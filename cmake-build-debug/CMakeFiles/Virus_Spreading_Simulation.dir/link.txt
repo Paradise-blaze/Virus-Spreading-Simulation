@@ -1,0 +1,1 @@
+/bin/c++  -g   CMakeFiles/Virus_Spreading_Simulation.dir/main.cpp.o  -o Virus_Spreading_Simulation 
