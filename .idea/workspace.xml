@@ -41,7 +41,7 @@
     <property name="cf.first.check.clang-format" value="false" />
   </component>
   <component name="RunManager">
-    <configuration name="Virus_Spreading_Simulation" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="Virus_Spreading_Simulation" TARGET_NAME="Virus_Spreading_Simulation" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="Virus_Spreading_Simulation" RUN_TARGET_NAME="Virus_Spreading_Simulation">
+    <configuration name="Virus_Spreading_Simulation" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" PROJECT_NAME="Virus_Spreading_Simulation" TARGET_NAME="Virus_Spreading_Simulation" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="Virus_Spreading_Simulation" RUN_TARGET_NAME="Virus_Spreading_Simulation">
       <method v="2">
         <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
       </method>
