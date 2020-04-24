@@ -1,0 +1,3 @@
+D:/Studia/Virus-Spreading-Simulation/build/CMakeFiles/Virus_Spreading_Simulation.dir
+D:/Studia/Virus-Spreading-Simulation/build/CMakeFiles/edit_cache.dir
+D:/Studia/Virus-Spreading-Simulation/build/CMakeFiles/rebuild_cache.dir
