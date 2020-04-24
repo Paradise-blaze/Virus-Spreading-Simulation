@@ -13,8 +13,10 @@
   <component name="ChangeListManager">
     <list default="true" id="f2db2f40-daab-415d-aca6-20a5f820c010" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Region.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Region.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Region.h" beforeDir="false" afterPath="$PROJECT_DIR$/Region.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/CMakeOutput.log" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/CMakeOutput.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Makefile.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Makefile.cmake" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Virus_Spreading_Simulation.dir/depend.make" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Virus_Spreading_Simulation.dir/depend.make" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/clion-log.txt" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/clion-log.txt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -41,7 +43,7 @@
     <property name="cf.first.check.clang-format" value="false" />
   </component>
   <component name="RunManager">
-    <configuration name="Virus_Spreading_Simulation" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" PROJECT_NAME="Virus_Spreading_Simulation" TARGET_NAME="Virus_Spreading_Simulation" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="Virus_Spreading_Simulation" RUN_TARGET_NAME="Virus_Spreading_Simulation">
+    <configuration name="Virus_Spreading_Simulation" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="Virus_Spreading_Simulation" TARGET_NAME="Virus_Spreading_Simulation" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="Virus_Spreading_Simulation" RUN_TARGET_NAME="Virus_Spreading_Simulation">
       <method v="2">
         <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
       </method>
@@ -63,5 +65,31 @@
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="2" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="163" y="329" width="724" height="396" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1587765095308">
+      <screen x="83" y="27" width="1837" height="1053" />
+    </state>
+    <state x="163" y="329" width="724" height="396" key="#com.intellij.fileTypes.FileTypeChooser/83.27.1837.1053@83.27.1837.1053" timestamp="1587765095308" />
+    <state x="313" y="285" width="424" height="484" key="FileChooserDialogImpl" timestamp="1587765720453">
+      <screen x="83" y="27" width="1837" height="1053" />
+    </state>
+    <state x="313" y="285" width="424" height="484" key="FileChooserDialogImpl/83.27.1837.1053@83.27.1837.1053" timestamp="1587765720453" />
+    <state width="849" height="260" key="GridCell.Tab.0.bottom" timestamp="1587765286706">
+      <screen x="83" y="27" width="1837" height="1053" />
+    </state>
+    <state width="849" height="260" key="GridCell.Tab.0.bottom/83.27.1837.1053@83.27.1837.1053" timestamp="1587765286706" />
+    <state width="849" height="260" key="GridCell.Tab.0.center" timestamp="1587765286706">
+      <screen x="83" y="27" width="1837" height="1053" />
+    </state>
+    <state width="849" height="260" key="GridCell.Tab.0.center/83.27.1837.1053@83.27.1837.1053" timestamp="1587765286706" />
+    <state width="849" height="260" key="GridCell.Tab.0.left" timestamp="1587765286706">
+      <screen x="83" y="27" width="1837" height="1053" />
+    </state>
+    <state width="849" height="260" key="GridCell.Tab.0.left/83.27.1837.1053@83.27.1837.1053" timestamp="1587765286706" />
+    <state width="849" height="260" key="GridCell.Tab.0.right" timestamp="1587765286706">
+      <screen x="83" y="27" width="1837" height="1053" />
+    </state>
+    <state width="849" height="260" key="GridCell.Tab.0.right/83.27.1837.1053@83.27.1837.1053" timestamp="1587765286706" />
   </component>
 </project>

@@ -1,0 +1,20 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/szymon/Pulpit/Programowanie/C++/Virus-Spreading-Simulation/Region.cpp
+Region.h
+/home/szymon/Pulpit/Programowanie/C++/Virus-Spreading-Simulation/Region.h
+
+/home/szymon/Pulpit/Programowanie/C++/Virus-Spreading-Simulation/Region.h
+string
+-
+
+/home/szymon/Pulpit/Programowanie/C++/Virus-Spreading-Simulation/main.cpp
+iostream
+-
+
