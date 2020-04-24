@@ -4,6 +4,8 @@
 
 #include "Region.h"
 
+Region::Region() = default;
+
 Region::Region(std::string &name, double averAge, double healthCare, double transport, climateType climate, double alpha, double beta, double gamma1, double gamma2, double lambda, double mi, long int population, long int susceptible, long int exposed, long int infectious, long int recovered, long int dead) {
     this->name = name;
     this->averAge = averAge;

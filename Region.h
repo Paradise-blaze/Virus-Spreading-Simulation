@@ -35,6 +35,8 @@ class Region {
     long int recovered;
     long int dead;
 
+public:
+    Region();
     Region(std::string &, double, double, double, climateType, double, double, double, double, double, double, long int, long int, long int, long int, long int, long int);
 };
 
