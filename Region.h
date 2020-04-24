@@ -1,0 +1,14 @@
+//
+// Created by szymon on 24.04.2020.
+//
+
+#ifndef VIRUS_SPREADING_SIMULATION_REGION_H
+#define VIRUS_SPREADING_SIMULATION_REGION_H
+
+
+class Region {
+
+};
+
+
+#endif //VIRUS_SPREADING_SIMULATION_REGION_H
