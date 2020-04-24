@@ -6,9 +6,4 @@
 #define VIRUS_SPREADING_SIMULATION_REGION_H
 
 
-class Region {
-
-};
-
-
 #endif //VIRUS_SPREADING_SIMULATION_REGION_H
