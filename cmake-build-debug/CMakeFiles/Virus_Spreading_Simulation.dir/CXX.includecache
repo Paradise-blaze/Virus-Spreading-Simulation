@@ -1,0 +1,20 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/proxpxd/Desktop/moje_programy/simulations/Virus-Spreading-Simulation/main.cpp
+iostream
+-
+vector
+-
+filesystem
+-
+fstream
+-
+iterator
+-
+

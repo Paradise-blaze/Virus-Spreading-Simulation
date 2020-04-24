@@ -22,7 +22,7 @@ class Region {
     double healthCare;
     double transport;
     climateType climate;
-    double alpha;         //transfer to exposed
+    double alpha;        //transfer to exposed
     double beta;         //infectiousness coefficient
     double gamma1;       //recovery coefficient
     double gamma2;       //death coefficient (disease)
