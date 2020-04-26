@@ -4,22 +4,29 @@
 
 #include "Region.h"
 
-Region::Region(std::string &name, double averAge, double healthCare, double transport, climateType climate, double alpha, double beta, double gamma1, double gamma2, double lambda, double mi, long int population, long int susceptible, long int exposed, long int infectious, long int recovered, long int dead) {
+Region::Region() = default;
+Region::Region(std::string &name, std::string &averAge, std::string &healthCare, std::string &transport, std::string &climate, std::string &alpha, std::string &beta, std::string &gamma1, std::string &gamma2, std::string &lambda, std::string &mi, std::string &population, std::string &susceptible, std::string &exposed, std::string &infectious, std::string &recovered, std::string &dead) {
     this->name = name;
-    this->averAge = averAge;
-    this->healthCare = healthCare;
-    this->transport = transport;
-    this->climate = climate;
-    this->alpha = alpha;
-    this->beta = beta;
-    this->gamma1 = gamma1;
-    this->gamma2 = gamma2;
-    this->lambda = lambda;
-    this->mi = mi;
-    this->population = population;
-    this->susceptible = susceptible;
-    this->exposed = exposed;
-    this->infectious = infectious;
-    this->recovered = recovered;
-    this->dead = dead;
+    this->averAge = std::stod(averAge);
+    this->healthCare = std::stod(healthCare);
+    this->transport = std::stod(transport);
+    this->climate = (climateType) std::stoi(climate);
+    this->alpha = std::stod(alpha);
+    this->beta = std::stod(beta);
+    this->gamma1 = std::stod(gamma1);
+    this->gamma2 = std::stod(gamma2);
+    this->lambda = std::stod(lambda);
+    this->mi = std::stod(mi);
+    this->population = std::stol(population);
+    this->susceptible = std::stol(susceptible);
+    this->exposed = std::stol(exposed);
+    this->infectious = std::stol(infectious);
+    this->recovered = std::stol(recovered);
+    this->dead = std::stol(dead);
+}
+
+void Region::addConnection(Region &region, double val) {
+    if (!connections.contains(region)){
+        connections.insert_or_assign(region, val);
+    }
 }
