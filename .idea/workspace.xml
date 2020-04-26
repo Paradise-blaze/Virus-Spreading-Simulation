@@ -13,15 +13,11 @@
   <component name="ChangeListManager">
     <list default="true" id="f2db2f40-daab-415d-aca6-20a5f820c010" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Region.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Region.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Region.h" beforeDir="false" afterPath="$PROJECT_DIR$/Region.h" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Virus_Spreading_Simulation.dir/CXX.includecache" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Virus_Spreading_Simulation.dir/CXX.includecache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Virus_Spreading_Simulation.dir/depend.internal" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Virus_Spreading_Simulation.dir/depend.internal" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Virus_Spreading_Simulation.dir/depend.make" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Virus_Spreading_Simulation.dir/depend.make" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Virus_Spreading_Simulation.dir/Region.cpp.o" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Virus_Spreading_Simulation.dir/Region.cpp.o" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Virus_Spreading_Simulation.dir/main.cpp.o" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Virus_Spreading_Simulation.dir/main.cpp.o" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/Virus_Spreading_Simulation" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/Virus_Spreading_Simulation" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/main.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/regions.csv" beforeDir="false" afterPath="$PROJECT_DIR$/resources/regions.csv" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -44,6 +40,7 @@
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="cf.first.check.clang-format" value="false" />
     <property name="settings.editor.selected.configurable" value="project.propVCSSupport.Mappings" />
@@ -78,52 +75,58 @@
       <option name="presentableId" value="Default" />
       <updated>1587755644424</updated>
       <workItem from="1587755648579" duration="3771000" />
+      <workItem from="1587815886122" duration="1655000" />
+      <workItem from="1587911462840" duration="258000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
-    <option name="version" value="2" />
+    <option name="version" value="1" />
   </component>
   <component name="WindowStateProjectService">
     <state x="467" y="116" key="FileChooserDialogImpl" timestamp="1587763815529">
       <screen x="0" y="0" width="1366" height="720" />
     </state>
     <state x="467" y="116" key="FileChooserDialogImpl/0.0.1366.720/1366.0.1366.768@0.0.1366.720" timestamp="1587763815529" />
-    <state width="1320" height="136" key="GridCell.Tab.0.bottom" timestamp="1587768580595">
+    <state width="1320" height="169" key="GridCell.Tab.0.bottom" timestamp="1587911823911">
       <screen x="0" y="0" width="1366" height="720" />
     </state>
-    <state width="1320" height="136" key="GridCell.Tab.0.bottom/0.0.1366.720/1366.0.1366.768@0.0.1366.720" timestamp="1587768580595" />
-    <state width="1320" height="136" key="GridCell.Tab.0.center" timestamp="1587768580595">
+    <state width="1320" height="169" key="GridCell.Tab.0.bottom/0.0.1366.720/1366.0.1366.768@0.0.1366.720" timestamp="1587911823911" />
+    <state width="1320" height="169" key="GridCell.Tab.0.center" timestamp="1587911823910">
       <screen x="0" y="0" width="1366" height="720" />
     </state>
-    <state width="1320" height="136" key="GridCell.Tab.0.center/0.0.1366.720/1366.0.1366.768@0.0.1366.720" timestamp="1587768580595" />
-    <state width="1320" height="136" key="GridCell.Tab.0.left" timestamp="1587768580595">
+    <state width="1320" height="169" key="GridCell.Tab.0.center/0.0.1366.720/1366.0.1366.768@0.0.1366.720" timestamp="1587911823910" />
+    <state width="1320" height="169" key="GridCell.Tab.0.left" timestamp="1587911823909">
       <screen x="0" y="0" width="1366" height="720" />
     </state>
-    <state width="1320" height="136" key="GridCell.Tab.0.left/0.0.1366.720/1366.0.1366.768@0.0.1366.720" timestamp="1587768580595" />
-    <state width="1320" height="136" key="GridCell.Tab.0.right" timestamp="1587768580595">
+    <state width="1320" height="169" key="GridCell.Tab.0.left/0.0.1366.720/1366.0.1366.768@0.0.1366.720" timestamp="1587911823909" />
+    <state width="1320" height="169" key="GridCell.Tab.0.right" timestamp="1587911823910">
       <screen x="0" y="0" width="1366" height="720" />
     </state>
-    <state width="1320" height="136" key="GridCell.Tab.0.right/0.0.1366.720/1366.0.1366.768@0.0.1366.720" timestamp="1587768580595" />
-    <state width="1320" height="211" key="GridCell.Tab.1.bottom" timestamp="1587766353658">
+    <state width="1320" height="169" key="GridCell.Tab.0.right/0.0.1366.720/1366.0.1366.768@0.0.1366.720" timestamp="1587911823910" />
+    <state width="1320" height="211" key="GridCell.Tab.1.bottom" timestamp="1587769899697">
       <screen x="0" y="0" width="1366" height="720" />
     </state>
-    <state width="1320" height="211" key="GridCell.Tab.1.bottom/0.0.1366.720/1366.0.1366.768@0.0.1366.720" timestamp="1587766353658" />
-    <state width="1320" height="211" key="GridCell.Tab.1.center" timestamp="1587766353658">
+    <state width="1320" height="211" key="GridCell.Tab.1.bottom/0.0.1366.720/1366.0.1366.768@0.0.1366.720" timestamp="1587769899697" />
+    <state width="1320" height="211" key="GridCell.Tab.1.center" timestamp="1587769899697">
       <screen x="0" y="0" width="1366" height="720" />
     </state>
-    <state width="1320" height="211" key="GridCell.Tab.1.center/0.0.1366.720/1366.0.1366.768@0.0.1366.720" timestamp="1587766353658" />
-    <state width="1320" height="211" key="GridCell.Tab.1.left" timestamp="1587766353658">
+    <state width="1320" height="211" key="GridCell.Tab.1.center/0.0.1366.720/1366.0.1366.768@0.0.1366.720" timestamp="1587769899697" />
+    <state width="1320" height="211" key="GridCell.Tab.1.left" timestamp="1587769899697">
       <screen x="0" y="0" width="1366" height="720" />
     </state>
-    <state width="1320" height="211" key="GridCell.Tab.1.left/0.0.1366.720/1366.0.1366.768@0.0.1366.720" timestamp="1587766353658" />
-    <state width="1320" height="211" key="GridCell.Tab.1.right" timestamp="1587766353658">
+    <state width="1320" height="211" key="GridCell.Tab.1.left/0.0.1366.720/1366.0.1366.768@0.0.1366.720" timestamp="1587769899697" />
+    <state width="1320" height="211" key="GridCell.Tab.1.right" timestamp="1587769899697">
       <screen x="0" y="0" width="1366" height="720" />
     </state>
-    <state width="1320" height="211" key="GridCell.Tab.1.right/0.0.1366.720/1366.0.1366.768@0.0.1366.720" timestamp="1587766353658" />
+    <state width="1320" height="211" key="GridCell.Tab.1.right/0.0.1366.720/1366.0.1366.768@0.0.1366.720" timestamp="1587769899697" />
     <state x="188" y="0" width="990" height="724" key="SettingsEditor" timestamp="1587765289752">
       <screen x="0" y="0" width="1366" height="720" />
     </state>
     <state x="188" y="0" width="990" height="724" key="SettingsEditor/0.0.1366.720/1366.0.1366.768@0.0.1366.720" timestamp="1587765289752" />
+    <state x="488" y="280" width="388" height="163" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1587911580575">
+      <screen x="0" y="0" width="1366" height="720" />
+    </state>
+    <state x="488" y="280" width="388" height="163" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1366.720/1366.0.1366.768@0.0.1366.720" timestamp="1587911580575" />
   </component>
 </project>

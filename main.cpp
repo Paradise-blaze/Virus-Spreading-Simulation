@@ -7,8 +7,7 @@
 //namespace filesystem = experimental::filesystem;
 using namespace std;
 
-vector<string> getPaths(){
-    string filesPath = "resources";
+vector<string> getPaths(string path){
 
     vector<string> paths;
     /*
@@ -16,7 +15,7 @@ vector<string> getPaths(){
         paths.push_back(file.path());
     }
      */
-    paths.push_back("../" + filesPath + "/regions.csv"); //temporally
+    paths.push_back(path + "regions.csv"); //temporally
     return paths;
 }
 
@@ -24,7 +23,7 @@ string choosePath(vector<string> paths){
     int i = 0;
     cout << "Proszę wybrać numer zarazy" << endl;
     for(string &path: paths){
-        cout << i + 1 << " " << path << endl;
+        cout << i + 1 << ": " << path << endl;
     }
     int choice;
     //cin >> choice;
@@ -32,17 +31,17 @@ string choosePath(vector<string> paths){
     return paths.at(choice-1);
 }
 
-vector<string> stringToVector(string &record, string &sep){
+vector<string> stringToVector(string &record, char delim){
     stringstream ss(record);
     vector<string> result;
     string val;
-    while (getline(ss, val,','))
+    while (getline(ss, val, delim))
         result.push_back(val);
 
     return result;
 }
 
-vector<vector<string>> loadData(string &path, string &sep){
+vector<vector<string>> loadRegions(string &path, char delim){
     vector<vector<string>> initials;
     vector<string> country;
     ifstream file;
@@ -50,7 +49,7 @@ vector<vector<string>> loadData(string &path, string &sep){
 
     string line;
     while (getline(file, line)){
-        country = stringToVector(line, sep);
+        country = stringToVector(line, delim);
     }
     return initials;
 }
@@ -65,6 +64,7 @@ vector<Region> createRegions(vector<vector<string>> &data){
         region = Region();
         regions.push_back(region);
     }
+    // creating connections between regions
     for (int i = 0; i < regions.size(); i++){
         //regions.at(i)
     }
@@ -73,10 +73,9 @@ vector<Region> createRegions(vector<vector<string>> &data){
 }
 
 int main() {
-    string sep = ",";
-    vector<string> paths = getPaths();
+    vector<string> paths = getPaths("../resources/");
     string path = choosePath(paths);
-    vector<vector<string>> data = loadData(path, sep);
-    vector<Region> regions = createRegions(data);
+    vector<vector<string>> regionsData = loadRegions(path, ',');
+    vector<Region> regions = createRegions(regionsData);
     return 0;
 }
