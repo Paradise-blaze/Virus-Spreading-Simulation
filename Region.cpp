@@ -26,7 +26,7 @@ Region::Region(std::string &name, std::string &averAge, std::string &healthCare,
 }
 
 void Region::addConnection(Region &region, double val) {
-    if (!connections.contains(region)){
-        connections.insert_or_assign(region, val);
-    }
+    /*if (!connections.contains(region)){
+        //connections.insert_or_assign(region, val);
+    }*/
 }
