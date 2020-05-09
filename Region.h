@@ -6,6 +6,7 @@
 #define VIRUS_SPREADING_SIMULATION_REGION_H
 
 #include <string>
+#include <map>
 
 enum climateType {
     Tropical,
@@ -34,8 +35,13 @@ class Region {
     long int infectious;
     long int recovered;
     long int dead;
+    std::map<Region, double> connections;
 
-    Region(std::string &, double, double, double, climateType, double, double, double, double, double, double, long int, long int, long int, long int, long int, long int);
+public:
+    Region();
+    Region(std::string &, std::string &, std::string &, std::string &, std::string &, std::string &, std::string &, std::string &, std::string &, std::string &, std::string &, std::string &, std::string &, std::string &, std::string &, std::string &, std::string &);
+
+    void addConnection(Region &region, double val);
 };
 
 #endif //VIRUS_SPREADING_SIMULATION_REGION_H
