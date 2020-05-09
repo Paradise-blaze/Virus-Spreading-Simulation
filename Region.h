@@ -23,18 +23,18 @@ class Region {
     double healthCare;
     double transport;
     climateType climate;
-    double alpha;         //transfer to exposed
+    double alpha;        //transfer to exposed
     double beta;         //infectiousness coefficient
     double gamma1;       //recovery coefficient
     double gamma2;       //death coefficient (disease)
     double lambda = 0;   //fertility coefficient
     double mi = 0;       //death coefficient (all cases)
     long int population;
-    long int susceptible;
-    long int exposed;
-    long int infectious;
-    long int recovered;
-    long int dead;
+    long int susceptible = 0;
+    long int exposed = 0;
+    long int infectious = 0;
+    long int recovered = 0;
+    long int dead = 0;
     std::map<Region, double> connections;
 
 public:

@@ -18,11 +18,6 @@ Region::Region(std::string &name, std::string &averAge, std::string &healthCare,
     this->lambda = std::stod(lambda);
     this->mi = std::stod(mi);
     this->population = std::stol(population);
-    this->susceptible = std::stol(susceptible);
-    this->exposed = std::stol(exposed);
-    this->infectious = std::stol(infectious);
-    this->recovered = std::stol(recovered);
-    this->dead = std::stol(dead);
 }
 
 void Region::addConnection(Region &region, double val) {
