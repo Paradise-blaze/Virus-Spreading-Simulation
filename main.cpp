@@ -4,60 +4,58 @@
 #include <sstream>
 #include "Region.h"
 
-//namespace filesystem = experimental::filesystem;
 using namespace std;
+using rawData = vector<vector<string>>;
+using rawRecord = vector<string>;
 
-vector<string> getPaths(string path){
+const string regionsPath = "/home/proxpxd/Desktop/moje_programy/simulations/Virus-Spreading-Simulation/resources/Country.csv";
+const string diseasesPath = "/home/proxpxd/Desktop/moje_programy/simulations/Virus-Spreading-Simulation/resources/diseases.csv";
 
-    vector<string> paths;
-    /*
-    for (const auto &file: filesystem::directory_iterator(filesPath)){
-        paths.push_back(file.path());
-    }
-     */
-    paths.push_back(path + "regions.csv"); //temporally
-    return paths;
-}
 
-string choosePath(vector<string> paths){
-    int i = 0;
-    cout << "Proszę wybrać numer zarazy" << endl;
-    for(string &path: paths){
-        cout << i + 1 << ": " << path << endl;
-    }
-    int choice;
-    //cin >> choice;
-    choice = 1; // for tests
-    return paths.at(choice-1);
-}
-
-vector<string> stringToVector(string &record, char delim){
+rawRecord stringToVector(string &record, char delim){
     stringstream ss(record);
-    vector<string> result;
+    rawRecord values;
     string val;
     while (getline(ss, val, delim))
-        result.push_back(val);
+        values.push_back(val);
 
-    return result;
+    return values;
 }
 
-vector<vector<string>> loadRegions(string &path, char delim){
-    vector<vector<string>> initials;
-    vector<string> country;
+rawData loadData(const string &path, char delim, bool header=true){
+    rawData data;
+    rawRecord  values;
     ifstream file;
     file.open(path, ios::in);
 
     string line;
-    while (getline(file, line)){
-        country = stringToVector(line, delim);
+    if (header)
+        file.ignore(numeric_limits<streamsize>::max(), '\n');
+
+    while (getline(file, line)) {
+        values = stringToVector(line, delim);
+        data.push_back(values);
     }
-    return initials;
+    return data;
 }
 
-vector<Region> createRegions(vector<vector<string>> &data){
+rawRecord chooseDisease(rawData data){
+    int i = 0;
+    cout << "Proszę wybrać numer zarazy:" << endl;
+    for(rawRecord &record: data){
+        cout << i + 1 << ": " << record.at(0) << endl;
+        i++;
+    }
+    int choice;
+    //cin >> choice;
+    choice = 1; // for tests
+    return data.at(choice-1);
+}
+
+vector<Region> createRegions(rawData &data){
     vector<Region> regions;
     Region region;
-    for(vector<string> d: data){
+    for(rawRecord d: data){
         // to fill constructor
         // think about all string constructor
         // with conversion inside
@@ -72,10 +70,18 @@ vector<Region> createRegions(vector<vector<string>> &data){
     return regions;
 }
 
+
 int main() {
-    vector<string> paths = getPaths("../resources/");
-    string path = choosePath(paths);
-    vector<vector<string>> regionsData = loadRegions(path, ',');
+    // Choosing and loading disease to simulate
+    rawData diseasesData = loadData(diseasesPath, ',');
+    rawRecord diseaseData = chooseDisease(diseasesData);
+
+    // Loading default regions' data
+    rawData regionsData = loadData(regionsPath, ';');
     vector<Region> regions = createRegions(regionsData);
+
+    // Creating simulation
+    // potentially in the future
+    //Simulation simulation = Simulation(regions, diseaseData);
     return 0;
 }
