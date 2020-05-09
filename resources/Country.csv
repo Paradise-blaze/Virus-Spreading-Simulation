@@ -1,264 +1,241 @@
-Aruba;105845
-Afghanistan;37172386
-Angola;30809762
-Albania;2866376
-Andorra;77006
-Arab World;419790588
-United Arab Emirates;9630959
-Argentina;44494502
-Armenia;2951776
-American Samoa;55465
-Antigua and Barbuda;96286
-Australia;24982688
-Austria;8840521
-Azerbaijan;9939800
-Burundi;11175378
-Belgium;11433256
-Benin;11485048
-Burkina Faso;19751535
-Bangladesh;161356039
-Bulgaria;7025037
-Bahrain;1569439
-Bahamas, The;385640
-Bosnia and Herzegovina;3323929
-Belarus;9483499
-Belize;383071
-Bermuda;63973
-Bolivia;11353142
-Brazil;209469333
-Barbados;286641
-Brunei Darussalam;428962
-Bhutan;754394
-Botswana;2254126
-Central African Republic;4666377
-Canada;37057765
-Central Europe and the Baltics;102511922
-Switzerland;8513227
-Channel Islands;170499
-Chile;18729160
-China;1392730000
-Cote d'Ivoire;25069229
-Cameroon;25216237
-Congo, Dem. Rep.;84068091
-Congo, Rep.;5244363
-Colombia;49648685
-Comoros;832322
-Cabo Verde;543767
-Costa Rica;4999441
-Caribbean small states;7358965
-Cuba;11338138
-Curacao;159800
-Cayman Islands;64174
-Cyprus;1189265
-Czech Republic;10629928
-Germany;82905782
-Djibouti;958920
-Dominica;71625
-Denmark;5793636
-Dominican Republic;10627165
-Algeria;42228429
-East Asia & Pacific (excluding high income);2081651801
-Early-demographic dividend;3249140605
-East Asia & Pacific;2328220870
-Europe & Central Asia (excluding high income);417797257
-Europe & Central Asia;918793590
-Ecuador;17084357
-Egypt, Arab Rep.;98423595
-Euro area;341783171
-Eritrea;
-Spain;46796540
-Estonia;1321977
-Ethiopia;109224559
-European Union;446786293
-Fragile and conflict affected situations;743958386
-Finland;5515525
-Fiji;883483
-France;66977107
-Faroe Islands;48497
-Micronesia, Fed. Sts.;112640
-Gabon;2119275
-United Kingdom;66460344
-Georgia;3726549
-Ghana;29767108
-Gibraltar;33718
-Guinea;12414318
-Gambia, The;2280102
-Guinea-Bissau;1874309
-Equatorial Guinea;1308974
-Greece;10731726
-Grenada;111454
-Greenland;56025
-Guatemala;17247807
-Guam;165768
-Guyana;779004
-High income;1210312147
-Hong Kong SAR, China;7451000
-Honduras;9587522
-Heavily indebted poor countries (HIPC);780234406
-Croatia;4087843
-Haiti;11123176
-Hungary;9775564
-IBRD only;4772284113
-IDA & IBRD total;6412522234
-IDA total;1640238121
-IDA blend;555830605
-Indonesia;267663435
-IDA only;1084407516
-Isle of Man;84077
-India;1352617328
-Not classified;
-Ireland;4867309
-Iran, Islamic Rep.;81800269
-Iraq;38433600
-Iceland;352721
-Israel;8882800
-Italy;60421760
-Jamaica;2934855
-Jordan;9956011
-Japan;126529100
-Kazakhstan;18272430
-Kenya;51393010
-Kyrgyz Republic;6322800
-Cambodia;16249798
-Kiribati;115847
-St. Kitts and Nevis;52441
-Korea, Rep.;51606633
-Kuwait;4137309
-Latin America & Caribbean (excluding high income);609013934
-Lao PDR;7061507
-Lebanon;6848925
-Liberia;4818977
-Libya;6678567
-St. Lucia;181889
-Latin America & Caribbean;641357515
-Least developed countries: UN classification;1009662578
-Low income;705417321
-Liechtenstein;37910
-Sri Lanka;21670000
-Lower middle income;3022905169
-Low & middle income;6383958209
-Lesotho;2108132
-Late-demographic dividend;2288665963
-Lithuania;2801543
-Luxembourg;607950
-Latvia;1927174
-Macao SAR, China;631636
-St. Martin (French part);37264
-Morocco;36029138
-Monaco;38682
-Moldova;2706049
-Madagascar;26262368
-Maldives;515696
-Middle East & North Africa;448912859
-Mexico;126190788
-Marshall Islands;58413
-Middle income;5678540888
-North Macedonia;2082958
-Mali;19077690
-Malta;484630
-Myanmar;53708395
-Middle East & North Africa (excluding high income);382896715
-Montenegro;622227
-Mongolia;3170208
-Northern Mariana Islands;56882
-Mozambique;29495962
-Mauritania;4403319
-Mauritius;1265303
-Malawi;18143315
-Malaysia;31528585
-North America;364290258
-Namibia;2448255
-New Caledonia;284060
-Niger;22442948
-Nigeria;195874740
-Nicaragua;6465513
-Netherlands;17231624
-Norway;5311916
-Nepal;28087871
-Nauru;12704
-New Zealand;4841000
-OECD members;1303529456
-Oman;4829483
-Other small states;30758989
-Pakistan;212215030
-Panama;4176873
-Peru;31989256
-Philippines;106651922
-Palau;17907
-Papua New Guinea;8606316
-Poland;37974750
-Pre-demographic dividend;919485393
-Puerto Rico;3195153
-Korea, Dem. People?s Rep.;25549819
-Portugal;10283822
-Paraguay;6956071
-West Bank and Gaza;4569087
-Pacific island small states;2457367
-Post-demographic dividend;1109997273
-French Polynesia;277679
-Qatar;2781677
-Romania;19466145
-Russian Federation;144478050
-Rwanda;12301939
-South Asia;1814388744
-Saudi Arabia;33699947
-Sudan;41801533
-Senegal;15854360
-Singapore;5638676
-Solomon Islands;652858
-Sierra Leone;7650154
-El Salvador;6420744
-San Marino;33785
-Somalia;15008154
-Serbia;6982604
-Sub-Saharan Africa (excluding high income);1078209758
-South Sudan;10975920
-Sub-Saharan Africa;1078306520
-Small states;40575321
-Sao Tome and Principe;211028
-Suriname;575991
-Slovak Republic;5446771
-Slovenia;2073894
-Sweden;10175214
-Eswatini;1136191
-Sint Maarten (Dutch part);40654
-Seychelles;96762
-Syrian Arab Republic;16906283
-Turks and Caicos Islands;37665
-Chad;15477751
-East Asia & Pacific (IDA & IBRD countries);2056064424
-Europe & Central Asia (IDA & IBRD countries);459865205
-Togo;7889094
-Thailand;69428524
-Tajikistan;9100837
-Turkmenistan;5850908
-Latin America & the Caribbean (IDA & IBRD countries);625569713
-Timor-Leste;1267972
-Middle East & North Africa (IDA & IBRD countries);378327628
-Tonga;103197
-South Asia (IDA & IBRD);1814388744
-Sub-Saharan Africa (IDA & IBRD countries);1078306520
-Trinidad and Tobago;1389858
-Tunisia;11565204
-Turkey;82319724
-Tuvalu;11508
-Tanzania;56318348
-Uganda;42723139
-Ukraine;44622516
-Upper middle income;2655635719
-Uruguay;3449299
-United States;326687501
-Uzbekistan;32955400
-St. Vincent and the Grenadines;110210
-Venezuela, RB;28870195
-British Virgin Islands;29802
-Virgin Islands (U.S.);106977
-Vietnam;95540395
-Vanuatu;292680
-World;7594270356
-Samoa;196130
-Kosovo;1845300
-Yemen, Rep.;28498687
-South Africa;57779622
-Zambia;17351822
-Zimbabwe;14439018
+name;averAge;healthCare;transport;climate;alpha;beta;gamma1;gamma2;lambda;mi;population
+Afghanistan;17.299999;;;;;;;;;;37172386
+Albania;36.200001;;;;;;;;;;2866376
+Algeria;27.5;;;;;;;;;;42228429
+Angola;16.4;;;;;;;;;;30809762
+Antigua and Barbuda;30.700001;;;;;;;;;;96286
+Argentina;30.799999;;;;;;;;;;44494502
+Armenia;33.900002;;;;;;;;;;2951776
+Aruba;40.099998;;;;;;;;;;105845
+Australia;37.400002;;;;;;;;;;24982688
+Austria;43.200001;;;;;;;;;;8840521
+Azerbaijan;30.299999;;;;;;;;;;9939800
+Bahamas;32.5;;;;;;;;;;385640
+Bahrain;31.200001;;;;;;;;;;1569439
+Bangladesh;25.6;;;;;;;;;;161356039
+Barbados;38.5;;;;;;;;;;286641
+Belarus;39.599998;;;;;;;;;;9483499
+Belgium;41.299999;;;;;;;;;;11433256
+Belize;23.5;;;;;;;;;;383071
+Benin;18.200001;;;;;;;;;;11485048
+Bermuda;43.5;;;;;;;;;;63973
+Bhutan;26.299999;;;;;;;;;;754394
+Bolivia;24.1;;;;;;;;;;11353142
+Bosnia and Herzegovina;41;;;;;;;;;;3323929
+Botswana;24.4;;;;;;;;;;2254126
+Brazil;31.299999;;;;;;;;;;209469333
+Brunei;30;;;;;;;;;;428962
+Bulgaria;43.5;;;;;;;;;;7025037
+Burkina Faso;17;;;;;;;;;;19751535
+Burundi;17.6;;;;;;;;;;11175378
+Cambodia;24;;;;;;;;;;16249798
+Cameroon;18.299999;;;;;;;;;;25216237
+Canada;40.5;;;;;;;;;;37057765
+Cape Verde;23.799999;;;;;;;;;;543767
+Caribbean small states;30.299999;;;;;;;;;;7358965
+Central African Republic;17.799999;;;;;;;;;;4666377
+Chad;16.1;;;;;;;;;;15477751
+Channel Islands;42.700001;;;;;;;;;;170499
+Chile;33.700001;;;;;;;;;;18729160
+China;37;;;;;;;;;;1392730000
+Colombia;30.1;;;;;;;;;;49648685
+Comoros;19.700001;;;;;;;;;;832322
+Congo;18.9;;;;;;;;;;84068091
+Costa Rica;31.4;;;;;;;;;;4999441
+Cote d'Ivoire;18.299999;;;;;;;;;;25069229
+Croatia;42.599998;;;;;;;;;;4087843
+Cuba;41.099998;;;;;;;;;;11338138
+Curacao;41.299999;;;;;;;;;;159800
+Cyprus;34.900002;;;;;;;;;;1189265
+Czech Republic;41.400002;;;;;;;;;;10629928
+Denmark;41.599998;;;;;;;;;;5793636
+Djibouti;23.700001;;;;;;;;;;958920
+Dominican Republic;26.1;;;;;;;;;;10627165
+Ecuador;26.6;;;;;;;;;;17084357
+Egypt;24.700001;;;;;;;;;;98423595
+El Salvador;25.799999;;;;;;;;;;6420744
+Equatorial Guinea;22.200001;;;;;;;;;;1308974
+Eritrea;18.9;;;;;;;;;;5933000
+Estonia;41.599998;;;;;;;;;;1321977
+Eswatini;20.7;;;;;;;;;;1136191
+Ethiopia;18.6;;;;;;;;;;109224559
+Fiji;27.6;;;;;;;;;;883483
+Finland;42.5;;;;;;;;;;5515525
+France;41.200001;;;;;;;;;;66977107
+French Polynesia;30.9;;;;;;;;;;277679
+Gabon;22.6;;;;;;;;;;2119275
+Gambia;17;;;;;;;;;;2280102
+Georgia;38;;;;;;;;;;3726549
+Germany;45.900002;;;;;;;;;;82905782
+Ghana;20.4;;;;;;;;;;29767108
+Gibraltar;35;;;;;;;;;;33718
+Greece;43.299999;;;;;;;;;;10731726
+Greenland;34;;;;;;;;;;56025
+Grenada;27.200001;;;;;;;;;;111454
+Guam;30.1;;;;;;;;;;165768
+Guatemala;21.299999;;;;;;;;;;17247807
+Guinea;18.4;;;;;;;;;;12414318
+Guinea-Bissau;18.9;;;;;;;;;;1874309
+Guyana;24.6;;;;;;;;;;779004
+Haiti;23;;;;;;;;;;11123176
+Honduras;23;;;;;;;;;;9587522
+Hungary;41.700001;;;;;;;;;;9775564
+Iceland;36;;;;;;;;;;352721
+India;26.700001;;;;;;;;;;1352617328
+Indonesia;28;;;;;;;;;;267663435
+Iran;29.5;;;;;;;;;;81800269
+Iraq;19.4;;;;;;;;;;38433600
+Ireland;36.900002;;;;;;;;;;4867309
+Israel;30.200001;;;;;;;;;;8882800
+Italy;45.900002;;;;;;;;;;60421760
+Jamaica;29.4;;;;;;;;;;2934855
+Japan;46.299999;;;;;;;;;;126529100
+Jordan;22.1;;;;;;;;;;9956011
+Kazakhstan;29.299999;;;;;;;;;;18272430
+Kenya;19;;;;;;;;;;51393010
+Kiribati;22.4;;;;;;;;;;115847
+Kosovo;29.1;;;;;;;;;;1845300
+Kuwait;33.400002;;;;;;;;;;4137309
+Kyrgyzstan;25.299999;;;;;;;;;;6322800
+Laos;22.700001;;;;;;;;;;7061507
+Latin America & Caribbean;29.200001;;;;;;;;;;641357515
+Latvia;42.5;;;;;;;;;;1927174
+Lebanon;28.5;;;;;;;;;;6848925
+Lesotho;21.299999;;;;;;;;;;2108132
+Liberia;18.6;;;;;;;;;;4818977
+Libya;27.200001;;;;;;;;;;6678567
+Lithuania;42.700001;;;;;;;;;;2801543
+Luxembourg;39.299999;;;;;;;;;;607950
+Madagascar;18.700001;;;;;;;;;;26262368
+Malawi;17.4;;;;;;;;;;18143315
+Malaysia;27.700001;;;;;;;;;;31528585
+Maldives;27.9;;;;;;;;;;515696
+Mali;16;;;;;;;;;;19077690
+Malta;40.900002;;;;;;;;;;484630
+Mauritania;19.700001;;;;;;;;;;4403319
+Mauritius;35.599998;;;;;;;;;;1265303
+Mexico;27.5;;;;;;;;;;126190788
+Micronesia;21.5;;;;;;;;;;112640
+Moldova;35.599998;;;;;;;;;;2706049
+Monaco;;;;;;;;;;;38682
+Mongolia;27.1;;;;;;;;;;3170208
+Montenegro;37.700001;;;;;;;;;;622227
+Morocco;27.9;;;;;;;;;;36029138
+Mozambique;17.200001;;;;;;;;;;29495962
+Myanmar;27.700001;;;;;;;;;;53708395
+Namibia;21;;;;;;;;;;2448255
+Nepal;23.200001;;;;;;;;;;28087871
+Netherlands;42.099998;;;;;;;;;;17231624
+New Caledonia;32.799999;;;;;;;;;;284060
+New Zealand;37.299999;;;;;;;;;;4841000
+Nicaragua;25.200001;;;;;;;;;;6465513
+Niger;14.9;;;;;;;;;;22442948
+Nigeria;17.9;;;;;;;;;;195874740
+North Korea;34;;;;;;;;;;25549819
+Norway;39.200001;;;;;;;;;;5311916
+Oman;29;;;;;;;;;;4829483
+Pakistan;22.5;;;;;;;;;;212215030
+Palau;;;;;;;;;;;17907
+Panama;28.4;;;;;;;;;;4176873
+Papua New Guinea;21.700001;;;;;;;;;;8606316
+Paraguay;24.9;;;;;;;;;;6956071
+Peru;27.5;;;;;;;;;;31989256
+Philippines;24.1;;;;;;;;;;106651922
+Poland;39.700001;;;;;;;;;;37974750
+Portugal;43.900002;;;;;;;;;;10283822
+Puerto Rico;36.400002;;;;;;;;;;3195153
+Qatar;31.299999;;;;;;;;;;2781677
+Romania;41.299999;;;;;;;;;;19466145
+Russia;38.700001;;;;;;;;;;144478050
+Rwanda;19.4;;;;;;;;;;12301939
+Samoa;21.200001;;;;;;;;;;196130
+San Marino;;;;;;;;;;;33785
+Sao Tome and Principe;18.1;;;;;;;;;;211028
+Saudi Arabia;29.799999;;;;;;;;;;33699947
+Senegal;18.299999;;;;;;;;;;15854360
+Serbia;40;;;;;;;;;;6982604
+Seychelles;34.599998;;;;;;;;;;96762
+Sierra Leone;18.299999;;;;;;;;;;7650154
+Singapore;40;;;;;;;;;;5638676
+Slovakia;39.200001;;;;;;;;;;5446771
+Slovenia;43;;;;;;;;;;2073894
+Solomon Islands;19.9;;;;;;;;;;652858
+Somalia;16.5;;;;;;;;;;15008154
+South Korea;40.799999;;;;;;;;;;51606633
+South Sudan;18.6;;;;;;;;;;10975920
+Spain;43.200001;;;;;;;;;;46796540
+Sri Lanka;32.299999;;;;;;;;;;21670000
+St. Lucia;32.599998;;;;;;;;;;181889
+St. Vincent and the Grenadines;29.799999;;;;;;;;;;110210
+Sudan;18.9;;;;;;;;;;41801533
+Suriname;28.4;;;;;;;;;;575991
+Sweden;40.900002;;;;;;;;;;10175214
+Switzerland;42.200001;;;;;;;;;;8513227
+Syria;20.200001;;;;;;;;;;16906283
+Tajikistan;22.4;;;;;;;;;;9100837
+Tanzania;17.299999;;;;;;;;;;56318348
+Thailand;37.799999;;;;;;;;;;69428524
+Timor;17.4;;;;;;;;;;1267972
+Togo;18.9;;;;;;;;;;7889094
+Tonga;21.299999;;;;;;;;;;103197
+Trinidad and Tobago;33.900002;;;;;;;;;;1389858
+Tunisia;31.1;;;;;;;;;;11565204
+Turkey;29.9;;;;;;;;;;82319724
+Turkmenistan;25.6;;;;;;;;;;5850908
+Uganda;15.8;;;;;;;;;;42723139
+Ukraine;40.299999;;;;;;;;;;44622516
+United Arab Emirates;33.400002;;;;;;;;;;9630959
+United Kingdom;40.200001;;;;;;;;;;66460344
+United States;37.599998;;;;;;;;;;326687501
+Uruguay;34.900002;;;;;;;;;;3449299
+Uzbekistan;26.299999;;;;;;;;;;32955400
+Vanuatu;22.200001;;;;;;;;;;292680
+Venezuela;27.4;;;;;;;;;;28870195
+Vietnam;30.4;;;;;;;;;;95540395
+Yemen;19.200001;;;;;;;;;;28498687
+Zambia;17.1;;;;;;;;;;17351822
+Zimbabwe;19;;;;;;;;;;14439018
+;;;;;;;;;;;
+;;;;;;;;;;;
+;;;;;;;;;;;
+;;;;;;;;;;;
+;;;;;;;;;;;
+;;;;;;;;;;;
+;;;;;;;;;;;
+;;;;;;;;;;;
+;;;;;;;;;;;
+;;;;;;;;;;;
+;;;;;;;;;;;
+;;;;;;;;;;;
+;;;;;;;;;;;
+;;;;;;;;;;;
+;;;;;;;;;;;
+;;;;;;;;;;;
+;;;;;;;;;;;
+;;;;;;;;;;;
+;;;;;;;;;;;
+;;;;;;;;;;;
+;;;;;;;;;;;
+;;;;;;;;;;;
+;;;;;;;;;;;
+;;;;;;;;;;;
+;;;;;;;;;;;
+;;;;;;;;;;;
+;;;;;;;;;;;
+;;;;;;;;;;;
+;;;;;;;;;;;
+;;;;;;;;;;;
+;;;;;;;;;;;
+;;;;;;;;;;;
+;;;;;;;;;;;
+;;;;;;;;;;;
+;;;;;;;;;;;
+;;;;;;;;;;;
+;;;;;;;;;;;
+;;;;;;;;;;;
+;;;;;;;;;;;
+;;;;;;;;;;;
+;;;;;;;;;;;
+;;;;;;;;;;;
+;;;;;;;;;;;
+;;;;;;;;;;;
