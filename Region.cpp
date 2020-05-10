@@ -1,24 +1,51 @@
 #include "Region.h"
 
+//Static members
+
+//String converters
+double Region::stod(std::string &str) {
+    double value;
+    try {value = std::stod(str);} catch (...) {value = 0.0;}
+    return value;
+}
+
+int Region::stoi(std::string &str) {
+    int value;
+    try {value = std::stoi(str);} catch (...) {value = 0;}
+    return value;
+}
+
+long Region::stol(std::string &str) {
+    long value;
+    try {value = std::stol(str);} catch (...) {value = 0;}
+    return value;
+}
+
+//Non static members
+
 //initialize
 Region::Region() = default;
 Region::Region(std::string &name, std::string &averAge, std::string &healthCare, std::string &transport, std::string &climate,  std::string &population) {
     this->name = name;
-    this->averAge = std::stod(averAge);
-    this->healthCare = std::stod(healthCare);
-    this->transport = std::stod(transport);
-    this->climate = (climateType) std::stoi(climate);
-    this->population = std::stol(population);
+    this->averAge = stod(averAge);
+    this->healthCare = stod(healthCare);
+    this->transport = stod(transport);
+    this->climate = (climateType) stoi(climate);
+    this->population = stol(population);
 }
 
-void Region::setCoefficients(std::string &Alpha, std::string &Beta, std::string &Gamma1, std::string &Gamma2, std::string &Lambda, std::string &Mi) {
-    this->alpha = std::stod(Alpha);
-    this->beta = std::stod(Beta);
-    this->gamma1 = std::stod(Gamma1);
-    this->gamma2 = std::stod(Gamma2);
-    this->lambda = std::stod(Lambda);
-    this->mi = std::stod(Mi);
+void Region::setNaturalGrowth(std::string &Lambda, std::string &Mi){
+    this->lambda = stod(Lambda);
+    this->mi = stod(Mi);
 }
+
+void Region::setCoefficients(std::string &Alpha, std::string &Beta, std::string &Gamma1, std::string &Gamma2) {
+    this->alpha = stod(Alpha);
+    this->beta = stod(Beta);
+    this->gamma1 = stod(Gamma1);
+    this->gamma2 = stod(Gamma2);
+}
+
 
 //getters
 std::string Region::getName() const { return this->name; }

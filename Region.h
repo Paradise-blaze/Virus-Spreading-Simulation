@@ -7,6 +7,7 @@
 
 #include <string>
 #include <map>
+#include <functional>
 
 #define SOCIAL_C 0.1
 #define CURFEW_C 0.3
@@ -40,6 +41,7 @@ enum climateType {
     Polar
 };
 
+
 class Region {
 private:
     std::string name;
@@ -62,11 +64,15 @@ private:
     std::map<Region, double> connections;
     std::map<Region, double> flights;
 
+    static double stod(std::string &);
+    static int stoi(std::string &);
+    static long stol(std::string &);
 public:
     //initialize
     Region();
     Region(std::string &, std::string &, std::string &, std::string &, std::string &, std::string &);
-    void setCoefficients(std::string &, std::string &, std::string &, std::string &, std::string &, std::string &);
+    void setCoefficients(std::string &, std::string &, std::string &, std::string &);
+    void setNaturalGrowth(std::string &, std::string &);
 
     //getters
     [[nodiscard]] std::string getName() const;              //nodiscard - CLion rzuca ostrzeżenia, gdy nie ma tego znacznika
@@ -141,6 +147,7 @@ public:
 
     //operators
     friend bool operator<(const Region &, const Region &);
+
 };
 
 #endif //VIRUS_SPREADING_SIMULATION_REGION_H
