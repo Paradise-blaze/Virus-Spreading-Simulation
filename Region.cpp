@@ -71,10 +71,14 @@ void Region::withdrawGloves() { this->beta /= GLOVE_C; }
 void Region::closeBorders() {
     for (auto pair : this->connections)
         pair.second = 1;
+    for (auto pair : this->flights)
+        pair.second = 1;
 }
 
 void Region::openBorders() {
     for (auto pair : this->connections)
+        pair.second = 2;
+    for (auto pair : this->flights)
         pair.second = 2;
 }
 
