@@ -1,27 +1,199 @@
-//
-// Created by szymon on 24.04.2020.
-//
-
 #include "Region.h"
 
+//initialize
 Region::Region() = default;
-Region::Region(std::string &name, std::string &averAge, std::string &healthCare, std::string &transport, std::string &climate, std::string &alpha, std::string &beta, std::string &gamma1, std::string &gamma2, std::string &lambda, std::string &mi, std::string &population, std::string &susceptible, std::string &exposed, std::string &infectious, std::string &recovered, std::string &dead) {
+Region::Region(std::string &name, std::string &averAge, std::string &healthCare, std::string &transport, std::string &climate,  std::string &population) {
     this->name = name;
     this->averAge = std::stod(averAge);
     this->healthCare = std::stod(healthCare);
     this->transport = std::stod(transport);
     this->climate = (climateType) std::stoi(climate);
-    this->alpha = std::stod(alpha);
-    this->beta = std::stod(beta);
-    this->gamma1 = std::stod(gamma1);
-    this->gamma2 = std::stod(gamma2);
-    this->lambda = std::stod(lambda);
-    this->mi = std::stod(mi);
     this->population = std::stol(population);
 }
 
-void Region::addConnection(Region &region, double val) {
-    /*if (!connections.contains(region)){
-        //connections.insert_or_assign(region, val);
-    }*/
+void Region::setCoefficients(std::string &Alpha, std::string &Beta, std::string &Gamma1, std::string &Gamma2, std::string &Lambda, std::string &Mi) {
+    this->alpha = std::stod(Alpha);
+    this->beta = std::stod(Beta);
+    this->gamma1 = std::stod(Gamma1);
+    this->gamma2 = std::stod(Gamma2);
+    this->lambda = std::stod(Lambda);
+    this->mi = std::stod(Mi);
 }
+
+//getters
+std::string Region::getName() const { return this->name; }
+double Region::getAverAge() const { return this->averAge; }
+double Region::getHealthCare() const { return this->healthCare; };
+double Region::getTransport() const { return this->transport; };
+climateType Region::getClimate() const { return this->climate; };
+double Region::getAlpha() const { return this->alpha; };
+double Region::getBeta() const { return this->beta; };
+double Region::getGamma1() const { return this->gamma1; };
+double Region::getGamma2() const { return this->gamma2; };
+double Region::getLambda() const { return this->lambda; };
+double Region::getMi() const { return this->mi; };
+long int Region::getPopulation() const { return this->population; };
+long int Region::getSusceptible() const { return this->susceptible; };
+long int Region::getExposed() const { return this->exposed; };
+long int Region::getInfectious() const { return this->infectious; };
+long int Region::getRecovered() const { return this->recovered; };
+long int Region::getDead() const { return this->dead; };
+
+//relations between regions
+void Region::addConnection(Region &region, int val) {
+    if (!this->checkConnection(region))
+        this->connections.insert(std::make_pair(region, val));
+}
+
+bool Region::checkConnection(Region &region) const { return this->connections.count(region); }
+
+void Region::addFlight(Region &region, int val) {
+    if (!this->checkFlight(region))
+        this->flights.insert(std::make_pair(region, val));
+}
+
+bool Region::checkFlight(Region &region) { return this->flights.count(region); }
+
+//reactions
+void Region::introduceSocialDistancing() { this->beta *= SOCIAL_C; }
+void Region::withdrawSocialDistancing() { this->beta /= SOCIAL_C; }
+void Region::introduceCurfew() { this->beta *= CURFEW_C; }
+void Region::withdrawCurfew() { this->beta /= CURFEW_C; }
+void Region::closeParks() { this->beta *= PARK_C; }
+void Region::openParks() { this->beta /= PARK_C; }
+void Region::closeRestaurants() { this->beta *= REST_C; }
+void Region::openRestaurants() { this->beta /= REST_C; }
+void Region::introduceMasks() { this->beta *= MASK_C; }
+void Region::withdrawMasks() { this->beta /= MASK_C;}
+void Region::introduceGloves() { this->beta *= GLOVE_C; }
+void Region::withdrawGloves() { this->beta /= GLOVE_C; }
+
+void Region::closeBorders() {
+    for (auto pair : this->connections)
+        pair.second = 1;
+}
+
+void Region::openBorders() {
+    for (auto pair : this->connections)
+        pair.second = 2;
+}
+
+void Region::increaseInternalTransport() {
+    if (this->transport != MAX_TRANSPORT)
+        this->transport++;
+}
+
+void Region::decreaseInternalTransport() {
+    if (this->transport != 1)
+        this->transport--;
+}
+
+void Region::decreaseExternalTransport() {
+    for (auto pair : this->connections)
+        if (pair.second != 1)
+            pair.second--;
+}
+
+void Region::increaseExternalTransport() {
+    for (auto pair : this->connections)
+        if (pair.second != MAX_CONNECT)
+            pair.second++;
+}
+
+void Region::increaseTrade(){
+    for (auto pair : this->flights)
+        if (pair.second != MAX_FLIGHT)
+            pair.second++;
+}
+
+void Region::decreaseTrade() {
+    for (auto pair : this->flights)
+        if (pair.second != 1)
+            pair.second--;
+}
+
+void Region::spreadFakeNews() {
+    this->beta /= FAKE_NEWS_C;
+    this->gamma1 *= FAKE_NEWS_C;
+    this->gamma2 /= FAKE_NEWS_C;
+}
+
+void Region::fightWithFakeNews() {
+    this->beta *= FAKE_NEWS_C;
+    this->gamma1 /= FAKE_NEWS_C;
+    this->gamma2 *= FAKE_NEWS_C;
+}
+
+void Region::closeEntertainmentCenter() {
+    this->beta *= ENTERTAINMENT_C;
+}
+
+void Region::openEntertainmentCenter() {
+    this->beta /= ENTERTAINMENT_C;
+}
+
+void Region::causePanic() {
+    this->alpha /= PANIC_C;
+    this->beta /= PANIC_C;
+    this->gamma1 *= PANIC_C;
+    this->gamma2 /= PANIC_C;
+    this->lambda /= PANIC_C;
+}
+
+void Region::reducePanic() {
+    this->alpha *= PANIC_C;
+    this->beta *= PANIC_C;
+    this->gamma1 /= PANIC_C;
+    this->gamma2 *= PANIC_C;
+    this->lambda *= PANIC_C;
+}
+
+void Region::educateSociety() {
+    this->beta *= EDUCATION_C;
+    this->gamma1 /= EDUCATION_C;
+    this->gamma2 *= EDUCATION_C;
+}
+
+void Region::foolSociety() {
+    this->beta /= EDUCATION_C;
+    this->gamma1 *= EDUCATION_C;
+    this->gamma2 /= EDUCATION_C;
+}
+
+void Region::closeSchools() { this->beta *= SCHOOL_C; }
+void Region::openSchools() { this->beta /= SCHOOL_C; }
+void Region::closeShoppingCenter() { this->beta *= SHOP_C; }
+void Region::openShoppingCenter() { this->beta /= SHOP_C; }
+void Region::forbidGatherings() { this->beta *= GATHER_C; }
+void Region::permitGatherings() { this->beta /= GATHER_C; }
+void Region::openPlacesOfWorship() { this->beta *= WORSHIP_C; }
+void Region::closePlacesOfWorship() { this->beta /= WORSHIP_C; }
+void Region::isolateInfectious() { this->beta *= INFECTIOUS_C; }
+void Region::doNotIsolateInfectious() { this->beta /= INFECTIOUS_C; }
+void Region::isolateExposed() { this->beta *= EXPOSED_C; }
+void Region::doNotIsolateExposed() { this->beta /= EXPOSED_C; }
+
+void Region::donateHealthCare() {
+    if (this->healthCare != MAX_HEALTH)
+        this->healthCare++;
+}
+
+void Region::cutExpensesOnHealthCare() {
+    if (this->healthCare != 1)
+        this->healthCare--;
+}
+
+void Region::donateScience() {
+    this->gamma1 /= SCIENCE_C;
+    this->gamma2 *= SCIENCE_C;
+    this->lambda *= SCIENCE_C;
+}
+
+void Region::cutExpensesOnScience() {
+    this->gamma1 *= SCIENCE_C;
+    this->gamma2 /= SCIENCE_C;
+    this->lambda /= SCIENCE_C;
+}
+
+//operators
+bool operator<(const Region &region1, const Region &region2) { return region1.name < region2.name; }
