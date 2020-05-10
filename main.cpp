@@ -56,10 +56,8 @@ vector<Region> createRegions(rawData &data){
     vector<Region> regions;
     Region region;
     for(rawRecord d: data){
-        // to fill constructor
-        // think about all string constructor
-        // with conversion inside
-        region = Region();
+        region = Region(d.at(0), d.at(1), d.at(2), d.at(3), d.at(4), d.at(7));
+        region.setNaturalGrowth(d.at(5), d.at(6));
         regions.push_back(region);
     }
     // creating connections between regions
