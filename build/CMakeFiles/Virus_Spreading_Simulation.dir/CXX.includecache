@@ -1,0 +1,32 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+D:/Studia/Virus-Spreading-Simulation/Region.cpp
+Region.h
+D:/Studia/Virus-Spreading-Simulation/Region.h
+
+D:/Studia/Virus-Spreading-Simulation/Region.h
+string
+-
+map
+-
+functional
+-
+
+D:/Studia/Virus-Spreading-Simulation/main.cpp
+iostream
+-
+vector
+-
+fstream
+-
+sstream
+-
+Region.h
+D:/Studia/Virus-Spreading-Simulation/Region.h
+
