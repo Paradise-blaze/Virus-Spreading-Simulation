@@ -13,10 +13,19 @@
   <component name="ChangeListManager">
     <list default="true" id="f2db2f40-daab-415d-aca6-20a5f820c010" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/CMakeOutput.log" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/CMakeOutput.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeCache.txt" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeCache.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Makefile.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Makefile.cmake" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Makefile2" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Makefile2" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Virus_Spreading_Simulation.dir/CXX.includecache" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Virus_Spreading_Simulation.dir/CXX.includecache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Virus_Spreading_Simulation.dir/Region.cpp.o" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Virus_Spreading_Simulation.dir/Region.cpp.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Virus_Spreading_Simulation.dir/build.make" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Virus_Spreading_Simulation.dir/build.make" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Virus_Spreading_Simulation.dir/depend.internal" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Virus_Spreading_Simulation.dir/depend.internal" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Virus_Spreading_Simulation.dir/depend.make" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Virus_Spreading_Simulation.dir/depend.make" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Virus_Spreading_Simulation.dir/main.cpp.o" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Virus_Spreading_Simulation.dir/main.cpp.o" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/clion-log.txt" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/clion-log.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/Makefile" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/Makefile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/Virus_Spreading_Simulation" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/Virus_Spreading_Simulation" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/diseases.csv" beforeDir="false" afterPath="$PROJECT_DIR$/resources/diseases.csv" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -41,6 +50,7 @@
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="cf.first.check.clang-format" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
   </component>
   <component name="RunManager">
     <configuration name="Virus_Spreading_Simulation" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="Virus_Spreading_Simulation" TARGET_NAME="Virus_Spreading_Simulation" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="Virus_Spreading_Simulation" RUN_TARGET_NAME="Virus_Spreading_Simulation">
@@ -60,6 +70,12 @@
       <option name="presentableId" value="Default" />
       <updated>1587755644424</updated>
       <workItem from="1587755648579" duration="3771000" />
+      <workItem from="1589023152232" duration="2942000" />
+      <workItem from="1589106147881" duration="12545000" />
+      <workItem from="1589306765381" duration="1606000" />
+      <workItem from="1589386259483" duration="1089000" />
+      <workItem from="1589389745603" duration="2319000" />
+      <workItem from="1589454892306" duration="5966000" />
     </task>
     <servers />
   </component>
@@ -67,29 +83,37 @@
     <option name="version" value="2" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="163" y="329" width="724" height="396" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1587765095308">
+    <state x="163" y="329" width="724" height="396" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1589389325270">
       <screen x="83" y="27" width="1837" height="1053" />
     </state>
-    <state x="163" y="329" width="724" height="396" key="#com.intellij.fileTypes.FileTypeChooser/83.27.1837.1053@83.27.1837.1053" timestamp="1587765095308" />
-    <state x="313" y="285" width="424" height="484" key="FileChooserDialogImpl" timestamp="1587765720453">
+    <state x="163" y="329" width="724" height="396" key="#com.intellij.fileTypes.FileTypeChooser/83.27.1837.1053@83.27.1837.1053" timestamp="1589389325270" />
+    <state x="313" y="285" width="424" height="484" key="FileChooserDialogImpl" timestamp="1589389369208">
       <screen x="83" y="27" width="1837" height="1053" />
     </state>
-    <state x="313" y="285" width="424" height="484" key="FileChooserDialogImpl/83.27.1837.1053@83.27.1837.1053" timestamp="1587765720453" />
-    <state width="849" height="260" key="GridCell.Tab.0.bottom" timestamp="1587765286706">
+    <state x="313" y="285" width="424" height="484" key="FileChooserDialogImpl/83.27.1837.1053@83.27.1837.1053" timestamp="1589389369208" />
+    <state width="1791" height="278" key="GridCell.Tab.0.bottom" timestamp="1589405438809">
       <screen x="83" y="27" width="1837" height="1053" />
     </state>
-    <state width="849" height="260" key="GridCell.Tab.0.bottom/83.27.1837.1053@83.27.1837.1053" timestamp="1587765286706" />
-    <state width="849" height="260" key="GridCell.Tab.0.center" timestamp="1587765286706">
+    <state width="1791" height="278" key="GridCell.Tab.0.bottom/83.27.1837.1053@83.27.1837.1053" timestamp="1589405438809" />
+    <state width="1791" height="278" key="GridCell.Tab.0.center" timestamp="1589405438807">
       <screen x="83" y="27" width="1837" height="1053" />
     </state>
-    <state width="849" height="260" key="GridCell.Tab.0.center/83.27.1837.1053@83.27.1837.1053" timestamp="1587765286706" />
-    <state width="849" height="260" key="GridCell.Tab.0.left" timestamp="1587765286706">
+    <state width="1791" height="278" key="GridCell.Tab.0.center/83.27.1837.1053@83.27.1837.1053" timestamp="1589405438807" />
+    <state width="1791" height="278" key="GridCell.Tab.0.left" timestamp="1589405438806">
       <screen x="83" y="27" width="1837" height="1053" />
     </state>
-    <state width="849" height="260" key="GridCell.Tab.0.left/83.27.1837.1053@83.27.1837.1053" timestamp="1587765286706" />
-    <state width="849" height="260" key="GridCell.Tab.0.right" timestamp="1587765286706">
+    <state width="1791" height="278" key="GridCell.Tab.0.left/83.27.1837.1053@83.27.1837.1053" timestamp="1589405438806" />
+    <state width="1791" height="278" key="GridCell.Tab.0.right" timestamp="1589405438808">
       <screen x="83" y="27" width="1837" height="1053" />
     </state>
-    <state width="849" height="260" key="GridCell.Tab.0.right/83.27.1837.1053@83.27.1837.1053" timestamp="1587765286706" />
+    <state width="1791" height="278" key="GridCell.Tab.0.right/83.27.1837.1053@83.27.1837.1053" timestamp="1589405438808" />
+    <state x="772" y="467" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1589024351418">
+      <screen x="83" y="27" width="1837" height="1053" />
+    </state>
+    <state x="772" y="467" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/83.27.1837.1053@83.27.1837.1053" timestamp="1589024351418" />
+    <state x="664" y="257" width="672" height="678" key="search.everywhere.popup" timestamp="1589115983272">
+      <screen x="83" y="27" width="1837" height="1053" />
+    </state>
+    <state x="664" y="257" width="672" height="678" key="search.everywhere.popup/83.27.1837.1053@83.27.1837.1053" timestamp="1589115983272" />
   </component>
 </project>
