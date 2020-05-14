@@ -9,7 +9,8 @@ using rawData = vector<vector<string>>;
 using rawRecord = vector<string>;
 
 const string regionsPath = "/home/proxpxd/Desktop/moje_programy/simulations/Virus-Spreading-Simulation/resources/Country.csv";
-const string diseasesPath = "/home/proxpxd/Desktop/moje_programy/simulations/Virus-Spreading-Simulation/resources/diseases.csv";
+const string diseasesPath = "/home/proxpxd/Desktop/moje_programy/simulations/Virus-Spreading-Simulation/resources/Diseases.csv";
+const string bordersPath = "/home/proxpxd/Desktop/moje_programy/simulations/Virus-Spreading-Simulation/resources/Borders.csv";
 
 
 rawRecord stringToVector(string &record, char delim){
@@ -52,6 +53,24 @@ rawRecord chooseDisease(rawData data){
     return data.at(choice-1);
 }
 
+void setConnections(vector<Region> regions, rawData borders){
+    // creating connections between regions
+    int i = 0, j = 0;
+    string neighbour_name, region_name;
+    Region neighbour, region = regions.at(j);
+    while(i < borders.size()){
+        region_name = borders.at(i).at(0);
+        neighbour_name = borders.at(i).at(1);
+        while (region.getName() != region_name)
+            region = regions.at(++j);
+
+        neighbour = *find_if(regions.begin(), regions.end(), [neighbour_name](const Region &r) -> bool {return r.getName() == neighbour_name;});
+        region.addConnection(neighbour, 1); // check the default value
+        //cout << region_name << neighbour_name << "\n" << region.getName() << neighbour.getName() << endl;
+        i++;
+    }
+}
+
 vector<Region> createRegions(rawData &data){
     vector<Region> regions;
     Region region;
@@ -60,23 +79,19 @@ vector<Region> createRegions(rawData &data){
         region.setNaturalGrowth(d.at(5), d.at(6));
         regions.push_back(region);
     }
-    // creating connections between regions
-    for (int i = 0; i < regions.size(); i++){
-        //regions.at(i);
-    }
-
     return regions;
 }
 
 
 int main() {
-    // Choosing and loading disease to simulate
+    // Loading data
     rawData diseasesData = loadData(diseasesPath, ',');
-    rawRecord diseaseData = chooseDisease(diseasesData);
-
-    // Loading default regions' data
     rawData regionsData = loadData(regionsPath, ';');
+    rawData borders = loadData(bordersPath, ';');
+
+    rawRecord diseaseData = chooseDisease(diseasesData);
     vector<Region> regions = createRegions(regionsData);
+    setConnections(regions, borders);
 
     // Creating simulation
     // potentially in the future
