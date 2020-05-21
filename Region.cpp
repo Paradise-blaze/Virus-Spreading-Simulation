@@ -32,6 +32,7 @@ Region::Region(std::string &name, std::string &averAge, std::string &healthCare,
     this->transport = stod(transport);
     this->climate = (climateType) stoi(climate);
     this->population = stol(population);
+    initEventHistory();
 }
 
 void Region::setNaturalGrowth(std::string &Lambda, std::string &Mi){
@@ -46,6 +47,26 @@ void Region::setCoefficients(std::string &Alpha, std::string &Beta, std::string 
     this->gamma2 = stod(Gamma2);
 }
 
+void Region::initEventHistory() {
+    this->eventHistory.insert(std::make_pair("setSocialDistancing",false));
+    this->eventHistory.insert(std::make_pair("setCurfew",false));
+    this->eventHistory.insert(std::make_pair("setParks",false));
+    this->eventHistory.insert(std::make_pair("setRestaurants",false));
+    this->eventHistory.insert(std::make_pair("setMasks",false));
+    this->eventHistory.insert(std::make_pair("setGloves",false));
+    this->eventHistory.insert(std::make_pair("setBorders",false));
+    this->eventHistory.insert(std::make_pair("setFakeNews",false));
+    this->eventHistory.insert(std::make_pair("setEntertainmentCenter",false));
+    this->eventHistory.insert(std::make_pair("setPanic",false));
+    this->eventHistory.insert(std::make_pair("setSociety",false));
+    this->eventHistory.insert(std::make_pair("setSchools",false));
+    this->eventHistory.insert(std::make_pair("setShoppingCenter",false));
+    this->eventHistory.insert(std::make_pair("setGatherings",false));
+    this->eventHistory.insert(std::make_pair("setPlacesOfWorship",false));
+    this->eventHistory.insert(std::make_pair("setInfectiousIsolation",false));
+    this->eventHistory.insert(std::make_pair("setExposedIsolation",false));
+    this->eventHistory.insert(std::make_pair("setScienceDonating",false));
+}
 
 //getters
 std::string Region::getName() const { return this->name; }
@@ -82,148 +103,235 @@ void Region::addFlight(Region &region, int val) {
 bool Region::checkFlight(Region &region) { return this->flights.count(region); }
 
 //reactions
-void Region::introduceSocialDistancing() { this->beta *= SOCIAL_C; }
-void Region::withdrawSocialDistancing() { this->beta /= SOCIAL_C; }
-void Region::introduceCurfew() { this->beta *= CURFEW_C; }
-void Region::withdrawCurfew() { this->beta /= CURFEW_C; }
-void Region::closeParks() { this->beta *= PARK_C; }
-void Region::openParks() { this->beta /= PARK_C; }
-void Region::closeRestaurants() { this->beta *= REST_C; }
-void Region::openRestaurants() { this->beta /= REST_C; }
-void Region::introduceMasks() { this->beta *= MASK_C; }
-void Region::withdrawMasks() { this->beta /= MASK_C;}
-void Region::introduceGloves() { this->beta *= GLOVE_C; }
-void Region::withdrawGloves() { this->beta /= GLOVE_C; }
-
-void Region::closeBorders() {
-    for (auto pair : this->connections)
-        pair.second = 1;
-    for (auto pair : this->flights)
-        pair.second = 1;
+std::string Region::setSocialDistancing(bool cond) {
+    if (cond)
+        this->beta *= SOCIAL_C;                 //increase
+    else
+        this->beta /= SOCIAL_C;                 //decrease
+    return __func__;
+}
+std::string Region::setCurfew(bool cond) {
+    if (cond)
+        this->beta *= CURFEW_C;                 //introduce
+    else
+        this->beta /= CURFEW_C;                 //withdraw
+    return __func__;
 }
 
-void Region::openBorders() {
-    for (auto pair : this->connections)
-        pair.second = 2;
-    for (auto pair : this->flights)
-        pair.second = 2;
+std::string Region::setParks(bool cond) {
+    if(cond)
+        this->beta *= PARK_C;                   //close
+    else
+        this->beta /= PARK_C;                   //open
+    return __func__;
 }
 
-void Region::increaseInternalTransport() {
+std::string Region::setRestaurants(bool cond) {
+    if(cond)
+        this->beta *= REST_C;                   //close
+    else
+        this->beta /= REST_C;                   //open
+    return __func__;
+}
+
+std::string Region::setMasks(bool cond) {
+    if(cond)
+        this->beta *= MASK_C;                   //introduce
+    else
+        this->beta /= MASK_C;                   //withdraw
+    return __func__;
+}
+
+std::string Region::setGloves(bool cond) {
+    if(cond)
+        this->beta *= GLOVE_C;                  //introduce
+    else
+        this->beta /= GLOVE_C;                  //withdraw
+    return __func__;
+}
+
+std::string Region::setBorders(bool cond) {
+    if (cond) {                                 //close
+        for (auto pair : this->connections)
+            pair.second = 1;
+        for (auto pair : this->flights)
+            pair.second = 1;
+    }
+    else {                                      //open but carefully
+        for (auto pair : this->connections)
+            pair.second = 2;
+        for (auto pair : this->flights)
+            pair.second = 2;
+    }
+    return __func__;
+}
+
+std::string Region::increaseInternalTransport() {
     if (this->transport != MAX_TRANSPORT)
         this->transport++;
+    return __func__;
 }
 
-void Region::decreaseInternalTransport() {
+std::string Region::decreaseInternalTransport() {
     if (this->transport != 1)
         this->transport--;
+    return __func__;
 }
 
-void Region::decreaseExternalTransport() {
-    for (auto pair : this->connections)
-        if (pair.second != 1)
-            pair.second--;
-}
-
-void Region::increaseExternalTransport() {
+std::string Region::increaseExternalTransport() {
     for (auto pair : this->connections)
         if (pair.second != MAX_CONNECT)
             pair.second++;
+    return __func__;
 }
 
-void Region::increaseTrade(){
+std::string Region::decreaseExternalTransport() {
+    for (auto pair : this->connections)
+        if (pair.second != 1)
+            pair.second--;
+    return __func__;
+}
+
+std::string Region::increaseTrade() {
     for (auto pair : this->flights)
         if (pair.second != MAX_FLIGHT)
             pair.second++;
+    return __func__;
 }
 
-void Region::decreaseTrade() {
+std::string Region::decreaseTrade() {
     for (auto pair : this->flights)
         if (pair.second != 1)
             pair.second--;
+    return __func__;
 }
 
-void Region::spreadFakeNews() {
-    this->beta /= FAKE_NEWS_C;
-    this->gamma1 *= FAKE_NEWS_C;
-    this->gamma2 /= FAKE_NEWS_C;
+std::string Region::setFakeNews(bool cond) {
+    if(cond) {
+        this->beta *= FAKE_NEWS_C;
+        this->gamma1 /= FAKE_NEWS_C;
+        this->gamma2 *= FAKE_NEWS_C;
+    }
+    else {
+        this->beta /= FAKE_NEWS_C;
+        this->gamma1 *= FAKE_NEWS_C;
+        this->gamma2 /= FAKE_NEWS_C;
+    }
+    return __func__;
 }
 
-void Region::fightWithFakeNews() {
-    this->beta *= FAKE_NEWS_C;
-    this->gamma1 /= FAKE_NEWS_C;
-    this->gamma2 *= FAKE_NEWS_C;
+std::string Region::setEntertainmentCenter(bool cond) {
+    if(cond)
+        this->beta *= ENTERTAINMENT_C;
+    else
+        this->beta /= ENTERTAINMENT_C;
+    return __func__;
 }
 
-void Region::closeEntertainmentCenter() {
-    this->beta *= ENTERTAINMENT_C;
+std::string Region::setPanic(bool cond) {
+    if(cond) {
+        this->alpha *= PANIC_C;
+        this->beta *= PANIC_C;
+        this->gamma1 /= PANIC_C;
+        this->gamma2 *= PANIC_C;
+        this->lambda *= PANIC_C;
+    }
+    else {
+        this->alpha /= PANIC_C;
+        this->beta /= PANIC_C;
+        this->gamma1 *= PANIC_C;
+        this->gamma2 /= PANIC_C;
+        this->lambda /= PANIC_C;
+    }
+    return __func__;
 }
 
-void Region::openEntertainmentCenter() {
-    this->beta /= ENTERTAINMENT_C;
+std::string Region::setSociety(bool cond) {
+    if (cond) {                         //educate
+        this->beta *= EDUCATION_C;
+        this->gamma1 /= EDUCATION_C;
+        this->gamma2 *= EDUCATION_C;
+    }
+    else {                              //fool
+        this->beta /= EDUCATION_C;
+        this->gamma1 *= EDUCATION_C;
+        this->gamma2 /= EDUCATION_C;
+    }
+    return __func__;
 }
 
-void Region::causePanic() {
-    this->alpha /= PANIC_C;
-    this->beta /= PANIC_C;
-    this->gamma1 *= PANIC_C;
-    this->gamma2 /= PANIC_C;
-    this->lambda /= PANIC_C;
+std::string Region::setSchools(bool cond) {
+    if(cond)                            //close
+        this->beta *= SCHOOL_C;
+    else                                //open
+        this->beta /= SCHOOL_C;
+    return __func__;
 }
 
-void Region::reducePanic() {
-    this->alpha *= PANIC_C;
-    this->beta *= PANIC_C;
-    this->gamma1 /= PANIC_C;
-    this->gamma2 *= PANIC_C;
-    this->lambda *= PANIC_C;
+std::string Region::setShoppingCenter(bool cond) {
+    if(cond)
+        this->beta *= SHOP_C;           //close
+    else
+        this->beta /= SHOP_C;           //open
+    return __func__;
 }
 
-void Region::educateSociety() {
-    this->beta *= EDUCATION_C;
-    this->gamma1 /= EDUCATION_C;
-    this->gamma2 *= EDUCATION_C;
+std::string Region::setGatherings(bool cond) {
+    if(cond)
+        this->beta *= GATHER_C;         //forbid
+    else
+        this->beta /= GATHER_C;         //permit
+    return __func__;
 }
 
-void Region::foolSociety() {
-    this->beta /= EDUCATION_C;
-    this->gamma1 *= EDUCATION_C;
-    this->gamma2 /= EDUCATION_C;
+std::string Region::setPlacesOfWorship(bool cond) {
+    if(cond)
+        this->beta *= WORSHIP_C;        //close
+    else
+        this->beta /= WORSHIP_C;        //open
+    return __func__;
 }
 
-void Region::closeSchools() { this->beta *= SCHOOL_C; }
-void Region::openSchools() { this->beta /= SCHOOL_C; }
-void Region::closeShoppingCenter() { this->beta *= SHOP_C; }
-void Region::openShoppingCenter() { this->beta /= SHOP_C; }
-void Region::forbidGatherings() { this->beta *= GATHER_C; }
-void Region::permitGatherings() { this->beta /= GATHER_C; }
-void Region::openPlacesOfWorship() { this->beta *= WORSHIP_C; }
-void Region::closePlacesOfWorship() { this->beta /= WORSHIP_C; }
-void Region::isolateInfectious() { this->beta *= INFECTIOUS_C; }
-void Region::doNotIsolateInfectious() { this->beta /= INFECTIOUS_C; }
-void Region::isolateExposed() { this->beta *= EXPOSED_C; }
-void Region::doNotIsolateExposed() { this->beta /= EXPOSED_C; }
+std::string Region::setInfectiousIsolation(bool cond) {
+    if(cond)
+        this->beta *= INFECTIOUS_C;     //isolate
+    else
+        this->beta /= INFECTIOUS_C;     //don't isolate
+    return __func__;
+}
 
-void Region::donateHealthCare() {
+std::string Region::setExposedIsolation(bool cond) {
+    if(cond)
+        this->beta *= EXPOSED_C;        //isolate
+    else
+        this->beta /= EXPOSED_C;        //don't isolate
+    return __func__;
+}
+
+std::string Region::donateHealthCare() {
     if (this->healthCare != MAX_HEALTH)
         this->healthCare++;
+    return __func__;
 }
 
-void Region::cutExpensesOnHealthCare() {
+std::string Region::cutExpensesOnHealthCare() {
     if (this->healthCare != 1)
         this->healthCare--;
+    return __func__;
 }
 
-void Region::donateScience() {
-    this->gamma1 /= SCIENCE_C;
-    this->gamma2 *= SCIENCE_C;
-    this->lambda *= SCIENCE_C;
-}
-
-void Region::cutExpensesOnScience() {
-    this->gamma1 *= SCIENCE_C;
-    this->gamma2 /= SCIENCE_C;
-    this->lambda /= SCIENCE_C;
+std::string Region::setScienceDonating(bool cond) {
+    if (cond) {                         //donate
+        this->gamma1 /= SCIENCE_C;
+        this->gamma2 *= SCIENCE_C;
+        this->lambda *= SCIENCE_C;
+    }
+    else {                              //cut expenses
+        this->gamma1 *= SCIENCE_C;
+        this->gamma2 /= SCIENCE_C;
+        this->lambda /= SCIENCE_C;
+    }
+    return __func__;
 }
 
 //operators

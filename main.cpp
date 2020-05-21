@@ -68,7 +68,6 @@ vector<Region> createRegions(rawData &data){
     return regions;
 }
 
-
 int main() {
     // Choosing and loading disease to simulate
     rawData diseasesData = loadData(diseasesPath, ',');

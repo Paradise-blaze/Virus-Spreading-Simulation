@@ -63,6 +63,7 @@ private:
     long int dead = 0;
     std::map<Region, double> connections;
     std::map<Region, double> flights;
+    std::map<std::string, bool> eventHistory;
 
     static double stod(std::string &);
     static int stoi(std::string &);
@@ -73,6 +74,7 @@ public:
     Region(std::string &, std::string &, std::string &, std::string &, std::string &, std::string &);
     void setCoefficients(std::string &, std::string &, std::string &, std::string &);
     void setNaturalGrowth(std::string &, std::string &);
+    void initEventHistory();
 
     //getters
     [[nodiscard]] std::string getName() const;              //nodiscard - CLion rzuca ostrzeżenia, gdy nie ma tego znacznika
@@ -100,54 +102,35 @@ public:
     bool checkFlight(Region &region);
 
     //reactions
-    void introduceSocialDistancing();
-    void withdrawSocialDistancing();
-    void introduceCurfew();
-    void withdrawCurfew();
-    void closeParks();
-    void openParks();
-    void closeRestaurants();
-    void openRestaurants();
-    void introduceMasks();
-    void withdrawMasks();
-    void introduceGloves();
-    void withdrawGloves();
-    void closeBorders();
-    void openBorders();
-    void decreaseInternalTransport();                             //transport
-    void increaseInternalTransport();
-    void decreaseExternalTransport();                             //connections
-    void increaseExternalTransport();
-    void increaseTrade();                                       //flights
-    void decreaseTrade();
-    void spreadFakeNews();
-    void fightWithFakeNews();
-    void closeEntertainmentCenter();
-    void openEntertainmentCenter();
-    void causePanic();
-    void reducePanic();
-    void educateSociety();
-    void foolSociety();
-    void closeSchools();
-    void openSchools();
-    void closeShoppingCenter();
-    void openShoppingCenter();
-    void forbidGatherings();
-    void permitGatherings();
-    void openPlacesOfWorship();
-    void closePlacesOfWorship();
-    void isolateInfectious();
-    void doNotIsolateInfectious();
-    void isolateExposed();
-    void doNotIsolateExposed();
-    void donateHealthCare();
-    void cutExpensesOnHealthCare();
-    void donateScience();
-    void cutExpensesOnScience();
+    std::string setSocialDistancing(bool);                             //bool arg: true - positive effect, false - negative effect
+    std::string setCurfew(bool);
+    std::string setParks(bool);
+    std::string setRestaurants(bool);
+    std::string setMasks(bool);
+    std::string setGloves(bool);
+    std::string setBorders(bool);
+    std::string increaseInternalTransport();                           //transport
+    std::string decreaseInternalTransport();
+    std::string increaseExternalTransport();                           //connections
+    std::string decreaseExternalTransport();
+    std::string increaseTrade();                                       //flights
+    std::string decreaseTrade();
+    std::string setFakeNews(bool);
+    std::string setEntertainmentCenter(bool);
+    std::string setPanic(bool);
+    std::string setSociety(bool);
+    std::string setSchools(bool);
+    std::string setShoppingCenter(bool);
+    std::string setGatherings(bool);
+    std::string setPlacesOfWorship(bool);
+    std::string setInfectiousIsolation(bool);
+    std::string setExposedIsolation(bool);
+    std::string donateHealthCare();
+    std::string cutExpensesOnHealthCare();
+    std::string setScienceDonating(bool);
 
     //operators
     friend bool operator<(const Region &, const Region &);
-
 };
 
 #endif //VIRUS_SPREADING_SIMULATION_REGION_H
