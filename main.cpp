@@ -2,7 +2,9 @@
 #include <vector>
 #include <fstream>
 #include <sstream>
+#include <stdlib.h>
 #include "Region.h"
+#include "Simulation.h"
 
 using namespace std;
 using rawData = vector<vector<string>>;
@@ -57,16 +59,15 @@ void setConnections(vector<Region> regions, rawData borders){
     // creating connections between regions
     int i = 0, j = 0;
     string neighbour_name, region_name;
-    Region neighbour, region = regions.at(j);
+    Region region = regions.at(j);
     while(i < borders.size()){
         region_name = borders.at(i).at(0);
         neighbour_name = borders.at(i).at(1);
         while (region.getName() != region_name)
             region = regions.at(++j);
 
-        neighbour = *find_if(regions.begin(), regions.end(), [neighbour_name](const Region &r) -> bool {return r.getName() == neighbour_name;});
+        Region &neighbour = *find_if(regions.begin(), regions.end(), [neighbour_name](const Region &r) -> bool {return r.getName() == neighbour_name;});
         region.addConnection(neighbour, 1); // check the default value
-        //cout << region_name << neighbour_name << "\n" << region.getName() << neighbour.getName() << endl;
         i++;
     }
 }
@@ -83,6 +84,7 @@ vector<Region> createRegions(rawData &data){
 }
 
 int main() {
+    srand(time(NULL));
     // Loading data
     rawData diseasesData = loadData(diseasesPath, ',');
     rawData regionsData = loadData(regionsPath, ';');
@@ -92,8 +94,12 @@ int main() {
     vector<Region> regions = createRegions(regionsData);
     setConnections(regions, borders);
 
-    // Creating simulation
-    // potentially in the future
-    //Simulation simulation = Simulation(regions, diseaseData);
+    // Creating and setting simulation
+    Simulation simulation = Simulation(regions, diseaseData);
+    simulation.setSavingFrequency(30);
+    simulation.setMaxDays(5000);
+
+    //turning simulation on
+    simulation.simulate();
     return 0;
 }

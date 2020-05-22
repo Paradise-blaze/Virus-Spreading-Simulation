@@ -33,6 +33,9 @@ Region::Region(std::string &name, std::string &averAge, std::string &healthCare,
     this->climate = (climateType) stoi(climate);
     this->population = stol(population);
     initEventHistory();
+
+    setHistorySize(1);
+    addDataHistory();
 }
 
 void Region::setNaturalGrowth(std::string &Lambda, std::string &Mi){
@@ -40,11 +43,11 @@ void Region::setNaturalGrowth(std::string &Lambda, std::string &Mi){
     this->mi = stod(Mi);
 }
 
-void Region::setCoefficients(std::string &Alpha, std::string &Beta, std::string &Gamma1, std::string &Gamma2) {
-    this->alpha = stod(Alpha);
-    this->beta = stod(Beta);
-    this->gamma1 = stod(Gamma1);
-    this->gamma2 = stod(Gamma2);
+void Region::setCoefficients(double Alpha, double Beta, double Gamma1, double Gamma2) {
+    this->alpha = Alpha;
+    this->beta = Beta;
+    this->gamma1 = Gamma1;
+    this->gamma2 = Gamma2;
 }
 
 void Region::initEventHistory() {
@@ -66,6 +69,10 @@ void Region::initEventHistory() {
     this->eventHistory.insert(std::make_pair("setInfectiousIsolation",false));
     this->eventHistory.insert(std::make_pair("setExposedIsolation",false));
     this->eventHistory.insert(std::make_pair("setScienceDonating",false));
+}
+
+bool Region::isExposed() const {
+    return getExposed() + getInfectious() > 0;
 }
 
 //getters
@@ -332,6 +339,52 @@ std::string Region::setScienceDonating(bool cond) {
         this->lambda /= SCIENCE_C;
     }
     return __func__;
+}
+
+void Region::makeSimulationStep() {
+    if (!isExposed() && dead > 0)
+        addDataHistory();
+    if (!isExposed())
+        return;
+
+    double b_I_S = beta * (double)infectious * (double)susceptible / (double)population;
+    d_susceptible = (lambda - mi) * (double)susceptible - b_I_S;
+    d_exposed = b_I_S - (mi + alpha) * (double)exposed;
+    d_infectious = alpha * (double)exposed - (gamma1 + gamma2 + mi) * (double)infectious;
+    d_recovered = gamma1 * (double)infectious - mi * (double)recovered;
+    d_dead = gamma2 * (double)infectious;
+
+    susceptible += (long int)d_susceptible;
+    exposed += (long int)d_exposed;
+    infectious += (long int)d_infectious;
+    recovered += (long int)d_recovered;
+    dead += (long int)d_dead;
+    population -= dead;
+
+    addDataHistory();
+}
+
+void Region::setPatientZero() {
+    exposed = 1;
+}
+
+void Region::setHistorySize(int size) {
+    historySize = size;
+    history = new std::string*[size];
+    for(int i = 0; i < size; i++)
+        history[i] = new std::string[5];
+}
+
+
+void Region::addDataHistory() {
+    if (historyDay >= historySize)
+        return;
+    history[historyDay][0] = std::to_string(susceptible);
+    history[historyDay][1] = std::to_string(exposed);
+    history[historyDay][2] = std::to_string(infectious);
+    history[historyDay][3] = std::to_string(recovered);
+    history[historyDay][4] = std::to_string(dead);
+    historyDay++;
 }
 
 //operators

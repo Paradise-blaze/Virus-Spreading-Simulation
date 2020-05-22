@@ -5,6 +5,7 @@
 #ifndef VIRUS_SPREADING_SIMULATION_REGION_H
 #define VIRUS_SPREADING_SIMULATION_REGION_H
 
+#include <iostream>
 #include <string>
 #include <map>
 #include <functional>
@@ -61,20 +62,31 @@ private:
     long int infectious = 0;
     long int recovered = 0;
     long int dead = 0;
+    double d_susceptible = 0;
+    double d_exposed = 0;
+    double d_infectious = 0;
+    double d_recovered = 0;
+    double d_dead = 0;
     std::map<Region, double> connections;
     std::map<Region, double> flights;
     std::map<std::string, bool> eventHistory;
+    std::string **history = nullptr;
+    int historyDay = 0;
+    int historySize = 0;
 
-    static double stod(std::string &);
-    static int stoi(std::string &);
-    static long stol(std::string &);
 public:
     //initialize
     Region();
     Region(std::string &, std::string &, std::string &, std::string &, std::string &, std::string &);
-    void setCoefficients(std::string &, std::string &, std::string &, std::string &);
+    void setCoefficients(double, double, double, double);
     void setNaturalGrowth(std::string &, std::string &);
     void initEventHistory();
+    void setHistorySize(int);
+
+    //converters
+    static double stod(std::string &);
+    static int stoi(std::string &);
+    static long stol(std::string &);
 
     //getters
     [[nodiscard]] std::string getName() const;              //nodiscard - CLion rzuca ostrzeżenia, gdy nie ma tego znacznika
@@ -128,6 +140,12 @@ public:
     std::string donateHealthCare();
     std::string cutExpensesOnHealthCare();
     std::string setScienceDonating(bool);
+
+    //simulation methods
+    [[nodiscard]] bool isExposed() const;
+    void makeSimulationStep();
+    void addDataHistory();
+    void setPatientZero();
 
     //operators
     friend bool operator<(const Region &, const Region &);
