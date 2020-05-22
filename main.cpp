@@ -2,14 +2,17 @@
 #include <vector>
 #include <fstream>
 #include <sstream>
+#include <stdlib.h>
 #include "Region.h"
+#include "Simulation.h"
 
 using namespace std;
 using rawData = vector<vector<string>>;
 using rawRecord = vector<string>;
 
 const string regionsPath = "/home/proxpxd/Desktop/moje_programy/simulations/Virus-Spreading-Simulation/resources/Country.csv";
-const string diseasesPath = "/home/proxpxd/Desktop/moje_programy/simulations/Virus-Spreading-Simulation/resources/diseases.csv";
+const string diseasesPath = "/home/proxpxd/Desktop/moje_programy/simulations/Virus-Spreading-Simulation/resources/Diseases.csv";
+const string bordersPath = "/home/proxpxd/Desktop/moje_programy/simulations/Virus-Spreading-Simulation/resources/Borders.csv";
 
 
 rawRecord stringToVector(string &record, char delim){
@@ -52,6 +55,23 @@ rawRecord chooseDisease(rawData data){
     return data.at(choice-1);
 }
 
+void setConnections(vector<Region> regions, rawData borders){
+    // creating connections between regions
+    int i = 0, j = 0;
+    string neighbour_name, region_name;
+    Region region = regions.at(j);
+    while(i < borders.size()){
+        region_name = borders.at(i).at(0);
+        neighbour_name = borders.at(i).at(1);
+        while (region.getName() != region_name)
+            region = regions.at(++j);
+
+        Region &neighbour = *find_if(regions.begin(), regions.end(), [neighbour_name](const Region &r) -> bool {return r.getName() == neighbour_name;});
+        region.addConnection(neighbour, 1); // check the default value
+        i++;
+    }
+}
+
 vector<Region> createRegions(rawData &data){
     vector<Region> regions;
     Region region;
@@ -60,25 +80,26 @@ vector<Region> createRegions(rawData &data){
         region.setNaturalGrowth(d.at(5), d.at(6));
         regions.push_back(region);
     }
-    // creating connections between regions
-    for (int i = 0; i < regions.size(); i++){
-        //regions.at(i);
-    }
-
     return regions;
 }
 
 int main() {
-    // Choosing and loading disease to simulate
+    srand(time(NULL));
+    // Loading data
     rawData diseasesData = loadData(diseasesPath, ',');
-    rawRecord diseaseData = chooseDisease(diseasesData);
-
-    // Loading default regions' data
     rawData regionsData = loadData(regionsPath, ';');
-    vector<Region> regions = createRegions(regionsData);
+    rawData borders = loadData(bordersPath, ';');
 
-    // Creating simulation
-    // potentially in the future
-    //Simulation simulation = Simulation(regions, diseaseData);
+    rawRecord diseaseData = chooseDisease(diseasesData);
+    vector<Region> regions = createRegions(regionsData);
+    setConnections(regions, borders);
+
+    // Creating and setting simulation
+    Simulation simulation = Simulation(regions, diseaseData);
+    simulation.setSavingFrequency(30);
+    simulation.setMaxDays(5000);
+
+    //turning simulation on
+    simulation.simulate();
     return 0;
 }
