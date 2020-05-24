@@ -59,7 +59,7 @@ private:
     long int population;
     long int susceptible = 0;
     long int exposed = 0;
-    long int infectious = 0;
+    mutable long int infectious = 0;
     long int recovered = 0;
     long int dead = 0;
     double d_susceptible = 0;
@@ -67,8 +67,8 @@ private:
     double d_infectious = 0;
     double d_recovered = 0;
     double d_dead = 0;
-    std::map<Region, double> connections;
-    std::map<Region, double> flights;
+    mutable std::map<Region, double> connections;
+    mutable std::map<Region, double> flights;
     std::map<std::string, bool> eventHistory;
     std::string **history = nullptr;
     int historyDay = 0;
@@ -106,6 +106,8 @@ public:
     [[nodiscard]] long int getInfectious() const;
     [[nodiscard]] long int getRecovered() const;
     [[nodiscard]] long int getDead() const;
+    std::map<Region, double>& getConnections() const;
+    std::map<Region, double>& getFlights() const;
 
     //relations between regions
     void addConnection(Region &, int);
@@ -140,6 +142,9 @@ public:
     std::string donateHealthCare();
     std::string cutExpensesOnHealthCare();
     std::string setScienceDonating(bool);
+
+    //spreading methods
+    void infectOtherCountry(std::map<Region, double> &) const;
 
     //simulation methods
     [[nodiscard]] bool isExposed() const;

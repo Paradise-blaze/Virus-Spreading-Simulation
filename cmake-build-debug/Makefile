@@ -150,6 +150,33 @@ Region.cpp.s:
 	$(MAKE) -f CMakeFiles/Virus_Spreading_Simulation.dir/build.make CMakeFiles/Virus_Spreading_Simulation.dir/Region.cpp.s
 .PHONY : Region.cpp.s
 
+Simulation.o: Simulation.cpp.o
+
+.PHONY : Simulation.o
+
+# target to build an object file
+Simulation.cpp.o:
+	$(MAKE) -f CMakeFiles/Virus_Spreading_Simulation.dir/build.make CMakeFiles/Virus_Spreading_Simulation.dir/Simulation.cpp.o
+.PHONY : Simulation.cpp.o
+
+Simulation.i: Simulation.cpp.i
+
+.PHONY : Simulation.i
+
+# target to preprocess a source file
+Simulation.cpp.i:
+	$(MAKE) -f CMakeFiles/Virus_Spreading_Simulation.dir/build.make CMakeFiles/Virus_Spreading_Simulation.dir/Simulation.cpp.i
+.PHONY : Simulation.cpp.i
+
+Simulation.s: Simulation.cpp.s
+
+.PHONY : Simulation.s
+
+# target to generate assembly for a file
+Simulation.cpp.s:
+	$(MAKE) -f CMakeFiles/Virus_Spreading_Simulation.dir/build.make CMakeFiles/Virus_Spreading_Simulation.dir/Simulation.cpp.s
+.PHONY : Simulation.cpp.s
+
 main.o: main.cpp.o
 
 .PHONY : main.o
@@ -189,6 +216,9 @@ help:
 	@echo "... Region.o"
 	@echo "... Region.i"
 	@echo "... Region.s"
+	@echo "... Simulation.o"
+	@echo "... Simulation.i"
+	@echo "... Simulation.s"
 	@echo "... main.o"
 	@echo "... main.i"
 	@echo "... main.s"

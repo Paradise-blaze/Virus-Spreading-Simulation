@@ -13,12 +13,25 @@
   <component name="ChangeListManager">
     <list default="true" id="f2db2f40-daab-415d-aca6-20a5f820c010" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CMakeLists.txt" beforeDir="false" afterPath="$PROJECT_DIR$/CMakeLists.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Region.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Region.cpp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Region.h" beforeDir="false" afterPath="$PROJECT_DIR$/Region.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Simulation.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Simulation.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Makefile2" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Makefile2" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Virus_Spreading_Simulation.dir/CXX.includecache" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Virus_Spreading_Simulation.dir/CXX.includecache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Virus_Spreading_Simulation.dir/DependInfo.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Virus_Spreading_Simulation.dir/DependInfo.cmake" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Virus_Spreading_Simulation.dir/Region.cpp.o" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Virus_Spreading_Simulation.dir/Region.cpp.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Virus_Spreading_Simulation.dir/build.make" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Virus_Spreading_Simulation.dir/build.make" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Virus_Spreading_Simulation.dir/cmake_clean.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Virus_Spreading_Simulation.dir/cmake_clean.cmake" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Virus_Spreading_Simulation.dir/depend.internal" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Virus_Spreading_Simulation.dir/depend.internal" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Virus_Spreading_Simulation.dir/depend.make" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Virus_Spreading_Simulation.dir/depend.make" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Virus_Spreading_Simulation.dir/link.txt" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Virus_Spreading_Simulation.dir/link.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Virus_Spreading_Simulation.dir/main.cpp.o" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Virus_Spreading_Simulation.dir/main.cpp.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Virus_Spreading_Simulation.dir/progress.make" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Virus_Spreading_Simulation.dir/progress.make" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/progress.marks" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/progress.marks" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/Makefile" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/Makefile" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/Virus_Spreading_Simulation" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/Virus_Spreading_Simulation" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/Virus_Spreading_Simulation.cbp" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/Virus_Spreading_Simulation.cbp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/main.cpp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -71,7 +84,8 @@
       <workItem from="1589389745603" duration="2319000" />
       <workItem from="1589454892306" duration="6400000" />
       <workItem from="1590055890651" duration="1264000" />
-      <workItem from="1590060526940" duration="6999000" />
+      <workItem from="1590060526940" duration="7279000" />
+      <workItem from="1590318040653" duration="6907000" />
     </task>
     <servers />
   </component>
@@ -87,30 +101,38 @@
       <screen x="83" y="27" width="1837" height="1053" />
     </state>
     <state x="313" y="285" width="424" height="484" key="FileChooserDialogImpl/83.27.1837.1053@83.27.1837.1053" timestamp="1589389369208" />
-    <state width="1791" height="278" key="GridCell.Tab.0.bottom" timestamp="1590066437856">
+    <state width="1791" height="278" key="GridCell.Tab.0.bottom" timestamp="1590325260492">
       <screen x="83" y="27" width="1837" height="1053" />
     </state>
-    <state width="1791" height="278" key="GridCell.Tab.0.bottom/83.27.1837.1053@83.27.1837.1053" timestamp="1590066437856" />
-    <state width="1791" height="278" key="GridCell.Tab.0.center" timestamp="1590066437856">
+    <state width="1791" height="278" key="GridCell.Tab.0.bottom/83.27.1837.1053@83.27.1837.1053" timestamp="1590325260492" />
+    <state width="1791" height="278" key="GridCell.Tab.0.center" timestamp="1590325260492">
       <screen x="83" y="27" width="1837" height="1053" />
     </state>
-    <state width="1791" height="278" key="GridCell.Tab.0.center/83.27.1837.1053@83.27.1837.1053" timestamp="1590066437856" />
-    <state width="1791" height="278" key="GridCell.Tab.0.left" timestamp="1590066437855">
+    <state width="1791" height="278" key="GridCell.Tab.0.center/83.27.1837.1053@83.27.1837.1053" timestamp="1590325260492" />
+    <state width="1791" height="278" key="GridCell.Tab.0.left" timestamp="1590325260492">
       <screen x="83" y="27" width="1837" height="1053" />
     </state>
-    <state width="1791" height="278" key="GridCell.Tab.0.left/83.27.1837.1053@83.27.1837.1053" timestamp="1590066437855" />
-    <state width="1791" height="278" key="GridCell.Tab.0.right" timestamp="1590066437856">
+    <state width="1791" height="278" key="GridCell.Tab.0.left/83.27.1837.1053@83.27.1837.1053" timestamp="1590325260492" />
+    <state width="1791" height="278" key="GridCell.Tab.0.right" timestamp="1590325260492">
       <screen x="83" y="27" width="1837" height="1053" />
     </state>
-    <state width="1791" height="278" key="GridCell.Tab.0.right/83.27.1837.1053@83.27.1837.1053" timestamp="1590066437856" />
-    <state x="611" y="166" width="770" height="773" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser" timestamp="1590067432470">
+    <state width="1791" height="278" key="GridCell.Tab.0.right/83.27.1837.1053@83.27.1837.1053" timestamp="1590325260492" />
+    <state x="668" y="236" width="657" height="633" key="RollbackChangesDialog" timestamp="1590319294006">
       <screen x="83" y="27" width="1837" height="1053" />
     </state>
-    <state x="611" y="166" width="770" height="773" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser/83.27.1837.1053@83.27.1837.1053" timestamp="1590067432470" />
+    <state x="668" y="236" width="657" height="633" key="RollbackChangesDialog/83.27.1837.1053@83.27.1837.1053" timestamp="1590319294006" />
+    <state x="611" y="166" width="770" height="773" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser" timestamp="1590325050954">
+      <screen x="83" y="27" width="1837" height="1053" />
+    </state>
+    <state x="611" y="166" width="770" height="773" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser/83.27.1837.1053@83.27.1837.1053" timestamp="1590325050954" />
     <state x="772" y="467" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1589024351418">
       <screen x="83" y="27" width="1837" height="1053" />
     </state>
     <state x="772" y="467" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/83.27.1837.1053@83.27.1837.1053" timestamp="1589024351418" />
+    <state x="884" y="338" width="224" height="429" key="refactoring.ChangeSignatureDialog" timestamp="1590321056116">
+      <screen x="83" y="27" width="1837" height="1053" />
+    </state>
+    <state x="884" y="338" width="224" height="429" key="refactoring.ChangeSignatureDialog/83.27.1837.1053@83.27.1837.1053" timestamp="1590321056116" />
     <state x="664" y="257" width="672" height="678" key="search.everywhere.popup" timestamp="1589115983272">
       <screen x="83" y="27" width="1837" height="1053" />
     </state>

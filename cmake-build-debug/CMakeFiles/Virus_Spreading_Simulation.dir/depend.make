@@ -4,6 +4,11 @@
 CMakeFiles/Virus_Spreading_Simulation.dir/Region.cpp.o: ../Region.cpp
 CMakeFiles/Virus_Spreading_Simulation.dir/Region.cpp.o: ../Region.h
 
+CMakeFiles/Virus_Spreading_Simulation.dir/Simulation.cpp.o: ../Region.h
+CMakeFiles/Virus_Spreading_Simulation.dir/Simulation.cpp.o: ../Simulation.cpp
+CMakeFiles/Virus_Spreading_Simulation.dir/Simulation.cpp.o: ../Simulation.h
+
 CMakeFiles/Virus_Spreading_Simulation.dir/main.cpp.o: ../Region.h
+CMakeFiles/Virus_Spreading_Simulation.dir/main.cpp.o: ../Simulation.h
 CMakeFiles/Virus_Spreading_Simulation.dir/main.cpp.o: ../main.cpp
 

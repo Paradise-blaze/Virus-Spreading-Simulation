@@ -4,6 +4,7 @@
 
 #include "Simulation.h"
 
+#define INFECT_CHANCE 5
 
 Simulation::Simulation() = default;
 Simulation::Simulation(vector<Region> &regions, vector<string> &disease_data) {
@@ -63,14 +64,24 @@ void Simulation::initialiseRegionZero() {
 }
 
 void Simulation::simulate() {
+    int infect;
+
     initialiseRegionZero();
     while (!isDiedOut() && (maxDays <= 0 || days < maxDays)){ //optional maximum simulation day setting
-        for(Region &r: regions){
+        for(Region &r: regions) {
             r.makeSimulationStep();
+            infect = random() % INFECT_CHANCE;
+            if(infect == 0)
+                r.infectOtherCountry(r.getConnections());
+            infect = random() % INFECT_CHANCE;
+            if(infect == 0)
+                r.infectOtherCountry(r.getFlights());
         }
         days++;
-        if (days % savingGap == 0)
-            0;//saveData();
+
+        if (days % savingGap == 0) {
+            //saveData();
+        }
         //cout << getRegionIt(regionZeroName)->getExposed() << " ";
         //cout << getRegionIt(regionZeroName)->getPopulation() << endl;
     }

@@ -2,18 +2,26 @@
 #include <vector>
 #include <fstream>
 #include <sstream>
-#include <stdlib.h>
+#include <cstdlib>
 #include "Region.h"
 #include "Simulation.h"
+
+#define MAX_DAYS 5000
+#define FREQUENCY 30
 
 using namespace std;
 using rawData = vector<vector<string>>;
 using rawRecord = vector<string>;
 
-const string regionsPath = "/home/proxpxd/Desktop/moje_programy/simulations/Virus-Spreading-Simulation/resources/Country.csv";
-const string diseasesPath = "/home/proxpxd/Desktop/moje_programy/simulations/Virus-Spreading-Simulation/resources/Diseases.csv";
-const string bordersPath = "/home/proxpxd/Desktop/moje_programy/simulations/Virus-Spreading-Simulation/resources/Borders.csv";
-
+const string PiDisPath = "/home/proxpxd/Desktop/moje_programy/simulations/Virus-Spreading-Simulation/resources/Diseases.csv";
+const string PiCouPath = "/home/proxpxd/Desktop/moje_programy/simulations/Virus-Spreading-Simulation/resources/Country.csv";
+const string PiBorPath = "/home/proxpxd/Desktop/moje_programy/simulations/Virus-Spreading-Simulation/resources/Borders.csv";
+const string SzDisPath = "/home/szymon/Pulpit/Programowanie/C++/Virus-Spreading-Simulation/resources/Diseases.csv";
+const string SzCouPath = "/home/szymon/Pulpit/Programowanie/C++/Virus-Spreading-Simulation/resources/Country.csv";
+const string SzBorPath = "/home/szymon/Pulpit/Programowanie/C++/Virus-Spreading-Simulation/resources/Borders.csv";
+const string JaDisPath;
+const string JaCouPath;
+const string JaBorPath;
 
 rawRecord stringToVector(string &record, char delim){
     stringstream ss(record);
@@ -84,11 +92,11 @@ vector<Region> createRegions(rawData &data){
 }
 
 int main() {
-    srand(time(NULL));
+    srand(time(nullptr));
     // Loading data
-    rawData diseasesData = loadData(diseasesPath, ',');
-    rawData regionsData = loadData(regionsPath, ';');
-    rawData borders = loadData(bordersPath, ';');
+    rawData diseasesData = loadData(SzDisPath, ',');
+    rawData regionsData = loadData(SzCouPath, ';');
+    rawData borders = loadData(SzBorPath, ';');
 
     rawRecord diseaseData = chooseDisease(diseasesData);
     vector<Region> regions = createRegions(regionsData);
@@ -96,8 +104,8 @@ int main() {
 
     // Creating and setting simulation
     Simulation simulation = Simulation(regions, diseaseData);
-    simulation.setSavingFrequency(30);
-    simulation.setMaxDays(5000);
+    simulation.setSavingFrequency(FREQUENCY);
+    simulation.setMaxDays(MAX_DAYS);
 
     //turning simulation on
     simulation.simulate();

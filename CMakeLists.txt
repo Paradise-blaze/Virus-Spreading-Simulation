@@ -3,4 +3,4 @@ project(Virus_Spreading_Simulation)
 
 set(CMAKE_CXX_STANDARD 20)
 
-add_executable(Virus_Spreading_Simulation main.cpp Region.h Region.cpp)
+add_executable(Virus_Spreading_Simulation main.cpp Region.h Region.cpp Simulation.h Simulation.cpp)

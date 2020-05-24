@@ -78,21 +78,23 @@ bool Region::isExposed() const {
 //getters
 std::string Region::getName() const { return this->name; }
 double Region::getAverAge() const { return this->averAge; }
-double Region::getHealthCare() const { return this->healthCare; };
-double Region::getTransport() const { return this->transport; };
-climateType Region::getClimate() const { return this->climate; };
-double Region::getAlpha() const { return this->alpha; };
-double Region::getBeta() const { return this->beta; };
-double Region::getGamma1() const { return this->gamma1; };
-double Region::getGamma2() const { return this->gamma2; };
-double Region::getLambda() const { return this->lambda; };
+double Region::getHealthCare() const { return this->healthCare; }
+double Region::getTransport() const { return this->transport; }
+climateType Region::getClimate() const { return this->climate; }
+double Region::getAlpha() const { return this->alpha; }
+double Region::getBeta() const { return this->beta; }
+double Region::getGamma1() const { return this->gamma1; }
+double Region::getGamma2() const { return this->gamma2; }
+double Region::getLambda() const { return this->lambda; }
 double Region::getMi() const { return this->mi; };
-long int Region::getPopulation() const { return this->population; };
-long int Region::getSusceptible() const { return this->susceptible; };
-long int Region::getExposed() const { return this->exposed; };
-long int Region::getInfectious() const { return this->infectious; };
-long int Region::getRecovered() const { return this->recovered; };
-long int Region::getDead() const { return this->dead; };
+long int Region::getPopulation() const { return this->population; }
+long int Region::getSusceptible() const { return this->susceptible; }
+long int Region::getExposed() const { return this->exposed; }
+long int Region::getInfectious() const { return this->infectious; }
+long int Region::getRecovered() const { return this->recovered; }
+long int Region::getDead() const { return this->dead; }
+std::map<Region,double>& Region::getConnections() const { return this->connections; }
+std::map<Region,double>& Region::getFlights() const { return this->flights; }
 
 //relations between regions
 void Region::addConnection(Region &region, int val) {
@@ -341,6 +343,25 @@ std::string Region::setScienceDonating(bool cond) {
     return __func__;
 }
 
+//spreading methods
+void Region::infectOtherCountry(std::map<Region, double> & countryMap) const {
+    if(this->infectious > 0) {
+        int neighbourCount, neighbourNumber;
+        auto it = countryMap.begin();
+
+        neighbourCount = countryMap.size();
+        neighbourNumber = static_cast<int>(random()) % neighbourCount;
+
+        for (int i = 0; i < neighbourNumber; ++i) {
+            it++;
+        }
+
+        if (it->first.infectious == 0)
+            it->first.infectious = 1;
+    }
+}
+
+//simulation methods
 void Region::makeSimulationStep() {
     if (!isExposed() && dead > 0)
         addDataHistory();

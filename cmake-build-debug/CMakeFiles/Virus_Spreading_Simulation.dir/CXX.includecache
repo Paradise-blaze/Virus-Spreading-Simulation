@@ -6,19 +6,23 @@
 
 #IncludeRegexTransform: 
 
-/home/szymon/Pulpit/Programowanie/C++/Virus-Spreading-Simulation/Region.cpp
-Region.h
 /home/szymon/Pulpit/Programowanie/C++/Virus-Spreading-Simulation/Region.h
-
-/home/szymon/Pulpit/Programowanie/C++/Virus-Spreading-Simulation/Region.h
+iostream
+-
 string
 -
 map
 -
-iostream
--
 functional
 -
+
+/home/szymon/Pulpit/Programowanie/C++/Virus-Spreading-Simulation/Simulation.h
+iostream
+-
+vector
+-
+Region.h
+/home/szymon/Pulpit/Programowanie/C++/Virus-Spreading-Simulation/Region.h
 
 /home/szymon/Pulpit/Programowanie/C++/Virus-Spreading-Simulation/main.cpp
 iostream
@@ -29,6 +33,10 @@ fstream
 -
 sstream
 -
+cstdlib
+-
 Region.h
 /home/szymon/Pulpit/Programowanie/C++/Virus-Spreading-Simulation/Region.h
+Simulation.h
+/home/szymon/Pulpit/Programowanie/C++/Virus-Spreading-Simulation/Simulation.h
 
