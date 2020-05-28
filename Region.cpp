@@ -35,6 +35,7 @@ Region::Region(std::string &name, std::string &averAge, std::string &healthCare,
     this->isHistoryEmpty = true;
     initEventHistory();
 
+    historyWidth = 5;
     setHistorySize(4*7); //4 weeks
     //addDataHistory();
 }
@@ -98,6 +99,7 @@ std::map<Region,double>& Region::getConnections() const { return this->connectio
 std::map<Region,double>& Region::getFlights() const { return this->flights; }
 int ** Region::getHistory() const { return this->history; }
 int Region::getHistorySize() const { return this->historySize; }
+int Region::getHistoryWidth() const { return this->historyWidth; }
 bool Region::getIsHistoryEmpty() const { return this->isHistoryEmpty; }
 int Region::getHistoryDay() const { return this->historyDay; }
 
@@ -367,11 +369,7 @@ void Region::infectOtherCountry(std::map<Region, double> & countryMap) const {
 }
 
 //simulation methods
-void Region::makeSimulationStep(long day) {
-    //if (!isExposed() && dead > 0)
-    //    addDataHistory();
-    if (!isExposed())
-        return;
+void Region::makeSimulationStep() {
     double b_I_S = beta * (double)infectious * (double)susceptible / (double)population;
     d_susceptible = (lambda - mi) * (double)susceptible - b_I_S;
     d_exposed = b_I_S - (mi + alpha) * (double)exposed;
@@ -386,7 +384,6 @@ void Region::makeSimulationStep(long day) {
     dead += (long int)d_dead;
     population -= dead;
 
-    addDataHistory(day);
 }
 
 void Region::setPatientZero() {
@@ -397,7 +394,7 @@ void Region::setHistorySize(int size) {
     historySize = size;
     history = new int*[size];
     for(int i = 0; i < size; i++)
-        history[i] = new int[5];
+        history[i] = new int[historyWidth];
 }
 
 
@@ -413,6 +410,11 @@ void Region::addDataHistory(long day) {
     history[historyDay][4] = recovered;
     history[historyDay][5] = dead;
     historyDay++;
+}
+
+void Region::clearHistory() {
+    historyDay = 0;
+    isHistoryEmpty = true;
 }
 
 //operators
