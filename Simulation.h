@@ -23,7 +23,7 @@ private:
     double gamma1 = 0;
     double gamma2 = 0;
 
-    int days = 0;
+    int day = 0;
     int savingGap = 0;
     long int maxDays = 0;
     vector<Region> regions;
@@ -35,6 +35,7 @@ private:
     //private methods
     vector<Region>::iterator getRegionIt(string &);
     void initialiseRegionZero();
+    void randomInfectFrom(const Region &);
 public:
     Simulation();
     Simulation(vector<Region> &, vector<string> &);
@@ -48,8 +49,7 @@ public:
     void simulate();
 
     void saveData();
-    Region getRegion(vector<Region> &);
-    void saveRegionHistory(Region regionToSaveHistory);
+    void saveRegionHistory(Region &regionToSaveHistory);
     void setNumberOfCores();
     void runThreads(int numberOfCores);
 };
