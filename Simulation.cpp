@@ -64,25 +64,18 @@ void Simulation::initialiseRegionZero() {
     }
 }
 
-
-
 void Simulation::saveData(){
     criticalSection.lock();
     while (vecIterator != regions.end()) {
-        Region activeThreadRegionHistory = getRegion(regions);
+        Region activeThreadRegionHistory = *vecIterator;
+        vecIterator++;
+        criticalSection.unlock();
         if(!activeThreadRegionHistory.getIsHistoryEmpty()){
         saveRegionHistory(activeThreadRegionHistory);
         }
         criticalSection.lock();
     }
     criticalSection.unlock();
-}
-
-Region Simulation::getRegion(vector<Region> &regions){
-    Region oneRegion = *vecIterator;
-    vecIterator++;
-    criticalSection.unlock();
-    return oneRegion;
 }
 
 void Simulation::saveRegionHistory(Region regionToSaveHistory){
