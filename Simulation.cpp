@@ -48,10 +48,9 @@ void Simulation::setSavingDirectory(const string &path) {
 }
 
 bool Simulation::isDiedOut() {
-    for(const Region &r: regions) {
+    for(const Region &r: regions)
         if (r.isExposed())
             return false;
-    }
     return true;
 }
 
@@ -94,6 +93,7 @@ void Simulation::saveRegionHistory(Region &regionToSaveHistory){
     int width = regionToSaveHistory.getHistoryWidth();
     for (int i = 0; i < size; i++){
         for (int j = 0; j < width; j++){
+
             regionFile << history[i][j];
             if(j!=5){
                 regionFile << ';';
