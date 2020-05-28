@@ -362,9 +362,7 @@ void Region::infectOtherCountry(std::map<Region, double> & countryMap) const {
 }
 
 //simulation methods
-void Region::makeSimulationStep() {
-    if (!isExposed() && dead > 0)
-        addDataHistory();
+void Region::makeSimulationStep(long day) {
     if (!isExposed())
         return;
 
@@ -382,7 +380,7 @@ void Region::makeSimulationStep() {
     dead += (long int)d_dead;
     population -= dead;
 
-    addDataHistory();
+    addDataHistory(day);
 }
 
 void Region::setPatientZero() {
@@ -393,18 +391,19 @@ void Region::setHistorySize(int size) {
     historySize = size;
     history = new std::string*[size];
     for(int i = 0; i < size; i++)
-        history[i] = new std::string[5];
+        history[i] = new std::string[6];
 }
 
 
-void Region::addDataHistory() {
+void Region::addDataHistory(long day) {
     if (historyDay >= historySize)
         return;
-    history[historyDay][0] = std::to_string(susceptible);
-    history[historyDay][1] = std::to_string(exposed);
-    history[historyDay][2] = std::to_string(infectious);
-    history[historyDay][3] = std::to_string(recovered);
-    history[historyDay][4] = std::to_string(dead);
+    history[historyDay][0] = std::to_string(day);
+    history[historyDay][1] = std::to_string(susceptible);
+    history[historyDay][2] = std::to_string(exposed);
+    history[historyDay][3] = std::to_string(infectious);
+    history[historyDay][4] = std::to_string(recovered);
+    history[historyDay][5] = std::to_string(dead);
     historyDay++;
 }
 

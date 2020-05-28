@@ -148,8 +148,8 @@ public:
 
     //simulation methods
     [[nodiscard]] bool isExposed() const;
-    void makeSimulationStep();
-    void addDataHistory();
+    void makeSimulationStep(long day);
+    void addDataHistory(long day);
     void setPatientZero();
 
     //operators
