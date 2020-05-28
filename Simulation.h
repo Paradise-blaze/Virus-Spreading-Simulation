@@ -7,6 +7,9 @@
 
 #include <iostream>
 #include <vector>
+#include <mutex>
+#include <fstream>
+#include <thread>
 #include "Region.h"
 
 using namespace std;
@@ -24,6 +27,10 @@ private:
     int savingGap = 0;
     long int maxDays = 0;
     vector<Region> regions;
+    vector<Region>::iterator vecIterator;
+    mutex criticalSection;
+    int coreUsable;
+    vector<thread> threads;
 
     //private methods
     vector<Region>::iterator getRegionIt(string &);
@@ -39,6 +46,12 @@ public:
     void setMaxDays(long);
 
     void simulate();
+
+    void saveData();
+    Region getRegion(vector<Region> &);
+    void saveRegionHistory(Region regionToSaveHistory);
+    void setNumberOfCores();
+    void runThreads(int numberOfCores);
 };
 
 

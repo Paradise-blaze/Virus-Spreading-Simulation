@@ -70,9 +70,10 @@ private:
     mutable std::map<Region, double> connections;
     mutable std::map<Region, double> flights;
     std::map<std::string, bool> eventHistory;
-    std::string **history = nullptr;
+    int **history = nullptr;
     int historyDay = 0;
     int historySize = 0;
+    bool isHistoryEmpty = true;
 
 public:
     //initialize
@@ -89,7 +90,7 @@ public:
     static long stol(std::string &);
 
     //getters
-    [[nodiscard]] std::string getName() const;              //nodiscard - CLion rzuca ostrzeżenia, gdy nie ma tego znacznika
+    /*[[nodiscard]]*/ std::string getName() const;              //nodiscard - CLion rzuca ostrzeżenia, gdy nie ma tego znacznika //Jasiu - a mi wywala gdzies warning kiedy jest xD 
     [[nodiscard]] double getAverAge() const;                //const - jak wyżej, później można usunąć
     [[nodiscard]] double getHealthCare() const;
     [[nodiscard]] double getTransport() const;
@@ -108,6 +109,10 @@ public:
     [[nodiscard]] long int getDead() const;
     std::map<Region, double>& getConnections() const;
     std::map<Region, double>& getFlights() const;
+    int ** getHistory() const;
+    int getHistorySize() const;
+    bool getIsHistoryEmpty() const;
+    int getHistoryDay() const;
 
     //relations between regions
     void addConnection(Region &, int);

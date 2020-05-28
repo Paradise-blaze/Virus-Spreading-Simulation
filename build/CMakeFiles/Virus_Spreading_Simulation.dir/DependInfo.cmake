@@ -5,6 +5,7 @@ set(CMAKE_DEPENDS_LANGUAGES
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
   "D:/Studia/Virus-Spreading-Simulation/Region.cpp" "D:/Studia/Virus-Spreading-Simulation/build/CMakeFiles/Virus_Spreading_Simulation.dir/Region.cpp.obj"
+  "D:/Studia/Virus-Spreading-Simulation/Simulation.cpp" "D:/Studia/Virus-Spreading-Simulation/build/CMakeFiles/Virus_Spreading_Simulation.dir/Simulation.cpp.obj"
   "D:/Studia/Virus-Spreading-Simulation/main.cpp" "D:/Studia/Virus-Spreading-Simulation/build/CMakeFiles/Virus_Spreading_Simulation.dir/main.cpp.obj"
   )
 set(CMAKE_CXX_COMPILER_ID "GNU")

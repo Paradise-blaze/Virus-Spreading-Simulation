@@ -32,10 +32,11 @@ Region::Region(std::string &name, std::string &averAge, std::string &healthCare,
     this->transport = stod(transport);
     this->climate = (climateType) stoi(climate);
     this->population = stol(population);
+    this->isHistoryEmpty = true;
     initEventHistory();
 
-    setHistorySize(1);
-    addDataHistory();
+    setHistorySize(4*7); //4 weeks
+    //addDataHistory();
 }
 
 void Region::setNaturalGrowth(std::string &Lambda, std::string &Mi){
@@ -95,6 +96,10 @@ long int Region::getRecovered() const { return this->recovered; }
 long int Region::getDead() const { return this->dead; }
 std::map<Region,double>& Region::getConnections() const { return this->connections; }
 std::map<Region,double>& Region::getFlights() const { return this->flights; }
+int ** Region::getHistory() const { return this->history; }
+int Region::getHistorySize() const { return this->historySize; }
+bool Region::getIsHistoryEmpty() const { return this->isHistoryEmpty; }
+int Region::getHistoryDay() const { return this->historyDay; }
 
 //relations between regions
 void Region::addConnection(Region &region, int val) {
@@ -350,7 +355,7 @@ void Region::infectOtherCountry(std::map<Region, double> & countryMap) const {
         auto it = countryMap.begin();
 
         neighbourCount = countryMap.size();
-        neighbourNumber = static_cast<int>(random()) % neighbourCount;
+        neighbourNumber = static_cast<int>(rand()) % neighbourCount;
 
         for (int i = 0; i < neighbourNumber; ++i) {
             it++;
@@ -363,9 +368,10 @@ void Region::infectOtherCountry(std::map<Region, double> & countryMap) const {
 
 //simulation methods
 void Region::makeSimulationStep(long day) {
+    //if (!isExposed() && dead > 0)
+    //    addDataHistory();
     if (!isExposed())
         return;
-
     double b_I_S = beta * (double)infectious * (double)susceptible / (double)population;
     d_susceptible = (lambda - mi) * (double)susceptible - b_I_S;
     d_exposed = b_I_S - (mi + alpha) * (double)exposed;
@@ -389,21 +395,23 @@ void Region::setPatientZero() {
 
 void Region::setHistorySize(int size) {
     historySize = size;
-    history = new std::string*[size];
+    history = new int*[size];
     for(int i = 0; i < size; i++)
-        history[i] = new std::string[6];
+        history[i] = new int[5];
 }
 
 
 void Region::addDataHistory(long day) {
-    if (historyDay >= historySize)
+    isHistoryEmpty = false;
+    if (historyDay >= historySize){
         return;
-    history[historyDay][0] = std::to_string(day);
-    history[historyDay][1] = std::to_string(susceptible);
-    history[historyDay][2] = std::to_string(exposed);
-    history[historyDay][3] = std::to_string(infectious);
-    history[historyDay][4] = std::to_string(recovered);
-    history[historyDay][5] = std::to_string(dead);
+    }
+    history[historyDay][0] = day;
+    history[historyDay][1] = susceptible;
+    history[historyDay][2] = exposed;
+    history[historyDay][3] = infectious;
+    history[historyDay][4] = recovered;
+    history[historyDay][5] = dead;
     historyDay++;
 }
 

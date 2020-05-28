@@ -15,7 +15,8 @@ Simulation::Simulation(vector<Region> &regions, vector<string> &disease_data) {
     gamma2 = Region::stod(disease_data.at(4));
     this->regions = move(regions);
     setInitialValues();
-    setSavingFrequency(7 * 4);
+    setNumberOfCores();
+    //threads = vector<thread>(coreUsable);
 }
 
 void Simulation::setInitialValues() {
@@ -63,6 +64,65 @@ void Simulation::initialiseRegionZero() {
     }
 }
 
+
+
+void Simulation::saveData(){
+    criticalSection.lock();
+    while (vecIterator != regions.end()) {
+        Region activeThreadRegionHistory = getRegion(regions);
+        if(!activeThreadRegionHistory.getIsHistoryEmpty()){
+        saveRegionHistory(activeThreadRegionHistory);
+        }
+        criticalSection.lock();
+    }
+    criticalSection.unlock();
+}
+
+Region Simulation::getRegion(vector<Region> &regions){
+    Region oneRegion = *vecIterator;
+    vecIterator++;
+    criticalSection.unlock();
+    return oneRegion;
+}
+
+void Simulation::saveRegionHistory(Region regionToSaveHistory){
+    regionToSaveHistory.getName();
+    int ** history = regionToSaveHistory.getHistory();
+    fstream regionFile;
+    regionFile.open(regionToSaveHistory.getName(), fstream::out | fstream::app);
+    int k;
+    if (days % savingGap == 0) {
+        k = regionToSaveHistory.getHistorySize(); 
+        } else {
+        k = days % savingGap;
+        }  
+    for (int i = 0; i < k; i++){
+        for (int j = 0; j < 6; j++){
+            regionFile << history[i][j];
+            if(j!=5){
+                regionFile << ';';
+            }
+        }
+        regionFile << endl;
+    }
+    regionFile.close();
+}
+
+void Simulation::setNumberOfCores(){
+    coreUsable = max(1u,thread::hardware_concurrency());
+}
+void Simulation::runThreads(int coreUsable){
+    for (int i = 0; i < coreUsable; i++){
+        threads.push_back(thread(saveData,this));
+    }
+    for (int i = 0; i < coreUsable; i++){
+        threads[i].join();
+    }
+    for (int i = 0; i < coreUsable; i++){
+        threads.pop_back();
+    }
+}
+
 void Simulation::simulate() {
     int infect;
 
@@ -70,20 +130,21 @@ void Simulation::simulate() {
     while (!isDiedOut() && (maxDays <= 0 || days < maxDays)){ //optional maximum simulation day setting
         for(Region &r: regions) {
             r.makeSimulationStep(days);
-            infect = random() % INFECT_CHANCE;
+            infect = rand() % INFECT_CHANCE;
             if(infect == 0)
                 r.infectOtherCountry(r.getConnections());
-            infect = random() % INFECT_CHANCE;
+            infect = rand() % INFECT_CHANCE;
             if(infect == 0)
                 r.infectOtherCountry(r.getFlights());
         }
         days++;
 
         if (days % savingGap == 0) {
-            //saveData();
+            vecIterator = regions.begin();
+            runThreads(coreUsable);
         }
         //cout << getRegionIt(regionZeroName)->getExposed() << " ";
         //cout << getRegionIt(regionZeroName)->getPopulation() << endl;
     }
-    //saveData();
+    runThreads(coreUsable);
 }
