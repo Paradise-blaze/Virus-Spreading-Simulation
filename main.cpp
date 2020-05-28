@@ -1,7 +1,6 @@
 #include <iostream>
 #include <vector>
-#include <fstream>
-#include <sstream>
+#include <filesystem>
 #include <cstdlib>
 #include <ctime>
 #include "Region.h"
@@ -9,20 +8,13 @@
 
 #define MAX_DAYS 5000
 #define FREQUENCY 30
+#define PROJECT_NAME "Virus-Spreading-Simulation"
 
 using namespace std;
+namespace fs = filesystem;
 using rawData = vector<vector<string>>;
 using rawRecord = vector<string>;
 
-const string PiDisPath = "/home/proxpxd/Desktop/moje_programy/simulations/Virus-Spreading-Simulation/resources/Diseases.csv";
-const string PiCouPath = "/home/proxpxd/Desktop/moje_programy/simulations/Virus-Spreading-Simulation/resources/Country.csv";
-const string PiBorPath = "/home/proxpxd/Desktop/moje_programy/simulations/Virus-Spreading-Simulation/resources/Borders.csv";
-const string SzDisPath = "/home/szymon/Pulpit/Programowanie/C++/Virus-Spreading-Simulation/resources/Diseases.csv";
-const string SzCouPath = "/home/szymon/Pulpit/Programowanie/C++/Virus-Spreading-Simulation/resources/Country.csv";
-const string SzBorPath = "/home/szymon/Pulpit/Programowanie/C++/Virus-Spreading-Simulation/resources/Borders.csv";
-const string JaDisPath = "D:/Studia/Virus-Spreading-Simulation/resources/Diseases.csv";
-const string JaCouPath = "D:/Studia/Virus-Spreading-Simulation/resources/Country.csv";
-const string JaBorPath = "D:/Studia/Virus-Spreading-Simulation/resources/Borders.csv";
 
 rawRecord stringToVector(string &record, char delim){
     stringstream ss(record);
@@ -92,12 +84,23 @@ vector<Region> createRegions(rawData &data){
     return regions;
 }
 
+fs::path getWorkingDirectory(){
+    fs::path path = fs::current_path();
+    while(path.filename().compare(PROJECT_NAME))
+        path = path.parent_path();
+    return path;
+}
+
 int main() {
     srand(time(nullptr));
+
     // Loading data
-    rawData diseasesData = loadData(JaDisPath, ',');
-    rawData regionsData = loadData(JaCouPath, ';');
-    rawData borders = loadData(JaBorPath, ';');
+    fs::path dirPath = getWorkingDirectory();
+    fs::path resourcesPath = dirPath / "resources";
+
+    rawData diseasesData = loadData(resourcesPath / "Diseases.csv", ',');
+    rawData regionsData = loadData(resourcesPath / "Country.csv", ';');
+    rawData borders = loadData(resourcesPath / "Borders.csv", ';');
 
     rawRecord diseaseData = chooseDisease(diseasesData);
     vector<Region> regions = createRegions(regionsData);
@@ -107,7 +110,7 @@ int main() {
     Simulation simulation = Simulation(regions, diseaseData);
     simulation.setSavingFrequency(FREQUENCY);
     simulation.setMaxDays(MAX_DAYS);
-
+    simulation.setSavingDirectory(dirPath / "results");
     //turning simulation on
     simulation.simulate();
     return 0;

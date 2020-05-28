@@ -9,10 +9,12 @@
 #include <vector>
 #include <mutex>
 #include <fstream>
+#include <filesystem>
 #include <thread>
 #include "Region.h"
 
 using namespace std;
+namespace fs = filesystem;
 
 class Simulation {
 private:
@@ -28,6 +30,8 @@ private:
     long int maxDays = 0;
     vector<Region> regions;
     vector<Region>::iterator vecIterator;
+
+    fs::path savingDirectory = "";
     mutex criticalSection;
     int coreUsable;
     vector<thread> threads;
@@ -45,6 +49,7 @@ public:
     void setSavingFrequency(int);
     void setRegionZero(string &);
     void setMaxDays(long);
+    void setSavingDirectory(const string &);
 
     void simulate();
 

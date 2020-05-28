@@ -38,11 +38,19 @@ void Simulation::setRegionZero(string &location) {
     regionZeroName = location;
 }
 
+void Simulation::setSavingDirectory(const string &path) {
+    savingDirectory = fs::path(path);
+    if (!fs::exists(savingDirectory))
+        fs::create_directory(savingDirectory);
+    else
+        for(const auto &file: fs::directory_iterator(savingDirectory))
+            fs::remove(file);
+}
+
 bool Simulation::isDiedOut() {
-    for(const Region &r: regions) {
+    for(const Region &r: regions)
         if (r.isExposed())
             return false;
-    }
     return true;
 }
 
@@ -80,11 +88,12 @@ void Simulation::saveData(){
 void Simulation::saveRegionHistory(Region &regionToSaveHistory){
     int ** history = regionToSaveHistory.getHistory();
     fstream regionFile;
-    regionFile.open(regionToSaveHistory.getName(), fstream::out | fstream::app);
+    regionFile.open( savingDirectory / regionToSaveHistory.getName(), fstream::out | fstream::app);
     int size = regionToSaveHistory.getHistoryDay();
     int width = regionToSaveHistory.getHistoryWidth();
     for (int i = 0; i < size; i++){
         for (int j = 0; j < width; j++){
+
             regionFile << history[i][j];
             if(j!=5){
                 regionFile << ';';
