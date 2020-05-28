@@ -69,7 +69,7 @@ void Simulation::simulate() {
     initialiseRegionZero();
     while (!isDiedOut() && (maxDays <= 0 || days < maxDays)){ //optional maximum simulation day setting
         for(Region &r: regions) {
-            r.makeSimulationStep();
+            r.makeSimulationStep(days);
             infect = random() % INFECT_CHANCE;
             if(infect == 0)
                 r.infectOtherCountry(r.getConnections());
