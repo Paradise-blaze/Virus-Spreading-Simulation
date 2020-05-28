@@ -3,6 +3,7 @@
 #include <fstream>
 #include <sstream>
 #include <cstdlib>
+#include <ctime>
 #include "Region.h"
 #include "Simulation.h"
 
@@ -19,9 +20,9 @@ const string PiBorPath = "/home/proxpxd/Desktop/moje_programy/simulations/Virus-
 const string SzDisPath = "/home/szymon/Pulpit/Programowanie/C++/Virus-Spreading-Simulation/resources/Diseases.csv";
 const string SzCouPath = "/home/szymon/Pulpit/Programowanie/C++/Virus-Spreading-Simulation/resources/Country.csv";
 const string SzBorPath = "/home/szymon/Pulpit/Programowanie/C++/Virus-Spreading-Simulation/resources/Borders.csv";
-const string JaDisPath;
-const string JaCouPath;
-const string JaBorPath;
+const string JaDisPath = "D:/Studia/Virus-Spreading-Simulation/resources/Diseases.csv";
+const string JaCouPath = "D:/Studia/Virus-Spreading-Simulation/resources/Country.csv";
+const string JaBorPath = "D:/Studia/Virus-Spreading-Simulation/resources/Borders.csv";
 
 rawRecord stringToVector(string &record, char delim){
     stringstream ss(record);
@@ -94,9 +95,9 @@ vector<Region> createRegions(rawData &data){
 int main() {
     srand(time(nullptr));
     // Loading data
-    rawData diseasesData = loadData(SzDisPath, ',');
-    rawData regionsData = loadData(SzCouPath, ';');
-    rawData borders = loadData(SzBorPath, ';');
+    rawData diseasesData = loadData(JaDisPath, ',');
+    rawData regionsData = loadData(JaCouPath, ';');
+    rawData borders = loadData(JaBorPath, ';');
 
     rawRecord diseaseData = chooseDisease(diseasesData);
     vector<Region> regions = createRegions(regionsData);

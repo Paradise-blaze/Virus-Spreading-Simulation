@@ -1,5 +1,6 @@
 file(REMOVE_RECURSE
   "CMakeFiles/Virus_Spreading_Simulation.dir/Region.cpp.obj"
+  "CMakeFiles/Virus_Spreading_Simulation.dir/Simulation.cpp.obj"
   "CMakeFiles/Virus_Spreading_Simulation.dir/main.cpp.obj"
   "Virus_Spreading_Simulation.exe"
   "Virus_Spreading_Simulation.exe.manifest"

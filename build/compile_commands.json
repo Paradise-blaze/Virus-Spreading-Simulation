@@ -8,5 +8,10 @@
   "directory": "D:/Studia/Virus-Spreading-Simulation/build",
   "command": "D:\\MinGW\\mingw64\\bin\\g++.exe    -g   -std=gnu++2a -o CMakeFiles\\Virus_Spreading_Simulation.dir\\Region.cpp.obj -c D:\\Studia\\Virus-Spreading-Simulation\\Region.cpp",
   "file": "D:/Studia/Virus-Spreading-Simulation/Region.cpp"
+},
+{
+  "directory": "D:/Studia/Virus-Spreading-Simulation/build",
+  "command": "D:\\MinGW\\mingw64\\bin\\g++.exe    -g   -std=gnu++2a -o CMakeFiles\\Virus_Spreading_Simulation.dir\\Simulation.cpp.obj -c D:\\Studia\\Virus-Spreading-Simulation\\Simulation.cpp",
+  "file": "D:/Studia/Virus-Spreading-Simulation/Simulation.cpp"
 }
 ]
