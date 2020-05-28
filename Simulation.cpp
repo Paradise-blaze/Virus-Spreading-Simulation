@@ -16,7 +16,6 @@ Simulation::Simulation(vector<Region> &regions, vector<string> &disease_data) {
     this->regions = move(regions);
     setInitialValues();
     setNumberOfCores();
-    //threads = vector<thread>(coreUsable);
 }
 
 void Simulation::setInitialValues() {
@@ -104,7 +103,6 @@ void Simulation::runThreads(int coreUsable){
     vecIterator = regions.begin();
     for (int i = 0; i < coreUsable; i++){
         threads.emplace_back(thread(&Simulation::saveData, this));
-        //threads.push_back(thread(saveData, this));
     }
     for (int i = 0; i < coreUsable; i++){
        threads[i].join();
@@ -116,7 +114,8 @@ void Simulation::runThreads(int coreUsable){
 
 void Simulation::simulate() {
     initialiseRegionZero();
-    while (!isDiedOut() && (maxDays <= 0 || day < maxDays)){ //optional maximum simulation day setting
+    //maxDays <= 0 - for negative maxDays simulation runs till end
+    while (!isDiedOut() && (maxDays <= 0 || day < maxDays)){
         for(Region &r: regions) {
             if (r.isExposed()){
                 r.makeSimulationStep();
@@ -135,10 +134,10 @@ void Simulation::simulate() {
 
 void Simulation::randomInfectFrom(const Region &region) {
     int infect;
-    infect = random() % INFECT_CHANCE;
+    infect = rand() % INFECT_CHANCE;
     if(infect == 0)
         region.infectOtherCountry(region.getConnections());
-    infect = random() % INFECT_CHANCE;
+    infect = rand() % INFECT_CHANCE;
     if(infect == 0)
         region.infectOtherCountry(region.getFlights());
 }

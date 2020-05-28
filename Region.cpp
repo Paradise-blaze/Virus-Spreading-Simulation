@@ -37,7 +37,6 @@ Region::Region(std::string &name, std::string &averAge, std::string &healthCare,
 
     historyWidth = 5;
     setHistorySize(4*7); //4 weeks
-    //addDataHistory();
 }
 
 void Region::setNaturalGrowth(std::string &Lambda, std::string &Mi){
