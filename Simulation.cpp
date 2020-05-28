@@ -97,9 +97,9 @@ void Simulation::saveRegionHistory(Region regionToSaveHistory){
         k = days % savingGap;
         }  
     for (int i = 0; i < k; i++){
-        for (int j = 0; j < 5; j++){
+        for (int j = 0; j < 6; j++){
             regionFile << history[i][j];
-            if(j!=4){
+            if(j!=5){
                 regionFile << ';';
             }
         }
@@ -129,7 +129,7 @@ void Simulation::simulate() {
     initialiseRegionZero();
     while (!isDiedOut() && (maxDays <= 0 || days < maxDays)){ //optional maximum simulation day setting
         for(Region &r: regions) {
-            r.makeSimulationStep();
+            r.makeSimulationStep(days);
             infect = rand() % INFECT_CHANCE;
             if(infect == 0)
                 r.infectOtherCountry(r.getConnections());

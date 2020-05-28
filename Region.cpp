@@ -367,7 +367,7 @@ void Region::infectOtherCountry(std::map<Region, double> & countryMap) const {
 }
 
 //simulation methods
-void Region::makeSimulationStep() {
+void Region::makeSimulationStep(long day) {
     //if (!isExposed() && dead > 0)
     //    addDataHistory();
     if (!isExposed())
@@ -401,16 +401,17 @@ void Region::setHistorySize(int size) {
 }
 
 
-void Region::addDataHistory() {
+void Region::addDataHistory(long day) {
     isHistoryEmpty = false;
     if (historyDay >= historySize){
         return;
     }
-    history[historyDay][0] = susceptible;
-    history[historyDay][1] = exposed;
-    history[historyDay][2] = infectious;
-    history[historyDay][3] = recovered;
-    history[historyDay][4] = dead;
+    history[historyDay][0] = day;
+    history[historyDay][1] = susceptible;
+    history[historyDay][2] = exposed;
+    history[historyDay][3] = infectious;
+    history[historyDay][4] = recovered;
+    history[historyDay][5] = dead;
     historyDay++;
 }
 
