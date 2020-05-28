@@ -73,6 +73,7 @@ private:
     int **history = nullptr;
     int historyDay = 0;
     int historySize = 0;
+    int historyWidth = 0;
     bool isHistoryEmpty = true;
 
 public:
@@ -111,6 +112,7 @@ public:
     std::map<Region, double>& getFlights() const;
     int ** getHistory() const;
     int getHistorySize() const;
+    int getHistoryWidth() const;
     bool getIsHistoryEmpty() const;
     int getHistoryDay() const;
 
@@ -153,9 +155,10 @@ public:
 
     //simulation methods
     [[nodiscard]] bool isExposed() const;
-    void makeSimulationStep(long day);
+    void makeSimulationStep();
     void addDataHistory(long day);
     void setPatientZero();
+    void clearHistory();
 
     //operators
     friend bool operator<(const Region &, const Region &);
