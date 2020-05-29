@@ -36,7 +36,7 @@ Region::Region(std::string &name, std::string &averAge, std::string &healthCare,
     this->isHistoryEmpty = true;
     initEventHistory();
 
-    historyWidth = 5;
+    historyWidth = 6;
     setHistorySize(4*7); //4 weeks
 }
 
