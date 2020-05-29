@@ -32,6 +32,7 @@ Region::Region(std::string &name, std::string &averAge, std::string &healthCare,
     this->transport = stod(transport);
     this->climate = (climateType) stoi(climate);
     this->population = stol(population);
+    this->susceptible = this->population;
     this->isHistoryEmpty = true;
     initEventHistory();
 

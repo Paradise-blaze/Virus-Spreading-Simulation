@@ -57,7 +57,7 @@ private:
     double lambda = 0;          //fertility coefficient
     double mi = 0;              //death coefficient (all cases)
     long int population;
-    long int susceptible = 0;
+    long int susceptible;
     long int exposed = 0;
     mutable long int infectious = 0;
     long int recovered = 0;
