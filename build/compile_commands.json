@@ -1,17 +1,17 @@
 [
 {
   "directory": "D:/Studia/Virus-Spreading-Simulation/build",
-  "command": "D:\\MinGW\\mingw64\\bin\\g++.exe    -g   -std=gnu++2a -o CMakeFiles\\Virus_Spreading_Simulation.dir\\main.cpp.obj -c D:\\Studia\\Virus-Spreading-Simulation\\main.cpp",
+  "command": "D:\\msys64\\mingw64\\bin\\g++.exe    -pthread -g   -std=gnu++2a -o CMakeFiles\\Virus_Spreading_Simulation.dir\\main.cpp.obj -c D:\\Studia\\Virus-Spreading-Simulation\\main.cpp",
   "file": "D:/Studia/Virus-Spreading-Simulation/main.cpp"
 },
 {
   "directory": "D:/Studia/Virus-Spreading-Simulation/build",
-  "command": "D:\\MinGW\\mingw64\\bin\\g++.exe    -g   -std=gnu++2a -o CMakeFiles\\Virus_Spreading_Simulation.dir\\Region.cpp.obj -c D:\\Studia\\Virus-Spreading-Simulation\\Region.cpp",
+  "command": "D:\\msys64\\mingw64\\bin\\g++.exe    -pthread -g   -std=gnu++2a -o CMakeFiles\\Virus_Spreading_Simulation.dir\\Region.cpp.obj -c D:\\Studia\\Virus-Spreading-Simulation\\Region.cpp",
   "file": "D:/Studia/Virus-Spreading-Simulation/Region.cpp"
 },
 {
   "directory": "D:/Studia/Virus-Spreading-Simulation/build",
-  "command": "D:\\MinGW\\mingw64\\bin\\g++.exe    -g   -std=gnu++2a -o CMakeFiles\\Virus_Spreading_Simulation.dir\\Simulation.cpp.obj -c D:\\Studia\\Virus-Spreading-Simulation\\Simulation.cpp",
+  "command": "D:\\msys64\\mingw64\\bin\\g++.exe    -pthread -g   -std=gnu++2a -o CMakeFiles\\Virus_Spreading_Simulation.dir\\Simulation.cpp.obj -c D:\\Studia\\Virus-Spreading-Simulation\\Simulation.cpp",
   "file": "D:/Studia/Virus-Spreading-Simulation/Simulation.cpp"
 }
 ]

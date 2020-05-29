@@ -36,7 +36,7 @@ void Simulation::setRegionZero(const string &location) {
     regionZeroName = location;
 }
 
-void Simulation::setSavingDirectory(const string &path) {
+void Simulation::setSavingDirectory(const fs::path &path) {
     savingDirectory = fs::path(path);
     if (!fs::exists(savingDirectory))
         fs::create_directory(savingDirectory);

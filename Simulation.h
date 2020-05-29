@@ -49,7 +49,7 @@ public:
     void setSavingFrequency(int);
     void setRegionZero(const string &);
     void setMaxDays(long);
-    void setSavingDirectory(const string &);
+    void setSavingDirectory(const fs::path &);
 
     void simulate();
 
