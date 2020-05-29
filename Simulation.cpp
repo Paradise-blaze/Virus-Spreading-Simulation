@@ -4,8 +4,6 @@
 
 #include "Simulation.h"
 
-#define INFECT_CHANCE 5
-
 Simulation::Simulation() = default;
 Simulation::Simulation(vector<Region> &regions, vector<string> &disease_data) {
     disease_name = disease_data.at(0);
@@ -142,11 +140,8 @@ void Simulation::simulate() {
 }
 
 void Simulation::randomInfectFrom(const Region &region) {
-    int infect;
-    infect = rand() % INFECT_CHANCE;
-    if(infect == 0)
+    if(region.getInfectionChance())
         region.infectOtherCountry(region.getConnections());
-    infect = rand() % INFECT_CHANCE;
-    if(infect == 0)
+    if(region.getInfectionChance())
         region.infectOtherCountry(region.getFlights());
 }

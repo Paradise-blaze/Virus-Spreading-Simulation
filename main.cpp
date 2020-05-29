@@ -1,6 +1,6 @@
 #include <iostream>
 #include <vector>
-#include <filesystem>
+#include <experimental/filesystem>
 #include <cstdlib>
 #include <ctime>
 #include "Region.h"
@@ -11,7 +11,7 @@
 #define PROJECT_NAME "Virus-Spreading-Simulation"
 
 using namespace std;
-namespace fs = filesystem;
+namespace fs = std::experimental::filesystem;
 using rawData = vector<vector<string>>;
 using rawRecord = vector<string>;
 

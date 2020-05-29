@@ -152,6 +152,7 @@ public:
 
     //spreading methods
     void infectOtherCountry(std::map<Region, double> &) const;
+    bool getInfectionChance() const;
 
     //simulation methods
     [[nodiscard]] bool isExposed() const;

@@ -9,12 +9,12 @@
 #include <vector>
 #include <mutex>
 #include <fstream>
-#include <filesystem>
+#include <experimental/filesystem>
 #include <thread>
 #include "Region.h"
 
 using namespace std;
-namespace fs = filesystem;
+namespace fs = std::experimental::filesystem;
 
 class Simulation {
 private:

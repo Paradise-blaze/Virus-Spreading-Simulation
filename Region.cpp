@@ -367,6 +367,12 @@ void Region::infectOtherCountry(std::map<Region, double> & countryMap) const {
     }
 }
 
+bool Region::getInfectionChance() const {
+    long int chance = rand() % this->population + 1;
+
+    return chance < this->exposed;
+}
+
 //simulation methods
 void Region::makeSimulationStep() {
     double b_I_S = beta * (double)infectious * (double)susceptible / (double)population;
@@ -382,7 +388,6 @@ void Region::makeSimulationStep() {
     recovered += (long int)d_recovered;
     dead += (long int)d_dead;
     population -= dead;
-
 }
 
 void Region::setPatientZero() {
