@@ -385,11 +385,12 @@ void Region::makeSimulationStep() {
     d_recovered = gamma1 * (double)infectious - mi * (double)recovered;
     d_dead = gamma2 * (double)infectious;
 
-    susceptible += (long int)d_susceptible;
-    exposed += (long int)d_exposed;
-    infectious += (long int)d_infectious;
-    recovered += (long int)d_recovered;
-    dead += (long int)d_dead;
+    susceptible += (d_susceptible);
+    exposed += (d_exposed);
+    infectious += (d_infectious);
+    recovered += (d_recovered);
+    dead += (d_dead);
+    std::cout << susceptible + exposed + infectious + recovered + dead << std::endl;
     population -= dead;
 }
 
