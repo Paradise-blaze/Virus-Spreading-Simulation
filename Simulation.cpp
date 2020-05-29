@@ -92,7 +92,7 @@ void Simulation::saveRegionHistory(Region &regionToSaveHistory){
     for (int i = 0; i < size; i++){
         for (int j = 0; j < width; j++){
             regionFile << history[i][j];
-            if(j!=5)
+            if(j!=(width-1))
                 regionFile << ';';
         }
         regionFile << endl;
