@@ -395,11 +395,7 @@ void Region::makeSimulationStep() {
 }
 
 void Region::setPatientZero() {
-<<<<<<< HEAD
     exposed = 10;
-=======
-    infectious = 10;
->>>>>>> parent of 528ddc1... Push
 }
 
 void Region::setHistorySize(int size) {
