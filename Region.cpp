@@ -1,5 +1,4 @@
 #include "Region.h"
-#include <math.h>
 //Static members
 
 //String converters
@@ -386,11 +385,11 @@ void Region::makeSimulationStep() {
     d_recovered = gamma1 * (double)infectious - mi * (double)recovered;
     d_dead = gamma2 * (double)infectious;
 
-    susceptible += (long int)round(d_susceptible);
-    exposed += (long int)round(d_exposed);
-    infectious += (long int)round(d_infectious);
-    recovered += (long int)round(d_recovered);
-    dead += (long int)round(d_dead);
+    susceptible += (long int)d_susceptible;
+    exposed += (long int)d_exposed;
+    infectious += (long int)d_infectious;
+    recovered += (long int)d_recovered;
+    dead += (long int)d_dead;
     population -= dead;
 }
 
