@@ -47,9 +47,9 @@ public:
     void setInitialValues();
     bool isDiedOut();
     void setSavingFrequency(int);
-    void setRegionZero(string &);
+    void setRegionZero(const string &);
     void setMaxDays(long);
-    void setSavingDirectory(const string &);
+    void setSavingDirectory(const fs::path &);
 
     void simulate();
 

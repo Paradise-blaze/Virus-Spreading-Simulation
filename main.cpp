@@ -26,7 +26,7 @@ rawRecord stringToVector(string &record, char delim){
     return values;
 }
 
-rawData loadData(const string &path, char delim, bool header=true){
+rawData loadData(const fs::path &path, char delim, bool header=true){
     rawData data;
     rawRecord  values;
     ifstream file;
@@ -110,6 +110,7 @@ int main() {
     Simulation simulation = Simulation(regions, diseaseData);
     simulation.setSavingFrequency(FREQUENCY);
     simulation.setMaxDays(MAX_DAYS);
+    simulation.setRegionZero("Solomon Islands");
     simulation.setSavingDirectory(dirPath / "results");
     //turning simulation on
     simulation.simulate();

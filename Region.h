@@ -56,12 +56,12 @@ private:
     double gamma2 = 0;          //death coefficient (disease)
     double lambda = 0;          //fertility coefficient
     double mi = 0;              //death coefficient (all cases)
-    long int population;
-    long int susceptible = 0;
-    long int exposed = 0;
-    mutable long int infectious = 0;
-    long int recovered = 0;
-    long int dead = 0;
+    long population;
+    double susceptible;
+    double exposed = 0;
+    mutable double infectious = 0;
+    double recovered = 0;
+    double dead = 0;
     double d_susceptible = 0;
     double d_exposed = 0;
     double d_infectious = 0;

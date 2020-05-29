@@ -8,10 +8,10 @@ set(CMAKE_DEPENDS_GENERATOR "MinGW Makefiles")
 set(CMAKE_MAKEFILE_DEPENDS
   "CMakeCache.txt"
   "../CMakeLists.txt"
-  "CMakeFiles/3.17.1/CMakeCCompiler.cmake"
-  "CMakeFiles/3.17.1/CMakeCXXCompiler.cmake"
-  "CMakeFiles/3.17.1/CMakeRCCompiler.cmake"
-  "CMakeFiles/3.17.1/CMakeSystem.cmake"
+  "CMakeFiles/3.17.3/CMakeCCompiler.cmake"
+  "CMakeFiles/3.17.3/CMakeCXXCompiler.cmake"
+  "CMakeFiles/3.17.3/CMakeRCCompiler.cmake"
+  "CMakeFiles/3.17.3/CMakeSystem.cmake"
   "D:/TYMCZASOWE GRY/CMake/share/cmake-3.17/Modules/CMakeCCompiler.cmake.in"
   "D:/TYMCZASOWE GRY/CMake/share/cmake-3.17/Modules/CMakeCCompilerABI.c"
   "D:/TYMCZASOWE GRY/CMake/share/cmake-3.17/Modules/CMakeCInformation.cmake"
@@ -114,12 +114,12 @@ set(CMAKE_MAKEFILE_OUTPUTS
 
 # Byproducts of CMake generate step:
 set(CMAKE_MAKEFILE_PRODUCTS
-  "CMakeFiles/3.17.1/CMakeSystem.cmake"
-  "CMakeFiles/3.17.1/CMakeCCompiler.cmake"
-  "CMakeFiles/3.17.1/CMakeCXXCompiler.cmake"
-  "CMakeFiles/3.17.1/CMakeRCCompiler.cmake"
-  "CMakeFiles/3.17.1/CMakeCCompiler.cmake"
-  "CMakeFiles/3.17.1/CMakeCXXCompiler.cmake"
+  "CMakeFiles/3.17.3/CMakeSystem.cmake"
+  "CMakeFiles/3.17.3/CMakeCCompiler.cmake"
+  "CMakeFiles/3.17.3/CMakeCXXCompiler.cmake"
+  "CMakeFiles/3.17.3/CMakeRCCompiler.cmake"
+  "CMakeFiles/3.17.3/CMakeCCompiler.cmake"
+  "CMakeFiles/3.17.3/CMakeCXXCompiler.cmake"
   "CMakeFiles/CMakeDirectoryInformation.cmake"
   )
 

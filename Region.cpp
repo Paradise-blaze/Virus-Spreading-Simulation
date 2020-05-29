@@ -1,5 +1,4 @@
 #include "Region.h"
-
 //Static members
 
 //String converters
@@ -32,10 +31,11 @@ Region::Region(std::string &name, std::string &averAge, std::string &healthCare,
     this->transport = stod(transport);
     this->climate = (climateType) stoi(climate);
     this->population = stol(population);
+    this->susceptible = this->population;
     this->isHistoryEmpty = true;
     initEventHistory();
 
-    historyWidth = 5;
+    historyWidth = 6;
     setHistorySize(4*7); //4 weeks
 }
 
@@ -351,7 +351,7 @@ std::string Region::setScienceDonating(bool cond) {
 
 //spreading methods
 void Region::infectOtherCountry(std::map<Region, double> & countryMap) const {
-    if(this->infectious > 0) {
+    if(this->infectious > 0 && !countryMap.empty()) {
         int neighbourCount, neighbourNumber;
         auto it = countryMap.begin();
 
@@ -368,6 +368,9 @@ void Region::infectOtherCountry(std::map<Region, double> & countryMap) const {
 }
 
 bool Region::getInfectionChance() const {
+    if (this->population)
+        return false;
+
     long int chance = rand() % this->population + 1;
 
     return chance < this->exposed;
@@ -382,16 +385,17 @@ void Region::makeSimulationStep() {
     d_recovered = gamma1 * (double)infectious - mi * (double)recovered;
     d_dead = gamma2 * (double)infectious;
 
-    susceptible += (long int)d_susceptible;
-    exposed += (long int)d_exposed;
-    infectious += (long int)d_infectious;
-    recovered += (long int)d_recovered;
-    dead += (long int)d_dead;
+    susceptible += (d_susceptible);
+    exposed += (d_exposed);
+    infectious += (d_infectious);
+    recovered += (d_recovered);
+    dead += (d_dead);
+    std::cout << susceptible + exposed + infectious + recovered + dead << std::endl;
     population -= dead;
 }
 
 void Region::setPatientZero() {
-    exposed = 1;
+    exposed = 10;
 }
 
 void Region::setHistorySize(int size) {

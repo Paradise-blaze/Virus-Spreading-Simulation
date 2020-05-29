@@ -32,11 +32,11 @@ void Simulation::setMaxDays(long max) {
     maxDays = max;
 }
 
-void Simulation::setRegionZero(string &location) {
+void Simulation::setRegionZero(const string &location) {
     regionZeroName = location;
 }
 
-void Simulation::setSavingDirectory(const string &path) {
+void Simulation::setSavingDirectory(const fs::path &path) {
     savingDirectory = fs::path(path);
     if (!fs::exists(savingDirectory))
         fs::create_directory(savingDirectory);
@@ -91,11 +91,9 @@ void Simulation::saveRegionHistory(Region &regionToSaveHistory){
     int width = regionToSaveHistory.getHistoryWidth();
     for (int i = 0; i < size; i++){
         for (int j = 0; j < width; j++){
-
             regionFile << history[i][j];
-            if(j!=5){
+            if(j!=(width-1))
                 regionFile << ';';
-            }
         }
         regionFile << endl;
     }
@@ -108,15 +106,15 @@ void Simulation::setNumberOfCores(){
 }
 void Simulation::runThreads(int coreUsable){
     vecIterator = regions.begin();
-    for (int i = 0; i < coreUsable; i++){
+    for (int i = 0; i < coreUsable; i++)
         threads.emplace_back(thread(&Simulation::saveData, this));
-    }
-    for (int i = 0; i < coreUsable; i++){
+
+    for (int i = 0; i < coreUsable; i++)
        threads[i].join();
-    }
-    for (int i = 0; i < coreUsable; i++){
+
+    for (int i = 0; i < coreUsable; i++)
         threads.pop_back();
-    }
+
 }
 
 void Simulation::simulate() {
@@ -130,11 +128,12 @@ void Simulation::simulate() {
                 r.addDataHistory(day);
             }
         }
+
+        if (day % savingGap == 0)
+            runThreads(coreUsable);
+
         day++;
 
-        if (day % savingGap == 0) {
-            runThreads(coreUsable);
-        }
     }
     runThreads(coreUsable);
 }
