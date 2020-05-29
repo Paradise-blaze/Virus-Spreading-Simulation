@@ -26,7 +26,7 @@ rawRecord stringToVector(string &record, char delim){
     return values;
 }
 
-rawData loadData(const string &path, char delim, bool header=true){
+rawData loadData(const fs::path &path, char delim, bool header=true){
     rawData data;
     rawRecord  values;
     ifstream file;

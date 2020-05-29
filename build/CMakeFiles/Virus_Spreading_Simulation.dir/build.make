@@ -79,41 +79,41 @@ include CMakeFiles/Virus_Spreading_Simulation.dir/flags.make
 CMakeFiles/Virus_Spreading_Simulation.dir/main.cpp.obj: CMakeFiles/Virus_Spreading_Simulation.dir/flags.make
 CMakeFiles/Virus_Spreading_Simulation.dir/main.cpp.obj: ../main.cpp
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=D:\Studia\Virus-Spreading-Simulation\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/Virus_Spreading_Simulation.dir/main.cpp.obj"
-	D:\MinGW\mingw64\bin\g++.exe  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\Virus_Spreading_Simulation.dir\main.cpp.obj -c D:\Studia\Virus-Spreading-Simulation\main.cpp
+	D:\msys64\mingw64\bin\g++.exe  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\Virus_Spreading_Simulation.dir\main.cpp.obj -c D:\Studia\Virus-Spreading-Simulation\main.cpp
 
 CMakeFiles/Virus_Spreading_Simulation.dir/main.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Virus_Spreading_Simulation.dir/main.cpp.i"
-	D:\MinGW\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E D:\Studia\Virus-Spreading-Simulation\main.cpp > CMakeFiles\Virus_Spreading_Simulation.dir\main.cpp.i
+	D:\msys64\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E D:\Studia\Virus-Spreading-Simulation\main.cpp > CMakeFiles\Virus_Spreading_Simulation.dir\main.cpp.i
 
 CMakeFiles/Virus_Spreading_Simulation.dir/main.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Virus_Spreading_Simulation.dir/main.cpp.s"
-	D:\MinGW\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S D:\Studia\Virus-Spreading-Simulation\main.cpp -o CMakeFiles\Virus_Spreading_Simulation.dir\main.cpp.s
+	D:\msys64\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S D:\Studia\Virus-Spreading-Simulation\main.cpp -o CMakeFiles\Virus_Spreading_Simulation.dir\main.cpp.s
 
 CMakeFiles/Virus_Spreading_Simulation.dir/Region.cpp.obj: CMakeFiles/Virus_Spreading_Simulation.dir/flags.make
 CMakeFiles/Virus_Spreading_Simulation.dir/Region.cpp.obj: ../Region.cpp
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=D:\Studia\Virus-Spreading-Simulation\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/Virus_Spreading_Simulation.dir/Region.cpp.obj"
-	D:\MinGW\mingw64\bin\g++.exe  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\Virus_Spreading_Simulation.dir\Region.cpp.obj -c D:\Studia\Virus-Spreading-Simulation\Region.cpp
+	D:\msys64\mingw64\bin\g++.exe  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\Virus_Spreading_Simulation.dir\Region.cpp.obj -c D:\Studia\Virus-Spreading-Simulation\Region.cpp
 
 CMakeFiles/Virus_Spreading_Simulation.dir/Region.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Virus_Spreading_Simulation.dir/Region.cpp.i"
-	D:\MinGW\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E D:\Studia\Virus-Spreading-Simulation\Region.cpp > CMakeFiles\Virus_Spreading_Simulation.dir\Region.cpp.i
+	D:\msys64\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E D:\Studia\Virus-Spreading-Simulation\Region.cpp > CMakeFiles\Virus_Spreading_Simulation.dir\Region.cpp.i
 
 CMakeFiles/Virus_Spreading_Simulation.dir/Region.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Virus_Spreading_Simulation.dir/Region.cpp.s"
-	D:\MinGW\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S D:\Studia\Virus-Spreading-Simulation\Region.cpp -o CMakeFiles\Virus_Spreading_Simulation.dir\Region.cpp.s
+	D:\msys64\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S D:\Studia\Virus-Spreading-Simulation\Region.cpp -o CMakeFiles\Virus_Spreading_Simulation.dir\Region.cpp.s
 
 CMakeFiles/Virus_Spreading_Simulation.dir/Simulation.cpp.obj: CMakeFiles/Virus_Spreading_Simulation.dir/flags.make
 CMakeFiles/Virus_Spreading_Simulation.dir/Simulation.cpp.obj: ../Simulation.cpp
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=D:\Studia\Virus-Spreading-Simulation\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/Virus_Spreading_Simulation.dir/Simulation.cpp.obj"
-	D:\MinGW\mingw64\bin\g++.exe  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\Virus_Spreading_Simulation.dir\Simulation.cpp.obj -c D:\Studia\Virus-Spreading-Simulation\Simulation.cpp
+	D:\msys64\mingw64\bin\g++.exe  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\Virus_Spreading_Simulation.dir\Simulation.cpp.obj -c D:\Studia\Virus-Spreading-Simulation\Simulation.cpp
 
 CMakeFiles/Virus_Spreading_Simulation.dir/Simulation.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Virus_Spreading_Simulation.dir/Simulation.cpp.i"
-	D:\MinGW\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E D:\Studia\Virus-Spreading-Simulation\Simulation.cpp > CMakeFiles\Virus_Spreading_Simulation.dir\Simulation.cpp.i
+	D:\msys64\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E D:\Studia\Virus-Spreading-Simulation\Simulation.cpp > CMakeFiles\Virus_Spreading_Simulation.dir\Simulation.cpp.i
 
 CMakeFiles/Virus_Spreading_Simulation.dir/Simulation.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Virus_Spreading_Simulation.dir/Simulation.cpp.s"
-	D:\MinGW\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S D:\Studia\Virus-Spreading-Simulation\Simulation.cpp -o CMakeFiles\Virus_Spreading_Simulation.dir\Simulation.cpp.s
+	D:\msys64\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S D:\Studia\Virus-Spreading-Simulation\Simulation.cpp -o CMakeFiles\Virus_Spreading_Simulation.dir\Simulation.cpp.s
 
 # Object files for target Virus_Spreading_Simulation
 Virus_Spreading_Simulation_OBJECTS = \
