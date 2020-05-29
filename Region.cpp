@@ -1,5 +1,5 @@
 #include "Region.h"
-
+#include <math.h>
 //Static members
 
 //String converters
@@ -352,7 +352,7 @@ std::string Region::setScienceDonating(bool cond) {
 
 //spreading methods
 void Region::infectOtherCountry(std::map<Region, double> & countryMap) const {
-    if(this->infectious > 0) {
+    if(this->infectious > 0 && !countryMap.empty()) {
         int neighbourCount, neighbourNumber;
         auto it = countryMap.begin();
 
@@ -369,6 +369,9 @@ void Region::infectOtherCountry(std::map<Region, double> & countryMap) const {
 }
 
 bool Region::getInfectionChance() const {
+    if (this->population)
+        return false;
+
     long int chance = rand() % this->population + 1;
 
     return chance < this->exposed;
@@ -383,16 +386,16 @@ void Region::makeSimulationStep() {
     d_recovered = gamma1 * (double)infectious - mi * (double)recovered;
     d_dead = gamma2 * (double)infectious;
 
-    susceptible += (long int)d_susceptible;
-    exposed += (long int)d_exposed;
-    infectious += (long int)d_infectious;
-    recovered += (long int)d_recovered;
-    dead += (long int)d_dead;
+    susceptible += (long int)round(d_susceptible);
+    exposed += (long int)round(d_exposed);
+    infectious += (long int)round(d_infectious);
+    recovered += (long int)round(d_recovered);
+    dead += (long int)round(d_dead);
     population -= dead;
 }
 
 void Region::setPatientZero() {
-    exposed = 1;
+    infectious = 10;
 }
 
 void Region::setHistorySize(int size) {
