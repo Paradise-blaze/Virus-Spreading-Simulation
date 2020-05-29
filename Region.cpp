@@ -394,7 +394,7 @@ void Region::makeSimulationStep() {
 }
 
 void Region::setPatientZero() {
-    infectious = 10;
+    exposed = 1;
 }
 
 void Region::setHistorySize(int size) {
