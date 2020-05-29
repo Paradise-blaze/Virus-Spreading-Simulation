@@ -110,6 +110,7 @@ int main() {
     Simulation simulation = Simulation(regions, diseaseData);
     simulation.setSavingFrequency(FREQUENCY);
     simulation.setMaxDays(MAX_DAYS);
+    simulation.setRegionZero("Solomon Islands");
     simulation.setSavingDirectory(dirPath / "results");
     //turning simulation on
     simulation.simulate();

@@ -32,7 +32,7 @@ void Simulation::setMaxDays(long max) {
     maxDays = max;
 }
 
-void Simulation::setRegionZero(string &location) {
+void Simulation::setRegionZero(const string &location) {
     regionZeroName = location;
 }
 
@@ -130,11 +130,12 @@ void Simulation::simulate() {
                 r.addDataHistory(day);
             }
         }
+
+        if (day % savingGap == 0)
+            runThreads(coreUsable);
+
         day++;
 
-        if (day % savingGap == 0) {
-            runThreads(coreUsable);
-        }
     }
     runThreads(coreUsable);
 }
