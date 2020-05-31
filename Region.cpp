@@ -51,7 +51,7 @@ void Region::setCoefficients(double Alpha, double Beta, double Gamma1, double Ga
     this->gamma2 = Gamma2;
 }
 
-void Region::initEventHistory() {
+void Region::initEventHistory() { // true znaczy pozytywny efekt false negatywny dla KRAJU
     this->eventHistory.insert(std::make_pair("setSocialDistancing",false));
     this->eventHistory.insert(std::make_pair("setCurfew",false));
     this->eventHistory.insert(std::make_pair("setParks",false));
@@ -59,9 +59,9 @@ void Region::initEventHistory() {
     this->eventHistory.insert(std::make_pair("setMasks",false));
     this->eventHistory.insert(std::make_pair("setGloves",false));
     this->eventHistory.insert(std::make_pair("setBorders",false));
-    this->eventHistory.insert(std::make_pair("setFakeNews",false));
+    this->eventHistory.insert(std::make_pair("setFakeNews",true));// negatywne jesli są
     this->eventHistory.insert(std::make_pair("setEntertainmentCenter",false));
-    this->eventHistory.insert(std::make_pair("setPanic",false));
+    this->eventHistory.insert(std::make_pair("setPanic",true));// tak samo panic cos wykminic z true/false
     this->eventHistory.insert(std::make_pair("setSociety",false));
     this->eventHistory.insert(std::make_pair("setSchools",false));
     this->eventHistory.insert(std::make_pair("setShoppingCenter",false));
@@ -378,20 +378,21 @@ bool Region::getInfectionChance() const {
 
 //simulation methods
 void Region::makeSimulationStep() {
+    population += lambda * susceptible;
+    
     double b_I_S = beta * (double)infectious * (double)susceptible / (double)population;
     d_susceptible = (lambda - mi) * (double)susceptible - b_I_S;
     d_exposed = b_I_S - (mi + alpha) * (double)exposed;
     d_infectious = alpha * (double)exposed - (gamma1 + gamma2 + mi) * (double)infectious;
     d_recovered = gamma1 * (double)infectious - mi * (double)recovered;
-    d_dead = gamma2 * (double)infectious;
+    d_dead = gamma2 * (double)infectious + mi * ((double)susceptible + (double)exposed + (double)infectious + (double)recovered);
 
     susceptible += (d_susceptible);
     exposed += (d_exposed);
     infectious += (d_infectious);
     recovered += (d_recovered);
     dead += (d_dead);
-    std::cout << susceptible + exposed + infectious + recovered + dead << std::endl;
-    population -= dead;
+    population -= (d_dead);
 }
 
 void Region::setPatientZero() {
