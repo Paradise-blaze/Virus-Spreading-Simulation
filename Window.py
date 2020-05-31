@@ -17,6 +17,8 @@ class Window:
     def __init__(self, title):
         self.root = tk.Tk()
         self.title = title
+        self.width = int(720 * 1.618)
+        self.height = 720
         self.img = None
         self.paths = {}
         self.images = {}
@@ -34,12 +36,17 @@ class Window:
     def set_map_path(self, path):
         self.paths["map"] = path
 
+    def set_dimensions(self, width, height):
+        self.width = width
+        self.height = height
+
     def open(self):
         self.root.title(self.title)
         self.load()
         self.scale()
         panel = tk.Label(self.root, image=self.scaled["background"])
         panel.pack(side="bottom", fill="both", expand="yes")
+        self.root.resizable(width=False, height=False)
         self.refresh()
         self.root.mainloop()
 
@@ -49,7 +56,7 @@ class Window:
 
     def scale(self):
         for name in ["background", "map"]:
-            image = self.images[name].resize((250, 250), Image.ANTIALIAS)
+            image = self.images[name].resize((self.width, self.height), Image.ANTIALIAS)
             self.scaled[name] = ImageTk.PhotoImage(image)
 
     def refresh(self):
