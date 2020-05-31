@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Form>
+    <Frame name="content">
+        <Label name="background"/>
+        <LabelFrame name="menu"/>
+    </Frame>
+    <Frame name="menus">
+        <LabelFrame name="initial">
+            <Button name='main' text="tik"/>
+        </LabelFrame>
+        <LabelFrame name="main" >
+            <Button name='initial' text='tak'/>
+        </LabelFrame>
+    </Frame>
+</Form>
