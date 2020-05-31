@@ -378,8 +378,6 @@ bool Region::getInfectionChance() const {
 
 //simulation methods
 void Region::makeSimulationStep() {
-    population += lambda * susceptible;
-    
     double b_I_S = beta * (double)infectious * (double)susceptible / (double)population;
     d_susceptible = (lambda - mi) * (double)susceptible - b_I_S;
     d_exposed = b_I_S - (mi + alpha) * (double)exposed;
@@ -387,12 +385,13 @@ void Region::makeSimulationStep() {
     d_recovered = gamma1 * (double)infectious - mi * (double)recovered;
     d_dead = gamma2 * (double)infectious + mi * ((double)susceptible + (double)exposed + (double)infectious + (double)recovered);
 
+    population += long(lambda * susceptible);
     susceptible += (d_susceptible);
     exposed += (d_exposed);
     infectious += (d_infectious);
     recovered += (d_recovered);
     dead += (d_dead);
-    population -= (d_dead);
+    population -= long(d_dead);
 }
 
 void Region::setPatientZero() {
