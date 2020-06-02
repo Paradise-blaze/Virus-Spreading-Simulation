@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Form>
+    <Frame name="content">
+        <Label name="background"/>
+        <LabelFrame name="menu"/>
+    </Frame>
+    <Frame name="menus">
+        <LabelFrame name="initial">
+            <Button name='main' text="Start" command="start_button"/>
+        </LabelFrame>
+        <LabelFrame name="main" >
+            <Button name='' text='Rozpocznij'/>
+            <Button name='' text='O symulacji'/>
+            <Button name='' text='Wyjdź' command="close_window"/>
+        </LabelFrame>
+    </Frame>
+</Form>
