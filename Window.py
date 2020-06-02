@@ -20,9 +20,9 @@ class Window:
                 if 'command' in options:
                     func = getattr(Window, options['command'], lambda _: None)
                     if func:
-                        elem.config(command=lambda: func(self))
+                        elem.config(command=lambda: func(self, elem))
                 elif tag == "Button":
-                    elem.config(command= lambda: self.change_menu(elem))
+                    elem.config(command=lambda: self.change_menu(elem))
                 for sub in to_add:
                     self.realize(elem, sub)
                 elem.pack()
@@ -32,9 +32,12 @@ class Window:
     def __init__(self, title, xml):
         self.root = self.realize(tk.Tk(), et.parse(xml).getroot())
         self.panel = self.root.nametowidget("content.background")
+        self.menu_pack_options = {}
+        self.menu_children_config_options = {}
+        self.set_options()
         self.menu = self.root.nametowidget("content.menu")
         self.menus = {}
-        self.set_menus()
+        self.load_menus()
         self.title = title
         self.width = int(720 * 1.618)
         self.height = 720
@@ -59,9 +62,25 @@ class Window:
         self.width = width
         self.height = height
 
-    def set_menus(self):
+    def set_options(self):
+        #pack options
+        self.menu_pack_options['side'] = tk.LEFT #horizontal alignment
+        #configurations
+        #self.menu_children_config_options[''] =
+
+    def set_configuration(self, original, copy):
+        for config in original.config():
+            try:
+                copy.config({config: original.cget(config)})
+            except:
+                pass
+
+    def load_menus(self):
         menu_holder = self.root.nametowidget("menus")
         for menu in menu_holder.winfo_children():
+            self.set_configuration(self.menu, menu)
+            for child in menu.winfo_children():
+                child.pack(**self.menu_pack_options)
             menu.pack_forget() #hides menu
             self.menus[menu.winfo_name()] = menu
 
@@ -91,8 +110,20 @@ class Window:
 
     def change_menu(self, elem):
         self.menu.pack_forget()
-        self.menu = self.menus[elem.winfo_name()]
+        name = elem.winfo_name()
+        if name in self.menus:
+            self.menu = self.menus[name]
+
         self.menu.pack()
 
     def refresh(self):
         self.root.after(1000, self.refresh) #refreshes every second
+
+    # button methods
+
+    def start_button(self, elem):
+        self.panel.config(image=self.scaled["map"])
+        self.change_menu(elem)
+
+    def close_window(self, _):
+        self.root.quit()
