@@ -7,13 +7,14 @@ Afghanistan;Uzbekistan
 Albania;Greece
 Albania;Montenegro
 Albania;Serbia
+Albania;Macedonia
 Algeria;Libya
 Algeria;Mali
 Algeria;Mauritania
 Algeria;Morocco
 Algeria;Niger
 Algeria;Tunisia
-Angola;Congo
+Angola;Dem. Rep. Congo
 Angola;Congo
 Angola;Namibia
 Angola;Zambia
@@ -26,7 +27,7 @@ Armenia;Azerbaijan
 Armenia;Georgia
 Armenia;Iran
 Armenia;Turkey
-Austria;Czech Republic
+Austria;Czechia
 Austria;Germany
 Austria;Hungary
 Austria;Italy
@@ -62,9 +63,9 @@ Bolivia;Brazil
 Bolivia;Chile
 Bolivia;Paraguay
 Bolivia;Peru
-Bosnia and Herzegovina;Croatia
-Bosnia and Herzegovina;Montenegro
-Bosnia and Herzegovina;Serbia
+Bosnia and Herz.;Croatia
+Bosnia and Herz.;Montenegro
+Bosnia and Herz.;Serbia
 Botswana;South Africa
 Botswana;Namibia
 Botswana;Zambia
@@ -80,36 +81,37 @@ Brazil;Uruguay
 Brazil;Venezuela
 Brunei;Malaysia
 Bulgaria;Greece
+Bulgaria;Macedonia
 Bulgaria;Romania
 Bulgaria;Serbia
 Bulgaria;Turkey
 Burkina Faso;Benin
-Burkina Faso;Cote d'Ivoire
+Burkina Faso;Côte d'Ivoire
 Burkina Faso;Ghana
 Burkina Faso;Mali
 Burkina Faso;Niger
 Burkina Faso;Togo
-Burundi;Congo
+Burundi;Dem. Rep. Congo
 Burundi;Rwanda
 Burundi;Tanzania
 Cambodia;Laos
 Cambodia;Thailand
 Cambodia;Vietnam
-Cameroon;Central African Republic
+Cameroon;Central African Rep.
 Cameroon;Chad
 Cameroon;Congo
-Cameroon;Equatorial Guinea
+Cameroon;Eq. Guinea
 Cameroon;Gabon
 Cameroon;Nigeria
-Canada;United States
-Central African Republic;Cameroon
-Central African Republic;Chad
-Central African Republic;Congo
-Central African Republic;Congo
-Central African Republic;South Sudan
-Central African Republic;Sudan
+Canada;United States of America
+Central African Rep.;Cameroon
+Central African Rep.;Chad
+Central African Rep.;Dem. Rep. Congo
+Central African Rep.;Congo
+Central African Rep.;S. Sudan
+Central African Rep.;Sudan
 Chad;Cameroon
-Chad;Central African Republic
+Chad;Central African Rep.
 Chad;Libya
 Chad;Niger
 Chad;Nigeria
@@ -136,41 +138,42 @@ Colombia;Brazil
 Colombia;Ecuador
 Colombia;Panama
 Colombia;Peru
-Congo;Tanzania
 Congo;Angola
-Congo;Angola
-Congo;Burundi
 Congo;Cameroon
-Congo;Central African Republic
-Congo;Central African Republic
-Congo;Congo
-Congo;Congo
+Congo;Central African Rep.
+Congo;Dem. Rep. Congo
 Congo;Gabon
-Congo;Rwanda
-Congo;South Sudan
-Congo;Uganda
-Congo;Zambia
 Costa Rica;Nicaragua
 Costa Rica;Panama
-Cote d'Ivoire;Burkina Faso
-Cote d'Ivoire;Ghana
-Cote d'Ivoire;Guinea
-Cote d'Ivoire;Liberia
-Cote d'Ivoire;Mali
-Croatia;Bosnia and Herzegovina
+Côte d'Ivoire;Burkina Faso
+Côte d'Ivoire;Ghana
+Côte d'Ivoire;Guinea
+Côte d'Ivoire;Liberia
+Côte d'Ivoire;Mali
+Croatia;Bosnia and Herz.
 Croatia;Hungary
 Croatia;Montenegro
 Croatia;Serbia
 Croatia;Slovenia
-Czech Republic;Austria
-Czech Republic;Germany
-Czech Republic;Poland
-Czech Republic;Slovakia
+Czechia;Austria
+Czechia;Germany
+Czechia;Poland
+Czechia;Slovakia
+Dem. Rep. Congo;Tanzania
+Dem. Rep. Congo;Angola
+Dem. Rep. Congo;Burundi
+Dem. Rep. Congo;Central African Rep.
+Dem. Rep. Congo;Congo
+Dem. Rep. Congo;Rwanda
+Dem. Rep. Congo;S. Sudan
+Dem. Rep. Congo;Uganda
+Dem. Rep. Congo;Zambia
 Denmark;Germany
 Djibouti;Eritrea
 Djibouti;Ethiopia
 Djibouti;Somalia
-Dominican Republic;Haiti
+Djibouti;Somaliland
+Dominican Rep.;Haiti
 Ecuador;Colombia
 Ecuador;Peru
 Egypt;Israel
@@ -178,20 +181,19 @@ Egypt;Libya
 Egypt;Sudan
 El Salvador;Guatemala
 El Salvador;Honduras
-Equatorial Guinea;Cameroon
-Equatorial Guinea;Gabon
+Eq. Guinea;Cameroon
+Eq. Guinea;Gabon
 Eritrea;Djibouti
 Eritrea;Ethiopia
 Eritrea;Sudan
 Estonia;Russia
 Estonia;Latvia
-Eswatini;South Africa
-Eswatini;Mozambique
 Ethiopia;Djibouti
 Ethiopia;Eritrea
 Ethiopia;Kenya
 Ethiopia;Somalia
-Ethiopia;South Sudan
+Ethiopia;Somaliland
+Ethiopia;S. Sudan
 Ethiopia;Sudan
 Finland;Russia
 Finland;Norway
@@ -200,18 +202,17 @@ France;Belgium
 France;Germany
 France;Italy
 France;Luxembourg
-France;Monaco
 France;Spain
 France;Switzerland
 Gabon;Cameroon
 Gabon;Congo
-Gabon;Equatorial Guinea
+Gabon;Eq. Guinea
 Gambia;Senegal
 Georgia;Russia
 Georgia;Armenia
 Georgia;Azerbaijan
 Georgia;Turkey
-Germany;Czech Republic
+Germany;Czechia
 Germany;Austria
 Germany;Belgium
 Germany;Denmark
@@ -220,18 +221,18 @@ Germany;Luxembourg
 Germany;Netherlands
 Germany;Poland
 Germany;Switzerland
-Ghana;Cote d'Ivoire
+Ghana;Côte d'Ivoire
 Ghana;Burkina Faso
 Ghana;Togo
-Gibraltar;Spain
 Greece;Albania
 Greece;Bulgaria
 Greece;Turkey
+Greece;Macedonia
 Guatemala;Belize
 Guatemala;El Salvador
 Guatemala;Honduras
 Guatemala;Mexico
-Guinea;Cote d'Ivoire
+Guinea;Côte d'Ivoire
 Guinea;Guinea-Bissau
 Guinea;Liberia
 Guinea;Mali
@@ -242,7 +243,7 @@ Guinea-Bissau;Senegal
 Guyana;Venezuela
 Guyana;Brazil
 Guyana;Suriname
-Haiti;Dominican Republic
+Haiti;Dominican Rep.
 Honduras;El Salvador
 Honduras;Guatemala
 Honduras;Nicaragua
@@ -259,7 +260,7 @@ India;China
 India;Myanmar
 India;Nepal
 India;Pakistan
-Indonesia;Timor
+Indonesia;Timor-Leste
 Indonesia;Malaysia
 Indonesia;Papua New Guinea
 Iran;Afghanistan
@@ -282,7 +283,6 @@ Israel;Jordan
 Israel;Lebanon
 Italy;Austria
 Italy;France
-Italy;San Marino
 Italy;Slovenia
 Italy;Switzerland
 Jordan;Syria
@@ -297,7 +297,7 @@ Kazakhstan;Uzbekistan
 Kenya;Tanzania
 Kenya;Ethiopia
 Kenya;Somalia
-Kenya;South Sudan
+Kenya;S. Sudan
 Kenya;Uganda
 Kuwait;Iraq
 Kuwait;Saudi Arabia
@@ -317,7 +317,7 @@ Latvia;Lithuania
 Lebanon;Syria
 Lebanon;Israel
 Lesotho;South Africa
-Liberia;Cote d'Ivoire
+Liberia;Côte d'Ivoire
 Liberia;Guinea
 Liberia;Sierra Leone
 Libya;Algeria
@@ -333,13 +333,17 @@ Lithuania;Poland
 Luxembourg;Belgium
 Luxembourg;France
 Luxembourg;Germany
+Macedonia;Bulgaria
+Macedonia;Serbia
+Macedonia;Greece
+Macedonia;Albania
 Malawi;Tanzania
 Malawi;Mozambique
 Malawi;Zambia
 Malaysia;Brunei
 Malaysia;Indonesia
 Malaysia;Thailand
-Mali;Cote d'Ivoire
+Mali;Côte d'Ivoire
 Mali;Algeria
 Mali;Burkina Faso
 Mali;Guinea
@@ -349,23 +353,21 @@ Mali;Senegal
 Mauritania;Algeria
 Mauritania;Mali
 Mauritania;Senegal
-Mexico;United States
+Mexico;United States of America
 Mexico;Belize
 Mexico;Guatemala
 Moldova;Romania
 Moldova;Ukraine
-Monaco;France
 Mongolia;Russia
 Mongolia;China
 Montenegro;Albania
-Montenegro;Bosnia and Herzegovina
+Montenegro;Bosnia and Herz.
 Montenegro;Croatia
 Montenegro;Serbia
 Morocco;Algeria
 Morocco;Spain
 Mozambique;South Africa
 Mozambique;Tanzania
-Mozambique;Eswatini
 Mozambique;Malawi
 Mozambique;Zambia
 Mozambique;Zimbabwe
@@ -419,7 +421,7 @@ Peru;Brazil
 Peru;Chile
 Peru;Colombia
 Peru;Ecuador
-Poland;Czech Republic
+Poland;Czechia
 Poland;Russia
 Poland;Belarus
 Poland;Germany
@@ -447,11 +449,10 @@ Russia;Mongolia
 Russia;Norway
 Russia;Poland
 Russia;Ukraine
-Rwanda;Congo
+Rwanda;Dem. Rep. Congo
 Rwanda;Tanzania
 Rwanda;Burundi
 Rwanda;Uganda
-San Marino;Italy
 Saudi Arabia;Iraq
 Saudi Arabia;Jordan
 Saudi Arabia;Kuwait
@@ -465,15 +466,16 @@ Senegal;Guinea-Bissau
 Senegal;Mali
 Senegal;Mauritania
 Serbia;Albania
-Serbia;Bosnia and Herzegovina
+Serbia;Bosnia and Herz.
 Serbia;Bulgaria
 Serbia;Croatia
 Serbia;Hungary
 Serbia;Montenegro
 Serbia;Romania
+Serbia;Macedonia
 Sierra Leone;Guinea
 Sierra Leone;Liberia
-Slovakia;Czech Republic
+Slovakia;Czechia
 Slovakia;Austria
 Slovakia;Hungary
 Slovakia;Poland
@@ -485,30 +487,32 @@ Slovenia;Italy
 Somalia;Djibouti
 Somalia;Ethiopia
 Somalia;Kenya
+Somalia;Somaliland
+Somaliland;Somalia
+Somaliland;Ethiopia
+Somaliland;Djibouti
 South Africa;Botswana
-South Africa;Eswatini
 South Africa;Lesotho
 South Africa;Mozambique
 South Africa;Namibia
 South Africa;Zimbabwe
 South Korea;North Korea
-South Sudan;Central African Republic
-South Sudan;Congo
-South Sudan;Ethiopia
-South Sudan;Kenya
-South Sudan;Sudan
-South Sudan;Uganda
+S. Sudan;Central African Rep.
+S. Sudan;Dem. Rep. Congo
+S. Sudan;Ethiopia
+S. Sudan;Kenya
+S. Sudan;Sudan
+S. Sudan;Uganda
 Spain;France
-Spain;Gibraltar
 Spain;Morocco
 Spain;Portugal
-Sudan;Central African Republic
+Sudan;Central African Rep.
 Sudan;Chad
 Sudan;Egypt
 Sudan;Eritrea
 Sudan;Ethiopia
 Sudan;Libya
-Sudan;South Sudan
+Sudan;S. Sudan
 Suriname;Brazil
 Suriname;Guyana
 Sweden;Finland
@@ -527,7 +531,7 @@ Tajikistan;China
 Tajikistan;Kyrgyzstan
 Tajikistan;Uzbekistan
 Tanzania;Burundi
-Tanzania;Congo
+Tanzania;Dem. Rep. Congo
 Tanzania;Kenya
 Tanzania;Malawi
 Tanzania;Mozambique
@@ -538,7 +542,7 @@ Thailand;Laos
 Thailand;Cambodia
 Thailand;Malaysia
 Thailand;Myanmar
-Timor;Indonesia
+Timor-Leste;Indonesia
 Togo;Benin
 Togo;Burkina Faso
 Togo;Ghana
@@ -556,11 +560,11 @@ Turkmenistan;Iran
 Turkmenistan;Afghanistan
 Turkmenistan;Kazakhstan
 Turkmenistan;Uzbekistan
-Uganda;Congo
+Uganda;Dem. Rep. Congo
 Uganda;Tanzania
 Uganda;Kenya
 Uganda;Rwanda
-Uganda;South Sudan
+Uganda;S. Sudan
 Ukraine;Moldova
 Ukraine;Russia
 Ukraine;Belarus
@@ -571,8 +575,8 @@ Ukraine;Slovakia
 United Arab Emirates;Oman
 United Arab Emirates;Saudi Arabia
 United Kingdom;Ireland
-United States;Canada
-United States;Mexico
+United States of America;Canada
+United States of America;Mexico
 Uruguay;Argentina
 Uruguay;Brazil
 Uzbekistan;Afghanistan
@@ -591,7 +595,7 @@ Yemen;Saudi Arabia
 Zambia;Tanzania
 Zambia;Angola
 Zambia;Botswana
-Zambia;Congo
+Zambia;Dem. Rep. Congo
 Zambia;Malawi
 Zambia;Mozambique
 Zambia;Namibia
