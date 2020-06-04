@@ -145,11 +145,6 @@ Congo;Dem. Rep. Congo
 Congo;Gabon
 Costa Rica;Nicaragua
 Costa Rica;Panama
-Côte d'Ivoire;Burkina Faso
-Côte d'Ivoire;Ghana
-Côte d'Ivoire;Guinea
-Côte d'Ivoire;Liberia
-Côte d'Ivoire;Mali
 Croatia;Bosnia and Herz.
 Croatia;Hungary
 Croatia;Montenegro
@@ -159,6 +154,11 @@ Czechia;Austria
 Czechia;Germany
 Czechia;Poland
 Czechia;Slovakia
+Côte d'Ivoire;Burkina Faso
+Côte d'Ivoire;Ghana
+Côte d'Ivoire;Guinea
+Côte d'Ivoire;Liberia
+Côte d'Ivoire;Mali
 Dem. Rep. Congo;Tanzania
 Dem. Rep. Congo;Angola
 Dem. Rep. Congo;Burundi
@@ -453,6 +453,12 @@ Rwanda;Dem. Rep. Congo
 Rwanda;Tanzania
 Rwanda;Burundi
 Rwanda;Uganda
+S. Sudan;Central African Rep.
+S. Sudan;Dem. Rep. Congo
+S. Sudan;Ethiopia
+S. Sudan;Kenya
+S. Sudan;Sudan
+S. Sudan;Uganda
 Saudi Arabia;Iraq
 Saudi Arabia;Jordan
 Saudi Arabia;Kuwait
@@ -497,12 +503,6 @@ South Africa;Mozambique
 South Africa;Namibia
 South Africa;Zimbabwe
 South Korea;North Korea
-S. Sudan;Central African Rep.
-S. Sudan;Dem. Rep. Congo
-S. Sudan;Ethiopia
-S. Sudan;Kenya
-S. Sudan;Sudan
-S. Sudan;Uganda
 Spain;France
 Spain;Morocco
 Spain;Portugal
