@@ -47,6 +47,11 @@ def drawMap(data, i):
     plt.close(fg)
 
 
+def mergeDataFrames(df1, df2, df3):
+    tmp = df1.set_index('name').join(df2.set_index('name'))
+    return tmp.join(df3)
+
+
 def main():             #te instrukcje trzeba będzie przerzucić do main w main.py
     step = 0
     dataFrameList = []
@@ -64,17 +69,15 @@ def main():             #te instrukcje trzeba będzie przerzucić do main w main
         currentDead['dead'].append(0)
         pandemyDict[file] = True
 
-    df = pd.DataFrame(currentDead, columns=['name', 'dead'])
-    df = df.set_index('name')
-    tmp = world.set_index('name').join(countries.set_index('name'))
-    merged = tmp.join(df)
+    dead = pd.DataFrame(currentDead, columns=['name', 'dead'])
+    dead = dead.set_index('name')
+    merged = mergeDataFrames(world, countries, dead)
 
     while True in pandemyDict.values():
         for frame in dataFrameList:
             if step in range(frame.startDay, frame.endDay+1):
-                df.loc[frame.name]['dead'] = frame.deadList[step-frame.startDay]
-                tmp = world.set_index('name').join(countries.set_index('name'))
-                merged = tmp.join(df)
+                dead.loc[frame.name]['dead'] = frame.deadList[step-frame.startDay]
+                merged = mergeDataFrames(world, countries, dead)
             if step > frame.endDay:
                 pandemyDict[frame.name] = False
             drawMap(merged, step)
