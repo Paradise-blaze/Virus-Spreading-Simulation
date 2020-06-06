@@ -36,15 +36,21 @@ def drawMap(data, i):
     data.plot(column='dead', ax=ax, cmap='Reds', linewidth=0.5, edgecolor='0.8',
               missing_kwds={"color": "white"})
 
-    script_dir = os.path.dirname(__file__)
-    results_dir = os.path.join(script_dir, 'maps/')
+    scriptDir = os.path.dirname(__file__)
+    resultsDir = os.path.join(scriptDir, 'maps/')
 
-    if not os.path.isdir(results_dir):
-        os.makedirs(results_dir)
+    if not os.path.isdir(resultsDir):
+        os.makedirs(resultsDir)
 
     plt.axis('off')
     plt.savefig('maps/'+str(i)+'.png', facecolor=fg.get_facecolor())
     plt.close(fg)
+
+
+def clearDirectory(path):
+    if os.path.isdir(path):
+        for file in os.scandir(path):
+            os.remove(file)
 
 
 def mergeDataFrames(df1, df2, df3):
@@ -55,31 +61,33 @@ def mergeDataFrames(df1, df2, df3):
 def main():             #te instrukcje trzeba będzie przerzucić do main w main.py
     step = 0
     dataFrameList = []
-    pandemyDict = {}
-    currentDead = {'name': [], 'dead': []}
+    pandemicCondition = {}    # country/bool pair
+    dataToMap = {'name': [], 'dead': []}
 
-    world = gp.read_file(gp.datasets.get_path('naturalearth_lowres'))
-    countries = pd.read_csv('resources/Country.csv', header=0, sep=';')
-    countries = clearData(countries)
+    geopandasCountries = gp.read_file(gp.datasets.get_path('naturalearth_lowres'))
+    csvCountries = pd.read_csv('resources/Country.csv', header=0, sep=';')
+    csvCountries = clearData(csvCountries)
 
     for file in os.listdir('results/'):
         country = DataFrame('results/'+file)
         dataFrameList.append(country)
-        currentDead['name'].append(country.name)
-        currentDead['dead'].append(0)
-        pandemyDict[file] = True
+        dataToMap['name'].append(country.name)
+        dataToMap['dead'].append(0)
+        pandemicCondition[file] = True
 
-    dead = pd.DataFrame(currentDead, columns=['name', 'dead'])
-    dead = dead.set_index('name')
-    merged = mergeDataFrames(world, countries, dead)
+    deadInCountries = pd.DataFrame(dataToMap, columns=['name', 'dead'])
+    deadInCountries = deadInCountries.set_index('name')
+    merged = mergeDataFrames(geopandasCountries, csvCountries, deadInCountries)
 
-    while True in pandemyDict.values():
+    clearDirectory(os.path.dirname(__file__)+"/maps/")
+
+    while True in pandemicCondition.values():
         for frame in dataFrameList:
             if step in range(frame.startDay, frame.endDay+1):
-                dead.loc[frame.name]['dead'] = frame.deadList[step-frame.startDay]
-                merged = mergeDataFrames(world, countries, dead)
+                deadInCountries.loc[frame.name]['dead'] = frame.deadList[step-frame.startDay]
+                merged = mergeDataFrames(geopandasCountries, csvCountries, deadInCountries)
             if step > frame.endDay:
-                pandemyDict[frame.name] = False
+                pandemicCondition[frame.name] = False
             drawMap(merged, step)
             step += 1
 
