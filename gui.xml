@@ -9,21 +9,25 @@
             <Button name='main' text="Start" command="start_button"/>
         </LabelFrame>
         <LabelFrame name="main" >
-            <Button name='diseases' text='Wybierz zarazę'/>
-            <Button name='custom' text='Własna symulacja'/>
-            <Button name='about' text='O symulacji'/>
-            <Button name='' text='Wyjdź' command="close_window"/>
+            <Button name='diseases' text='Choose a disease'/>
+            <Button name='custom' text='Custom simulation'/>
+            <Button name='languages' text='Language'/>
+            <Button name='about' text='About simulation'/>
+            <Button name='' text='Exit' command="close_window"/>
         </LabelFrame>
         <LabelFrame name="diseases" >
-            <Button name='main' text='Powrót'/>
+            <Button name='main' text='Return'/>
         </LabelFrame>
         <LabelFrame name='custom' >
-            <Button name='main' text='Powrót'/>
+            <Button name='main' text='Return'/>
+        </LabelFrame>
+        <LabelFrame name='languages'>
+            <Button name='main' text='Return'/>
         </LabelFrame>
         <LabelFrame name='about' >
-            <Button name='' text='Informacje' command=""/>
-            <Button name='' text='Autorzy' command=""/>
-            <Button name='main' text='Powrót'/>
+            <Button name='' text='About application' command=""/>
+            <Button name='' text='Authors' command=""/>
+            <Button name='main' text='Return'/>
         </LabelFrame>
     </Frame>
 </Form>
