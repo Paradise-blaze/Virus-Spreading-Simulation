@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Form>
     <Frame name="content">
-        <Label name="background"/>
+        <Label name="panel"/>
         <LabelFrame name="menu"/>
     </Frame>
     <Frame name="menus">
@@ -28,6 +28,14 @@
             <Button name='' text='About application' command=""/>
             <Button name='' text='Authors' command=""/>
             <Button name='main' text='Return'/>
+        </LabelFrame>
+        <LabelFrame name='confirmation' >
+            <Button name='simulation' text='Confirm' command="run_simulation"/>
+            <Button name='diseases' text='Return' command="clear_choice"/>
+        </LabelFrame>
+        <LabelFrame name='simulation' >
+            <Button name='' text='Phantom Button :)'/>
+            <Button name='main' text='Exit'/>
         </LabelFrame>
     </Frame>
 </Form>
