@@ -6,10 +6,6 @@
 
 #IncludeRegexTransform: 
 
-/home/szymon/Pulpit/Programowanie/Symulacje/Virus-Spreading-Simulation/Region.cpp
-Region.h
-/home/szymon/Pulpit/Programowanie/Symulacje/Virus-Spreading-Simulation/Region.h
-
 /home/szymon/Pulpit/Programowanie/Symulacje/Virus-Spreading-Simulation/Region.h
 iostream
 -
@@ -19,10 +15,6 @@ map
 -
 functional
 -
-
-/home/szymon/Pulpit/Programowanie/Symulacje/Virus-Spreading-Simulation/Simulation.cpp
-Simulation.h
-/home/szymon/Pulpit/Programowanie/Symulacje/Virus-Spreading-Simulation/Simulation.h
 
 /home/szymon/Pulpit/Programowanie/Symulacje/Virus-Spreading-Simulation/Simulation.h
 iostream
