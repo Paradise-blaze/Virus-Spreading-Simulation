@@ -1,18 +1,4 @@
-/snap/clion/112/bin/cmake/linux/bin/cmake -DCMAKE_BUILD_TYPE=Debug -DCMAKE_C_COMPILER=/usr/bin/gcc-10 -DCMAKE_CXX_COMPILER=/usr/bin/g++-10 -G "CodeBlocks - Unix Makefiles" /home/szymon/Pulpit/Programowanie/Symulacje/Virus-Spreading-Simulation
--- The C compiler identification is GNU 10.1.0
--- The CXX compiler identification is GNU 10.1.0
--- Check for working C compiler: /usr/bin/gcc-10
--- Check for working C compiler: /usr/bin/gcc-10 -- works
--- Detecting C compiler ABI info
--- Detecting C compiler ABI info - done
--- Detecting C compile features
--- Detecting C compile features - done
--- Check for working CXX compiler: /usr/bin/g++-10
--- Check for working CXX compiler: /usr/bin/g++-10 -- works
--- Detecting CXX compiler ABI info
--- Detecting CXX compiler ABI info - done
--- Detecting CXX compile features
--- Detecting CXX compile features - done
+/snap/clion/112/bin/cmake/linux/bin/cmake -DCMAKE_BUILD_TYPE=Debug -G "CodeBlocks - Unix Makefiles" /home/szymon/Pulpit/Programowanie/C++/Virus-Spreading-Simulation
 -- Configuring done
 -- Generating done
--- Build files have been written to: /home/szymon/Pulpit/Programowanie/Symulacje/Virus-Spreading-Simulation/cmake-build-debug
+-- Build files have been written to: /home/szymon/Pulpit/Programowanie/C++/Virus-Spreading-Simulation/cmake-build-debug
