@@ -15,12 +15,20 @@ class Window:
 
     @staticmethod
     def get_translations(from_lang, to_lang):
+        from_lang = from_lang.lower()
+        to_lang = to_lang.lower()
         with open(Window.translations_path) as f:
             translations = csv.DictReader(f)
             dictionary = {}
             for t in translations:
                 dictionary[t[from_lang]] = t[to_lang]
         return dictionary
+
+    @staticmethod
+    def translate(dictionary, word):
+        if word in dictionary and dictionary[word] is not None and dictionary[word] != '':
+            return dictionary[word]
+        return word
 
     def realize(self, root, to_add):
         if to_add.tag == "Form":
@@ -225,9 +233,7 @@ class Window:
         self.root.mainloop()
 
     def trans(self, word):
-        if word in self.dictionary and self.dictionary[word] is not None and self.dictionary[word] != '':
-            return self.dictionary[word]
-        return word
+        return Window.translate(self.dictionary, word)
 
     def clear_panel(self):
         for child in self.panel.winfo_children():
