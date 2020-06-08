@@ -34,19 +34,19 @@ cmake_force:
 SHELL = /bin/sh
 
 # The CMake executable.
-CMAKE_COMMAND = /snap/clion/112/bin/cmake/linux/bin/cmake
+CMAKE_COMMAND = /snap/clion/114/bin/cmake/linux/bin/cmake
 
 # The command to remove a file.
-RM = /snap/clion/112/bin/cmake/linux/bin/cmake -E remove -f
+RM = /snap/clion/114/bin/cmake/linux/bin/cmake -E remove -f
 
 # Escaping for special characters.
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/szymon/Pulpit/Programowanie/C++/Virus-Spreading-Simulation
+CMAKE_SOURCE_DIR = /home/szymon/Pulpit/Programowanie/Symulacje/Virus-Spreading-Simulation
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/szymon/Pulpit/Programowanie/C++/Virus-Spreading-Simulation/cmake-build-debug
+CMAKE_BINARY_DIR = /home/szymon/Pulpit/Programowanie/Symulacje/Virus-Spreading-Simulation/cmake-build-debug
 
 # Include any dependencies generated for this target.
 include CMakeFiles/Virus_Spreading_Simulation.dir/depend.make
@@ -59,42 +59,42 @@ include CMakeFiles/Virus_Spreading_Simulation.dir/flags.make
 
 CMakeFiles/Virus_Spreading_Simulation.dir/main.cpp.o: CMakeFiles/Virus_Spreading_Simulation.dir/flags.make
 CMakeFiles/Virus_Spreading_Simulation.dir/main.cpp.o: ../main.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/szymon/Pulpit/Programowanie/C++/Virus-Spreading-Simulation/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/Virus_Spreading_Simulation.dir/main.cpp.o"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Virus_Spreading_Simulation.dir/main.cpp.o -c /home/szymon/Pulpit/Programowanie/C++/Virus-Spreading-Simulation/main.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/szymon/Pulpit/Programowanie/Symulacje/Virus-Spreading-Simulation/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/Virus_Spreading_Simulation.dir/main.cpp.o"
+	/usr/bin/g++-10  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Virus_Spreading_Simulation.dir/main.cpp.o -c /home/szymon/Pulpit/Programowanie/Symulacje/Virus-Spreading-Simulation/main.cpp
 
 CMakeFiles/Virus_Spreading_Simulation.dir/main.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Virus_Spreading_Simulation.dir/main.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/szymon/Pulpit/Programowanie/C++/Virus-Spreading-Simulation/main.cpp > CMakeFiles/Virus_Spreading_Simulation.dir/main.cpp.i
+	/usr/bin/g++-10 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/szymon/Pulpit/Programowanie/Symulacje/Virus-Spreading-Simulation/main.cpp > CMakeFiles/Virus_Spreading_Simulation.dir/main.cpp.i
 
 CMakeFiles/Virus_Spreading_Simulation.dir/main.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Virus_Spreading_Simulation.dir/main.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/szymon/Pulpit/Programowanie/C++/Virus-Spreading-Simulation/main.cpp -o CMakeFiles/Virus_Spreading_Simulation.dir/main.cpp.s
+	/usr/bin/g++-10 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/szymon/Pulpit/Programowanie/Symulacje/Virus-Spreading-Simulation/main.cpp -o CMakeFiles/Virus_Spreading_Simulation.dir/main.cpp.s
 
 CMakeFiles/Virus_Spreading_Simulation.dir/Region.cpp.o: CMakeFiles/Virus_Spreading_Simulation.dir/flags.make
 CMakeFiles/Virus_Spreading_Simulation.dir/Region.cpp.o: ../Region.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/szymon/Pulpit/Programowanie/C++/Virus-Spreading-Simulation/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/Virus_Spreading_Simulation.dir/Region.cpp.o"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Virus_Spreading_Simulation.dir/Region.cpp.o -c /home/szymon/Pulpit/Programowanie/C++/Virus-Spreading-Simulation/Region.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/szymon/Pulpit/Programowanie/Symulacje/Virus-Spreading-Simulation/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/Virus_Spreading_Simulation.dir/Region.cpp.o"
+	/usr/bin/g++-10  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Virus_Spreading_Simulation.dir/Region.cpp.o -c /home/szymon/Pulpit/Programowanie/Symulacje/Virus-Spreading-Simulation/Region.cpp
 
 CMakeFiles/Virus_Spreading_Simulation.dir/Region.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Virus_Spreading_Simulation.dir/Region.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/szymon/Pulpit/Programowanie/C++/Virus-Spreading-Simulation/Region.cpp > CMakeFiles/Virus_Spreading_Simulation.dir/Region.cpp.i
+	/usr/bin/g++-10 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/szymon/Pulpit/Programowanie/Symulacje/Virus-Spreading-Simulation/Region.cpp > CMakeFiles/Virus_Spreading_Simulation.dir/Region.cpp.i
 
 CMakeFiles/Virus_Spreading_Simulation.dir/Region.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Virus_Spreading_Simulation.dir/Region.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/szymon/Pulpit/Programowanie/C++/Virus-Spreading-Simulation/Region.cpp -o CMakeFiles/Virus_Spreading_Simulation.dir/Region.cpp.s
+	/usr/bin/g++-10 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/szymon/Pulpit/Programowanie/Symulacje/Virus-Spreading-Simulation/Region.cpp -o CMakeFiles/Virus_Spreading_Simulation.dir/Region.cpp.s
 
 CMakeFiles/Virus_Spreading_Simulation.dir/Simulation.cpp.o: CMakeFiles/Virus_Spreading_Simulation.dir/flags.make
 CMakeFiles/Virus_Spreading_Simulation.dir/Simulation.cpp.o: ../Simulation.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/szymon/Pulpit/Programowanie/C++/Virus-Spreading-Simulation/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/Virus_Spreading_Simulation.dir/Simulation.cpp.o"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Virus_Spreading_Simulation.dir/Simulation.cpp.o -c /home/szymon/Pulpit/Programowanie/C++/Virus-Spreading-Simulation/Simulation.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/szymon/Pulpit/Programowanie/Symulacje/Virus-Spreading-Simulation/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/Virus_Spreading_Simulation.dir/Simulation.cpp.o"
+	/usr/bin/g++-10  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Virus_Spreading_Simulation.dir/Simulation.cpp.o -c /home/szymon/Pulpit/Programowanie/Symulacje/Virus-Spreading-Simulation/Simulation.cpp
 
 CMakeFiles/Virus_Spreading_Simulation.dir/Simulation.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Virus_Spreading_Simulation.dir/Simulation.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/szymon/Pulpit/Programowanie/C++/Virus-Spreading-Simulation/Simulation.cpp > CMakeFiles/Virus_Spreading_Simulation.dir/Simulation.cpp.i
+	/usr/bin/g++-10 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/szymon/Pulpit/Programowanie/Symulacje/Virus-Spreading-Simulation/Simulation.cpp > CMakeFiles/Virus_Spreading_Simulation.dir/Simulation.cpp.i
 
 CMakeFiles/Virus_Spreading_Simulation.dir/Simulation.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Virus_Spreading_Simulation.dir/Simulation.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/szymon/Pulpit/Programowanie/C++/Virus-Spreading-Simulation/Simulation.cpp -o CMakeFiles/Virus_Spreading_Simulation.dir/Simulation.cpp.s
+	/usr/bin/g++-10 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/szymon/Pulpit/Programowanie/Symulacje/Virus-Spreading-Simulation/Simulation.cpp -o CMakeFiles/Virus_Spreading_Simulation.dir/Simulation.cpp.s
 
 # Object files for target Virus_Spreading_Simulation
 Virus_Spreading_Simulation_OBJECTS = \
@@ -110,7 +110,7 @@ Virus_Spreading_Simulation: CMakeFiles/Virus_Spreading_Simulation.dir/Region.cpp
 Virus_Spreading_Simulation: CMakeFiles/Virus_Spreading_Simulation.dir/Simulation.cpp.o
 Virus_Spreading_Simulation: CMakeFiles/Virus_Spreading_Simulation.dir/build.make
 Virus_Spreading_Simulation: CMakeFiles/Virus_Spreading_Simulation.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/szymon/Pulpit/Programowanie/C++/Virus-Spreading-Simulation/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Linking CXX executable Virus_Spreading_Simulation"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/szymon/Pulpit/Programowanie/Symulacje/Virus-Spreading-Simulation/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Linking CXX executable Virus_Spreading_Simulation"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/Virus_Spreading_Simulation.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
@@ -123,6 +123,6 @@ CMakeFiles/Virus_Spreading_Simulation.dir/clean:
 .PHONY : CMakeFiles/Virus_Spreading_Simulation.dir/clean
 
 CMakeFiles/Virus_Spreading_Simulation.dir/depend:
-	cd /home/szymon/Pulpit/Programowanie/C++/Virus-Spreading-Simulation/cmake-build-debug && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/szymon/Pulpit/Programowanie/C++/Virus-Spreading-Simulation /home/szymon/Pulpit/Programowanie/C++/Virus-Spreading-Simulation /home/szymon/Pulpit/Programowanie/C++/Virus-Spreading-Simulation/cmake-build-debug /home/szymon/Pulpit/Programowanie/C++/Virus-Spreading-Simulation/cmake-build-debug /home/szymon/Pulpit/Programowanie/C++/Virus-Spreading-Simulation/cmake-build-debug/CMakeFiles/Virus_Spreading_Simulation.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/szymon/Pulpit/Programowanie/Symulacje/Virus-Spreading-Simulation/cmake-build-debug && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/szymon/Pulpit/Programowanie/Symulacje/Virus-Spreading-Simulation /home/szymon/Pulpit/Programowanie/Symulacje/Virus-Spreading-Simulation /home/szymon/Pulpit/Programowanie/Symulacje/Virus-Spreading-Simulation/cmake-build-debug /home/szymon/Pulpit/Programowanie/Symulacje/Virus-Spreading-Simulation/cmake-build-debug /home/szymon/Pulpit/Programowanie/Symulacje/Virus-Spreading-Simulation/cmake-build-debug/CMakeFiles/Virus_Spreading_Simulation.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : CMakeFiles/Virus_Spreading_Simulation.dir/depend
 

@@ -1,3 +1,3 @@
-/home/szymon/Pulpit/Programowanie/C++/Virus-Spreading-Simulation/cmake-build-debug/CMakeFiles/rebuild_cache.dir
-/home/szymon/Pulpit/Programowanie/C++/Virus-Spreading-Simulation/cmake-build-debug/CMakeFiles/edit_cache.dir
-/home/szymon/Pulpit/Programowanie/C++/Virus-Spreading-Simulation/cmake-build-debug/CMakeFiles/Virus_Spreading_Simulation.dir
+/home/szymon/Pulpit/Programowanie/Symulacje/Virus-Spreading-Simulation/cmake-build-debug/CMakeFiles/rebuild_cache.dir
+/home/szymon/Pulpit/Programowanie/Symulacje/Virus-Spreading-Simulation/cmake-build-debug/CMakeFiles/edit_cache.dir
+/home/szymon/Pulpit/Programowanie/Symulacje/Virus-Spreading-Simulation/cmake-build-debug/CMakeFiles/Virus_Spreading_Simulation.dir
