@@ -153,6 +153,52 @@ def gather_global_data(frame_list):
     return dictionary
 
 
+def plot_world(world):
+    time = [i for i in range(0, len(world['dead']))]
+
+    plt.plot(time, world['susceptible'], label='Susceptible')
+    plt.plot(time, world['exposed'], label='Exposed')
+    plt.plot(time, world['infectious'], label='Infectious')
+    plt.plot(time, world['recovered'], label='Recovered')
+    plt.plot(time, world['dead'], label='Dead')
+
+    plt.ylabel('Number of people')
+    plt.xlabel('Time (in days)')
+    plt.legend()
+
+    script_dir = os.path.dirname(__file__)
+    results_dir = os.path.join(script_dir, 'plots/')
+
+    if not os.path.isdir(results_dir):
+        os.makedirs(results_dir)
+
+    plt.savefig('plots/world_plot.png')
+    plt.close()
+
+
+def plot_country(country):
+    time = [i for i in range(0, len(country.dead))]
+
+    plt.plot(time, country.susceptible, label='Susceptible')
+    plt.plot(time, country.exposed, label='Exposed')
+    plt.plot(time, country.infectious, label='Infectious')
+    plt.plot(time, country.recovered, label='Recovered')
+    plt.plot(time, country.dead, label='Dead')
+
+    plt.ylabel('Number of people')
+    plt.xlabel('Time (in days)')
+    plt.legend()
+
+    script_dir = os.path.dirname(__file__)
+    results_dir = os.path.join(script_dir, 'plots/')
+
+    if not os.path.isdir(results_dir):
+        os.makedirs(results_dir)
+
+    plt.savefig('plots/'+country.name+'_plot.png')
+    plt.close()
+
+
 if __name__ == "__main__":
     data_frame_list = []            #tutaj będą zapisywane dane z plików
     load_data(data_frame_list)
@@ -162,9 +208,15 @@ if __name__ == "__main__":
     worldStats = gather_global_data(data_frame_list)       #słownik do generowania wykresu dla całego świata
 
     clear_directory(os.path.dirname(__file__)+"/maps/")         #ta funkcja czyści cały folder, być może będzie potrzebna implementacja kasująca wybrany rodzaj map
+    clear_directory(os.path.dirname(__file__) + "/plots/")
 
-    mapGen.generate_maps('susceptible', data_frame_list)
-    mapGen.generate_maps('exposed', data_frame_list)
-    mapGen.generate_maps('infectious', data_frame_list)
-    mapGen.generate_maps('recovered', data_frame_list)
-    mapGen.generate_maps('dead', data_frame_list)
+    #mapGen.generate_maps('susceptible', data_frame_list)
+    #mapGen.generate_maps('exposed', data_frame_list)
+    #mapGen.generate_maps('infectious', data_frame_list)
+    #mapGen.generate_maps('recovered', data_frame_list)
+    #mapGen.generate_maps('dead', data_frame_list)
+
+    plot_world(worldStats)
+
+    for frame in data_frame_list:
+        plot_country(frame)
