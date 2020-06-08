@@ -35,7 +35,7 @@
         </LabelFrame>
         <LabelFrame name='simulation' >
             <Button name='' text='Phantom Button :)'/>
-            <Button name='main' text='Exit'/>
+            <Button name='main' text='Powrót'/>
         </LabelFrame>
     </Frame>
 </Form>

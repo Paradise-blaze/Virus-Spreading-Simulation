@@ -3,7 +3,7 @@ import xml.etree.ElementTree as et
 from PIL import Image, ImageTk
 import time
 import csv
-from subprocess import call
+import subprocess
 import os
 
 
@@ -102,6 +102,7 @@ class Window:
         self.dictionary = {}
         self.disease_choice = ''
         self.region_choice = ''
+        self.process = None
 
     def set_title(self, title):
         self.root.title(title)
@@ -224,7 +225,7 @@ class Window:
         self.root.mainloop()
 
     def trans(self, word):
-        if word in self.dictionary and self.dictionary[word] is not None:
+        if word in self.dictionary and self.dictionary[word] is not None and self.dictionary[word] != '':
             return self.dictionary[word]
         return word
 
@@ -285,6 +286,6 @@ class Window:
 
     def run_simulation(self, widget):
         program = os.path.join('cmake-build-debug', 'Virus_Spreading_Simulation')
-        call([program, self.disease_choice, self.region_choice])
+        self.process = subprocess.Popen([program, self.disease_choice, self.region_choice])
         self.change_menu(widget)
 
