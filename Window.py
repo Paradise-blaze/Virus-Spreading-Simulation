@@ -5,6 +5,7 @@ import time
 import csv
 import subprocess
 import os
+from DataFrame import MapGenerator
 
 
 class Window:
@@ -79,7 +80,7 @@ class Window:
             if Window.diseases_names is None:
                 Window.load_diseases_names()
             return Window.diseases_names
-        elif menu_name == 'panel':
+        elif menu_name == 'regions':
             if Window.regions_names is None:
                 Window.load_regions_names()
             return Window.regions_names
@@ -91,8 +92,10 @@ class Window:
         self.menu_pack_options = {}
         self.menu_children_config_options = {}
         self.current_language = 'english'
+        #self.map_generator = MapGenerator('resources/Country.csv')
         self.menu = None
         self.menus = {}
+        self.hided_children = {}
         self.width = int(720 * 1.618)
         self.height = 720
         self.img = None
@@ -136,11 +139,16 @@ class Window:
         scaled = image.resize((self.width, self.height), Image.ANTIALIAS)
         return ImageTk.PhotoImage(scaled)
 
+    def load_panel_menus(self):
+        self.set_dynamic_buttons(self.panel, False, 'regions')
+        Window.hide_children(self.panel)
+
     def load_all(self):
         self.load_images()
         self.set_menu_options()
         self.menu = self.root.nametowidget("content.menu")
         self.load_menus()
+        self.load_panel_menus()
         self.menu = self.menus['initial']
 
     def set_all(self):
@@ -164,18 +172,18 @@ class Window:
             return lambda: self.set_language(button_name)
         elif menu_name == 'diseases':
             return lambda: self.choose_disease(button_name)
-        elif menu_name == 'panel':
+        elif menu_name == 'regions':
             return lambda: self.choose_region(button_name)
 
     # To use there should exist:
     # -get_custom_names
     # -get_button_function
     # methods for a menu name
-    def set_dynamic_buttons(self, menu, with_return=True):
-        menu_name = menu.winfo_name()
-        if menu_name not in ['languages', 'diseases', 'panel']:
+    def set_dynamic_buttons(self, menu, with_return=True, name=None):
+        menu_name = menu.winfo_name() if name is None else name
+        if menu_name not in ['languages', 'diseases', 'regions']:
             return
-
+        self.hided_children[menu_name] = []
         names = Window.get_custom_names(menu_name)
         i = 0
         max_in_row = 10
@@ -183,6 +191,7 @@ class Window:
         for name in names:
             if i % max_in_row == 0:
                 frame = tk.Frame(menu, name='frame{}'.format(i//max_in_row))
+                self.hided_children[menu_name].append(frame)
                 frame.pack(side=tk.TOP)
             button = tk.Button(frame, name=Window.purify_name(name), text=self.trans(name))
             func = self.get_button_function(menu_name, name.lower())
@@ -229,23 +238,34 @@ class Window:
             return self.dictionary[word]
         return word
 
-    def clear_panel(self):
-        for child in self.panel.winfo_children():
+    @staticmethod
+    def destroy_childs(widget):
+        for child in widget.winfo_children():
             child.destroy()
+
+    @staticmethod
+    def hide_children(widget):
+        for child in widget.winfo_children():
+            child.pack_forget()
 
     def change_menu(self, arg):
         self.menu.pack_forget()
         name = arg if isinstance(arg, str) else arg.winfo_name()
         if name in self.menus:
             self.menu = self.menus[name]
-        self.clear_panel()
+        Window.hide_children(self.panel)
         self.menu.pack()
 
     def refresh(self):
+        if self.process is not None:
+            #print(self.process.pid, self.process.returncode, self.process.stdout)
+            if True: #expectation a info from a process
+                pass
         self.root.after(1000, self.refresh)  # refreshes every second
 
     def display_regions(self):
-        self.set_dynamic_buttons(self.panel, False)
+        for child in self.hided_children['regions']:
+            child.pack(side=tk.TOP)
 
     # Button functions
     def start_button(self, widget):
@@ -270,10 +290,9 @@ class Window:
 
     def choose_disease(self, disease_name):
         self.disease_choice = disease_name
-        if len(self.panel.winfo_children()) == 0:
-            self.panel.pack_forget()
-            self.display_regions()
-            self.panel.pack()
+        #self.panel.pack_forget()
+        self.display_regions()
+        #self.panel.pack()
 
     def choose_region(self, region_name):
         self.region_choice = region_name
@@ -284,8 +303,15 @@ class Window:
         self.region_choice = ''
         self.change_menu(widget)
 
+    # running and displaying simulation
+
     def run_simulation(self, widget):
         program = os.path.join('cmake-build-debug', 'Virus_Spreading_Simulation')
         self.process = subprocess.Popen([program, self.disease_choice, self.region_choice])
         self.change_menu(widget)
+
+
+
+    def display_next_map(self):
+        pass
 
