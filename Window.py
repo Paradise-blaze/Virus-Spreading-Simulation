@@ -246,7 +246,7 @@ class Window:
         return word
 
     @staticmethod
-    def destroy_childs(widget):
+    def destroy_children(widget):
         for child in widget.winfo_children():
             child.destroy()
 
