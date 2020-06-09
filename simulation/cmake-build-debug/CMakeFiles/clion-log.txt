@@ -1,0 +1,4 @@
+/usr/bin/cmake -DCMAKE_BUILD_TYPE=Debug -G "CodeBlocks - Unix Makefiles" /home/proxpxd/Desktop/moje_programy/simulations/Virus-Spreading-Simulation/simulation
+-- Configuring done
+-- Generating done
+-- Build files have been written to: /home/proxpxd/Desktop/moje_programy/simulations/Virus-Spreading-Simulation/simulation/cmake-build-debug
