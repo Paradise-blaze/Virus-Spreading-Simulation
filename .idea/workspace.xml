@@ -11,7 +11,33 @@
     </configurations>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f2db2f40-daab-415d-aca6-20a5f820c010" name="Default Changelist" comment="" />
+    <list default="true" id="f2db2f40-daab-415d-aca6-20a5f820c010" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DataFrame.py" beforeDir="false" afterPath="$PROJECT_DIR$/DataFrame.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/maps/susceptible0.png" beforeDir="false" afterPath="$PROJECT_DIR$/maps/susceptible0.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/maps/susceptible1.png" beforeDir="false" afterPath="$PROJECT_DIR$/maps/susceptible1.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/maps/susceptible10.png" beforeDir="false" afterPath="$PROJECT_DIR$/maps/susceptible10.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/maps/susceptible11.png" beforeDir="false" afterPath="$PROJECT_DIR$/maps/susceptible11.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/maps/susceptible12.png" beforeDir="false" afterPath="$PROJECT_DIR$/maps/susceptible12.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/maps/susceptible2.png" beforeDir="false" afterPath="$PROJECT_DIR$/maps/susceptible2.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/maps/susceptible3.png" beforeDir="false" afterPath="$PROJECT_DIR$/maps/susceptible3.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/maps/susceptible4.png" beforeDir="false" afterPath="$PROJECT_DIR$/maps/susceptible4.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/maps/susceptible5.png" beforeDir="false" afterPath="$PROJECT_DIR$/maps/susceptible5.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/maps/susceptible6.png" beforeDir="false" afterPath="$PROJECT_DIR$/maps/susceptible6.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/maps/susceptible7.png" beforeDir="false" afterPath="$PROJECT_DIR$/maps/susceptible7.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/maps/susceptible8.png" beforeDir="false" afterPath="$PROJECT_DIR$/maps/susceptible8.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/maps/susceptible9.png" beforeDir="false" afterPath="$PROJECT_DIR$/maps/susceptible9.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/plots/China_plot.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/plots/Colombia_plot.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/plots/Dem. Rep. Congo_plot.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/plots/Germany_plot.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/plots/Mexico_plot.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/plots/Solomon Islands_plot.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/plots/United States of America_plot.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/plots/world_plot.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/results/Solomon Islands" beforeDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -36,12 +62,64 @@
     <property name="cf.first.check.clang-format" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="Python.DataFrame">
     <configuration name="Virus_Spreading_Simulation" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="Virus_Spreading_Simulation" TARGET_NAME="Virus_Spreading_Simulation" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="Virus_Spreading_Simulation" RUN_TARGET_NAME="Virus_Spreading_Simulation">
       <method v="2">
         <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
       </method>
     </configuration>
+    <configuration name="DataFrame" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="Virus-Spreading-Simulation" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/DataFrame.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="main" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="Virus-Spreading-Simulation" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/main.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <list>
+      <item itemvalue="Python.DataFrame" />
+      <item itemvalue="Python.main" />
+    </list>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Python.DataFrame" />
+        <item itemvalue="Python.main" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="SvnConfiguration">
     <configuration />
@@ -80,26 +158,42 @@
       <screen x="83" y="27" width="1837" height="1053" />
     </state>
     <state x="313" y="285" width="424" height="484" key="FileChooserDialogImpl/83.27.1837.1053@83.27.1837.1053" timestamp="1589389369208" />
-    <state width="1791" height="278" key="GridCell.Tab.0.bottom" timestamp="1590770672356">
+    <state width="1814" height="278" key="GridCell.Tab.0.bottom" timestamp="1591702913367">
       <screen x="83" y="27" width="1837" height="1053" />
     </state>
-    <state width="1791" height="278" key="GridCell.Tab.0.bottom/83.27.1837.1053@83.27.1837.1053" timestamp="1590770672356" />
-    <state width="1791" height="278" key="GridCell.Tab.0.center" timestamp="1590770672356">
+    <state width="1814" height="278" key="GridCell.Tab.0.bottom/83.27.1837.1053@83.27.1837.1053" timestamp="1591702913367" />
+    <state width="1814" height="278" key="GridCell.Tab.0.center" timestamp="1591702913366">
       <screen x="83" y="27" width="1837" height="1053" />
     </state>
-    <state width="1791" height="278" key="GridCell.Tab.0.center/83.27.1837.1053@83.27.1837.1053" timestamp="1590770672356" />
-    <state width="1791" height="278" key="GridCell.Tab.0.left" timestamp="1590770672355">
+    <state width="1814" height="278" key="GridCell.Tab.0.center/83.27.1837.1053@83.27.1837.1053" timestamp="1591702913366" />
+    <state width="1814" height="278" key="GridCell.Tab.0.left" timestamp="1591702913366">
       <screen x="83" y="27" width="1837" height="1053" />
     </state>
-    <state width="1791" height="278" key="GridCell.Tab.0.left/83.27.1837.1053@83.27.1837.1053" timestamp="1590770672355" />
-    <state width="1791" height="278" key="GridCell.Tab.0.right" timestamp="1590770672356">
+    <state width="1814" height="278" key="GridCell.Tab.0.left/83.27.1837.1053@83.27.1837.1053" timestamp="1591702913366" />
+    <state width="1814" height="278" key="GridCell.Tab.0.right" timestamp="1591702913367">
       <screen x="83" y="27" width="1837" height="1053" />
     </state>
-    <state width="1791" height="278" key="GridCell.Tab.0.right/83.27.1837.1053@83.27.1837.1053" timestamp="1590770672356" />
-    <state x="668" y="236" width="657" height="633" key="RollbackChangesDialog" timestamp="1590319294006">
+    <state width="1814" height="278" key="GridCell.Tab.0.right/83.27.1837.1053@83.27.1837.1053" timestamp="1591702913367" />
+    <state width="1814" height="344" key="GridCell.Tab.1.bottom" timestamp="1591652544675">
       <screen x="83" y="27" width="1837" height="1053" />
     </state>
-    <state x="668" y="236" width="657" height="633" key="RollbackChangesDialog/83.27.1837.1053@83.27.1837.1053" timestamp="1590319294006" />
+    <state width="1814" height="344" key="GridCell.Tab.1.bottom/83.27.1837.1053@83.27.1837.1053" timestamp="1591652544675" />
+    <state width="1814" height="344" key="GridCell.Tab.1.center" timestamp="1591652544674">
+      <screen x="83" y="27" width="1837" height="1053" />
+    </state>
+    <state width="1814" height="344" key="GridCell.Tab.1.center/83.27.1837.1053@83.27.1837.1053" timestamp="1591652544674" />
+    <state width="1814" height="344" key="GridCell.Tab.1.left" timestamp="1591652544674">
+      <screen x="83" y="27" width="1837" height="1053" />
+    </state>
+    <state width="1814" height="344" key="GridCell.Tab.1.left/83.27.1837.1053@83.27.1837.1053" timestamp="1591652544674" />
+    <state width="1814" height="344" key="GridCell.Tab.1.right" timestamp="1591652544675">
+      <screen x="83" y="27" width="1837" height="1053" />
+    </state>
+    <state width="1814" height="344" key="GridCell.Tab.1.right/83.27.1837.1053@83.27.1837.1053" timestamp="1591652544675" />
+    <state x="668" y="236" width="657" height="633" key="RollbackChangesDialog" timestamp="1591647549027">
+      <screen x="83" y="27" width="1837" height="1053" />
+    </state>
+    <state x="668" y="236" width="657" height="633" key="RollbackChangesDialog/83.27.1837.1053@83.27.1837.1053" timestamp="1591647549027" />
     <state x="611" y="166" width="770" height="773" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser" timestamp="1590325050954">
       <screen x="83" y="27" width="1837" height="1053" />
     </state>
