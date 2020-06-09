@@ -85,7 +85,7 @@ void Simulation::saveData(){
 }
 
 void Simulation::saveRegionHistory(Region &regionToSaveHistory){
-    int ** history = regionToSaveHistory.getHistory();
+    double ** history = regionToSaveHistory.getHistory();
     fstream regionFile;
     regionFile.open( savingDirectory / regionToSaveHistory.getName(), fstream::out | fstream::app);
     int size = regionToSaveHistory.getHistoryDay();
@@ -125,8 +125,11 @@ void Simulation::simulate() {
         for(Region &r: regions) {
             if (r.isExposed()){
                 r.makeSimulationStep();
-                randomInfectFrom(r);
                 r.addDataHistory(day);
+                if (r.getInfectionChance()){
+                    randomInfectFrom(r);
+                }
+                
             }
         }
 
@@ -139,9 +142,10 @@ void Simulation::simulate() {
     runThreadsToSave(coreUsable);
 }
 
-void Simulation::randomInfectFrom(const Region &region) {
-    if(region.getInfectionChance())
-        region.infectOtherCountry(region.getConnections());
-    if(region.getInfectionChance())
-        region.infectOtherCountry(region.getFlights());
+void Simulation::randomInfectFrom(Region &region) {
+    if(!region.getConnections().empty()){
+        region.infectOtherCountryByLand(region.getConnections());
+    } else {
+        region.infectOtherCountryByAir(regions, region);
+    }
 }

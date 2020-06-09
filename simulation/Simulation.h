@@ -40,6 +40,7 @@ private:
     vector<Region>::iterator getRegionIt(string &);
     void initialiseRegionZero();
     void randomInfectFrom(Region &);
+    
 public:
     Simulation();
     Simulation(vector<Region> &, vector<string> &);

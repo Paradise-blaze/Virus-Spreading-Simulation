@@ -6,6 +6,10 @@
 
 #IncludeRegexTransform: 
 
+D:/Studia/Virus-Spreading-Simulation/simulation/Region.cpp
+Region.h
+D:/Studia/Virus-Spreading-Simulation/simulation/Region.h
+
 D:/Studia/Virus-Spreading-Simulation/simulation/Region.h
 iostream
 -
@@ -15,24 +19,4 @@ map
 -
 functional
 -
-
-D:/Studia/Virus-Spreading-Simulation/simulation/Simulation.cpp
-Simulation.h
-D:/Studia/Virus-Spreading-Simulation/simulation/Simulation.h
-
-D:/Studia/Virus-Spreading-Simulation/simulation/Simulation.h
-iostream
--
-vector
--
-mutex
--
-fstream
--
-filesystem
--
-thread
--
-Region.h
-D:/Studia/Virus-Spreading-Simulation/simulation/Region.h
 

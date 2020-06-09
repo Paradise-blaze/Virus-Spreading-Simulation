@@ -74,7 +74,7 @@ void Region::initEventHistory() { // true znaczy pozytywny efekt false negatywny
 }
 
 bool Region::isExposed() const {
-    return getExposed() + getInfectious() > 0;
+    return (getExposed() > 0.5 || getInfectious() > 0.5);
 }
 
 //getters
@@ -91,13 +91,13 @@ double Region::getLambda() const { return this->lambda; }
 double Region::getMi() const { return this->mi; };
 long int Region::getPopulation() const { return this->population; }
 long int Region::getSusceptible() const { return this->susceptible; }
-long int Region::getExposed() const { return this->exposed; }
-long int Region::getInfectious() const { return this->infectious; }
+double Region::getExposed() const { return this->exposed; }
+double Region::getInfectious() const { return this->infectious; }
 long int Region::getRecovered() const { return this->recovered; }
 long int Region::getDead() const { return this->dead; }
 std::map<Region,double>& Region::getConnections() const { return this->connections; }
 std::map<Region,double>& Region::getFlights() const { return this->flights; }
-int ** Region::getHistory() const { return this->history; }
+double ** Region::getHistory() const { return this->history; }
 int Region::getHistorySize() const { return this->historySize; }
 int Region::getHistoryWidth() const { return this->historyWidth; }
 bool Region::getIsHistoryEmpty() const { return this->isHistoryEmpty; }
@@ -379,12 +379,16 @@ void Region::infectOtherCountryByAir(std::vector<Region> & regions, Region & reg
         for (int i = 0; i < regionNumber; ++i) {
             it++;
         }
+        if (it->getInfectious() > 0 || it->getExposed() > 0 || this->infectious < 1){
+            return;
+        }
         if (regionZero.getName() == it->getName()){
             it++;
-            if (it->infectious==0 && regionZero.getInfectionChance()){
             it->infectious = 1;
-            }
+        } else {
+            it->infectious = 1;  
         }
+        this->infectious--;
     }
 }
 
@@ -423,14 +427,15 @@ void Region::makeSimulationStep() {
 }
 
 void Region::setPatientZero() {
-    exposed = 10;
+    exposed = 1;
+    //infected = 1;
 }
 
 void Region::setHistorySize(int size) {
     historySize = size;
-    history = new int*[size];
+    history = new double*[size];
     for(int i = 0; i < size; i++)
-        history[i] = new int[historyWidth];
+        history[i] = new double[historyWidth];
 }
 
 
