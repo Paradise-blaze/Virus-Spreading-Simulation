@@ -70,11 +70,12 @@ private:
     mutable std::map<Region, double> connections;
     mutable std::map<Region, double> flights;
     std::map<std::string, bool> eventHistory;
-    int **history = nullptr;
+    double **history = nullptr;
     int historyDay = 0;
     int historySize = 0;
     int historyWidth = 0;
     bool isHistoryEmpty = true;
+    double transportCoef;
 
 public:
     //initialize
@@ -104,13 +105,13 @@ public:
     [[nodiscard]] double getMi() const;
     [[nodiscard]] long int getPopulation() const;
     [[nodiscard]] long int getSusceptible() const;
-    [[nodiscard]] long int getExposed() const;
-    [[nodiscard]] long int getInfectious() const;
+    [[nodiscard]] double getExposed() const;
+    [[nodiscard]] double getInfectious() const;
     [[nodiscard]] long int getRecovered() const;
     [[nodiscard]] long int getDead() const;
     std::map<Region, double>& getConnections() const;
     std::map<Region, double>& getFlights() const;
-    int ** getHistory() const;
+    double ** getHistory() const;
     int getHistorySize() const;
     int getHistoryWidth() const;
     bool getIsHistoryEmpty() const;
@@ -151,7 +152,8 @@ public:
     std::string setScienceDonating(bool);
 
     //spreading methods
-    void infectOtherCountry(std::map<Region, double> &) const;
+    void infectOtherCountryByLand(std::map<Region, double> &) const;
+    void infectOtherCountryByAir(std::vector<Region> &,Region &) const;
     bool getInfectionChance() const;
 
     //simulation methods

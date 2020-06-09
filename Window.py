@@ -129,6 +129,9 @@ class Window:
     def set_program_path(self, path):
         self.paths["program"] = path
 
+    def set_results_path(self, path):
+        self.paths["results"] = path
+
     def set_dimensions(self, width, height):
         self.width = width
         self.height = height
@@ -171,6 +174,7 @@ class Window:
 
     def set_generator(self):
         self.map_generator.set_csv_path(self.paths['regions'])
+        #self.map_generator.set_results_path(self.paths['results'])
         self.map_generator.clear_data()
 
     @staticmethod

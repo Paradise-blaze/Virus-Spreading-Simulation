@@ -85,7 +85,7 @@ void Simulation::saveData(){
 }
 
 void Simulation::saveRegionHistory(Region &regionToSaveHistory){
-    int ** history = regionToSaveHistory.getHistory();
+    double ** history = regionToSaveHistory.getHistory();
     fstream regionFile;
     regionFile.open( savingDirectory / regionToSaveHistory.getName(), fstream::out | fstream::app);
     int size = regionToSaveHistory.getHistoryDay();
@@ -105,7 +105,7 @@ void Simulation::saveRegionHistory(Region &regionToSaveHistory){
 void Simulation::setNumberOfCores(){
     coreUsable = max(1u,thread::hardware_concurrency());
 }
-void Simulation::runThreads(int coreUsable){
+void Simulation::runThreadsToSave(int coreUsable){
     vecIterator = regions.begin();
     for (int i = 0; i < coreUsable; i++)
         threads.emplace_back(thread(&Simulation::saveData, this));
@@ -125,23 +125,27 @@ void Simulation::simulate() {
         for(Region &r: regions) {
             if (r.isExposed()){
                 r.makeSimulationStep();
-                randomInfectFrom(r);
                 r.addDataHistory(day);
+                if (r.getInfectionChance()){
+                    randomInfectFrom(r);
+                }
+                
             }
         }
 
         if (day % savingGap == 0)
-            runThreads(coreUsable);
+            runThreadsToSave(coreUsable);
 
         day++;
 
     }
-    runThreads(coreUsable);
+    runThreadsToSave(coreUsable);
 }
 
-void Simulation::randomInfectFrom(const Region &region) {
-    if(region.getInfectionChance())
-        region.infectOtherCountry(region.getConnections());
-    if(region.getInfectionChance())
-        region.infectOtherCountry(region.getFlights());
+void Simulation::randomInfectFrom(Region &region) {
+    if(!region.getConnections().empty()){
+        region.infectOtherCountryByLand(region.getConnections());
+    } else {
+        region.infectOtherCountryByAir(regions, region);
+    }
 }

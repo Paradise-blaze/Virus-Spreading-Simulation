@@ -33,6 +33,7 @@ Region::Region(std::string &name, std::string &averAge, std::string &healthCare,
     this->population = stol(population);
     this->susceptible = this->population;
     this->isHistoryEmpty = true;
+    this->transportCoef = this->transport / MAX_TRANSPORT;
     initEventHistory();
 
     historyWidth = 6;
@@ -59,9 +60,9 @@ void Region::initEventHistory() { // true znaczy pozytywny efekt false negatywny
     this->eventHistory.insert(std::make_pair("setMasks",false));
     this->eventHistory.insert(std::make_pair("setGloves",false));
     this->eventHistory.insert(std::make_pair("setBorders",false));
-    this->eventHistory.insert(std::make_pair("setFakeNews",true));// negatywne jesli są
+    this->eventHistory.insert(std::make_pair("setFakeNews",false));// wszystkioe na false z powodu wpisywania fakenews i panic !cond
     this->eventHistory.insert(std::make_pair("setEntertainmentCenter",false));
-    this->eventHistory.insert(std::make_pair("setPanic",true));// tak samo panic cos wykminic z true/false
+    this->eventHistory.insert(std::make_pair("setPanic",false));// tak samo panic cos wykminic z true/false
     this->eventHistory.insert(std::make_pair("setSociety",false));
     this->eventHistory.insert(std::make_pair("setSchools",false));
     this->eventHistory.insert(std::make_pair("setShoppingCenter",false));
@@ -73,7 +74,7 @@ void Region::initEventHistory() { // true znaczy pozytywny efekt false negatywny
 }
 
 bool Region::isExposed() const {
-    return getExposed() + getInfectious() > 0;
+    return (getExposed() > 0.5 || getInfectious() > 0.5);
 }
 
 //getters
@@ -90,13 +91,13 @@ double Region::getLambda() const { return this->lambda; }
 double Region::getMi() const { return this->mi; };
 long int Region::getPopulation() const { return this->population; }
 long int Region::getSusceptible() const { return this->susceptible; }
-long int Region::getExposed() const { return this->exposed; }
-long int Region::getInfectious() const { return this->infectious; }
+double Region::getExposed() const { return this->exposed; }
+double Region::getInfectious() const { return this->infectious; }
 long int Region::getRecovered() const { return this->recovered; }
 long int Region::getDead() const { return this->dead; }
 std::map<Region,double>& Region::getConnections() const { return this->connections; }
 std::map<Region,double>& Region::getFlights() const { return this->flights; }
-int ** Region::getHistory() const { return this->history; }
+double ** Region::getHistory() const { return this->history; }
 int Region::getHistorySize() const { return this->historySize; }
 int Region::getHistoryWidth() const { return this->historyWidth; }
 bool Region::getIsHistoryEmpty() const { return this->isHistoryEmpty; }
@@ -222,7 +223,7 @@ std::string Region::decreaseTrade() {
 }
 
 std::string Region::setFakeNews(bool cond) {
-    if(cond) {
+    if(!cond) { //!cond 
         this->beta *= FAKE_NEWS_C;
         this->gamma1 /= FAKE_NEWS_C;
         this->gamma2 *= FAKE_NEWS_C;
@@ -244,7 +245,7 @@ std::string Region::setEntertainmentCenter(bool cond) {
 }
 
 std::string Region::setPanic(bool cond) {
-    if(cond) {
+    if(!cond) { //!cond
         this->alpha *= PANIC_C;
         this->beta *= PANIC_C;
         this->gamma1 /= PANIC_C;
@@ -350,8 +351,8 @@ std::string Region::setScienceDonating(bool cond) {
 }
 
 //spreading methods
-void Region::infectOtherCountry(std::map<Region, double> & countryMap) const {
-    if(this->infectious > 0 && !countryMap.empty()) {
+void Region::infectOtherCountryByLand(std::map<Region, double> & countryMap) const {
+    if((this->infectious > 0 || this->exposed > 0) && !countryMap.empty()) {
         int neighbourCount, neighbourNumber;
         auto it = countryMap.begin();
 
@@ -367,13 +368,43 @@ void Region::infectOtherCountry(std::map<Region, double> & countryMap) const {
     }
 }
 
+void Region::infectOtherCountryByAir(std::vector<Region> & regions, Region & regionZero) const {
+    if(this->infectious > 0 || this->exposed > 0) {
+        int regionCount, regionNumber;
+        auto it = regions.begin();
+
+        regionCount = regions.size();
+        regionNumber = static_cast<int>(rand()) % regionCount;
+
+        for (int i = 0; i < regionNumber; ++i) {
+            it++;
+        }
+        if (it->getInfectious() > 0 || it->getExposed() > 0 || this->infectious < 1){
+            return;
+        }
+        if (regionZero.getName() == it->getName()){
+            it++;
+            it->infectious = 1;
+        } else {
+            it->infectious = 1;  
+        }
+        this->infectious--;
+    }
+}
+
 bool Region::getInfectionChance() const {
-    if (this->population)
+    long int chance = -1;
+    if(((double)rand()/(RAND_MAX))<this->transportCoef){
+        chance = rand() % this->population + 1;
+    } else {
+        chance = -1;
+    }
+
+    if(chance != -1){
+        return chance < this->exposed;
+    } else {
         return false;
-
-    long int chance = rand() % this->population + 1;
-
-    return chance < this->exposed;
+    }
 }
 
 //simulation methods
@@ -392,17 +423,19 @@ void Region::makeSimulationStep() {
     recovered += (d_recovered);
     dead += (d_dead);
     population -= long(d_dead);
+    
 }
 
 void Region::setPatientZero() {
-    exposed = 10;
+    exposed = 1;
+    //infected = 1;
 }
 
 void Region::setHistorySize(int size) {
     historySize = size;
-    history = new int*[size];
+    history = new double*[size];
     for(int i = 0; i < size; i++)
-        history[i] = new int[historyWidth];
+        history[i] = new double[historyWidth];
 }
 
 
