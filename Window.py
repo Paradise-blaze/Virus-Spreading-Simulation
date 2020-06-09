@@ -9,10 +9,14 @@ from DataFrame import MapGenerator
 
 
 class Window:
-    translations_path = os.path.join('resources', 'translations.csv')
+    translations_path = ''
     languages_names = None
     diseases_names = None
     regions_names = None
+
+    @staticmethod
+    def set_translations_path(path):
+        Window.translations_path = path
 
     @staticmethod
     def get_translations(from_lang, to_lang):
