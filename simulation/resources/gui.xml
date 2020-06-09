@@ -34,11 +34,14 @@
             <Button name='diseases' text='Return' command="clear_choice"/>
         </LabelFrame>
         <LabelFrame name='simulation' >
-            <Button name='susceptible' text='Susceptible' command="display"/>
-            <Button name='exposed' text='Exposed' command="display"/>
-            <Button name='infectious' text='Infectious' command="display"/>
-            <Button name='recovered' text='Recovered' command="display"/>
-            <Button name='dead' text='Dead' command="display"/>
+            <Button name='susceptible' text='Susceptible' command="select_type"/>
+            <Button name='exposed' text='Exposed' command="select_type"/>
+            <Button name='infectious' text='Infectious' command="select_type"/>
+            <Button name='recovered' text='Recovered' command="select_type"/>
+            <Button name='dead' text='Dead' command="select_type"/>
+            <Button name='main' text='Powrót'/>
+        </LabelFrame>
+        <LabelFrame name='map' >
             <Button name='main' text='Powrót'/>
         </LabelFrame>
     </Frame>
