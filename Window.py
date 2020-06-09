@@ -106,6 +106,8 @@ class Window:
         self.dictionary = {}
         self.disease_choice = ''
         self.region_choice = ''
+        self.slide_num = 0
+        self.map_type_choice = None
         self.process = None
 
     def set_title(self, title):
@@ -174,7 +176,7 @@ class Window:
 
     def set_generator(self):
         self.map_generator.set_csv_path(self.paths['regions'])
-        #self.map_generator.set_results_path(self.paths['results'])
+        self.map_generator.set_result_path(self.paths['results'])
         self.map_generator.clear_data()
 
     @staticmethod
@@ -248,8 +250,12 @@ class Window:
     def open(self):
         self.load_all()
         self.set_all()
+        self.disease_choice = "SARS"
+        self.region_choice = "United States of America"
+        self.map_type_choice = "exposed"
+        self.paths['animation'] = os.path.join(self.paths['results'], self.disease_choice, self.region_choice, 'maps')
+        self.display()
 
-        self.refresh()
         self.root.mainloop()
 
     def trans(self, word):
@@ -274,13 +280,6 @@ class Window:
             self.menu = self.menus[name]
         Window.hide_children(self.panel)
         self.menu.pack()
-
-    def refresh(self):
-        if self.process is not None:
-            #print(self.process.pid, self.process.returncode, self.process.stdout)
-            if True: #expectation a info from a process
-                pass
-        self.root.after(1000, self.refresh)  # refreshes every second
 
     def display_regions(self):
         for child in self.hided_children['regions']:
@@ -309,9 +308,7 @@ class Window:
 
     def choose_disease(self, disease_name):
         self.disease_choice = disease_name
-        #self.panel.pack_forget()
         self.display_regions()
-        #self.panel.pack()
 
     def choose_region(self, region_name):
         self.region_choice = region_name
@@ -322,21 +319,48 @@ class Window:
         self.region_choice = ''
         self.change_menu(widget)
 
-    # running and displaying simulation
+    def select_type(self, widget):
+        self.map_type_choice = widget.winfo_name()
+        self.change_menu("map")
 
+    # running and displaying simulation
     def run_simulation(self, widget):
         self.process = subprocess.Popen([self.paths['program'], self.disease_choice, self.region_choice])
         self.change_menu(widget)
+        self.wait_for_simulation()
 
-    def generate_animation(self):
-        pass#self.map_generator.load_data_frames(DISEASE, REGION)
+    def wait_for_simulation(self):
+        if self.process is not None and self.process.poll() is not None:
+            self.map_generator.set_directory(self.disease_choice, self.region_choice)
+            self.process = None
+            self.wait_for_map_type_choice()
+        else:
+            self.root.after(100, self.wait_for_simulation)  # refreshes every second
 
-    def display(self, widget):
-        if not False: #"If not generated" in the future
-            pass
-            #self.map_generator.generate_maps(widget.winfo_name(), self.disease_choice, self.region_choice)
-            #generate_maps(WHAT)
+    def wait_for_map_type_choice(self):
+        if self.map_type_choice is not None:
+            self.map_generator.generate_maps(self.map_type_choice)
+            self.wait_for_generator()
+        else:
+            self.root.after(100, self.wait_for_map_type_choice)
 
-    def display_next_map(self):
-        pass
+    def wait_for_generator(self):
+        if self.map_generator.check_status(self.map_type_choice):
+            self.paths['animation'] = os.path.join(self.paths['results'], self.disease_choice, self.region_choice, 'maps')
+            self.slide_num = 0
+            self.display()
+        else:
+            self.root.after(100, self.wait_for_map_type_choice)
+
+    def display(self):
+        self.slide_num += 1
+        print(self.slide_num)
+        file = os.path.join(self.paths['animation'], "{}{}.png".format(self.map_type_choice, self.slide_num-1))
+        if os.path.exists(file):
+            image = self.scale_image(Image.open(file))
+            self.panel.config(image=image)
+            self.panel.image = image
+            self.root.after(100, self.display)
+
+
 
