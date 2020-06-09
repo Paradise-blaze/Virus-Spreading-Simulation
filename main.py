@@ -9,6 +9,7 @@ window.set_background_path(os.path.join(base_dir, "images", "background.png"))
 window.set_map_path(os.path.join(base_dir, "images", "map.png"))
 window.set_diseases_path(os.path.join(base_dir, 'resources', 'Diseases.csv'))
 window.set_regions_path(os.path.join(base_dir, 'resources', 'Country.csv'))
+window.set_program_path(os.path.join(base_dir, 'cmake-build-debug', 'Virus_Spreading_Simulation'))
 size = 580
 window.set_dimensions(int(size * 1.618), size)
 window.open()

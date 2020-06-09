@@ -63,7 +63,6 @@ void setConnections(vector<Region> regions, rawData borders){
         neighbour_name = borders.at(i).at(1);
         while (region.getName() != region_name)
             region = regions.at(++j);
-
         Region &neighbour = *find_if(regions.begin(), regions.end(), [neighbour_name](const Region &r) -> bool {return r.getName() == neighbour_name;});
         region.addConnection(neighbour, 1); // check the default value
         i++;
@@ -118,7 +117,7 @@ int main(int argc, char *argv[]) {
     simulation.setSavingFrequency(FREQUENCY);
     simulation.setMaxDays(MAX_DAYS);
     simulation.setRegionZero(initialRegion);
-    simulation.setSavingDirectory(fs::path("results") / disease / initialRegion / "data");
+    simulation.setSavingDirectory(dirPath / "results" / disease / initialRegion / "data");
     //turning simulation on
     simulation.simulate();
     return 0;

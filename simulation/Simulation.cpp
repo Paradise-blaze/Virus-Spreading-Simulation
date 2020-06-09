@@ -38,8 +38,9 @@ void Simulation::setRegionZero(const string &location) {
 
 void Simulation::setSavingDirectory(const fs::path &path) {
     savingDirectory = fs::path(path);
-    if (!fs::exists(savingDirectory))
-        fs::create_directory(savingDirectory);
+    if (!fs::exists(savingDirectory)) {
+        fs::create_directories(savingDirectory);
+    }
     else
         for(const auto &file: fs::directory_iterator(savingDirectory))
             fs::remove(file);
@@ -53,7 +54,7 @@ bool Simulation::isDiedOut() {
 }
 
 vector<Region>::iterator Simulation::getRegionIt(string &regionName) {
-    auto regionZeroItr = find_if(regions.begin(), regions.end(), [regionName](Region &r)-> bool {return r.getName() == regionName;});
+    auto regionZeroItr = find_if(regions.begin(), regions.end(), [regionName, this](Region &r)-> bool {return r.getName() == regionName;});
     return regionZeroItr;
 }
 

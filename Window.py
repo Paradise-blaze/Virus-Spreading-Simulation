@@ -126,6 +126,9 @@ class Window:
     def set_diseases_path(self, path):
         self.paths["diseases"] = path
 
+    def set_program_path(self, path):
+        self.paths["program"] = path
+
     def set_dimensions(self, width, height):
         self.width = width
         self.height = height
@@ -204,8 +207,9 @@ class Window:
                 frame = tk.Frame(menu, name='frame{}'.format(i//max_in_row))
                 self.hided_children[menu_name].append(frame)
                 frame.pack(side=tk.TOP)
-            button = tk.Button(frame, name=Window.purify_name(name), text=self.trans(name))
-            func = self.get_button_function(menu_name, name.lower())
+            purified_name = Window.purify_name(name)
+            button = tk.Button(frame, name=purified_name, text=self.trans(name))
+            func = self.get_button_function(menu_name, name)
             button.config(command=func)
             self.set_child_pack_options(button)
             i += 1
@@ -317,8 +321,7 @@ class Window:
     # running and displaying simulation
 
     def run_simulation(self, widget):
-        program = os.path.join('cmake-build-debug', 'Virus_Spreading_Simulation')
-        self.process = subprocess.Popen([program, self.disease_choice, self.region_choice])
+        self.process = subprocess.Popen([self.paths['program'], self.disease_choice, self.region_choice])
         self.change_menu(widget)
 
     def generate_animation(self):
