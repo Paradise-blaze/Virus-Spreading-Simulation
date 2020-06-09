@@ -246,7 +246,7 @@ class Window:
         return word
 
     @staticmethod
-    def destroy_childs(widget):
+    def destroy_children(widget):
         for child in widget.winfo_children():
             child.destroy()
 
@@ -317,11 +317,14 @@ class Window:
         self.process = subprocess.Popen([program, self.disease_choice, self.region_choice])
         self.change_menu(widget)
 
+    def generate_animation(self):
+        pass#self.map_generator.load_data_frames(DISEASE, REGION)
+
     def display(self, widget):
         if not False: #"If not generated" in the future
             pass
             #self.map_generator.generate_maps(widget.winfo_name(), self.disease_choice, self.region_choice)
-            #generate_maps(WHAT, DISEASE, REGION)
+            #generate_maps(WHAT)
 
     def display_next_map(self):
         pass
