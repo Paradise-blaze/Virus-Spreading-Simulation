@@ -5,9 +5,24 @@ import os
 
 
 class MapGenerator:
-    def __init__(self, path):
+    def __init__(self):
         self.geopandas_countries = gp.read_file(gp.datasets.get_path('naturalearth_lowres'))
+        self.csv_countries = None
+        self.path = ''
+        self.status = []
+
+    def get_status(self):
+        return self.status
+
+    def check_status(self, member):
+        return member in self.status
+
+    def set_path(self, path):
+        self.path = path
         self.csv_countries = pd.read_csv(path, header=0, sep=';')
+
+    def get_path(self):
+        return self.path
 
     def clear_data(self):
         to_drop = ['Antarctica', 'Falkland Is.', 'Fr. S. Antarctic Lands', 'N. Cyprus', 'Palestine', 'Taiwan',
@@ -40,6 +55,8 @@ class MapGenerator:
                     pandemic_condition[frame.name] = False
             draw_map(merged, step, group)
             step += 1
+
+        set_status(self.status, group)
 
 
 class DataFrame:
@@ -76,6 +93,10 @@ class DataFrame:
             return self.recovered
         else:  # name == 'dead'
             return self.dead
+
+
+def set_status(array, member):
+    array.append(member)
 
 
 def draw_map(data, i, group):
@@ -203,18 +224,23 @@ if __name__ == "__main__":
     data_frame_list = []            #tutaj będą zapisywane dane z plików
     load_data(data_frame_list)
 
-    mapGen = MapGenerator('resources/Country.csv')
+    mapGen = MapGenerator()
+    mapGen.set_path('resources/Country.csv')
     mapGen.clear_data()
     worldStats = gather_global_data(data_frame_list)       #słownik do generowania wykresu dla całego świata
 
     clear_directory(os.path.dirname(__file__)+"/maps/")         #ta funkcja czyści cały folder, być może będzie potrzebna implementacja kasująca wybrany rodzaj map
     clear_directory(os.path.dirname(__file__) + "/plots/")
 
-    #mapGen.generate_maps('susceptible', data_frame_list)
+    mapGen.generate_maps('susceptible', data_frame_list)
+    print(mapGen.get_status())
+    print(mapGen.check_status('susceptible'))
     #mapGen.generate_maps('exposed', data_frame_list)
     #mapGen.generate_maps('infectious', data_frame_list)
     #mapGen.generate_maps('recovered', data_frame_list)
     #mapGen.generate_maps('dead', data_frame_list)
+
+    print(mapGen.get_path())
 
     plot_world(worldStats)
 
