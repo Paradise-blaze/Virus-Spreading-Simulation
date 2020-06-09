@@ -52,37 +52,34 @@ class Window:
             langs = f.readline().replace('\n', '').split(',')
         Window.languages_names = [lang.title() for lang in langs]
 
-    @staticmethod
-    def load_diseases_names():
+    def load_diseases_names(self):
         names = []
-        with open(os.path.join('resources', 'Diseases.csv')) as f:
+        with open(self.paths['diseases']) as f:
             f.readline()
             for line in f.readlines():
                 names.append(line.split(',', 1)[0])
         Window.diseases_names = names
 
-    @staticmethod
-    def load_regions_names():
+    def load_regions_names(self):
         names = []
-        with open(os.path.join('resources', 'Country.csv')) as f:
+        with open(self.paths['regions']) as f:
             f.readline()
             for line in f.readlines():
                 names.append(line.split(';', 1)[0])
         Window.regions_names = names
 
-    @staticmethod
-    def get_custom_names(menu_name):
+    def get_custom_names(self, menu_name):
         if menu_name == 'languages':
             if Window.languages_names is None:
                 Window.load_languages_names()
             return Window.languages_names
         elif menu_name == 'diseases':
             if Window.diseases_names is None:
-                Window.load_diseases_names()
+                self.load_diseases_names()
             return Window.diseases_names
         elif menu_name == 'regions':
             if Window.regions_names is None:
-                Window.load_regions_names()
+                self.load_regions_names()
             return Window.regions_names
 
     def __init__(self, title, xml):
@@ -92,7 +89,7 @@ class Window:
         self.menu_pack_options = {}
         self.menu_children_config_options = {}
         self.current_language = 'english'
-        #self.map_generator = MapGenerator('resources/Country.csv')
+        self.map_generator = MapGenerator()
         self.menu = None
         self.menus = {}
         self.hided_children = {}
@@ -118,6 +115,12 @@ class Window:
 
     def set_map_path(self, path):
         self.paths["map"] = path
+
+    def set_regions_path(self, path):
+        self.paths["regions"] = path
+
+    def set_diseases_path(self, path):
+        self.paths["diseases"] = path
 
     def set_dimensions(self, width, height):
         self.width = width
@@ -153,11 +156,15 @@ class Window:
 
     def set_all(self):
         self.panel.config(image=self.scaled["background"])
-        #self.panel.pack(side="bottom", fill="both", expand="yes")
         self.menu.pack()
         self.root.config(menu=self.menu)
         self.set_language('polish')
+        self.set_generator()
         # self.root.resizable(width=False, height=False)
+
+    def set_generator(self):
+        self.map_generator.set_path(self.paths['regions'])
+        self.map_generator.clear_data()
 
     @staticmethod
     def copy_configuration(original, copy):
@@ -184,7 +191,7 @@ class Window:
         if menu_name not in ['languages', 'diseases', 'regions']:
             return
         self.hided_children[menu_name] = []
-        names = Window.get_custom_names(menu_name)
+        names = self.get_custom_names(menu_name)
         i = 0
         max_in_row = 10
         frame = None
@@ -310,7 +317,11 @@ class Window:
         self.process = subprocess.Popen([program, self.disease_choice, self.region_choice])
         self.change_menu(widget)
 
-
+    def display(self, widget):
+        if not False: #"If not generated" in the future
+            pass
+            #self.map_generator.generate_maps(widget.winfo_name(), self.disease_choice, self.region_choice)
+            #generate_maps(WHAT, DISEASE, REGION)
 
     def display_next_map(self):
         pass
