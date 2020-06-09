@@ -57,16 +57,19 @@ void setConnections(vector<Region> regions, rawData borders){
     // creating connections between regions
     int i = 0, j = 0;
     string neighbour_name, region_name;
-    Region region = regions.at(j);
     while(i < borders.size()){
         region_name = borders.at(i).at(0);
         neighbour_name = borders.at(i).at(1);
-        while (region.getName() != region_name)
-            region = regions.at(++j);
-        Region &neighbour = *find_if(regions.begin(), regions.end(), [neighbour_name](const Region &r) -> bool {return r.getName() == neighbour_name;});
-        region.addConnection(neighbour, 1); // check the default value
+        while (regions.at(j).getName() != region_name)
+            j++;
+        Region &region = regions.at(j);
+        Region &neighbour = *find_if(regions.begin(), regions.end(),
+                [neighbour_name](const Region &r) -> bool {return r.getName() == neighbour_name;});
+        region.addConnection(neighbour, 1);
         i++;
     }
+    for(Region &r: regions)
+        cout << r.getConnections().size() << " ";
 }
 
 vector<Region> createRegions(rawData &data){
@@ -106,7 +109,7 @@ int main(int argc, char *argv[]) {
 
     rawData diseasesData = loadData(resourcesPath / "Diseases.csv", ',');
     rawData regionsData = loadData(resourcesPath / "Country.csv", ';');
-    rawData borders = loadData(resourcesPath / "Borders.csv", ';');
+    rawData borders = loadData(resourcesPath / "Borders.csv", ';', false);
 
     rawRecord diseaseData = chooseDisease(diseasesData, disease);
     vector<Region> regions = createRegions(regionsData);
