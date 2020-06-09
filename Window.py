@@ -174,7 +174,7 @@ class Window:
 
     def set_generator(self):
         self.map_generator.set_path(self.paths['regions'])
-        self.map_generator.set_results_path(self.paths['results'])
+        #self.map_generator.set_results_path(self.paths['results'])
         self.map_generator.clear_data()
 
     @staticmethod
