@@ -39,7 +39,7 @@ private:
     //private methods
     vector<Region>::iterator getRegionIt(string &);
     void initialiseRegionZero();
-    void randomInfectFrom(const Region &);
+    void randomInfectFrom(Region &);
 public:
     Simulation();
     Simulation(vector<Region> &, vector<string> &);
@@ -56,7 +56,7 @@ public:
     void saveData();
     void saveRegionHistory(Region &regionToSaveHistory);
     void setNumberOfCores();
-    void runThreads(int numberOfCores);
+    void runThreadsToSave(int numberOfCores);
 };
 
 

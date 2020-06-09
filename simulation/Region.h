@@ -75,6 +75,7 @@ private:
     int historySize = 0;
     int historyWidth = 0;
     bool isHistoryEmpty = true;
+    double transportCoef;
 
 public:
     //initialize
@@ -151,7 +152,8 @@ public:
     std::string setScienceDonating(bool);
 
     //spreading methods
-    void infectOtherCountry(std::map<Region, double> &) const;
+    void infectOtherCountryByLand(std::map<Region, double> &) const;
+    void infectOtherCountryByAir(std::vector<Region> &,Region &) const;
     bool getInfectionChance() const;
 
     //simulation methods

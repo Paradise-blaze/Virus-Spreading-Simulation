@@ -38,9 +38,8 @@ void Simulation::setRegionZero(const string &location) {
 
 void Simulation::setSavingDirectory(const fs::path &path) {
     savingDirectory = fs::path(path);
-    if (!fs::exists(savingDirectory)) {
-        fs::create_directories(savingDirectory);
-    }
+    if (!fs::exists(savingDirectory))
+        fs::create_directory(savingDirectory);
     else
         for(const auto &file: fs::directory_iterator(savingDirectory))
             fs::remove(file);
@@ -54,7 +53,7 @@ bool Simulation::isDiedOut() {
 }
 
 vector<Region>::iterator Simulation::getRegionIt(string &regionName) {
-    auto regionZeroItr = find_if(regions.begin(), regions.end(), [regionName, this](Region &r)-> bool {return r.getName() == regionName;});
+    auto regionZeroItr = find_if(regions.begin(), regions.end(), [regionName](Region &r)-> bool {return r.getName() == regionName;});
     return regionZeroItr;
 }
 
@@ -139,9 +138,11 @@ void Simulation::simulate() {
     runThreadsToSave(coreUsable);
 }
 
-void Simulation::randomInfectFrom(const Region &region) {
-    if(region.getInfectionChance())
-        region.infectOtherCountry(region.getConnections());
-    if(region.getInfectionChance())
-        region.infectOtherCountry(region.getFlights());
+void Simulation::randomInfectFrom(Region &region) {
+    if(!region.getConnections().empty()){
+        region.infectOtherCountryByLand(region.getConnections());
+    } else {
+        region.infectOtherCountryByAir(regions, region);
+    }
+    
 }

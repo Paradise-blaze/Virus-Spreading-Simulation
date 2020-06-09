@@ -381,7 +381,7 @@ void Region::infectOtherCountryByAir(std::vector<Region> & regions, Region & reg
         }
         if (regionZero.getName() == it->getName()){
             it++;
-            if (it->infectious==0 && regionZero.getInfectionChance()){
+            if (it->infectious==0){
             it->infectious = 1;
             }
         }
