@@ -5,6 +5,7 @@ import time
 import csv
 import subprocess
 import os
+from DataFrame import MapGenerator
 
 
 class Window:
@@ -91,6 +92,7 @@ class Window:
         self.menu_pack_options = {}
         self.menu_children_config_options = {}
         self.current_language = 'english'
+        #self.map_generator = MapGenerator('resources/Country.csv')
         self.menu = None
         self.menus = {}
         self.hided_children = {}
@@ -255,6 +257,10 @@ class Window:
         self.menu.pack()
 
     def refresh(self):
+        if self.process is not None:
+            #print(self.process.pid, self.process.returncode, self.process.stdout)
+            if True: #expectation a info from a process
+                pass
         self.root.after(1000, self.refresh)  # refreshes every second
 
     def display_regions(self):
@@ -297,8 +303,15 @@ class Window:
         self.region_choice = ''
         self.change_menu(widget)
 
+    # running and displaying simulation
+
     def run_simulation(self, widget):
         program = os.path.join('cmake-build-debug', 'Virus_Spreading_Simulation')
         self.process = subprocess.Popen([program, self.disease_choice, self.region_choice])
         self.change_menu(widget)
+
+
+
+    def display_next_map(self):
+        pass
 
