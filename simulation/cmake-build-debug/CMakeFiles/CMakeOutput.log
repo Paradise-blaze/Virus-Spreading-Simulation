@@ -1,6 +1,6 @@
-The system is: Linux - 4.15.0-101-generic - x86_64
+The system is: Linux - 4.14.180-1-MANJARO - x86_64
 Compiling the C compiler identification source file "CMakeCCompilerId.c" succeeded.
-Compiler: /usr/bin/gcc-10 
+Compiler: /bin/cc 
 Build flags: 
 Id flags:  
 
@@ -10,10 +10,10 @@ The output was:
 
 Compilation of the C compiler identification source "CMakeCCompilerId.c" produced "a.out"
 
-The C compiler identification is GNU, found in "/home/szymon/Pulpit/Programowanie/Symulacje/Virus-Spreading-Simulation/simulation/cmake-build-debug/CMakeFiles/3.16.5/CompilerIdC/a.out"
+The C compiler identification is GNU, found in "/home/proxpxd/Desktop/moje_programy/simulations/Virus-Spreading-Simulation/simulation/cmake-build-debug/CMakeFiles/3.17.2/CompilerIdC/a.out"
 
 Compiling the CXX compiler identification source file "CMakeCXXCompilerId.cpp" succeeded.
-Compiler: /usr/bin/g++-10 
+Compiler: /bin/c++ 
 Build flags: 
 Id flags:  
 
@@ -23,168 +23,152 @@ The output was:
 
 Compilation of the CXX compiler identification source "CMakeCXXCompilerId.cpp" produced "a.out"
 
-The CXX compiler identification is GNU, found in "/home/szymon/Pulpit/Programowanie/Symulacje/Virus-Spreading-Simulation/simulation/cmake-build-debug/CMakeFiles/3.16.5/CompilerIdCXX/a.out"
+The CXX compiler identification is GNU, found in "/home/proxpxd/Desktop/moje_programy/simulations/Virus-Spreading-Simulation/simulation/cmake-build-debug/CMakeFiles/3.17.2/CompilerIdCXX/a.out"
 
 Determining if the C compiler works passed with the following output:
-Change Dir: /home/szymon/Pulpit/Programowanie/Symulacje/Virus-Spreading-Simulation/simulation/cmake-build-debug/CMakeFiles/CMakeTmp
+Change Dir: /home/proxpxd/Desktop/moje_programy/simulations/Virus-Spreading-Simulation/simulation/cmake-build-debug/CMakeFiles/CMakeTmp
 
-Run Build Command(s):/usr/bin/make cmTC_8f927/fast && /usr/bin/make -f CMakeFiles/cmTC_8f927.dir/build.make CMakeFiles/cmTC_8f927.dir/build
-make[1]: Wejście do katalogu '/home/szymon/Pulpit/Programowanie/Symulacje/Virus-Spreading-Simulation/simulation/cmake-build-debug/CMakeFiles/CMakeTmp'
-Building C object CMakeFiles/cmTC_8f927.dir/testCCompiler.c.o
-/usr/bin/gcc-10    -o CMakeFiles/cmTC_8f927.dir/testCCompiler.c.o   -c /home/szymon/Pulpit/Programowanie/Symulacje/Virus-Spreading-Simulation/simulation/cmake-build-debug/CMakeFiles/CMakeTmp/testCCompiler.c
-Linking C executable cmTC_8f927
-/snap/clion/114/bin/cmake/linux/bin/cmake -E cmake_link_script CMakeFiles/cmTC_8f927.dir/link.txt --verbose=1
-/usr/bin/gcc-10      CMakeFiles/cmTC_8f927.dir/testCCompiler.c.o  -o cmTC_8f927 
-make[1]: Opuszczenie katalogu '/home/szymon/Pulpit/Programowanie/Symulacje/Virus-Spreading-Simulation/simulation/cmake-build-debug/CMakeFiles/CMakeTmp'
+Run Build Command(s):/bin/make cmTC_d7b7e/fast && /bin/make  -f CMakeFiles/cmTC_d7b7e.dir/build.make CMakeFiles/cmTC_d7b7e.dir/build
+make[1]: Entering directory '/home/proxpxd/Desktop/moje_programy/simulations/Virus-Spreading-Simulation/simulation/cmake-build-debug/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_d7b7e.dir/testCCompiler.c.o
+/bin/cc    -o CMakeFiles/cmTC_d7b7e.dir/testCCompiler.c.o   -c /home/proxpxd/Desktop/moje_programy/simulations/Virus-Spreading-Simulation/simulation/cmake-build-debug/CMakeFiles/CMakeTmp/testCCompiler.c
+Linking C executable cmTC_d7b7e
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_d7b7e.dir/link.txt --verbose=1
+/bin/cc      CMakeFiles/cmTC_d7b7e.dir/testCCompiler.c.o  -o cmTC_d7b7e 
+make[1]: Leaving directory '/home/proxpxd/Desktop/moje_programy/simulations/Virus-Spreading-Simulation/simulation/cmake-build-debug/CMakeFiles/CMakeTmp'
 
 
 
 Detecting C compiler ABI info compiled with the following output:
-Change Dir: /home/szymon/Pulpit/Programowanie/Symulacje/Virus-Spreading-Simulation/simulation/cmake-build-debug/CMakeFiles/CMakeTmp
+Change Dir: /home/proxpxd/Desktop/moje_programy/simulations/Virus-Spreading-Simulation/simulation/cmake-build-debug/CMakeFiles/CMakeTmp
 
-Run Build Command(s):/usr/bin/make cmTC_3836a/fast && /usr/bin/make -f CMakeFiles/cmTC_3836a.dir/build.make CMakeFiles/cmTC_3836a.dir/build
-make[1]: Entering directory '/home/szymon/Pulpit/Programowanie/Symulacje/Virus-Spreading-Simulation/simulation/cmake-build-debug/CMakeFiles/CMakeTmp'
-Building C object CMakeFiles/cmTC_3836a.dir/CMakeCCompilerABI.c.o
-/usr/bin/gcc-10   -v -o CMakeFiles/cmTC_3836a.dir/CMakeCCompilerABI.c.o   -c /snap/clion/114/bin/cmake/linux/share/cmake-3.16/Modules/CMakeCCompilerABI.c
+Run Build Command(s):/bin/make cmTC_00fae/fast && /bin/make  -f CMakeFiles/cmTC_00fae.dir/build.make CMakeFiles/cmTC_00fae.dir/build
+make[1]: Entering directory '/home/proxpxd/Desktop/moje_programy/simulations/Virus-Spreading-Simulation/simulation/cmake-build-debug/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_00fae.dir/CMakeCCompilerABI.c.o
+/bin/cc   -v -o CMakeFiles/cmTC_00fae.dir/CMakeCCompilerABI.c.o   -c /usr/share/cmake-3.17/Modules/CMakeCCompilerABI.c
 Using built-in specs.
-COLLECT_GCC=/usr/bin/gcc-10
-OFFLOAD_TARGET_NAMES=nvptx-none:amdgcn-amdhsa:hsa
-OFFLOAD_TARGET_DEFAULT=1
-Target: x86_64-linux-gnu
-Configured with: ../src/configure -v --with-pkgversion='Ubuntu 10.1.0-2ubuntu1~18.04' --with-bugurl=file:///usr/share/doc/gcc-10/README.Bugs --enable-languages=c,ada,c++,go,brig,d,fortran,objc,obj-c++,m2 --prefix=/usr --with-gcc-major-version-only --program-suffix=-10 --program-prefix=x86_64-linux-gnu- --enable-shared --enable-linker-build-id --libexecdir=/usr/lib --without-included-gettext --enable-threads=posix --libdir=/usr/lib --enable-nls --enable-clocale=gnu --enable-libstdcxx-debug --enable-libstdcxx-time=yes --with-default-libstdcxx-abi=new --enable-gnu-unique-object --disable-vtable-verify --enable-plugin --enable-default-pie --with-system-zlib --enable-libphobos-checking=release --with-target-system-zlib=auto --enable-objc-gc=auto --enable-multiarch --disable-werror --with-arch-32=i686 --with-abi=m64 --with-multilib-list=m32,m64,mx32 --enable-multilib --with-tune=generic --enable-offload-targets=nvptx-none=/build/gcc-10-eDoCEC/gcc-10-10.1.0/debian/tmp-nvptx/usr,amdgcn-amdhsa=/build/gcc-10-eDoCEC/gcc-10-10.1.0/debian/tmp-gcn/usr,hsa --without-cuda-driver --enable-checking=release --build=x86_64-linux-gnu --host=x86_64-linux-gnu --target=x86_64-linux-gnu
+COLLECT_GCC=/bin/cc
+Target: x86_64-pc-linux-gnu
+Configured with: /build/gcc/src/gcc/configure --prefix=/usr --libdir=/usr/lib --libexecdir=/usr/lib --mandir=/usr/share/man --infodir=/usr/share/info --with-pkgversion='Arch Linux 9.3.0-1' --with-bugurl=https://bugs.archlinux.org/ --enable-languages=c,c++,ada,fortran,go,lto,objc,obj-c++,d --enable-shared --enable-threads=posix --with-system-zlib --with-isl --enable-__cxa_atexit --disable-libunwind-exceptions --enable-clocale=gnu --disable-libstdcxx-pch --disable-libssp --enable-gnu-unique-object --enable-linker-build-id --enable-lto --enable-plugin --enable-install-libiberty --with-linker-hash-style=gnu --enable-gnu-indirect-function --enable-multilib --disable-werror --enable-checking=release --enable-default-pie --enable-default-ssp --enable-cet=auto gdc_include_dir=/usr/include/dlang/gdc
 Thread model: posix
-Supported LTO compression algorithms: zlib zstd
-gcc version 10.1.0 (Ubuntu 10.1.0-2ubuntu1~18.04) 
-COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_3836a.dir/CMakeCCompilerABI.c.o' '-c' '-mtune=generic' '-march=x86-64'
- /usr/lib/gcc/x86_64-linux-gnu/10/cc1 -quiet -v -imultiarch x86_64-linux-gnu /snap/clion/114/bin/cmake/linux/share/cmake-3.16/Modules/CMakeCCompilerABI.c -quiet -dumpbase CMakeCCompilerABI.c -mtune=generic -march=x86-64 -auxbase-strip CMakeFiles/cmTC_3836a.dir/CMakeCCompilerABI.c.o -version -fasynchronous-unwind-tables -fstack-protector-strong -Wformat -Wformat-security -o /tmp/ccqnQu9A.s
-GNU C17 (Ubuntu 10.1.0-2ubuntu1~18.04) version 10.1.0 (x86_64-linux-gnu)
-	compiled by GNU C version 10.1.0, GMP version 6.1.2, MPFR version 4.0.1, MPC version 1.1.0, isl version isl-0.19-GMP
+gcc version 9.3.0 (Arch Linux 9.3.0-1) 
+COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_00fae.dir/CMakeCCompilerABI.c.o' '-c' '-mtune=generic' '-march=x86-64'
+ /usr/lib/gcc/x86_64-pc-linux-gnu/9.3.0/cc1 -quiet -v /usr/share/cmake-3.17/Modules/CMakeCCompilerABI.c -quiet -dumpbase CMakeCCompilerABI.c -mtune=generic -march=x86-64 -auxbase-strip CMakeFiles/cmTC_00fae.dir/CMakeCCompilerABI.c.o -version -o /tmp/ccY8aE7r.s
+GNU C17 (Arch Linux 9.3.0-1) version 9.3.0 (x86_64-pc-linux-gnu)
+	compiled by GNU C version 9.3.0, GMP version 6.2.0, MPFR version 4.0.2, MPC version 1.1.0, isl version isl-0.21-GMP
 
 GGC heuristics: --param ggc-min-expand=100 --param ggc-min-heapsize=131072
-ignoring nonexistent directory "/usr/local/include/x86_64-linux-gnu"
-ignoring nonexistent directory "/usr/lib/gcc/x86_64-linux-gnu/10/include-fixed"
-ignoring nonexistent directory "/usr/lib/gcc/x86_64-linux-gnu/10/../../../../x86_64-linux-gnu/include"
+ignoring nonexistent directory "/usr/lib/gcc/x86_64-pc-linux-gnu/9.3.0/../../../../x86_64-pc-linux-gnu/include"
 #include "..." search starts here:
 #include <...> search starts here:
- /usr/lib/gcc/x86_64-linux-gnu/10/include
+ /usr/lib/gcc/x86_64-pc-linux-gnu/9.3.0/include
  /usr/local/include
- /usr/include/x86_64-linux-gnu
+ /usr/lib/gcc/x86_64-pc-linux-gnu/9.3.0/include-fixed
  /usr/include
 End of search list.
-GNU C17 (Ubuntu 10.1.0-2ubuntu1~18.04) version 10.1.0 (x86_64-linux-gnu)
-	compiled by GNU C version 10.1.0, GMP version 6.1.2, MPFR version 4.0.1, MPC version 1.1.0, isl version isl-0.19-GMP
+GNU C17 (Arch Linux 9.3.0-1) version 9.3.0 (x86_64-pc-linux-gnu)
+	compiled by GNU C version 9.3.0, GMP version 6.2.0, MPFR version 4.0.2, MPC version 1.1.0, isl version isl-0.21-GMP
 
 GGC heuristics: --param ggc-min-expand=100 --param ggc-min-heapsize=131072
-Compiler executable checksum: 797ff541be7d2acc7d0ced3c057e002c
-COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_3836a.dir/CMakeCCompilerABI.c.o' '-c' '-mtune=generic' '-march=x86-64'
- as -v --64 -o CMakeFiles/cmTC_3836a.dir/CMakeCCompilerABI.c.o /tmp/ccqnQu9A.s
-GNU assembler version 2.30 (x86_64-linux-gnu) using BFD version (GNU Binutils for Ubuntu) 2.30
-COMPILER_PATH=/usr/lib/gcc/x86_64-linux-gnu/10/:/usr/lib/gcc/x86_64-linux-gnu/10/:/usr/lib/gcc/x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/10/:/usr/lib/gcc/x86_64-linux-gnu/
-LIBRARY_PATH=/usr/lib/gcc/x86_64-linux-gnu/10/:/usr/lib/gcc/x86_64-linux-gnu/10/../../../x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/10/../../../../lib/:/lib/x86_64-linux-gnu/:/lib/../lib/:/usr/lib/x86_64-linux-gnu/:/usr/lib/../lib/:/usr/lib/gcc/x86_64-linux-gnu/10/../../../:/lib/:/usr/lib/
-COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_3836a.dir/CMakeCCompilerABI.c.o' '-c' '-mtune=generic' '-march=x86-64'
-Linking C executable cmTC_3836a
-/snap/clion/114/bin/cmake/linux/bin/cmake -E cmake_link_script CMakeFiles/cmTC_3836a.dir/link.txt --verbose=1
-/usr/bin/gcc-10     -v CMakeFiles/cmTC_3836a.dir/CMakeCCompilerABI.c.o  -o cmTC_3836a 
+Compiler executable checksum: 692ee564c92e51fae6616097075dc3ce
+COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_00fae.dir/CMakeCCompilerABI.c.o' '-c' '-mtune=generic' '-march=x86-64'
+ as -v --64 -o CMakeFiles/cmTC_00fae.dir/CMakeCCompilerABI.c.o /tmp/ccY8aE7r.s
+GNU assembler version 2.34 (x86_64-pc-linux-gnu) using BFD version (GNU Binutils) 2.34
+COMPILER_PATH=/usr/lib/gcc/x86_64-pc-linux-gnu/9.3.0/:/usr/lib/gcc/x86_64-pc-linux-gnu/9.3.0/:/usr/lib/gcc/x86_64-pc-linux-gnu/:/usr/lib/gcc/x86_64-pc-linux-gnu/9.3.0/:/usr/lib/gcc/x86_64-pc-linux-gnu/
+LIBRARY_PATH=/usr/lib/gcc/x86_64-pc-linux-gnu/9.3.0/:/usr/lib/gcc/x86_64-pc-linux-gnu/9.3.0/../../../../lib/:/lib/../lib/:/usr/lib/../lib/:/usr/lib/gcc/x86_64-pc-linux-gnu/9.3.0/../../../:/lib/:/usr/lib/
+COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_00fae.dir/CMakeCCompilerABI.c.o' '-c' '-mtune=generic' '-march=x86-64'
+Linking C executable cmTC_00fae
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_00fae.dir/link.txt --verbose=1
+/bin/cc     -v CMakeFiles/cmTC_00fae.dir/CMakeCCompilerABI.c.o  -o cmTC_00fae 
 Using built-in specs.
-COLLECT_GCC=/usr/bin/gcc-10
-COLLECT_LTO_WRAPPER=/usr/lib/gcc/x86_64-linux-gnu/10/lto-wrapper
-OFFLOAD_TARGET_NAMES=nvptx-none:amdgcn-amdhsa:hsa
-OFFLOAD_TARGET_DEFAULT=1
-Target: x86_64-linux-gnu
-Configured with: ../src/configure -v --with-pkgversion='Ubuntu 10.1.0-2ubuntu1~18.04' --with-bugurl=file:///usr/share/doc/gcc-10/README.Bugs --enable-languages=c,ada,c++,go,brig,d,fortran,objc,obj-c++,m2 --prefix=/usr --with-gcc-major-version-only --program-suffix=-10 --program-prefix=x86_64-linux-gnu- --enable-shared --enable-linker-build-id --libexecdir=/usr/lib --without-included-gettext --enable-threads=posix --libdir=/usr/lib --enable-nls --enable-clocale=gnu --enable-libstdcxx-debug --enable-libstdcxx-time=yes --with-default-libstdcxx-abi=new --enable-gnu-unique-object --disable-vtable-verify --enable-plugin --enable-default-pie --with-system-zlib --enable-libphobos-checking=release --with-target-system-zlib=auto --enable-objc-gc=auto --enable-multiarch --disable-werror --with-arch-32=i686 --with-abi=m64 --with-multilib-list=m32,m64,mx32 --enable-multilib --with-tune=generic --enable-offload-targets=nvptx-none=/build/gcc-10-eDoCEC/gcc-10-10.1.0/debian/tmp-nvptx/usr,amdgcn-amdhsa=/build/gcc-10-eDoCEC/gcc-10-10.1.0/debian/tmp-gcn/usr,hsa --without-cuda-driver --enable-checking=release --build=x86_64-linux-gnu --host=x86_64-linux-gnu --target=x86_64-linux-gnu
+COLLECT_GCC=/bin/cc
+COLLECT_LTO_WRAPPER=/usr/lib/gcc/x86_64-pc-linux-gnu/9.3.0/lto-wrapper
+Target: x86_64-pc-linux-gnu
+Configured with: /build/gcc/src/gcc/configure --prefix=/usr --libdir=/usr/lib --libexecdir=/usr/lib --mandir=/usr/share/man --infodir=/usr/share/info --with-pkgversion='Arch Linux 9.3.0-1' --with-bugurl=https://bugs.archlinux.org/ --enable-languages=c,c++,ada,fortran,go,lto,objc,obj-c++,d --enable-shared --enable-threads=posix --with-system-zlib --with-isl --enable-__cxa_atexit --disable-libunwind-exceptions --enable-clocale=gnu --disable-libstdcxx-pch --disable-libssp --enable-gnu-unique-object --enable-linker-build-id --enable-lto --enable-plugin --enable-install-libiberty --with-linker-hash-style=gnu --enable-gnu-indirect-function --enable-multilib --disable-werror --enable-checking=release --enable-default-pie --enable-default-ssp --enable-cet=auto gdc_include_dir=/usr/include/dlang/gdc
 Thread model: posix
-Supported LTO compression algorithms: zlib zstd
-gcc version 10.1.0 (Ubuntu 10.1.0-2ubuntu1~18.04) 
-COMPILER_PATH=/usr/lib/gcc/x86_64-linux-gnu/10/:/usr/lib/gcc/x86_64-linux-gnu/10/:/usr/lib/gcc/x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/10/:/usr/lib/gcc/x86_64-linux-gnu/
-LIBRARY_PATH=/usr/lib/gcc/x86_64-linux-gnu/10/:/usr/lib/gcc/x86_64-linux-gnu/10/../../../x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/10/../../../../lib/:/lib/x86_64-linux-gnu/:/lib/../lib/:/usr/lib/x86_64-linux-gnu/:/usr/lib/../lib/:/usr/lib/gcc/x86_64-linux-gnu/10/../../../:/lib/:/usr/lib/
-COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_3836a' '-mtune=generic' '-march=x86-64'
- /usr/lib/gcc/x86_64-linux-gnu/10/collect2 -plugin /usr/lib/gcc/x86_64-linux-gnu/10/liblto_plugin.so -plugin-opt=/usr/lib/gcc/x86_64-linux-gnu/10/lto-wrapper -plugin-opt=-fresolution=/tmp/cc2qkZYD.res -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s --build-id --eh-frame-hdr -m elf_x86_64 --hash-style=gnu --as-needed -dynamic-linker /lib64/ld-linux-x86-64.so.2 -pie -z now -z relro -o cmTC_3836a /usr/lib/gcc/x86_64-linux-gnu/10/../../../x86_64-linux-gnu/Scrt1.o /usr/lib/gcc/x86_64-linux-gnu/10/../../../x86_64-linux-gnu/crti.o /usr/lib/gcc/x86_64-linux-gnu/10/crtbeginS.o -L/usr/lib/gcc/x86_64-linux-gnu/10 -L/usr/lib/gcc/x86_64-linux-gnu/10/../../../x86_64-linux-gnu -L/usr/lib/gcc/x86_64-linux-gnu/10/../../../../lib -L/lib/x86_64-linux-gnu -L/lib/../lib -L/usr/lib/x86_64-linux-gnu -L/usr/lib/../lib -L/usr/lib/gcc/x86_64-linux-gnu/10/../../.. CMakeFiles/cmTC_3836a.dir/CMakeCCompilerABI.c.o -lgcc --push-state --as-needed -lgcc_s --pop-state -lc -lgcc --push-state --as-needed -lgcc_s --pop-state /usr/lib/gcc/x86_64-linux-gnu/10/crtendS.o /usr/lib/gcc/x86_64-linux-gnu/10/../../../x86_64-linux-gnu/crtn.o
-COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_3836a' '-mtune=generic' '-march=x86-64'
-make[1]: Leaving directory '/home/szymon/Pulpit/Programowanie/Symulacje/Virus-Spreading-Simulation/simulation/cmake-build-debug/CMakeFiles/CMakeTmp'
+gcc version 9.3.0 (Arch Linux 9.3.0-1) 
+COMPILER_PATH=/usr/lib/gcc/x86_64-pc-linux-gnu/9.3.0/:/usr/lib/gcc/x86_64-pc-linux-gnu/9.3.0/:/usr/lib/gcc/x86_64-pc-linux-gnu/:/usr/lib/gcc/x86_64-pc-linux-gnu/9.3.0/:/usr/lib/gcc/x86_64-pc-linux-gnu/
+LIBRARY_PATH=/usr/lib/gcc/x86_64-pc-linux-gnu/9.3.0/:/usr/lib/gcc/x86_64-pc-linux-gnu/9.3.0/../../../../lib/:/lib/../lib/:/usr/lib/../lib/:/usr/lib/gcc/x86_64-pc-linux-gnu/9.3.0/../../../:/lib/:/usr/lib/
+COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_00fae' '-mtune=generic' '-march=x86-64'
+ /usr/lib/gcc/x86_64-pc-linux-gnu/9.3.0/collect2 -plugin /usr/lib/gcc/x86_64-pc-linux-gnu/9.3.0/liblto_plugin.so -plugin-opt=/usr/lib/gcc/x86_64-pc-linux-gnu/9.3.0/lto-wrapper -plugin-opt=-fresolution=/tmp/ccYi96MN.res -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s --build-id --eh-frame-hdr --hash-style=gnu -m elf_x86_64 -dynamic-linker /lib64/ld-linux-x86-64.so.2 -pie -o cmTC_00fae /usr/lib/gcc/x86_64-pc-linux-gnu/9.3.0/../../../../lib/Scrt1.o /usr/lib/gcc/x86_64-pc-linux-gnu/9.3.0/../../../../lib/crti.o /usr/lib/gcc/x86_64-pc-linux-gnu/9.3.0/crtbeginS.o -L/usr/lib/gcc/x86_64-pc-linux-gnu/9.3.0 -L/usr/lib/gcc/x86_64-pc-linux-gnu/9.3.0/../../../../lib -L/lib/../lib -L/usr/lib/../lib -L/usr/lib/gcc/x86_64-pc-linux-gnu/9.3.0/../../.. CMakeFiles/cmTC_00fae.dir/CMakeCCompilerABI.c.o -lgcc --push-state --as-needed -lgcc_s --pop-state -lc -lgcc --push-state --as-needed -lgcc_s --pop-state /usr/lib/gcc/x86_64-pc-linux-gnu/9.3.0/crtendS.o /usr/lib/gcc/x86_64-pc-linux-gnu/9.3.0/../../../../lib/crtn.o
+COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_00fae' '-mtune=generic' '-march=x86-64'
+make[1]: Leaving directory '/home/proxpxd/Desktop/moje_programy/simulations/Virus-Spreading-Simulation/simulation/cmake-build-debug/CMakeFiles/CMakeTmp'
 
 
 
 Parsed C implicit include dir info from above output: rv=done
   found start of include info
   found start of implicit include info
-    add: [/usr/lib/gcc/x86_64-linux-gnu/10/include]
+    add: [/usr/lib/gcc/x86_64-pc-linux-gnu/9.3.0/include]
     add: [/usr/local/include]
-    add: [/usr/include/x86_64-linux-gnu]
+    add: [/usr/lib/gcc/x86_64-pc-linux-gnu/9.3.0/include-fixed]
     add: [/usr/include]
   end of search list found
-  collapse include dir [/usr/lib/gcc/x86_64-linux-gnu/10/include] ==> [/usr/lib/gcc/x86_64-linux-gnu/10/include]
+  collapse include dir [/usr/lib/gcc/x86_64-pc-linux-gnu/9.3.0/include] ==> [/usr/lib/gcc/x86_64-pc-linux-gnu/9.3.0/include]
   collapse include dir [/usr/local/include] ==> [/usr/local/include]
-  collapse include dir [/usr/include/x86_64-linux-gnu] ==> [/usr/include/x86_64-linux-gnu]
+  collapse include dir [/usr/lib/gcc/x86_64-pc-linux-gnu/9.3.0/include-fixed] ==> [/usr/lib/gcc/x86_64-pc-linux-gnu/9.3.0/include-fixed]
   collapse include dir [/usr/include] ==> [/usr/include]
-  implicit include dirs: [/usr/lib/gcc/x86_64-linux-gnu/10/include;/usr/local/include;/usr/include/x86_64-linux-gnu;/usr/include]
+  implicit include dirs: [/usr/lib/gcc/x86_64-pc-linux-gnu/9.3.0/include;/usr/local/include;/usr/lib/gcc/x86_64-pc-linux-gnu/9.3.0/include-fixed;/usr/include]
 
 
 Parsed C implicit link information from above output:
   link line regex: [^( *|.*[/\])(ld|CMAKE_LINK_STARTFILE-NOTFOUND|([^/\]+-)?ld|collect2)[^/\]*( |$)]
-  ignore line: [Change Dir: /home/szymon/Pulpit/Programowanie/Symulacje/Virus-Spreading-Simulation/simulation/cmake-build-debug/CMakeFiles/CMakeTmp]
+  ignore line: [Change Dir: /home/proxpxd/Desktop/moje_programy/simulations/Virus-Spreading-Simulation/simulation/cmake-build-debug/CMakeFiles/CMakeTmp]
   ignore line: []
-  ignore line: [Run Build Command(s):/usr/bin/make cmTC_3836a/fast && /usr/bin/make -f CMakeFiles/cmTC_3836a.dir/build.make CMakeFiles/cmTC_3836a.dir/build]
-  ignore line: [make[1]: Entering directory '/home/szymon/Pulpit/Programowanie/Symulacje/Virus-Spreading-Simulation/simulation/cmake-build-debug/CMakeFiles/CMakeTmp']
-  ignore line: [Building C object CMakeFiles/cmTC_3836a.dir/CMakeCCompilerABI.c.o]
-  ignore line: [/usr/bin/gcc-10   -v -o CMakeFiles/cmTC_3836a.dir/CMakeCCompilerABI.c.o   -c /snap/clion/114/bin/cmake/linux/share/cmake-3.16/Modules/CMakeCCompilerABI.c]
+  ignore line: [Run Build Command(s):/bin/make cmTC_00fae/fast && /bin/make  -f CMakeFiles/cmTC_00fae.dir/build.make CMakeFiles/cmTC_00fae.dir/build]
+  ignore line: [make[1]: Entering directory '/home/proxpxd/Desktop/moje_programy/simulations/Virus-Spreading-Simulation/simulation/cmake-build-debug/CMakeFiles/CMakeTmp']
+  ignore line: [Building C object CMakeFiles/cmTC_00fae.dir/CMakeCCompilerABI.c.o]
+  ignore line: [/bin/cc   -v -o CMakeFiles/cmTC_00fae.dir/CMakeCCompilerABI.c.o   -c /usr/share/cmake-3.17/Modules/CMakeCCompilerABI.c]
   ignore line: [Using built-in specs.]
-  ignore line: [COLLECT_GCC=/usr/bin/gcc-10]
-  ignore line: [OFFLOAD_TARGET_NAMES=nvptx-none:amdgcn-amdhsa:hsa]
-  ignore line: [OFFLOAD_TARGET_DEFAULT=1]
-  ignore line: [Target: x86_64-linux-gnu]
-  ignore line: [Configured with: ../src/configure -v --with-pkgversion='Ubuntu 10.1.0-2ubuntu1~18.04' --with-bugurl=file:///usr/share/doc/gcc-10/README.Bugs --enable-languages=c ada c++ go brig d fortran objc obj-c++ m2 --prefix=/usr --with-gcc-major-version-only --program-suffix=-10 --program-prefix=x86_64-linux-gnu- --enable-shared --enable-linker-build-id --libexecdir=/usr/lib --without-included-gettext --enable-threads=posix --libdir=/usr/lib --enable-nls --enable-clocale=gnu --enable-libstdcxx-debug --enable-libstdcxx-time=yes --with-default-libstdcxx-abi=new --enable-gnu-unique-object --disable-vtable-verify --enable-plugin --enable-default-pie --with-system-zlib --enable-libphobos-checking=release --with-target-system-zlib=auto --enable-objc-gc=auto --enable-multiarch --disable-werror --with-arch-32=i686 --with-abi=m64 --with-multilib-list=m32 m64 mx32 --enable-multilib --with-tune=generic --enable-offload-targets=nvptx-none=/build/gcc-10-eDoCEC/gcc-10-10.1.0/debian/tmp-nvptx/usr amdgcn-amdhsa=/build/gcc-10-eDoCEC/gcc-10-10.1.0/debian/tmp-gcn/usr hsa --without-cuda-driver --enable-checking=release --build=x86_64-linux-gnu --host=x86_64-linux-gnu --target=x86_64-linux-gnu]
+  ignore line: [COLLECT_GCC=/bin/cc]
+  ignore line: [Target: x86_64-pc-linux-gnu]
+  ignore line: [Configured with: /build/gcc/src/gcc/configure --prefix=/usr --libdir=/usr/lib --libexecdir=/usr/lib --mandir=/usr/share/man --infodir=/usr/share/info --with-pkgversion='Arch Linux 9.3.0-1' --with-bugurl=https://bugs.archlinux.org/ --enable-languages=c c++ ada fortran go lto objc obj-c++ d --enable-shared --enable-threads=posix --with-system-zlib --with-isl --enable-__cxa_atexit --disable-libunwind-exceptions --enable-clocale=gnu --disable-libstdcxx-pch --disable-libssp --enable-gnu-unique-object --enable-linker-build-id --enable-lto --enable-plugin --enable-install-libiberty --with-linker-hash-style=gnu --enable-gnu-indirect-function --enable-multilib --disable-werror --enable-checking=release --enable-default-pie --enable-default-ssp --enable-cet=auto gdc_include_dir=/usr/include/dlang/gdc]
   ignore line: [Thread model: posix]
-  ignore line: [Supported LTO compression algorithms: zlib zstd]
-  ignore line: [gcc version 10.1.0 (Ubuntu 10.1.0-2ubuntu1~18.04) ]
-  ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_3836a.dir/CMakeCCompilerABI.c.o' '-c' '-mtune=generic' '-march=x86-64']
-  ignore line: [ /usr/lib/gcc/x86_64-linux-gnu/10/cc1 -quiet -v -imultiarch x86_64-linux-gnu /snap/clion/114/bin/cmake/linux/share/cmake-3.16/Modules/CMakeCCompilerABI.c -quiet -dumpbase CMakeCCompilerABI.c -mtune=generic -march=x86-64 -auxbase-strip CMakeFiles/cmTC_3836a.dir/CMakeCCompilerABI.c.o -version -fasynchronous-unwind-tables -fstack-protector-strong -Wformat -Wformat-security -o /tmp/ccqnQu9A.s]
-  ignore line: [GNU C17 (Ubuntu 10.1.0-2ubuntu1~18.04) version 10.1.0 (x86_64-linux-gnu)]
-  ignore line: [	compiled by GNU C version 10.1.0  GMP version 6.1.2  MPFR version 4.0.1  MPC version 1.1.0  isl version isl-0.19-GMP]
+  ignore line: [gcc version 9.3.0 (Arch Linux 9.3.0-1) ]
+  ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_00fae.dir/CMakeCCompilerABI.c.o' '-c' '-mtune=generic' '-march=x86-64']
+  ignore line: [ /usr/lib/gcc/x86_64-pc-linux-gnu/9.3.0/cc1 -quiet -v /usr/share/cmake-3.17/Modules/CMakeCCompilerABI.c -quiet -dumpbase CMakeCCompilerABI.c -mtune=generic -march=x86-64 -auxbase-strip CMakeFiles/cmTC_00fae.dir/CMakeCCompilerABI.c.o -version -o /tmp/ccY8aE7r.s]
+  ignore line: [GNU C17 (Arch Linux 9.3.0-1) version 9.3.0 (x86_64-pc-linux-gnu)]
+  ignore line: [	compiled by GNU C version 9.3.0  GMP version 6.2.0  MPFR version 4.0.2  MPC version 1.1.0  isl version isl-0.21-GMP]
   ignore line: []
   ignore line: [GGC heuristics: --param ggc-min-expand=100 --param ggc-min-heapsize=131072]
-  ignore line: [ignoring nonexistent directory "/usr/local/include/x86_64-linux-gnu"]
-  ignore line: [ignoring nonexistent directory "/usr/lib/gcc/x86_64-linux-gnu/10/include-fixed"]
-  ignore line: [ignoring nonexistent directory "/usr/lib/gcc/x86_64-linux-gnu/10/../../../../x86_64-linux-gnu/include"]
+  ignore line: [ignoring nonexistent directory "/usr/lib/gcc/x86_64-pc-linux-gnu/9.3.0/../../../../x86_64-pc-linux-gnu/include"]
   ignore line: [#include "..." search starts here:]
   ignore line: [#include <...> search starts here:]
-  ignore line: [ /usr/lib/gcc/x86_64-linux-gnu/10/include]
+  ignore line: [ /usr/lib/gcc/x86_64-pc-linux-gnu/9.3.0/include]
   ignore line: [ /usr/local/include]
-  ignore line: [ /usr/include/x86_64-linux-gnu]
+  ignore line: [ /usr/lib/gcc/x86_64-pc-linux-gnu/9.3.0/include-fixed]
   ignore line: [ /usr/include]
   ignore line: [End of search list.]
-  ignore line: [GNU C17 (Ubuntu 10.1.0-2ubuntu1~18.04) version 10.1.0 (x86_64-linux-gnu)]
-  ignore line: [	compiled by GNU C version 10.1.0  GMP version 6.1.2  MPFR version 4.0.1  MPC version 1.1.0  isl version isl-0.19-GMP]
+  ignore line: [GNU C17 (Arch Linux 9.3.0-1) version 9.3.0 (x86_64-pc-linux-gnu)]
+  ignore line: [	compiled by GNU C version 9.3.0  GMP version 6.2.0  MPFR version 4.0.2  MPC version 1.1.0  isl version isl-0.21-GMP]
   ignore line: []
   ignore line: [GGC heuristics: --param ggc-min-expand=100 --param ggc-min-heapsize=131072]
-  ignore line: [Compiler executable checksum: 797ff541be7d2acc7d0ced3c057e002c]
-  ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_3836a.dir/CMakeCCompilerABI.c.o' '-c' '-mtune=generic' '-march=x86-64']
-  ignore line: [ as -v --64 -o CMakeFiles/cmTC_3836a.dir/CMakeCCompilerABI.c.o /tmp/ccqnQu9A.s]
-  ignore line: [GNU assembler version 2.30 (x86_64-linux-gnu) using BFD version (GNU Binutils for Ubuntu) 2.30]
-  ignore line: [COMPILER_PATH=/usr/lib/gcc/x86_64-linux-gnu/10/:/usr/lib/gcc/x86_64-linux-gnu/10/:/usr/lib/gcc/x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/10/:/usr/lib/gcc/x86_64-linux-gnu/]
-  ignore line: [LIBRARY_PATH=/usr/lib/gcc/x86_64-linux-gnu/10/:/usr/lib/gcc/x86_64-linux-gnu/10/../../../x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/10/../../../../lib/:/lib/x86_64-linux-gnu/:/lib/../lib/:/usr/lib/x86_64-linux-gnu/:/usr/lib/../lib/:/usr/lib/gcc/x86_64-linux-gnu/10/../../../:/lib/:/usr/lib/]
-  ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_3836a.dir/CMakeCCompilerABI.c.o' '-c' '-mtune=generic' '-march=x86-64']
-  ignore line: [Linking C executable cmTC_3836a]
-  ignore line: [/snap/clion/114/bin/cmake/linux/bin/cmake -E cmake_link_script CMakeFiles/cmTC_3836a.dir/link.txt --verbose=1]
-  ignore line: [/usr/bin/gcc-10     -v CMakeFiles/cmTC_3836a.dir/CMakeCCompilerABI.c.o  -o cmTC_3836a ]
+  ignore line: [Compiler executable checksum: 692ee564c92e51fae6616097075dc3ce]
+  ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_00fae.dir/CMakeCCompilerABI.c.o' '-c' '-mtune=generic' '-march=x86-64']
+  ignore line: [ as -v --64 -o CMakeFiles/cmTC_00fae.dir/CMakeCCompilerABI.c.o /tmp/ccY8aE7r.s]
+  ignore line: [GNU assembler version 2.34 (x86_64-pc-linux-gnu) using BFD version (GNU Binutils) 2.34]
+  ignore line: [COMPILER_PATH=/usr/lib/gcc/x86_64-pc-linux-gnu/9.3.0/:/usr/lib/gcc/x86_64-pc-linux-gnu/9.3.0/:/usr/lib/gcc/x86_64-pc-linux-gnu/:/usr/lib/gcc/x86_64-pc-linux-gnu/9.3.0/:/usr/lib/gcc/x86_64-pc-linux-gnu/]
+  ignore line: [LIBRARY_PATH=/usr/lib/gcc/x86_64-pc-linux-gnu/9.3.0/:/usr/lib/gcc/x86_64-pc-linux-gnu/9.3.0/../../../../lib/:/lib/../lib/:/usr/lib/../lib/:/usr/lib/gcc/x86_64-pc-linux-gnu/9.3.0/../../../:/lib/:/usr/lib/]
+  ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_00fae.dir/CMakeCCompilerABI.c.o' '-c' '-mtune=generic' '-march=x86-64']
+  ignore line: [Linking C executable cmTC_00fae]
+  ignore line: [/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_00fae.dir/link.txt --verbose=1]
+  ignore line: [/bin/cc     -v CMakeFiles/cmTC_00fae.dir/CMakeCCompilerABI.c.o  -o cmTC_00fae ]
   ignore line: [Using built-in specs.]
-  ignore line: [COLLECT_GCC=/usr/bin/gcc-10]
-  ignore line: [COLLECT_LTO_WRAPPER=/usr/lib/gcc/x86_64-linux-gnu/10/lto-wrapper]
-  ignore line: [OFFLOAD_TARGET_NAMES=nvptx-none:amdgcn-amdhsa:hsa]
-  ignore line: [OFFLOAD_TARGET_DEFAULT=1]
-  ignore line: [Target: x86_64-linux-gnu]
-  ignore line: [Configured with: ../src/configure -v --with-pkgversion='Ubuntu 10.1.0-2ubuntu1~18.04' --with-bugurl=file:///usr/share/doc/gcc-10/README.Bugs --enable-languages=c ada c++ go brig d fortran objc obj-c++ m2 --prefix=/usr --with-gcc-major-version-only --program-suffix=-10 --program-prefix=x86_64-linux-gnu- --enable-shared --enable-linker-build-id --libexecdir=/usr/lib --without-included-gettext --enable-threads=posix --libdir=/usr/lib --enable-nls --enable-clocale=gnu --enable-libstdcxx-debug --enable-libstdcxx-time=yes --with-default-libstdcxx-abi=new --enable-gnu-unique-object --disable-vtable-verify --enable-plugin --enable-default-pie --with-system-zlib --enable-libphobos-checking=release --with-target-system-zlib=auto --enable-objc-gc=auto --enable-multiarch --disable-werror --with-arch-32=i686 --with-abi=m64 --with-multilib-list=m32 m64 mx32 --enable-multilib --with-tune=generic --enable-offload-targets=nvptx-none=/build/gcc-10-eDoCEC/gcc-10-10.1.0/debian/tmp-nvptx/usr amdgcn-amdhsa=/build/gcc-10-eDoCEC/gcc-10-10.1.0/debian/tmp-gcn/usr hsa --without-cuda-driver --enable-checking=release --build=x86_64-linux-gnu --host=x86_64-linux-gnu --target=x86_64-linux-gnu]
+  ignore line: [COLLECT_GCC=/bin/cc]
+  ignore line: [COLLECT_LTO_WRAPPER=/usr/lib/gcc/x86_64-pc-linux-gnu/9.3.0/lto-wrapper]
+  ignore line: [Target: x86_64-pc-linux-gnu]
+  ignore line: [Configured with: /build/gcc/src/gcc/configure --prefix=/usr --libdir=/usr/lib --libexecdir=/usr/lib --mandir=/usr/share/man --infodir=/usr/share/info --with-pkgversion='Arch Linux 9.3.0-1' --with-bugurl=https://bugs.archlinux.org/ --enable-languages=c c++ ada fortran go lto objc obj-c++ d --enable-shared --enable-threads=posix --with-system-zlib --with-isl --enable-__cxa_atexit --disable-libunwind-exceptions --enable-clocale=gnu --disable-libstdcxx-pch --disable-libssp --enable-gnu-unique-object --enable-linker-build-id --enable-lto --enable-plugin --enable-install-libiberty --with-linker-hash-style=gnu --enable-gnu-indirect-function --enable-multilib --disable-werror --enable-checking=release --enable-default-pie --enable-default-ssp --enable-cet=auto gdc_include_dir=/usr/include/dlang/gdc]
   ignore line: [Thread model: posix]
-  ignore line: [Supported LTO compression algorithms: zlib zstd]
-  ignore line: [gcc version 10.1.0 (Ubuntu 10.1.0-2ubuntu1~18.04) ]
-  ignore line: [COMPILER_PATH=/usr/lib/gcc/x86_64-linux-gnu/10/:/usr/lib/gcc/x86_64-linux-gnu/10/:/usr/lib/gcc/x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/10/:/usr/lib/gcc/x86_64-linux-gnu/]
-  ignore line: [LIBRARY_PATH=/usr/lib/gcc/x86_64-linux-gnu/10/:/usr/lib/gcc/x86_64-linux-gnu/10/../../../x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/10/../../../../lib/:/lib/x86_64-linux-gnu/:/lib/../lib/:/usr/lib/x86_64-linux-gnu/:/usr/lib/../lib/:/usr/lib/gcc/x86_64-linux-gnu/10/../../../:/lib/:/usr/lib/]
-  ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_3836a' '-mtune=generic' '-march=x86-64']
-  link line: [ /usr/lib/gcc/x86_64-linux-gnu/10/collect2 -plugin /usr/lib/gcc/x86_64-linux-gnu/10/liblto_plugin.so -plugin-opt=/usr/lib/gcc/x86_64-linux-gnu/10/lto-wrapper -plugin-opt=-fresolution=/tmp/cc2qkZYD.res -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s --build-id --eh-frame-hdr -m elf_x86_64 --hash-style=gnu --as-needed -dynamic-linker /lib64/ld-linux-x86-64.so.2 -pie -z now -z relro -o cmTC_3836a /usr/lib/gcc/x86_64-linux-gnu/10/../../../x86_64-linux-gnu/Scrt1.o /usr/lib/gcc/x86_64-linux-gnu/10/../../../x86_64-linux-gnu/crti.o /usr/lib/gcc/x86_64-linux-gnu/10/crtbeginS.o -L/usr/lib/gcc/x86_64-linux-gnu/10 -L/usr/lib/gcc/x86_64-linux-gnu/10/../../../x86_64-linux-gnu -L/usr/lib/gcc/x86_64-linux-gnu/10/../../../../lib -L/lib/x86_64-linux-gnu -L/lib/../lib -L/usr/lib/x86_64-linux-gnu -L/usr/lib/../lib -L/usr/lib/gcc/x86_64-linux-gnu/10/../../.. CMakeFiles/cmTC_3836a.dir/CMakeCCompilerABI.c.o -lgcc --push-state --as-needed -lgcc_s --pop-state -lc -lgcc --push-state --as-needed -lgcc_s --pop-state /usr/lib/gcc/x86_64-linux-gnu/10/crtendS.o /usr/lib/gcc/x86_64-linux-gnu/10/../../../x86_64-linux-gnu/crtn.o]
-    arg [/usr/lib/gcc/x86_64-linux-gnu/10/collect2] ==> ignore
+  ignore line: [gcc version 9.3.0 (Arch Linux 9.3.0-1) ]
+  ignore line: [COMPILER_PATH=/usr/lib/gcc/x86_64-pc-linux-gnu/9.3.0/:/usr/lib/gcc/x86_64-pc-linux-gnu/9.3.0/:/usr/lib/gcc/x86_64-pc-linux-gnu/:/usr/lib/gcc/x86_64-pc-linux-gnu/9.3.0/:/usr/lib/gcc/x86_64-pc-linux-gnu/]
+  ignore line: [LIBRARY_PATH=/usr/lib/gcc/x86_64-pc-linux-gnu/9.3.0/:/usr/lib/gcc/x86_64-pc-linux-gnu/9.3.0/../../../../lib/:/lib/../lib/:/usr/lib/../lib/:/usr/lib/gcc/x86_64-pc-linux-gnu/9.3.0/../../../:/lib/:/usr/lib/]
+  ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_00fae' '-mtune=generic' '-march=x86-64']
+  link line: [ /usr/lib/gcc/x86_64-pc-linux-gnu/9.3.0/collect2 -plugin /usr/lib/gcc/x86_64-pc-linux-gnu/9.3.0/liblto_plugin.so -plugin-opt=/usr/lib/gcc/x86_64-pc-linux-gnu/9.3.0/lto-wrapper -plugin-opt=-fresolution=/tmp/ccYi96MN.res -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s --build-id --eh-frame-hdr --hash-style=gnu -m elf_x86_64 -dynamic-linker /lib64/ld-linux-x86-64.so.2 -pie -o cmTC_00fae /usr/lib/gcc/x86_64-pc-linux-gnu/9.3.0/../../../../lib/Scrt1.o /usr/lib/gcc/x86_64-pc-linux-gnu/9.3.0/../../../../lib/crti.o /usr/lib/gcc/x86_64-pc-linux-gnu/9.3.0/crtbeginS.o -L/usr/lib/gcc/x86_64-pc-linux-gnu/9.3.0 -L/usr/lib/gcc/x86_64-pc-linux-gnu/9.3.0/../../../../lib -L/lib/../lib -L/usr/lib/../lib -L/usr/lib/gcc/x86_64-pc-linux-gnu/9.3.0/../../.. CMakeFiles/cmTC_00fae.dir/CMakeCCompilerABI.c.o -lgcc --push-state --as-needed -lgcc_s --pop-state -lc -lgcc --push-state --as-needed -lgcc_s --pop-state /usr/lib/gcc/x86_64-pc-linux-gnu/9.3.0/crtendS.o /usr/lib/gcc/x86_64-pc-linux-gnu/9.3.0/../../../../lib/crtn.o]
+    arg [/usr/lib/gcc/x86_64-pc-linux-gnu/9.3.0/collect2] ==> ignore
     arg [-plugin] ==> ignore
-    arg [/usr/lib/gcc/x86_64-linux-gnu/10/liblto_plugin.so] ==> ignore
-    arg [-plugin-opt=/usr/lib/gcc/x86_64-linux-gnu/10/lto-wrapper] ==> ignore
-    arg [-plugin-opt=-fresolution=/tmp/cc2qkZYD.res] ==> ignore
+    arg [/usr/lib/gcc/x86_64-pc-linux-gnu/9.3.0/liblto_plugin.so] ==> ignore
+    arg [-plugin-opt=/usr/lib/gcc/x86_64-pc-linux-gnu/9.3.0/lto-wrapper] ==> ignore
+    arg [-plugin-opt=-fresolution=/tmp/ccYi96MN.res] ==> ignore
     arg [-plugin-opt=-pass-through=-lgcc] ==> ignore
     arg [-plugin-opt=-pass-through=-lgcc_s] ==> ignore
     arg [-plugin-opt=-pass-through=-lc] ==> ignore
@@ -192,29 +176,23 @@ Parsed C implicit link information from above output:
     arg [-plugin-opt=-pass-through=-lgcc_s] ==> ignore
     arg [--build-id] ==> ignore
     arg [--eh-frame-hdr] ==> ignore
+    arg [--hash-style=gnu] ==> ignore
     arg [-m] ==> ignore
     arg [elf_x86_64] ==> ignore
-    arg [--hash-style=gnu] ==> ignore
-    arg [--as-needed] ==> ignore
     arg [-dynamic-linker] ==> ignore
     arg [/lib64/ld-linux-x86-64.so.2] ==> ignore
     arg [-pie] ==> ignore
-    arg [-znow] ==> ignore
-    arg [-zrelro] ==> ignore
     arg [-o] ==> ignore
-    arg [cmTC_3836a] ==> ignore
-    arg [/usr/lib/gcc/x86_64-linux-gnu/10/../../../x86_64-linux-gnu/Scrt1.o] ==> ignore
-    arg [/usr/lib/gcc/x86_64-linux-gnu/10/../../../x86_64-linux-gnu/crti.o] ==> ignore
-    arg [/usr/lib/gcc/x86_64-linux-gnu/10/crtbeginS.o] ==> ignore
-    arg [-L/usr/lib/gcc/x86_64-linux-gnu/10] ==> dir [/usr/lib/gcc/x86_64-linux-gnu/10]
-    arg [-L/usr/lib/gcc/x86_64-linux-gnu/10/../../../x86_64-linux-gnu] ==> dir [/usr/lib/gcc/x86_64-linux-gnu/10/../../../x86_64-linux-gnu]
-    arg [-L/usr/lib/gcc/x86_64-linux-gnu/10/../../../../lib] ==> dir [/usr/lib/gcc/x86_64-linux-gnu/10/../../../../lib]
-    arg [-L/lib/x86_64-linux-gnu] ==> dir [/lib/x86_64-linux-gnu]
+    arg [cmTC_00fae] ==> ignore
+    arg [/usr/lib/gcc/x86_64-pc-linux-gnu/9.3.0/../../../../lib/Scrt1.o] ==> ignore
+    arg [/usr/lib/gcc/x86_64-pc-linux-gnu/9.3.0/../../../../lib/crti.o] ==> ignore
+    arg [/usr/lib/gcc/x86_64-pc-linux-gnu/9.3.0/crtbeginS.o] ==> ignore
+    arg [-L/usr/lib/gcc/x86_64-pc-linux-gnu/9.3.0] ==> dir [/usr/lib/gcc/x86_64-pc-linux-gnu/9.3.0]
+    arg [-L/usr/lib/gcc/x86_64-pc-linux-gnu/9.3.0/../../../../lib] ==> dir [/usr/lib/gcc/x86_64-pc-linux-gnu/9.3.0/../../../../lib]
     arg [-L/lib/../lib] ==> dir [/lib/../lib]
-    arg [-L/usr/lib/x86_64-linux-gnu] ==> dir [/usr/lib/x86_64-linux-gnu]
     arg [-L/usr/lib/../lib] ==> dir [/usr/lib/../lib]
-    arg [-L/usr/lib/gcc/x86_64-linux-gnu/10/../../..] ==> dir [/usr/lib/gcc/x86_64-linux-gnu/10/../../..]
-    arg [CMakeFiles/cmTC_3836a.dir/CMakeCCompilerABI.c.o] ==> ignore
+    arg [-L/usr/lib/gcc/x86_64-pc-linux-gnu/9.3.0/../../..] ==> dir [/usr/lib/gcc/x86_64-pc-linux-gnu/9.3.0/../../..]
+    arg [CMakeFiles/cmTC_00fae.dir/CMakeCCompilerABI.c.o] ==> ignore
     arg [-lgcc] ==> lib [gcc]
     arg [--push-state] ==> ignore
     arg [--as-needed] ==> ignore
@@ -226,195 +204,174 @@ Parsed C implicit link information from above output:
     arg [--as-needed] ==> ignore
     arg [-lgcc_s] ==> lib [gcc_s]
     arg [--pop-state] ==> ignore
-    arg [/usr/lib/gcc/x86_64-linux-gnu/10/crtendS.o] ==> ignore
-    arg [/usr/lib/gcc/x86_64-linux-gnu/10/../../../x86_64-linux-gnu/crtn.o] ==> ignore
-  collapse library dir [/usr/lib/gcc/x86_64-linux-gnu/10] ==> [/usr/lib/gcc/x86_64-linux-gnu/10]
-  collapse library dir [/usr/lib/gcc/x86_64-linux-gnu/10/../../../x86_64-linux-gnu] ==> [/usr/lib/x86_64-linux-gnu]
-  collapse library dir [/usr/lib/gcc/x86_64-linux-gnu/10/../../../../lib] ==> [/usr/lib]
-  collapse library dir [/lib/x86_64-linux-gnu] ==> [/lib/x86_64-linux-gnu]
+    arg [/usr/lib/gcc/x86_64-pc-linux-gnu/9.3.0/crtendS.o] ==> ignore
+    arg [/usr/lib/gcc/x86_64-pc-linux-gnu/9.3.0/../../../../lib/crtn.o] ==> ignore
+  collapse library dir [/usr/lib/gcc/x86_64-pc-linux-gnu/9.3.0] ==> [/usr/lib/gcc/x86_64-pc-linux-gnu/9.3.0]
+  collapse library dir [/usr/lib/gcc/x86_64-pc-linux-gnu/9.3.0/../../../../lib] ==> [/usr/lib]
   collapse library dir [/lib/../lib] ==> [/lib]
-  collapse library dir [/usr/lib/x86_64-linux-gnu] ==> [/usr/lib/x86_64-linux-gnu]
   collapse library dir [/usr/lib/../lib] ==> [/usr/lib]
-  collapse library dir [/usr/lib/gcc/x86_64-linux-gnu/10/../../..] ==> [/usr/lib]
+  collapse library dir [/usr/lib/gcc/x86_64-pc-linux-gnu/9.3.0/../../..] ==> [/usr/lib]
   implicit libs: [gcc;gcc_s;c;gcc;gcc_s]
-  implicit dirs: [/usr/lib/gcc/x86_64-linux-gnu/10;/usr/lib/x86_64-linux-gnu;/usr/lib;/lib/x86_64-linux-gnu;/lib]
+  implicit dirs: [/usr/lib/gcc/x86_64-pc-linux-gnu/9.3.0;/usr/lib;/lib]
   implicit fwks: []
 
 
 Determining if the CXX compiler works passed with the following output:
-Change Dir: /home/szymon/Pulpit/Programowanie/Symulacje/Virus-Spreading-Simulation/simulation/cmake-build-debug/CMakeFiles/CMakeTmp
+Change Dir: /home/proxpxd/Desktop/moje_programy/simulations/Virus-Spreading-Simulation/simulation/cmake-build-debug/CMakeFiles/CMakeTmp
 
-Run Build Command(s):/usr/bin/make cmTC_3054f/fast && /usr/bin/make -f CMakeFiles/cmTC_3054f.dir/build.make CMakeFiles/cmTC_3054f.dir/build
-make[1]: Wejście do katalogu '/home/szymon/Pulpit/Programowanie/Symulacje/Virus-Spreading-Simulation/simulation/cmake-build-debug/CMakeFiles/CMakeTmp'
-Building CXX object CMakeFiles/cmTC_3054f.dir/testCXXCompiler.cxx.o
-/usr/bin/g++-10     -o CMakeFiles/cmTC_3054f.dir/testCXXCompiler.cxx.o -c /home/szymon/Pulpit/Programowanie/Symulacje/Virus-Spreading-Simulation/simulation/cmake-build-debug/CMakeFiles/CMakeTmp/testCXXCompiler.cxx
-Linking CXX executable cmTC_3054f
-/snap/clion/114/bin/cmake/linux/bin/cmake -E cmake_link_script CMakeFiles/cmTC_3054f.dir/link.txt --verbose=1
-/usr/bin/g++-10       CMakeFiles/cmTC_3054f.dir/testCXXCompiler.cxx.o  -o cmTC_3054f 
-make[1]: Opuszczenie katalogu '/home/szymon/Pulpit/Programowanie/Symulacje/Virus-Spreading-Simulation/simulation/cmake-build-debug/CMakeFiles/CMakeTmp'
+Run Build Command(s):/bin/make cmTC_fde74/fast && /bin/make  -f CMakeFiles/cmTC_fde74.dir/build.make CMakeFiles/cmTC_fde74.dir/build
+make[1]: Entering directory '/home/proxpxd/Desktop/moje_programy/simulations/Virus-Spreading-Simulation/simulation/cmake-build-debug/CMakeFiles/CMakeTmp'
+Building CXX object CMakeFiles/cmTC_fde74.dir/testCXXCompiler.cxx.o
+/bin/c++     -o CMakeFiles/cmTC_fde74.dir/testCXXCompiler.cxx.o -c /home/proxpxd/Desktop/moje_programy/simulations/Virus-Spreading-Simulation/simulation/cmake-build-debug/CMakeFiles/CMakeTmp/testCXXCompiler.cxx
+Linking CXX executable cmTC_fde74
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_fde74.dir/link.txt --verbose=1
+/bin/c++       CMakeFiles/cmTC_fde74.dir/testCXXCompiler.cxx.o  -o cmTC_fde74 
+make[1]: Leaving directory '/home/proxpxd/Desktop/moje_programy/simulations/Virus-Spreading-Simulation/simulation/cmake-build-debug/CMakeFiles/CMakeTmp'
 
 
 
 Detecting CXX compiler ABI info compiled with the following output:
-Change Dir: /home/szymon/Pulpit/Programowanie/Symulacje/Virus-Spreading-Simulation/simulation/cmake-build-debug/CMakeFiles/CMakeTmp
+Change Dir: /home/proxpxd/Desktop/moje_programy/simulations/Virus-Spreading-Simulation/simulation/cmake-build-debug/CMakeFiles/CMakeTmp
 
-Run Build Command(s):/usr/bin/make cmTC_3ccd4/fast && /usr/bin/make -f CMakeFiles/cmTC_3ccd4.dir/build.make CMakeFiles/cmTC_3ccd4.dir/build
-make[1]: Entering directory '/home/szymon/Pulpit/Programowanie/Symulacje/Virus-Spreading-Simulation/simulation/cmake-build-debug/CMakeFiles/CMakeTmp'
-Building CXX object CMakeFiles/cmTC_3ccd4.dir/CMakeCXXCompilerABI.cpp.o
-/usr/bin/g++-10    -v -o CMakeFiles/cmTC_3ccd4.dir/CMakeCXXCompilerABI.cpp.o -c /snap/clion/114/bin/cmake/linux/share/cmake-3.16/Modules/CMakeCXXCompilerABI.cpp
+Run Build Command(s):/bin/make cmTC_2f4b9/fast && /bin/make  -f CMakeFiles/cmTC_2f4b9.dir/build.make CMakeFiles/cmTC_2f4b9.dir/build
+make[1]: Entering directory '/home/proxpxd/Desktop/moje_programy/simulations/Virus-Spreading-Simulation/simulation/cmake-build-debug/CMakeFiles/CMakeTmp'
+Building CXX object CMakeFiles/cmTC_2f4b9.dir/CMakeCXXCompilerABI.cpp.o
+/bin/c++    -v -o CMakeFiles/cmTC_2f4b9.dir/CMakeCXXCompilerABI.cpp.o -c /usr/share/cmake-3.17/Modules/CMakeCXXCompilerABI.cpp
 Using built-in specs.
-COLLECT_GCC=/usr/bin/g++-10
-OFFLOAD_TARGET_NAMES=nvptx-none:amdgcn-amdhsa:hsa
-OFFLOAD_TARGET_DEFAULT=1
-Target: x86_64-linux-gnu
-Configured with: ../src/configure -v --with-pkgversion='Ubuntu 10.1.0-2ubuntu1~18.04' --with-bugurl=file:///usr/share/doc/gcc-10/README.Bugs --enable-languages=c,ada,c++,go,brig,d,fortran,objc,obj-c++,m2 --prefix=/usr --with-gcc-major-version-only --program-suffix=-10 --program-prefix=x86_64-linux-gnu- --enable-shared --enable-linker-build-id --libexecdir=/usr/lib --without-included-gettext --enable-threads=posix --libdir=/usr/lib --enable-nls --enable-clocale=gnu --enable-libstdcxx-debug --enable-libstdcxx-time=yes --with-default-libstdcxx-abi=new --enable-gnu-unique-object --disable-vtable-verify --enable-plugin --enable-default-pie --with-system-zlib --enable-libphobos-checking=release --with-target-system-zlib=auto --enable-objc-gc=auto --enable-multiarch --disable-werror --with-arch-32=i686 --with-abi=m64 --with-multilib-list=m32,m64,mx32 --enable-multilib --with-tune=generic --enable-offload-targets=nvptx-none=/build/gcc-10-eDoCEC/gcc-10-10.1.0/debian/tmp-nvptx/usr,amdgcn-amdhsa=/build/gcc-10-eDoCEC/gcc-10-10.1.0/debian/tmp-gcn/usr,hsa --without-cuda-driver --enable-checking=release --build=x86_64-linux-gnu --host=x86_64-linux-gnu --target=x86_64-linux-gnu
+COLLECT_GCC=/bin/c++
+Target: x86_64-pc-linux-gnu
+Configured with: /build/gcc/src/gcc/configure --prefix=/usr --libdir=/usr/lib --libexecdir=/usr/lib --mandir=/usr/share/man --infodir=/usr/share/info --with-pkgversion='Arch Linux 9.3.0-1' --with-bugurl=https://bugs.archlinux.org/ --enable-languages=c,c++,ada,fortran,go,lto,objc,obj-c++,d --enable-shared --enable-threads=posix --with-system-zlib --with-isl --enable-__cxa_atexit --disable-libunwind-exceptions --enable-clocale=gnu --disable-libstdcxx-pch --disable-libssp --enable-gnu-unique-object --enable-linker-build-id --enable-lto --enable-plugin --enable-install-libiberty --with-linker-hash-style=gnu --enable-gnu-indirect-function --enable-multilib --disable-werror --enable-checking=release --enable-default-pie --enable-default-ssp --enable-cet=auto gdc_include_dir=/usr/include/dlang/gdc
 Thread model: posix
-Supported LTO compression algorithms: zlib zstd
-gcc version 10.1.0 (Ubuntu 10.1.0-2ubuntu1~18.04) 
-COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_3ccd4.dir/CMakeCXXCompilerABI.cpp.o' '-c' '-shared-libgcc' '-mtune=generic' '-march=x86-64'
- /usr/lib/gcc/x86_64-linux-gnu/10/cc1plus -quiet -v -imultiarch x86_64-linux-gnu -D_GNU_SOURCE /snap/clion/114/bin/cmake/linux/share/cmake-3.16/Modules/CMakeCXXCompilerABI.cpp -quiet -dumpbase CMakeCXXCompilerABI.cpp -mtune=generic -march=x86-64 -auxbase-strip CMakeFiles/cmTC_3ccd4.dir/CMakeCXXCompilerABI.cpp.o -version -fasynchronous-unwind-tables -fstack-protector-strong -Wformat -Wformat-security -o /tmp/cc5GrsBD.s
-GNU C++14 (Ubuntu 10.1.0-2ubuntu1~18.04) version 10.1.0 (x86_64-linux-gnu)
-	compiled by GNU C version 10.1.0, GMP version 6.1.2, MPFR version 4.0.1, MPC version 1.1.0, isl version isl-0.19-GMP
+gcc version 9.3.0 (Arch Linux 9.3.0-1) 
+COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_2f4b9.dir/CMakeCXXCompilerABI.cpp.o' '-c' '-shared-libgcc' '-mtune=generic' '-march=x86-64'
+ /usr/lib/gcc/x86_64-pc-linux-gnu/9.3.0/cc1plus -quiet -v -D_GNU_SOURCE /usr/share/cmake-3.17/Modules/CMakeCXXCompilerABI.cpp -quiet -dumpbase CMakeCXXCompilerABI.cpp -mtune=generic -march=x86-64 -auxbase-strip CMakeFiles/cmTC_2f4b9.dir/CMakeCXXCompilerABI.cpp.o -version -o /tmp/cc1x9aP7.s
+GNU C++14 (Arch Linux 9.3.0-1) version 9.3.0 (x86_64-pc-linux-gnu)
+	compiled by GNU C version 9.3.0, GMP version 6.2.0, MPFR version 4.0.2, MPC version 1.1.0, isl version isl-0.21-GMP
 
 GGC heuristics: --param ggc-min-expand=100 --param ggc-min-heapsize=131072
-ignoring duplicate directory "/usr/include/x86_64-linux-gnu/c++/10"
-ignoring nonexistent directory "/usr/local/include/x86_64-linux-gnu"
-ignoring nonexistent directory "/usr/lib/gcc/x86_64-linux-gnu/10/include-fixed"
-ignoring nonexistent directory "/usr/lib/gcc/x86_64-linux-gnu/10/../../../../x86_64-linux-gnu/include"
+ignoring nonexistent directory "/usr/lib/gcc/x86_64-pc-linux-gnu/9.3.0/../../../../x86_64-pc-linux-gnu/include"
 #include "..." search starts here:
 #include <...> search starts here:
- /usr/include/c++/10
- /usr/include/x86_64-linux-gnu/c++/10
- /usr/include/c++/10/backward
- /usr/lib/gcc/x86_64-linux-gnu/10/include
+ /usr/lib/gcc/x86_64-pc-linux-gnu/9.3.0/../../../../include/c++/9.3.0
+ /usr/lib/gcc/x86_64-pc-linux-gnu/9.3.0/../../../../include/c++/9.3.0/x86_64-pc-linux-gnu
+ /usr/lib/gcc/x86_64-pc-linux-gnu/9.3.0/../../../../include/c++/9.3.0/backward
+ /usr/lib/gcc/x86_64-pc-linux-gnu/9.3.0/include
  /usr/local/include
- /usr/include/x86_64-linux-gnu
+ /usr/lib/gcc/x86_64-pc-linux-gnu/9.3.0/include-fixed
  /usr/include
 End of search list.
-GNU C++14 (Ubuntu 10.1.0-2ubuntu1~18.04) version 10.1.0 (x86_64-linux-gnu)
-	compiled by GNU C version 10.1.0, GMP version 6.1.2, MPFR version 4.0.1, MPC version 1.1.0, isl version isl-0.19-GMP
+GNU C++14 (Arch Linux 9.3.0-1) version 9.3.0 (x86_64-pc-linux-gnu)
+	compiled by GNU C version 9.3.0, GMP version 6.2.0, MPFR version 4.0.2, MPC version 1.1.0, isl version isl-0.21-GMP
 
 GGC heuristics: --param ggc-min-expand=100 --param ggc-min-heapsize=131072
-Compiler executable checksum: 435c9a72f92ce04eba08a47828fa63c4
-COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_3ccd4.dir/CMakeCXXCompilerABI.cpp.o' '-c' '-shared-libgcc' '-mtune=generic' '-march=x86-64'
- as -v --64 -o CMakeFiles/cmTC_3ccd4.dir/CMakeCXXCompilerABI.cpp.o /tmp/cc5GrsBD.s
-GNU assembler version 2.30 (x86_64-linux-gnu) using BFD version (GNU Binutils for Ubuntu) 2.30
-COMPILER_PATH=/usr/lib/gcc/x86_64-linux-gnu/10/:/usr/lib/gcc/x86_64-linux-gnu/10/:/usr/lib/gcc/x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/10/:/usr/lib/gcc/x86_64-linux-gnu/
-LIBRARY_PATH=/usr/lib/gcc/x86_64-linux-gnu/10/:/usr/lib/gcc/x86_64-linux-gnu/10/../../../x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/10/../../../../lib/:/lib/x86_64-linux-gnu/:/lib/../lib/:/usr/lib/x86_64-linux-gnu/:/usr/lib/../lib/:/usr/lib/gcc/x86_64-linux-gnu/10/../../../:/lib/:/usr/lib/
-COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_3ccd4.dir/CMakeCXXCompilerABI.cpp.o' '-c' '-shared-libgcc' '-mtune=generic' '-march=x86-64'
-Linking CXX executable cmTC_3ccd4
-/snap/clion/114/bin/cmake/linux/bin/cmake -E cmake_link_script CMakeFiles/cmTC_3ccd4.dir/link.txt --verbose=1
-/usr/bin/g++-10      -v CMakeFiles/cmTC_3ccd4.dir/CMakeCXXCompilerABI.cpp.o  -o cmTC_3ccd4 
+Compiler executable checksum: 814040b5981cd30c081565ed9d15a61c
+COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_2f4b9.dir/CMakeCXXCompilerABI.cpp.o' '-c' '-shared-libgcc' '-mtune=generic' '-march=x86-64'
+ as -v --64 -o CMakeFiles/cmTC_2f4b9.dir/CMakeCXXCompilerABI.cpp.o /tmp/cc1x9aP7.s
+GNU assembler version 2.34 (x86_64-pc-linux-gnu) using BFD version (GNU Binutils) 2.34
+COMPILER_PATH=/usr/lib/gcc/x86_64-pc-linux-gnu/9.3.0/:/usr/lib/gcc/x86_64-pc-linux-gnu/9.3.0/:/usr/lib/gcc/x86_64-pc-linux-gnu/:/usr/lib/gcc/x86_64-pc-linux-gnu/9.3.0/:/usr/lib/gcc/x86_64-pc-linux-gnu/
+LIBRARY_PATH=/usr/lib/gcc/x86_64-pc-linux-gnu/9.3.0/:/usr/lib/gcc/x86_64-pc-linux-gnu/9.3.0/../../../../lib/:/lib/../lib/:/usr/lib/../lib/:/usr/lib/gcc/x86_64-pc-linux-gnu/9.3.0/../../../:/lib/:/usr/lib/
+COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_2f4b9.dir/CMakeCXXCompilerABI.cpp.o' '-c' '-shared-libgcc' '-mtune=generic' '-march=x86-64'
+Linking CXX executable cmTC_2f4b9
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_2f4b9.dir/link.txt --verbose=1
+/bin/c++      -v CMakeFiles/cmTC_2f4b9.dir/CMakeCXXCompilerABI.cpp.o  -o cmTC_2f4b9 
 Using built-in specs.
-COLLECT_GCC=/usr/bin/g++-10
-COLLECT_LTO_WRAPPER=/usr/lib/gcc/x86_64-linux-gnu/10/lto-wrapper
-OFFLOAD_TARGET_NAMES=nvptx-none:amdgcn-amdhsa:hsa
-OFFLOAD_TARGET_DEFAULT=1
-Target: x86_64-linux-gnu
-Configured with: ../src/configure -v --with-pkgversion='Ubuntu 10.1.0-2ubuntu1~18.04' --with-bugurl=file:///usr/share/doc/gcc-10/README.Bugs --enable-languages=c,ada,c++,go,brig,d,fortran,objc,obj-c++,m2 --prefix=/usr --with-gcc-major-version-only --program-suffix=-10 --program-prefix=x86_64-linux-gnu- --enable-shared --enable-linker-build-id --libexecdir=/usr/lib --without-included-gettext --enable-threads=posix --libdir=/usr/lib --enable-nls --enable-clocale=gnu --enable-libstdcxx-debug --enable-libstdcxx-time=yes --with-default-libstdcxx-abi=new --enable-gnu-unique-object --disable-vtable-verify --enable-plugin --enable-default-pie --with-system-zlib --enable-libphobos-checking=release --with-target-system-zlib=auto --enable-objc-gc=auto --enable-multiarch --disable-werror --with-arch-32=i686 --with-abi=m64 --with-multilib-list=m32,m64,mx32 --enable-multilib --with-tune=generic --enable-offload-targets=nvptx-none=/build/gcc-10-eDoCEC/gcc-10-10.1.0/debian/tmp-nvptx/usr,amdgcn-amdhsa=/build/gcc-10-eDoCEC/gcc-10-10.1.0/debian/tmp-gcn/usr,hsa --without-cuda-driver --enable-checking=release --build=x86_64-linux-gnu --host=x86_64-linux-gnu --target=x86_64-linux-gnu
+COLLECT_GCC=/bin/c++
+COLLECT_LTO_WRAPPER=/usr/lib/gcc/x86_64-pc-linux-gnu/9.3.0/lto-wrapper
+Target: x86_64-pc-linux-gnu
+Configured with: /build/gcc/src/gcc/configure --prefix=/usr --libdir=/usr/lib --libexecdir=/usr/lib --mandir=/usr/share/man --infodir=/usr/share/info --with-pkgversion='Arch Linux 9.3.0-1' --with-bugurl=https://bugs.archlinux.org/ --enable-languages=c,c++,ada,fortran,go,lto,objc,obj-c++,d --enable-shared --enable-threads=posix --with-system-zlib --with-isl --enable-__cxa_atexit --disable-libunwind-exceptions --enable-clocale=gnu --disable-libstdcxx-pch --disable-libssp --enable-gnu-unique-object --enable-linker-build-id --enable-lto --enable-plugin --enable-install-libiberty --with-linker-hash-style=gnu --enable-gnu-indirect-function --enable-multilib --disable-werror --enable-checking=release --enable-default-pie --enable-default-ssp --enable-cet=auto gdc_include_dir=/usr/include/dlang/gdc
 Thread model: posix
-Supported LTO compression algorithms: zlib zstd
-gcc version 10.1.0 (Ubuntu 10.1.0-2ubuntu1~18.04) 
-COMPILER_PATH=/usr/lib/gcc/x86_64-linux-gnu/10/:/usr/lib/gcc/x86_64-linux-gnu/10/:/usr/lib/gcc/x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/10/:/usr/lib/gcc/x86_64-linux-gnu/
-LIBRARY_PATH=/usr/lib/gcc/x86_64-linux-gnu/10/:/usr/lib/gcc/x86_64-linux-gnu/10/../../../x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/10/../../../../lib/:/lib/x86_64-linux-gnu/:/lib/../lib/:/usr/lib/x86_64-linux-gnu/:/usr/lib/../lib/:/usr/lib/gcc/x86_64-linux-gnu/10/../../../:/lib/:/usr/lib/
-COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_3ccd4' '-shared-libgcc' '-mtune=generic' '-march=x86-64'
- /usr/lib/gcc/x86_64-linux-gnu/10/collect2 -plugin /usr/lib/gcc/x86_64-linux-gnu/10/liblto_plugin.so -plugin-opt=/usr/lib/gcc/x86_64-linux-gnu/10/lto-wrapper -plugin-opt=-fresolution=/tmp/ccsVcPcC.res -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc --build-id --eh-frame-hdr -m elf_x86_64 --hash-style=gnu --as-needed -dynamic-linker /lib64/ld-linux-x86-64.so.2 -pie -z now -z relro -o cmTC_3ccd4 /usr/lib/gcc/x86_64-linux-gnu/10/../../../x86_64-linux-gnu/Scrt1.o /usr/lib/gcc/x86_64-linux-gnu/10/../../../x86_64-linux-gnu/crti.o /usr/lib/gcc/x86_64-linux-gnu/10/crtbeginS.o -L/usr/lib/gcc/x86_64-linux-gnu/10 -L/usr/lib/gcc/x86_64-linux-gnu/10/../../../x86_64-linux-gnu -L/usr/lib/gcc/x86_64-linux-gnu/10/../../../../lib -L/lib/x86_64-linux-gnu -L/lib/../lib -L/usr/lib/x86_64-linux-gnu -L/usr/lib/../lib -L/usr/lib/gcc/x86_64-linux-gnu/10/../../.. CMakeFiles/cmTC_3ccd4.dir/CMakeCXXCompilerABI.cpp.o -lstdc++ -lm -lgcc_s -lgcc -lc -lgcc_s -lgcc /usr/lib/gcc/x86_64-linux-gnu/10/crtendS.o /usr/lib/gcc/x86_64-linux-gnu/10/../../../x86_64-linux-gnu/crtn.o
-COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_3ccd4' '-shared-libgcc' '-mtune=generic' '-march=x86-64'
-make[1]: Leaving directory '/home/szymon/Pulpit/Programowanie/Symulacje/Virus-Spreading-Simulation/simulation/cmake-build-debug/CMakeFiles/CMakeTmp'
+gcc version 9.3.0 (Arch Linux 9.3.0-1) 
+COMPILER_PATH=/usr/lib/gcc/x86_64-pc-linux-gnu/9.3.0/:/usr/lib/gcc/x86_64-pc-linux-gnu/9.3.0/:/usr/lib/gcc/x86_64-pc-linux-gnu/:/usr/lib/gcc/x86_64-pc-linux-gnu/9.3.0/:/usr/lib/gcc/x86_64-pc-linux-gnu/
+LIBRARY_PATH=/usr/lib/gcc/x86_64-pc-linux-gnu/9.3.0/:/usr/lib/gcc/x86_64-pc-linux-gnu/9.3.0/../../../../lib/:/lib/../lib/:/usr/lib/../lib/:/usr/lib/gcc/x86_64-pc-linux-gnu/9.3.0/../../../:/lib/:/usr/lib/
+COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_2f4b9' '-shared-libgcc' '-mtune=generic' '-march=x86-64'
+ /usr/lib/gcc/x86_64-pc-linux-gnu/9.3.0/collect2 -plugin /usr/lib/gcc/x86_64-pc-linux-gnu/9.3.0/liblto_plugin.so -plugin-opt=/usr/lib/gcc/x86_64-pc-linux-gnu/9.3.0/lto-wrapper -plugin-opt=-fresolution=/tmp/cclF7U6r.res -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc --build-id --eh-frame-hdr --hash-style=gnu -m elf_x86_64 -dynamic-linker /lib64/ld-linux-x86-64.so.2 -pie -o cmTC_2f4b9 /usr/lib/gcc/x86_64-pc-linux-gnu/9.3.0/../../../../lib/Scrt1.o /usr/lib/gcc/x86_64-pc-linux-gnu/9.3.0/../../../../lib/crti.o /usr/lib/gcc/x86_64-pc-linux-gnu/9.3.0/crtbeginS.o -L/usr/lib/gcc/x86_64-pc-linux-gnu/9.3.0 -L/usr/lib/gcc/x86_64-pc-linux-gnu/9.3.0/../../../../lib -L/lib/../lib -L/usr/lib/../lib -L/usr/lib/gcc/x86_64-pc-linux-gnu/9.3.0/../../.. CMakeFiles/cmTC_2f4b9.dir/CMakeCXXCompilerABI.cpp.o -lstdc++ -lm -lgcc_s -lgcc -lc -lgcc_s -lgcc /usr/lib/gcc/x86_64-pc-linux-gnu/9.3.0/crtendS.o /usr/lib/gcc/x86_64-pc-linux-gnu/9.3.0/../../../../lib/crtn.o
+COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_2f4b9' '-shared-libgcc' '-mtune=generic' '-march=x86-64'
+make[1]: Leaving directory '/home/proxpxd/Desktop/moje_programy/simulations/Virus-Spreading-Simulation/simulation/cmake-build-debug/CMakeFiles/CMakeTmp'
 
 
 
 Parsed CXX implicit include dir info from above output: rv=done
   found start of include info
   found start of implicit include info
-    add: [/usr/include/c++/10]
-    add: [/usr/include/x86_64-linux-gnu/c++/10]
-    add: [/usr/include/c++/10/backward]
-    add: [/usr/lib/gcc/x86_64-linux-gnu/10/include]
+    add: [/usr/lib/gcc/x86_64-pc-linux-gnu/9.3.0/../../../../include/c++/9.3.0]
+    add: [/usr/lib/gcc/x86_64-pc-linux-gnu/9.3.0/../../../../include/c++/9.3.0/x86_64-pc-linux-gnu]
+    add: [/usr/lib/gcc/x86_64-pc-linux-gnu/9.3.0/../../../../include/c++/9.3.0/backward]
+    add: [/usr/lib/gcc/x86_64-pc-linux-gnu/9.3.0/include]
     add: [/usr/local/include]
-    add: [/usr/include/x86_64-linux-gnu]
+    add: [/usr/lib/gcc/x86_64-pc-linux-gnu/9.3.0/include-fixed]
     add: [/usr/include]
   end of search list found
-  collapse include dir [/usr/include/c++/10] ==> [/usr/include/c++/10]
-  collapse include dir [/usr/include/x86_64-linux-gnu/c++/10] ==> [/usr/include/x86_64-linux-gnu/c++/10]
-  collapse include dir [/usr/include/c++/10/backward] ==> [/usr/include/c++/10/backward]
-  collapse include dir [/usr/lib/gcc/x86_64-linux-gnu/10/include] ==> [/usr/lib/gcc/x86_64-linux-gnu/10/include]
+  collapse include dir [/usr/lib/gcc/x86_64-pc-linux-gnu/9.3.0/../../../../include/c++/9.3.0] ==> [/usr/include/c++/9.3.0]
+  collapse include dir [/usr/lib/gcc/x86_64-pc-linux-gnu/9.3.0/../../../../include/c++/9.3.0/x86_64-pc-linux-gnu] ==> [/usr/include/c++/9.3.0/x86_64-pc-linux-gnu]
+  collapse include dir [/usr/lib/gcc/x86_64-pc-linux-gnu/9.3.0/../../../../include/c++/9.3.0/backward] ==> [/usr/include/c++/9.3.0/backward]
+  collapse include dir [/usr/lib/gcc/x86_64-pc-linux-gnu/9.3.0/include] ==> [/usr/lib/gcc/x86_64-pc-linux-gnu/9.3.0/include]
   collapse include dir [/usr/local/include] ==> [/usr/local/include]
-  collapse include dir [/usr/include/x86_64-linux-gnu] ==> [/usr/include/x86_64-linux-gnu]
+  collapse include dir [/usr/lib/gcc/x86_64-pc-linux-gnu/9.3.0/include-fixed] ==> [/usr/lib/gcc/x86_64-pc-linux-gnu/9.3.0/include-fixed]
   collapse include dir [/usr/include] ==> [/usr/include]
-  implicit include dirs: [/usr/include/c++/10;/usr/include/x86_64-linux-gnu/c++/10;/usr/include/c++/10/backward;/usr/lib/gcc/x86_64-linux-gnu/10/include;/usr/local/include;/usr/include/x86_64-linux-gnu;/usr/include]
+  implicit include dirs: [/usr/include/c++/9.3.0;/usr/include/c++/9.3.0/x86_64-pc-linux-gnu;/usr/include/c++/9.3.0/backward;/usr/lib/gcc/x86_64-pc-linux-gnu/9.3.0/include;/usr/local/include;/usr/lib/gcc/x86_64-pc-linux-gnu/9.3.0/include-fixed;/usr/include]
 
 
 Parsed CXX implicit link information from above output:
   link line regex: [^( *|.*[/\])(ld|CMAKE_LINK_STARTFILE-NOTFOUND|([^/\]+-)?ld|collect2)[^/\]*( |$)]
-  ignore line: [Change Dir: /home/szymon/Pulpit/Programowanie/Symulacje/Virus-Spreading-Simulation/simulation/cmake-build-debug/CMakeFiles/CMakeTmp]
+  ignore line: [Change Dir: /home/proxpxd/Desktop/moje_programy/simulations/Virus-Spreading-Simulation/simulation/cmake-build-debug/CMakeFiles/CMakeTmp]
   ignore line: []
-  ignore line: [Run Build Command(s):/usr/bin/make cmTC_3ccd4/fast && /usr/bin/make -f CMakeFiles/cmTC_3ccd4.dir/build.make CMakeFiles/cmTC_3ccd4.dir/build]
-  ignore line: [make[1]: Entering directory '/home/szymon/Pulpit/Programowanie/Symulacje/Virus-Spreading-Simulation/simulation/cmake-build-debug/CMakeFiles/CMakeTmp']
-  ignore line: [Building CXX object CMakeFiles/cmTC_3ccd4.dir/CMakeCXXCompilerABI.cpp.o]
-  ignore line: [/usr/bin/g++-10    -v -o CMakeFiles/cmTC_3ccd4.dir/CMakeCXXCompilerABI.cpp.o -c /snap/clion/114/bin/cmake/linux/share/cmake-3.16/Modules/CMakeCXXCompilerABI.cpp]
+  ignore line: [Run Build Command(s):/bin/make cmTC_2f4b9/fast && /bin/make  -f CMakeFiles/cmTC_2f4b9.dir/build.make CMakeFiles/cmTC_2f4b9.dir/build]
+  ignore line: [make[1]: Entering directory '/home/proxpxd/Desktop/moje_programy/simulations/Virus-Spreading-Simulation/simulation/cmake-build-debug/CMakeFiles/CMakeTmp']
+  ignore line: [Building CXX object CMakeFiles/cmTC_2f4b9.dir/CMakeCXXCompilerABI.cpp.o]
+  ignore line: [/bin/c++    -v -o CMakeFiles/cmTC_2f4b9.dir/CMakeCXXCompilerABI.cpp.o -c /usr/share/cmake-3.17/Modules/CMakeCXXCompilerABI.cpp]
   ignore line: [Using built-in specs.]
-  ignore line: [COLLECT_GCC=/usr/bin/g++-10]
-  ignore line: [OFFLOAD_TARGET_NAMES=nvptx-none:amdgcn-amdhsa:hsa]
-  ignore line: [OFFLOAD_TARGET_DEFAULT=1]
-  ignore line: [Target: x86_64-linux-gnu]
-  ignore line: [Configured with: ../src/configure -v --with-pkgversion='Ubuntu 10.1.0-2ubuntu1~18.04' --with-bugurl=file:///usr/share/doc/gcc-10/README.Bugs --enable-languages=c ada c++ go brig d fortran objc obj-c++ m2 --prefix=/usr --with-gcc-major-version-only --program-suffix=-10 --program-prefix=x86_64-linux-gnu- --enable-shared --enable-linker-build-id --libexecdir=/usr/lib --without-included-gettext --enable-threads=posix --libdir=/usr/lib --enable-nls --enable-clocale=gnu --enable-libstdcxx-debug --enable-libstdcxx-time=yes --with-default-libstdcxx-abi=new --enable-gnu-unique-object --disable-vtable-verify --enable-plugin --enable-default-pie --with-system-zlib --enable-libphobos-checking=release --with-target-system-zlib=auto --enable-objc-gc=auto --enable-multiarch --disable-werror --with-arch-32=i686 --with-abi=m64 --with-multilib-list=m32 m64 mx32 --enable-multilib --with-tune=generic --enable-offload-targets=nvptx-none=/build/gcc-10-eDoCEC/gcc-10-10.1.0/debian/tmp-nvptx/usr amdgcn-amdhsa=/build/gcc-10-eDoCEC/gcc-10-10.1.0/debian/tmp-gcn/usr hsa --without-cuda-driver --enable-checking=release --build=x86_64-linux-gnu --host=x86_64-linux-gnu --target=x86_64-linux-gnu]
+  ignore line: [COLLECT_GCC=/bin/c++]
+  ignore line: [Target: x86_64-pc-linux-gnu]
+  ignore line: [Configured with: /build/gcc/src/gcc/configure --prefix=/usr --libdir=/usr/lib --libexecdir=/usr/lib --mandir=/usr/share/man --infodir=/usr/share/info --with-pkgversion='Arch Linux 9.3.0-1' --with-bugurl=https://bugs.archlinux.org/ --enable-languages=c c++ ada fortran go lto objc obj-c++ d --enable-shared --enable-threads=posix --with-system-zlib --with-isl --enable-__cxa_atexit --disable-libunwind-exceptions --enable-clocale=gnu --disable-libstdcxx-pch --disable-libssp --enable-gnu-unique-object --enable-linker-build-id --enable-lto --enable-plugin --enable-install-libiberty --with-linker-hash-style=gnu --enable-gnu-indirect-function --enable-multilib --disable-werror --enable-checking=release --enable-default-pie --enable-default-ssp --enable-cet=auto gdc_include_dir=/usr/include/dlang/gdc]
   ignore line: [Thread model: posix]
-  ignore line: [Supported LTO compression algorithms: zlib zstd]
-  ignore line: [gcc version 10.1.0 (Ubuntu 10.1.0-2ubuntu1~18.04) ]
-  ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_3ccd4.dir/CMakeCXXCompilerABI.cpp.o' '-c' '-shared-libgcc' '-mtune=generic' '-march=x86-64']
-  ignore line: [ /usr/lib/gcc/x86_64-linux-gnu/10/cc1plus -quiet -v -imultiarch x86_64-linux-gnu -D_GNU_SOURCE /snap/clion/114/bin/cmake/linux/share/cmake-3.16/Modules/CMakeCXXCompilerABI.cpp -quiet -dumpbase CMakeCXXCompilerABI.cpp -mtune=generic -march=x86-64 -auxbase-strip CMakeFiles/cmTC_3ccd4.dir/CMakeCXXCompilerABI.cpp.o -version -fasynchronous-unwind-tables -fstack-protector-strong -Wformat -Wformat-security -o /tmp/cc5GrsBD.s]
-  ignore line: [GNU C++14 (Ubuntu 10.1.0-2ubuntu1~18.04) version 10.1.0 (x86_64-linux-gnu)]
-  ignore line: [	compiled by GNU C version 10.1.0  GMP version 6.1.2  MPFR version 4.0.1  MPC version 1.1.0  isl version isl-0.19-GMP]
+  ignore line: [gcc version 9.3.0 (Arch Linux 9.3.0-1) ]
+  ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_2f4b9.dir/CMakeCXXCompilerABI.cpp.o' '-c' '-shared-libgcc' '-mtune=generic' '-march=x86-64']
+  ignore line: [ /usr/lib/gcc/x86_64-pc-linux-gnu/9.3.0/cc1plus -quiet -v -D_GNU_SOURCE /usr/share/cmake-3.17/Modules/CMakeCXXCompilerABI.cpp -quiet -dumpbase CMakeCXXCompilerABI.cpp -mtune=generic -march=x86-64 -auxbase-strip CMakeFiles/cmTC_2f4b9.dir/CMakeCXXCompilerABI.cpp.o -version -o /tmp/cc1x9aP7.s]
+  ignore line: [GNU C++14 (Arch Linux 9.3.0-1) version 9.3.0 (x86_64-pc-linux-gnu)]
+  ignore line: [	compiled by GNU C version 9.3.0  GMP version 6.2.0  MPFR version 4.0.2  MPC version 1.1.0  isl version isl-0.21-GMP]
   ignore line: []
   ignore line: [GGC heuristics: --param ggc-min-expand=100 --param ggc-min-heapsize=131072]
-  ignore line: [ignoring duplicate directory "/usr/include/x86_64-linux-gnu/c++/10"]
-  ignore line: [ignoring nonexistent directory "/usr/local/include/x86_64-linux-gnu"]
-  ignore line: [ignoring nonexistent directory "/usr/lib/gcc/x86_64-linux-gnu/10/include-fixed"]
-  ignore line: [ignoring nonexistent directory "/usr/lib/gcc/x86_64-linux-gnu/10/../../../../x86_64-linux-gnu/include"]
+  ignore line: [ignoring nonexistent directory "/usr/lib/gcc/x86_64-pc-linux-gnu/9.3.0/../../../../x86_64-pc-linux-gnu/include"]
   ignore line: [#include "..." search starts here:]
   ignore line: [#include <...> search starts here:]
-  ignore line: [ /usr/include/c++/10]
-  ignore line: [ /usr/include/x86_64-linux-gnu/c++/10]
-  ignore line: [ /usr/include/c++/10/backward]
-  ignore line: [ /usr/lib/gcc/x86_64-linux-gnu/10/include]
+  ignore line: [ /usr/lib/gcc/x86_64-pc-linux-gnu/9.3.0/../../../../include/c++/9.3.0]
+  ignore line: [ /usr/lib/gcc/x86_64-pc-linux-gnu/9.3.0/../../../../include/c++/9.3.0/x86_64-pc-linux-gnu]
+  ignore line: [ /usr/lib/gcc/x86_64-pc-linux-gnu/9.3.0/../../../../include/c++/9.3.0/backward]
+  ignore line: [ /usr/lib/gcc/x86_64-pc-linux-gnu/9.3.0/include]
   ignore line: [ /usr/local/include]
-  ignore line: [ /usr/include/x86_64-linux-gnu]
+  ignore line: [ /usr/lib/gcc/x86_64-pc-linux-gnu/9.3.0/include-fixed]
   ignore line: [ /usr/include]
   ignore line: [End of search list.]
-  ignore line: [GNU C++14 (Ubuntu 10.1.0-2ubuntu1~18.04) version 10.1.0 (x86_64-linux-gnu)]
-  ignore line: [	compiled by GNU C version 10.1.0  GMP version 6.1.2  MPFR version 4.0.1  MPC version 1.1.0  isl version isl-0.19-GMP]
+  ignore line: [GNU C++14 (Arch Linux 9.3.0-1) version 9.3.0 (x86_64-pc-linux-gnu)]
+  ignore line: [	compiled by GNU C version 9.3.0  GMP version 6.2.0  MPFR version 4.0.2  MPC version 1.1.0  isl version isl-0.21-GMP]
   ignore line: []
   ignore line: [GGC heuristics: --param ggc-min-expand=100 --param ggc-min-heapsize=131072]
-  ignore line: [Compiler executable checksum: 435c9a72f92ce04eba08a47828fa63c4]
-  ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_3ccd4.dir/CMakeCXXCompilerABI.cpp.o' '-c' '-shared-libgcc' '-mtune=generic' '-march=x86-64']
-  ignore line: [ as -v --64 -o CMakeFiles/cmTC_3ccd4.dir/CMakeCXXCompilerABI.cpp.o /tmp/cc5GrsBD.s]
-  ignore line: [GNU assembler version 2.30 (x86_64-linux-gnu) using BFD version (GNU Binutils for Ubuntu) 2.30]
-  ignore line: [COMPILER_PATH=/usr/lib/gcc/x86_64-linux-gnu/10/:/usr/lib/gcc/x86_64-linux-gnu/10/:/usr/lib/gcc/x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/10/:/usr/lib/gcc/x86_64-linux-gnu/]
-  ignore line: [LIBRARY_PATH=/usr/lib/gcc/x86_64-linux-gnu/10/:/usr/lib/gcc/x86_64-linux-gnu/10/../../../x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/10/../../../../lib/:/lib/x86_64-linux-gnu/:/lib/../lib/:/usr/lib/x86_64-linux-gnu/:/usr/lib/../lib/:/usr/lib/gcc/x86_64-linux-gnu/10/../../../:/lib/:/usr/lib/]
-  ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_3ccd4.dir/CMakeCXXCompilerABI.cpp.o' '-c' '-shared-libgcc' '-mtune=generic' '-march=x86-64']
-  ignore line: [Linking CXX executable cmTC_3ccd4]
-  ignore line: [/snap/clion/114/bin/cmake/linux/bin/cmake -E cmake_link_script CMakeFiles/cmTC_3ccd4.dir/link.txt --verbose=1]
-  ignore line: [/usr/bin/g++-10      -v CMakeFiles/cmTC_3ccd4.dir/CMakeCXXCompilerABI.cpp.o  -o cmTC_3ccd4 ]
+  ignore line: [Compiler executable checksum: 814040b5981cd30c081565ed9d15a61c]
+  ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_2f4b9.dir/CMakeCXXCompilerABI.cpp.o' '-c' '-shared-libgcc' '-mtune=generic' '-march=x86-64']
+  ignore line: [ as -v --64 -o CMakeFiles/cmTC_2f4b9.dir/CMakeCXXCompilerABI.cpp.o /tmp/cc1x9aP7.s]
+  ignore line: [GNU assembler version 2.34 (x86_64-pc-linux-gnu) using BFD version (GNU Binutils) 2.34]
+  ignore line: [COMPILER_PATH=/usr/lib/gcc/x86_64-pc-linux-gnu/9.3.0/:/usr/lib/gcc/x86_64-pc-linux-gnu/9.3.0/:/usr/lib/gcc/x86_64-pc-linux-gnu/:/usr/lib/gcc/x86_64-pc-linux-gnu/9.3.0/:/usr/lib/gcc/x86_64-pc-linux-gnu/]
+  ignore line: [LIBRARY_PATH=/usr/lib/gcc/x86_64-pc-linux-gnu/9.3.0/:/usr/lib/gcc/x86_64-pc-linux-gnu/9.3.0/../../../../lib/:/lib/../lib/:/usr/lib/../lib/:/usr/lib/gcc/x86_64-pc-linux-gnu/9.3.0/../../../:/lib/:/usr/lib/]
+  ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_2f4b9.dir/CMakeCXXCompilerABI.cpp.o' '-c' '-shared-libgcc' '-mtune=generic' '-march=x86-64']
+  ignore line: [Linking CXX executable cmTC_2f4b9]
+  ignore line: [/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_2f4b9.dir/link.txt --verbose=1]
+  ignore line: [/bin/c++      -v CMakeFiles/cmTC_2f4b9.dir/CMakeCXXCompilerABI.cpp.o  -o cmTC_2f4b9 ]
   ignore line: [Using built-in specs.]
-  ignore line: [COLLECT_GCC=/usr/bin/g++-10]
-  ignore line: [COLLECT_LTO_WRAPPER=/usr/lib/gcc/x86_64-linux-gnu/10/lto-wrapper]
-  ignore line: [OFFLOAD_TARGET_NAMES=nvptx-none:amdgcn-amdhsa:hsa]
-  ignore line: [OFFLOAD_TARGET_DEFAULT=1]
-  ignore line: [Target: x86_64-linux-gnu]
-  ignore line: [Configured with: ../src/configure -v --with-pkgversion='Ubuntu 10.1.0-2ubuntu1~18.04' --with-bugurl=file:///usr/share/doc/gcc-10/README.Bugs --enable-languages=c ada c++ go brig d fortran objc obj-c++ m2 --prefix=/usr --with-gcc-major-version-only --program-suffix=-10 --program-prefix=x86_64-linux-gnu- --enable-shared --enable-linker-build-id --libexecdir=/usr/lib --without-included-gettext --enable-threads=posix --libdir=/usr/lib --enable-nls --enable-clocale=gnu --enable-libstdcxx-debug --enable-libstdcxx-time=yes --with-default-libstdcxx-abi=new --enable-gnu-unique-object --disable-vtable-verify --enable-plugin --enable-default-pie --with-system-zlib --enable-libphobos-checking=release --with-target-system-zlib=auto --enable-objc-gc=auto --enable-multiarch --disable-werror --with-arch-32=i686 --with-abi=m64 --with-multilib-list=m32 m64 mx32 --enable-multilib --with-tune=generic --enable-offload-targets=nvptx-none=/build/gcc-10-eDoCEC/gcc-10-10.1.0/debian/tmp-nvptx/usr amdgcn-amdhsa=/build/gcc-10-eDoCEC/gcc-10-10.1.0/debian/tmp-gcn/usr hsa --without-cuda-driver --enable-checking=release --build=x86_64-linux-gnu --host=x86_64-linux-gnu --target=x86_64-linux-gnu]
+  ignore line: [COLLECT_GCC=/bin/c++]
+  ignore line: [COLLECT_LTO_WRAPPER=/usr/lib/gcc/x86_64-pc-linux-gnu/9.3.0/lto-wrapper]
+  ignore line: [Target: x86_64-pc-linux-gnu]
+  ignore line: [Configured with: /build/gcc/src/gcc/configure --prefix=/usr --libdir=/usr/lib --libexecdir=/usr/lib --mandir=/usr/share/man --infodir=/usr/share/info --with-pkgversion='Arch Linux 9.3.0-1' --with-bugurl=https://bugs.archlinux.org/ --enable-languages=c c++ ada fortran go lto objc obj-c++ d --enable-shared --enable-threads=posix --with-system-zlib --with-isl --enable-__cxa_atexit --disable-libunwind-exceptions --enable-clocale=gnu --disable-libstdcxx-pch --disable-libssp --enable-gnu-unique-object --enable-linker-build-id --enable-lto --enable-plugin --enable-install-libiberty --with-linker-hash-style=gnu --enable-gnu-indirect-function --enable-multilib --disable-werror --enable-checking=release --enable-default-pie --enable-default-ssp --enable-cet=auto gdc_include_dir=/usr/include/dlang/gdc]
   ignore line: [Thread model: posix]
-  ignore line: [Supported LTO compression algorithms: zlib zstd]
-  ignore line: [gcc version 10.1.0 (Ubuntu 10.1.0-2ubuntu1~18.04) ]
-  ignore line: [COMPILER_PATH=/usr/lib/gcc/x86_64-linux-gnu/10/:/usr/lib/gcc/x86_64-linux-gnu/10/:/usr/lib/gcc/x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/10/:/usr/lib/gcc/x86_64-linux-gnu/]
-  ignore line: [LIBRARY_PATH=/usr/lib/gcc/x86_64-linux-gnu/10/:/usr/lib/gcc/x86_64-linux-gnu/10/../../../x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/10/../../../../lib/:/lib/x86_64-linux-gnu/:/lib/../lib/:/usr/lib/x86_64-linux-gnu/:/usr/lib/../lib/:/usr/lib/gcc/x86_64-linux-gnu/10/../../../:/lib/:/usr/lib/]
-  ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_3ccd4' '-shared-libgcc' '-mtune=generic' '-march=x86-64']
-  link line: [ /usr/lib/gcc/x86_64-linux-gnu/10/collect2 -plugin /usr/lib/gcc/x86_64-linux-gnu/10/liblto_plugin.so -plugin-opt=/usr/lib/gcc/x86_64-linux-gnu/10/lto-wrapper -plugin-opt=-fresolution=/tmp/ccsVcPcC.res -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc --build-id --eh-frame-hdr -m elf_x86_64 --hash-style=gnu --as-needed -dynamic-linker /lib64/ld-linux-x86-64.so.2 -pie -z now -z relro -o cmTC_3ccd4 /usr/lib/gcc/x86_64-linux-gnu/10/../../../x86_64-linux-gnu/Scrt1.o /usr/lib/gcc/x86_64-linux-gnu/10/../../../x86_64-linux-gnu/crti.o /usr/lib/gcc/x86_64-linux-gnu/10/crtbeginS.o -L/usr/lib/gcc/x86_64-linux-gnu/10 -L/usr/lib/gcc/x86_64-linux-gnu/10/../../../x86_64-linux-gnu -L/usr/lib/gcc/x86_64-linux-gnu/10/../../../../lib -L/lib/x86_64-linux-gnu -L/lib/../lib -L/usr/lib/x86_64-linux-gnu -L/usr/lib/../lib -L/usr/lib/gcc/x86_64-linux-gnu/10/../../.. CMakeFiles/cmTC_3ccd4.dir/CMakeCXXCompilerABI.cpp.o -lstdc++ -lm -lgcc_s -lgcc -lc -lgcc_s -lgcc /usr/lib/gcc/x86_64-linux-gnu/10/crtendS.o /usr/lib/gcc/x86_64-linux-gnu/10/../../../x86_64-linux-gnu/crtn.o]
-    arg [/usr/lib/gcc/x86_64-linux-gnu/10/collect2] ==> ignore
+  ignore line: [gcc version 9.3.0 (Arch Linux 9.3.0-1) ]
+  ignore line: [COMPILER_PATH=/usr/lib/gcc/x86_64-pc-linux-gnu/9.3.0/:/usr/lib/gcc/x86_64-pc-linux-gnu/9.3.0/:/usr/lib/gcc/x86_64-pc-linux-gnu/:/usr/lib/gcc/x86_64-pc-linux-gnu/9.3.0/:/usr/lib/gcc/x86_64-pc-linux-gnu/]
+  ignore line: [LIBRARY_PATH=/usr/lib/gcc/x86_64-pc-linux-gnu/9.3.0/:/usr/lib/gcc/x86_64-pc-linux-gnu/9.3.0/../../../../lib/:/lib/../lib/:/usr/lib/../lib/:/usr/lib/gcc/x86_64-pc-linux-gnu/9.3.0/../../../:/lib/:/usr/lib/]
+  ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_2f4b9' '-shared-libgcc' '-mtune=generic' '-march=x86-64']
+  link line: [ /usr/lib/gcc/x86_64-pc-linux-gnu/9.3.0/collect2 -plugin /usr/lib/gcc/x86_64-pc-linux-gnu/9.3.0/liblto_plugin.so -plugin-opt=/usr/lib/gcc/x86_64-pc-linux-gnu/9.3.0/lto-wrapper -plugin-opt=-fresolution=/tmp/cclF7U6r.res -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc --build-id --eh-frame-hdr --hash-style=gnu -m elf_x86_64 -dynamic-linker /lib64/ld-linux-x86-64.so.2 -pie -o cmTC_2f4b9 /usr/lib/gcc/x86_64-pc-linux-gnu/9.3.0/../../../../lib/Scrt1.o /usr/lib/gcc/x86_64-pc-linux-gnu/9.3.0/../../../../lib/crti.o /usr/lib/gcc/x86_64-pc-linux-gnu/9.3.0/crtbeginS.o -L/usr/lib/gcc/x86_64-pc-linux-gnu/9.3.0 -L/usr/lib/gcc/x86_64-pc-linux-gnu/9.3.0/../../../../lib -L/lib/../lib -L/usr/lib/../lib -L/usr/lib/gcc/x86_64-pc-linux-gnu/9.3.0/../../.. CMakeFiles/cmTC_2f4b9.dir/CMakeCXXCompilerABI.cpp.o -lstdc++ -lm -lgcc_s -lgcc -lc -lgcc_s -lgcc /usr/lib/gcc/x86_64-pc-linux-gnu/9.3.0/crtendS.o /usr/lib/gcc/x86_64-pc-linux-gnu/9.3.0/../../../../lib/crtn.o]
+    arg [/usr/lib/gcc/x86_64-pc-linux-gnu/9.3.0/collect2] ==> ignore
     arg [-plugin] ==> ignore
-    arg [/usr/lib/gcc/x86_64-linux-gnu/10/liblto_plugin.so] ==> ignore
-    arg [-plugin-opt=/usr/lib/gcc/x86_64-linux-gnu/10/lto-wrapper] ==> ignore
-    arg [-plugin-opt=-fresolution=/tmp/ccsVcPcC.res] ==> ignore
+    arg [/usr/lib/gcc/x86_64-pc-linux-gnu/9.3.0/liblto_plugin.so] ==> ignore
+    arg [-plugin-opt=/usr/lib/gcc/x86_64-pc-linux-gnu/9.3.0/lto-wrapper] ==> ignore
+    arg [-plugin-opt=-fresolution=/tmp/cclF7U6r.res] ==> ignore
     arg [-plugin-opt=-pass-through=-lgcc_s] ==> ignore
     arg [-plugin-opt=-pass-through=-lgcc] ==> ignore
     arg [-plugin-opt=-pass-through=-lc] ==> ignore
@@ -422,29 +379,23 @@ Parsed CXX implicit link information from above output:
     arg [-plugin-opt=-pass-through=-lgcc] ==> ignore
     arg [--build-id] ==> ignore
     arg [--eh-frame-hdr] ==> ignore
+    arg [--hash-style=gnu] ==> ignore
     arg [-m] ==> ignore
     arg [elf_x86_64] ==> ignore
-    arg [--hash-style=gnu] ==> ignore
-    arg [--as-needed] ==> ignore
     arg [-dynamic-linker] ==> ignore
     arg [/lib64/ld-linux-x86-64.so.2] ==> ignore
     arg [-pie] ==> ignore
-    arg [-znow] ==> ignore
-    arg [-zrelro] ==> ignore
     arg [-o] ==> ignore
-    arg [cmTC_3ccd4] ==> ignore
-    arg [/usr/lib/gcc/x86_64-linux-gnu/10/../../../x86_64-linux-gnu/Scrt1.o] ==> ignore
-    arg [/usr/lib/gcc/x86_64-linux-gnu/10/../../../x86_64-linux-gnu/crti.o] ==> ignore
-    arg [/usr/lib/gcc/x86_64-linux-gnu/10/crtbeginS.o] ==> ignore
-    arg [-L/usr/lib/gcc/x86_64-linux-gnu/10] ==> dir [/usr/lib/gcc/x86_64-linux-gnu/10]
-    arg [-L/usr/lib/gcc/x86_64-linux-gnu/10/../../../x86_64-linux-gnu] ==> dir [/usr/lib/gcc/x86_64-linux-gnu/10/../../../x86_64-linux-gnu]
-    arg [-L/usr/lib/gcc/x86_64-linux-gnu/10/../../../../lib] ==> dir [/usr/lib/gcc/x86_64-linux-gnu/10/../../../../lib]
-    arg [-L/lib/x86_64-linux-gnu] ==> dir [/lib/x86_64-linux-gnu]
+    arg [cmTC_2f4b9] ==> ignore
+    arg [/usr/lib/gcc/x86_64-pc-linux-gnu/9.3.0/../../../../lib/Scrt1.o] ==> ignore
+    arg [/usr/lib/gcc/x86_64-pc-linux-gnu/9.3.0/../../../../lib/crti.o] ==> ignore
+    arg [/usr/lib/gcc/x86_64-pc-linux-gnu/9.3.0/crtbeginS.o] ==> ignore
+    arg [-L/usr/lib/gcc/x86_64-pc-linux-gnu/9.3.0] ==> dir [/usr/lib/gcc/x86_64-pc-linux-gnu/9.3.0]
+    arg [-L/usr/lib/gcc/x86_64-pc-linux-gnu/9.3.0/../../../../lib] ==> dir [/usr/lib/gcc/x86_64-pc-linux-gnu/9.3.0/../../../../lib]
     arg [-L/lib/../lib] ==> dir [/lib/../lib]
-    arg [-L/usr/lib/x86_64-linux-gnu] ==> dir [/usr/lib/x86_64-linux-gnu]
     arg [-L/usr/lib/../lib] ==> dir [/usr/lib/../lib]
-    arg [-L/usr/lib/gcc/x86_64-linux-gnu/10/../../..] ==> dir [/usr/lib/gcc/x86_64-linux-gnu/10/../../..]
-    arg [CMakeFiles/cmTC_3ccd4.dir/CMakeCXXCompilerABI.cpp.o] ==> ignore
+    arg [-L/usr/lib/gcc/x86_64-pc-linux-gnu/9.3.0/../../..] ==> dir [/usr/lib/gcc/x86_64-pc-linux-gnu/9.3.0/../../..]
+    arg [CMakeFiles/cmTC_2f4b9.dir/CMakeCXXCompilerABI.cpp.o] ==> ignore
     arg [-lstdc++] ==> lib [stdc++]
     arg [-lm] ==> lib [m]
     arg [-lgcc_s] ==> lib [gcc_s]
@@ -452,18 +403,15 @@ Parsed CXX implicit link information from above output:
     arg [-lc] ==> lib [c]
     arg [-lgcc_s] ==> lib [gcc_s]
     arg [-lgcc] ==> lib [gcc]
-    arg [/usr/lib/gcc/x86_64-linux-gnu/10/crtendS.o] ==> ignore
-    arg [/usr/lib/gcc/x86_64-linux-gnu/10/../../../x86_64-linux-gnu/crtn.o] ==> ignore
-  collapse library dir [/usr/lib/gcc/x86_64-linux-gnu/10] ==> [/usr/lib/gcc/x86_64-linux-gnu/10]
-  collapse library dir [/usr/lib/gcc/x86_64-linux-gnu/10/../../../x86_64-linux-gnu] ==> [/usr/lib/x86_64-linux-gnu]
-  collapse library dir [/usr/lib/gcc/x86_64-linux-gnu/10/../../../../lib] ==> [/usr/lib]
-  collapse library dir [/lib/x86_64-linux-gnu] ==> [/lib/x86_64-linux-gnu]
+    arg [/usr/lib/gcc/x86_64-pc-linux-gnu/9.3.0/crtendS.o] ==> ignore
+    arg [/usr/lib/gcc/x86_64-pc-linux-gnu/9.3.0/../../../../lib/crtn.o] ==> ignore
+  collapse library dir [/usr/lib/gcc/x86_64-pc-linux-gnu/9.3.0] ==> [/usr/lib/gcc/x86_64-pc-linux-gnu/9.3.0]
+  collapse library dir [/usr/lib/gcc/x86_64-pc-linux-gnu/9.3.0/../../../../lib] ==> [/usr/lib]
   collapse library dir [/lib/../lib] ==> [/lib]
-  collapse library dir [/usr/lib/x86_64-linux-gnu] ==> [/usr/lib/x86_64-linux-gnu]
   collapse library dir [/usr/lib/../lib] ==> [/usr/lib]
-  collapse library dir [/usr/lib/gcc/x86_64-linux-gnu/10/../../..] ==> [/usr/lib]
+  collapse library dir [/usr/lib/gcc/x86_64-pc-linux-gnu/9.3.0/../../..] ==> [/usr/lib]
   implicit libs: [stdc++;m;gcc_s;gcc;c;gcc_s;gcc]
-  implicit dirs: [/usr/lib/gcc/x86_64-linux-gnu/10;/usr/lib/x86_64-linux-gnu;/usr/lib;/lib/x86_64-linux-gnu;/lib]
+  implicit dirs: [/usr/lib/gcc/x86_64-pc-linux-gnu/9.3.0;/usr/lib;/lib]
   implicit fwks: []
 
 

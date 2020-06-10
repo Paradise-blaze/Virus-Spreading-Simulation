@@ -1,1 +1,1 @@
-/usr/bin/g++-10  -pthread -g  -lstdc++fs CMakeFiles/Virus_Spreading_Simulation.dir/main.cpp.o CMakeFiles/Virus_Spreading_Simulation.dir/Region.cpp.o CMakeFiles/Virus_Spreading_Simulation.dir/Simulation.cpp.o  -o Virus_Spreading_Simulation  -lstdc++fs 
+/bin/c++  -pthread -g  -lstdc++fs CMakeFiles/Virus_Spreading_Simulation.dir/main.cpp.o CMakeFiles/Virus_Spreading_Simulation.dir/Region.cpp.o CMakeFiles/Virus_Spreading_Simulation.dir/Simulation.cpp.o  -o Virus_Spreading_Simulation  -lstdc++fs 
