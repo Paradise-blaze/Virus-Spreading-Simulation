@@ -6,7 +6,11 @@
 
 #IncludeRegexTransform: 
 
-/home/proxpxd/Desktop/moje_programy/simulations/Virus-Spreading-Simulation/simulation/Region.h
+/home/szymon/Pulpit/Programowanie/Symulacje/Virus-Spreading-Simulation/simulation/Region.cpp
+Region.h
+/home/szymon/Pulpit/Programowanie/Symulacje/Virus-Spreading-Simulation/simulation/Region.h
+
+/home/szymon/Pulpit/Programowanie/Symulacje/Virus-Spreading-Simulation/simulation/Region.h
 iostream
 -
 string
@@ -16,7 +20,11 @@ map
 functional
 -
 
-/home/proxpxd/Desktop/moje_programy/simulations/Virus-Spreading-Simulation/simulation/Simulation.h
+/home/szymon/Pulpit/Programowanie/Symulacje/Virus-Spreading-Simulation/simulation/Simulation.cpp
+Simulation.h
+/home/szymon/Pulpit/Programowanie/Symulacje/Virus-Spreading-Simulation/simulation/Simulation.h
+
+/home/szymon/Pulpit/Programowanie/Symulacje/Virus-Spreading-Simulation/simulation/Simulation.h
 iostream
 -
 vector
@@ -30,9 +38,9 @@ filesystem
 thread
 -
 Region.h
-/home/proxpxd/Desktop/moje_programy/simulations/Virus-Spreading-Simulation/simulation/Region.h
+/home/szymon/Pulpit/Programowanie/Symulacje/Virus-Spreading-Simulation/simulation/Region.h
 
-/home/proxpxd/Desktop/moje_programy/simulations/Virus-Spreading-Simulation/simulation/main.cpp
+/home/szymon/Pulpit/Programowanie/Symulacje/Virus-Spreading-Simulation/simulation/main.cpp
 iostream
 -
 vector
@@ -44,7 +52,7 @@ cstdlib
 ctime
 -
 Region.h
-/home/proxpxd/Desktop/moje_programy/simulations/Virus-Spreading-Simulation/simulation/Region.h
+/home/szymon/Pulpit/Programowanie/Symulacje/Virus-Spreading-Simulation/simulation/Region.h
 Simulation.h
-/home/proxpxd/Desktop/moje_programy/simulations/Virus-Spreading-Simulation/simulation/Simulation.h
+/home/szymon/Pulpit/Programowanie/Symulacje/Virus-Spreading-Simulation/simulation/Simulation.h
 
