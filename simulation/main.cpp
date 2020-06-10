@@ -91,28 +91,41 @@ fs::path getWorkingDirectory(){
 int main(int argc, char *argv[]) {
     srand(time(nullptr));
 
+
     // Arguments
     string disease;
     string initialRegion;
-    if (argc == 3) {
-        disease = argv[1];
-        initialRegion = argv[2];
-    } else {
-        disease = "measles";
-        initialRegion = "Italy";
-    }
-    // Loading data
+
+    // setting working directory
     fs::path dirPath = getWorkingDirectory();
     fs::path resourcesPath = dirPath / "resources";
 
-    rawData diseasesData = loadData(resourcesPath / "Diseases.csv", ',');
     rawData regionsData = loadData(resourcesPath / "Country.csv", ';');
     rawData borders = loadData(resourcesPath / "Borders.csv", ';', false);
 
-    rawRecord diseaseData = chooseDisease(diseasesData, disease);
     vector<Region> regions = createRegions(regionsData);
     setConnections(regions, borders);
 
+    rawRecord diseaseData;
+    if (argc == 3) {  //saved disease
+        disease = argv[1];
+        initialRegion = argv[2];
+        rawData diseasesData = loadData(resourcesPath / "Diseases.csv", ',');
+        diseaseData = chooseDisease(diseasesData, disease);
+    } else if(argc == 6){  //custom disease
+        disease = argv[1];
+        initialRegion = "";
+        diseaseData.push_back(argv[1]);
+        diseaseData.push_back(argv[2]);
+        diseaseData.push_back(argv[3]);
+        diseaseData.push_back(argv[4]);
+        diseaseData.push_back(argv[5]);
+    } else {  //no arguments
+        disease = "measles";
+        initialRegion = "Italy";
+        rawData diseasesData = loadData(resourcesPath / "Diseases.csv", ',');
+        diseaseData = chooseDisease(diseasesData, disease);
+    }
     // Creating and setting simulation
     Simulation simulation = Simulation(regions, diseaseData);
     simulation.setSavingFrequency(FREQUENCY);
