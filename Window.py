@@ -191,7 +191,6 @@ class Window:
         tk.Frame().winfo_children()
         for child in self.menus["custom"].winfo_children()[1].winfo_children():
             child.pack(expand=True, fill=tk.BOTH) #modifying custom's name label
-        print(self.menus["custom"].winfo_children())
         # self.root.resizable(width=False, height=False)
 
     def set_generator(self):
@@ -299,6 +298,21 @@ class Window:
                             disabledforeground=self.colors["field_text"]) #  font=("Arial", 16)
                 elem.pack(side=tk.LEFT)
                 self.hided_children["map"].append(elem)
+
+        for child in self.menu.winfo_children():
+            if child.winfo_name() in ['main', 'diseases']:
+                child.pack(side=tk.RIGHT)
+
+    def region_generator_factory(self, name):
+        return lambda: self.generate_region_plot(name)
+
+    def create_plot_menu(self):
+        menu = self.menus['plots']
+        regions = list(set([self.region_choice, "Poland", "United States of America", "China", "Germany", "France", "Russia"]))
+        for region in regions:
+            button = tk.Button(menu, name=self.purify_name(region), text=self.trans(region))
+            button.config(command=self.region_generator_factory(region))
+            self.set_child_pack_options(button)
 
     def trans(self, word):
         if word in self.dictionary and self.dictionary[word] is not None and self.dictionary[word] != '':
@@ -417,12 +431,6 @@ class Window:
             self.change_menu("map")
             self.wait_for_generator()
 
-    def begin_display(self):
-        self.slide_num = 0
-        self.create_animation_widgets()
-        self.menu.nametowidget("main").config(text="return", command=lambda: self.change_menu("main"))
-        self.display()
-
     def wait_for_generator(self):
         if self.max_day - self.current_day.value <= self.day_step:
             self.begin_display()
@@ -434,10 +442,16 @@ class Window:
         status = 100*self.current_day.value/self.max_day
         self.menu.nametowidget("main").config(text=self.trans("Generating") + " {:.2f}%".format(status))
 
+    def begin_display(self):
+        self.slide_num = 0
+        self.create_animation_widgets()
+        self.menu.nametowidget("main").config(text="return", command=lambda: self.change_menu("main"))
+        self.display()
+
     def display(self):
         file = os.path.join(self.paths['animation'], "{}{}.png".format(self.map_type_choice, self.slide_num))
         self.slide_num += self.day_step
-        if os.path.exists(file):
+        if False and os.path.exists(file): # False to delete
             self.images_not_found = 0
             image = self.scale_image(Image.open(file))
             self.panel.config(image=image)
@@ -448,4 +462,24 @@ class Window:
             self.root.after(1, self.display)
         else:
             self.destroy_children(self.menu, 'main')
+            self.create_plot_menu()
+            self.change_menu("plots")
 
+    def generate_world_plot(self, _):
+        self.map_generator.plot_world()
+        self.display_plot("world")
+
+    def generate_region_plot(self, name):
+        self.map_generator.plot_country(name)
+        self.display_plot(name)
+
+    def display_plot(self, name):
+        file = "{}_plot.png".format(name)
+        path = os.path.join(self.paths["results"], self.disease_choice, self.region_choice, "plots", file)
+        if os.path.exists(path):
+            print("Double WTF!?")
+            time.sleep(20)
+            image = self.scale_image(Image.open(path))
+            self.panel.config(image=image)
+        else:
+            print("WTF!?")

@@ -48,10 +48,14 @@
             <Button name='infectious' text='Infectious' command="select_type"/>
             <Button name='recovered' text='Recovered' command="select_type"/>
             <Button name='dead' text='Dead' command="select_type"/>
-            <Button name='main' text='Powrót'/>
+            <Button name='main' text='Return'/>
         </LabelFrame>
         <LabelFrame name='map'>
             <Button name="main" text="Generating" command=""/>
+        </LabelFrame>
+        <LabelFrame name='plots'>
+            <Button name="word_plot" text="World" command="generate_world_plot"/>
+            <Button name='main' text='Return'/>
         </LabelFrame>
     </Frame>
 </Form>
