@@ -2,7 +2,6 @@ import geopandas as gp
 import matplotlib.pyplot as plt
 import pandas as pd
 import os
-import time
 
 
 class MapGenerator:
@@ -212,7 +211,6 @@ if __name__ == "__main__":
     mapGen.set_directory('measles', 'Italy')
     mapGen.set_day_step(5)
 
-    start_time = time.time()
     mapGen.generate_maps('susceptible')
     print(mapGen.get_status())
     print(mapGen.check_status('susceptible'))
@@ -222,7 +220,6 @@ if __name__ == "__main__":
     mapGen.generate_maps('dead')
     print(mapGen.get_status())
     print(mapGen.get_directory())
-    print(time.time() - start_time)
 
     mapGen.plot_world()
 
