@@ -476,10 +476,6 @@ class Window:
     def display_plot(self, name):
         file = "{}_plot.png".format(name)
         path = os.path.join(self.paths["results"], self.disease_choice, self.region_choice, "plots", file)
-        if os.path.exists(path):
-            print("Double WTF!?")
-            time.sleep(20)
-            image = self.scale_image(Image.open(path))
-            self.panel.config(image=image)
-        else:
-            print("WTF!?")
+        image = self.scale_image(Image.open(path))
+        self.panel.config(image=image)
+        self.panel.image = image
