@@ -343,37 +343,26 @@ class Window:
     def wait_for_simulation(self):
         if self.simulation_process is not None and self.simulation_process.poll() is not None:
             self.map_generator.set_directory(self.disease_choice, self.region_choice)
+            self.max_day = self.map_generator.get_max_day()
             self.simulation_process = None
             self.wait_for_map_type_choice()
         else:
-            self.root.after(100, self.wait_for_simulation)  # refreshes every second
+            self.root.after(100, self.wait_for_simulation)
 
     def wait_for_map_type_choice(self):
         if self.map_type_choice is not None:
-            self.max_day = self.map_generator.get_max_day()
-            self.current_day = mp.Value('i', 0) # i stands for int
+            self.current_day = mp.Value('i', 0)  # i stands for int
             self.generator_process = mp.Process(target=self.map_generator.generate_maps, args=(self.map_type_choice, self.current_day,))
-            #self.generator_process = mp.Process(target=self.inc, args=(self.current_day,))
             self.generator_process.start()
-
-            #self.map_generator.generate_maps(self.map_type_choice)
             self.wait_for_generator()
         else:
             self.root.after(1000, self.wait_for_map_type_choice)
 
-    def inc(self, curr):
-        while True:
-            curr.value += 1
-            time.sleep(0.1)
-
     def wait_for_generator(self):
         if self.map_generator.check_status(self.map_type_choice):
-            print("finished")
             self.paths['animation'] = os.path.join(self.paths['results'], self.disease_choice, self.region_choice, 'maps')
             self.slide_num = 0
-            loading_button = self.menu.nametowidget("main")
-            loading_button.config(text="return", command=lambda: self.change_menu("main"))
-
+            self.menu.nametowidget("main").config(text="return", command=lambda: self.change_menu("main"))
             self.display()
         else:
             self.update_loading_status()
@@ -381,9 +370,7 @@ class Window:
 
     def update_loading_status(self):
         status = 100*self.current_day.value/self.max_day
-        #self.menu.pack_forget()
-        self.menu.nametowidget("main").config(text=self.trans("Loading") + " {}%".format(status))
-        #self.menu.pack()
+        self.menu.nametowidget("main").config(text=self.trans("Loading") + " {:.2f}%".format(status))
 
     def display(self):
         file = os.path.join(self.paths['animation'], "{}{}.png".format(self.map_type_choice, self.slide_num))
