@@ -194,15 +194,19 @@ class MapGenerator:
         plt.xlabel('Time (in days)')
         plt.legend()
 
-        results_dir = os.path.join(self.result_directory, 'plots/')
+        results_dir = os.path.join(self.result_directory, 'plots')
 
         if not os.path.isdir(results_dir):
             os.makedirs(results_dir)
 
-        plt.savefig(results_dir + 'world_plot.png')
+        plt.savefig(os.path.join(results_dir, 'world_plot.png'))
         plt.close()
 
-    def plot_country(self, country):
+
+    def plot_country(self, country_name):
+        country = next((frame for frame in self.frame_list if frame.name == country_name), None)
+        if country_name is None:
+            return
         time = [i for i in range(0, len(country.dead))]
 
         plt.plot(time, country.susceptible, label='Susceptible')
@@ -215,10 +219,11 @@ class MapGenerator:
         plt.xlabel('Time (in days)')
         plt.legend()
 
-        results_dir = os.path.join(self.result_directory, 'plots/')
+        results_dir = os.path.join(self.result_directory, 'plots')
 
         if not os.path.isdir(results_dir):
             os.makedirs(results_dir)
 
-        plt.savefig(results_dir + country.name + '_plot.png')
+        plt.savefig(os.path.join(results_dir, country.name) + '_plot.png')
         plt.close()
+
