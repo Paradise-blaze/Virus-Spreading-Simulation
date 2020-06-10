@@ -6,10 +6,6 @@
 
 #IncludeRegexTransform: 
 
-/home/proxpxd/Desktop/moje_programy/simulations/Virus-Spreading-Simulation/simulation/Region.cpp
-Region.h
-/home/proxpxd/Desktop/moje_programy/simulations/Virus-Spreading-Simulation/simulation/Region.h
-
 /home/proxpxd/Desktop/moje_programy/simulations/Virus-Spreading-Simulation/simulation/Region.h
 iostream
 -
