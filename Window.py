@@ -250,10 +250,13 @@ class Window:
     def open(self):
         self.load_all()
         self.set_all()
+        '''
+        #Example of animation at the start
         self.disease_choice = "SARS"
         self.region_choice = "United States of America"
         self.map_type_choice = "exposed"
         self.paths['animation'] = os.path.join(self.paths['results'], self.disease_choice, self.region_choice, 'maps')
+        '''
         self.display()
 
         self.root.mainloop()
