@@ -12,12 +12,13 @@ class MapGenerator:
 
             self.name = os.path.basename(path).split(';')[0]
             self.start_day = int(lines[0].split(';')[0])
-            self.end_day = int(lines[len(lines)-1].split(';')[0])
+            self.end_day = int(lines[len(lines) - 1].split(';')[0])
             self.susceptible = []
             self.exposed = []
             self.infectious = []
             self.recovered = []
             self.dead = []
+            self.population = 0
 
             for line in lines:
                 numbers = line.split(';')
@@ -26,6 +27,8 @@ class MapGenerator:
                 self.infectious.append(float(numbers[3]))
                 self.recovered.append(float(numbers[4]))
                 self.dead.append(float(numbers[5].strip()))
+
+            self.population = self.susceptible[0] + self.exposed[0] + self.infectious[0] + self.recovered[0] + self.dead[0]
 
         def choose_list(self, name):
             if name == 'susceptible':
@@ -78,7 +81,7 @@ class MapGenerator:
         return self.status
 
     def get_current_day(self):
-        return 0
+        return self.curr_day
 
     def get_max_day(self):
         return self.max_day
@@ -87,13 +90,14 @@ class MapGenerator:
         return member in self.status
 
     def generate_maps(self, group, curr_day):
-        data_to_map = {'name': [], group: []}
+        data_to_map = {'name': [], 'population': [], group: []}
 
         for frame in self.frame_list:
             data_to_map['name'].append(frame.name)
+            data_to_map['population'].append(frame.population)
             data_to_map[group].append(0)
 
-        group_in_countries = pd.DataFrame(data_to_map, columns=['name', group])
+        group_in_countries = pd.DataFrame(data_to_map, columns=['name', 'population', group])
         merged = self.geopandas_countries.set_index('name').join(group_in_countries.set_index('name'))
 
         self.curr_day = 0
@@ -106,6 +110,8 @@ class MapGenerator:
                     merged.loc[frame.name, group] = actual_list[0]
                 if frame.start_day <= step <= frame.end_day:
                     merged.loc[frame.name, group] = actual_list[step - frame.start_day]
+                elif step > frame.end_day:
+                    merged.loc[frame.name, group] = actual_list[-1]
             self.draw_map(merged, step, group)
 
         self.set_status(group)
@@ -125,12 +131,11 @@ class MapGenerator:
         fg, ax = plt.subplots(figsize=(10, 5))
         fg.set_facecolor('cyan')
 
-        #dict = {'name': data.index, 'density': [x/y for x, y in zip(data[group], data['pop_est'])]}
-        #tmp_frame = pd.DataFrame(dict, columns=['name', group]).set_index('name')
-        #merged = data.join(tmp_frame)
+        data[group] = data.apply(lambda x: x[group] / x['population'], axis=1)
+        max_value = data[group].max()
 
-        data.plot(column='density', ax=ax, cmap='Reds', linewidth=0.5, edgecolor='0.8',
-                    missing_kwds={"color": "white"})
+        data.plot(column=group, ax=ax, cmap='Reds', linewidth=0.5, edgecolor='0.8',
+                  missing_kwds={"color": "white"}, vmin=0, vmax=max_value, legend=True)
 
         results_dir = os.path.join(self.result_directory, 'maps/')
 
@@ -163,11 +168,11 @@ class MapGenerator:
                     self.world_stats['recovered'][step] += frame.recovered[step - frame.start_day]
                     self.world_stats['dead'][step] += frame.dead[step - frame.start_day]
                 elif step >= frame.end_day:
-                    self.world_stats['susceptible'][step] += frame.susceptible[frame.end_day-frame.start_day]
-                    self.world_stats['exposed'][step] += frame.exposed[frame.end_day-frame.start_day]
-                    self.world_stats['infectious'][step] += frame.infectious[frame.end_day-frame.start_day]
-                    self.world_stats['recovered'][step] += frame.recovered[frame.end_day-frame.start_day]
-                    self.world_stats['dead'][step] += frame.dead[frame.end_day-frame.start_day]
+                    self.world_stats['susceptible'][step] += frame.susceptible[frame.end_day - frame.start_day]
+                    self.world_stats['exposed'][step] += frame.exposed[frame.end_day - frame.start_day]
+                    self.world_stats['infectious'][step] += frame.infectious[frame.end_day - frame.start_day]
+                    self.world_stats['recovered'][step] += frame.recovered[frame.end_day - frame.start_day]
+                    self.world_stats['dead'][step] += frame.dead[frame.end_day - frame.start_day]
 
         self.world_stats['susceptible'].pop(len(self.world_stats['susceptible']) - 1)
         self.world_stats['exposed'].pop(len(self.world_stats['exposed']) - 1)
@@ -224,13 +229,13 @@ if __name__ == "__main__":
     mapGen.set_directory('measles', 'Italy')
     mapGen.set_day_step(5)
 
-    mapGen.generate_maps('susceptible')
+    #mapGen.generate_maps('susceptible')
     print(mapGen.get_status())
     print(mapGen.check_status('susceptible'))
-    mapGen.generate_maps('exposed')
-    mapGen.generate_maps('infectious')
-    mapGen.generate_maps('recovered')
-    mapGen.generate_maps('dead')
+    #mapGen.generate_maps('exposed')
+    #mapGen.generate_maps('infectious')
+    #mapGen.generate_maps('recovered')
+    #mapGen.generate_maps('dead')
     print(mapGen.get_status())
     print(mapGen.get_directory())
 
