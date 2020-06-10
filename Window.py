@@ -115,6 +115,7 @@ class Window:
         self.generator_process = None
         self.max_day = 0
         self.current_day = 0
+        self.images_not_found = 0
 
     def set_title(self, title):
         self.root.title(title)
@@ -147,8 +148,10 @@ class Window:
     def set_menu_options(self):
         # pack options
         self.menu_pack_options['side'] = tk.LEFT  # horizontal alignment
+        self.menu_pack_options['fill'] = tk.BOTH  #
+        self.menu_pack_options['expand'] = True  #
         # configurations
-        #self.menu_children_config_options['height'] = '3 0'
+        #self.menu_children_config_options['fill'] = '3 0'
         pass
 
     def set_day_step(self, step):
@@ -220,7 +223,7 @@ class Window:
             if i % max_in_row == 0:
                 frame = tk.Frame(menu, name='frame{}'.format(i//max_in_row))
                 self.hided_children[menu_name].append(frame)
-                frame.pack(side=tk.TOP)
+                frame.pack(side=tk.TOP, expand=True, fill=tk.BOTH)
             purified_name = Window.purify_name(name)
             button = tk.Button(frame, name=purified_name, text=self.trans(name))
             func = self.get_button_function(menu_name, name)
@@ -229,8 +232,13 @@ class Window:
             i += 1
 
         if with_return:
+            #return_button = self.get_return_button(menu, "main")
             return_button = menu.nametowidget('main')
             return_button.pack(side=tk.RIGHT)
+
+    def get_return_button(self, parent, destiny):
+        return_btn = tk.Button(parent, name=destiny, text=self.trans("Return"))
+        return return_btn
 
     @staticmethod
     def purify_name(name):
@@ -270,10 +278,17 @@ class Window:
         self.root.mainloop()
 
     def create_animation_widgets(self):
-        pass#r = tk.Text(self.menu, name="region", text=self.region_choice)
-        #d = tk.Text(self.menu, name="disease", text=self.disease_choice)
-        #t = tk.Text(self.menu, name="type", text=self.map_type_choice)
-        #self.hided_children["map"] = [r, d, t]
+        names = ["region", "disease", "type"]
+        to_translate = [self.region_choice, self.disease_choice, self.map_type_choice]
+        self.hided_children["map"] = []
+        for i in range(len(names)):
+            if to_translate[i] is not  None:
+                elem = tk.Text(self.menu, name=names[i])
+                elem.insert(tk.INSERT, self.trans(to_translate[i]))
+                self.set_child_pack_options(elem)
+                elem.config(state="disabled") #  font=("Arial", 16)
+                elem.pack(side=tk.LEFT)
+                self.hided_children["map"].append(elem)
 
     def trans(self, word):
         if word in self.dictionary and self.dictionary[word] is not None and self.dictionary[word] != '':
@@ -281,9 +296,10 @@ class Window:
         return word
 
     @staticmethod
-    def destroy_children(widget):
+    def destroy_children(widget, dont=""):
         for child in widget.winfo_children():
-            child.destroy()
+            if child.winfo_name() != dont:
+                child.destroy()
 
     @staticmethod
     def hide_children(widget):
@@ -296,6 +312,8 @@ class Window:
         if name in self.menus:
             self.menu = self.menus[name]
         Window.hide_children(self.panel)
+        if name in ['main', 'return']:
+            self.panel.config(image=self.scaled['map'])
         self.menu.pack()
 
     def display_regions(self):
@@ -330,15 +348,12 @@ class Window:
     def choose_region(self, region_name):
         self.region_choice = region_name
         self.change_menu('confirmation')
+        self.create_animation_widgets()
 
     def clear_choice(self, widget):
         self.disease_choice = ''
         self.region_choice = ''
         self.change_menu(widget)
-
-    def select_type(self, widget):
-        self.map_type_choice = widget.winfo_name()
-        self.change_menu("map")
 
     # running and displaying simulation
     def run_simulation(self, widget):
@@ -351,26 +366,43 @@ class Window:
             self.map_generator.set_directory(self.disease_choice, self.region_choice)
             self.max_day = self.map_generator.get_max_day()
             self.simulation_process = None
-            self.wait_for_map_type_choice()
         else:
             self.root.after(100, self.wait_for_simulation)
 
-    def wait_for_map_type_choice(self):
-        if self.map_type_choice is not None:
-            self.current_day = mp.Value('i', 0)  # i stands for int
-            self.generator_process = mp.Process(target=self.map_generator.generate_maps, args=(self.map_type_choice, self.current_day,))
-            self.generator_process.start()
-            self.wait_for_generator()
+    def exists_simulation(self):
+        return os.path.exists(os.path.join(self.paths['animation'], self.map_type_choice + "0.png"))
+
+    def select_type(self, widget):
+        self.map_type_choice = widget.winfo_name()
+        self.paths['animation'] = os.path.join(self.paths['results'], self.disease_choice, self.region_choice, 'maps')
+        if self.exists_simulation():
+            self.change_menu("map")
+            self.begin_display()
         else:
-            self.root.after(1000, self.wait_for_map_type_choice)
+            self.current_day = mp.Value('i', 0)  # i stands for int
+            self.generator_process = mp.Process(target=self.map_generator.generate_maps,
+                                                args=(self.map_type_choice, self.current_day,))
+            self.generator_process.start()
+            self.change_menu("map")
+            self.wait_for_generator()
+
+    def begin_display(self):
+        self.slide_num = 0
+        self.create_animation_widgets()
+        self.menu.nametowidget("main").config(text="return", command=lambda: self.change_menu("main"))
+        self.display()
+        '''
+        self.region_choice = ""
+        self.disease_choice = ""
+        self.map_type_choice = ""
+        for child in self.hided_children["map"]:
+            child.destroy()
+        '''
+
 
     def wait_for_generator(self):
-        if self.max_day - self.current_day.value < self.day_step:
-            self.paths['animation'] = os.path.join(self.paths['results'], self.disease_choice, self.region_choice, 'maps')
-            self.slide_num = 0
-            self.create_animation_widgets()
-            self.menu.nametowidget("main").config(text="return", command=lambda: self.change_menu("main"))
-            self.display()
+        if self.max_day - self.current_day.value <= self.day_step:
+            self.begin_display()
         else:
             self.update_loading_status()
             self.root.after(1000, self.wait_for_generator)
@@ -381,12 +413,20 @@ class Window:
 
     def display(self):
         file = os.path.join(self.paths['animation'], "{}{}.png".format(self.map_type_choice, self.slide_num))
+        self.slide_num += self.day_step
         if os.path.exists(file):
-            self.slide_num += self.day_step
-            print(self.slide_num)
+            self.images_not_found = 0
             image = self.scale_image(Image.open(file))
             self.panel.config(image=image)
             self.panel.image = image
             self.root.after(100, self.display)
+        elif self.images_not_found <= 11:
+            self.images_not_found += 1
+            self.root.after(1, self.display)
+        else:
+            self.destroy_children(self.menu, 'main')
+            for menu in self.menus.values():
+                print(menu.winfo_children())
+
 
 

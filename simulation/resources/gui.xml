@@ -41,7 +41,7 @@
             <Button name='dead' text='Dead' command="select_type"/>
             <Button name='main' text='Powrót'/>
         </LabelFrame>
-        <LabelFrame name='map' >
+        <LabelFrame name='map'>
             <Button name="main" text="Generating" command=""/>
         </LabelFrame>
     </Frame>

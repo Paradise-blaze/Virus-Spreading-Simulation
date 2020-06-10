@@ -1,5 +1,8 @@
 import os
 from Window import Window
+import matplotlib as plt
+
+plt.use('Agg')
 
 base_dir = 'simulation'
 
