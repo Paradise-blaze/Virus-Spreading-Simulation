@@ -41,7 +41,6 @@ class MapGenerator:
 
     def __init__(self):
         self.geopandas_countries = gp.read_file(gp.datasets.get_path('naturalearth_lowres'))
-        self.csv_countries = None
         self.result_path = ''
         self.disease = ''
         self.init_region = ''
@@ -87,7 +86,7 @@ class MapGenerator:
     def check_status(self, member):
         return member in self.status
 
-    def generate_maps(self, group):
+    def generate_maps(self, group, curr_day):
         data_to_map = {'name': [], group: []}
 
         for frame in self.frame_list:
@@ -99,6 +98,7 @@ class MapGenerator:
 
         self.curr_day = 0
         for step in range(0, self.max_day, self.day_step):
+            curr_day.value = step
             self.curr_day = step
             for frame in self.frame_list:
                 actual_list = frame.choose_list(group)
@@ -124,8 +124,13 @@ class MapGenerator:
     def draw_map(self, data, i, group):
         fg, ax = plt.subplots(figsize=(10, 5))
         fg.set_facecolor('cyan')
-        data.plot(column=group, ax=ax, cmap='Reds', linewidth=0.5, edgecolor='0.8',
-                  missing_kwds={"color": "white"})
+
+        #dict = {'name': data.index, 'density': [x/y for x, y in zip(data[group], data['pop_est'])]}
+        #tmp_frame = pd.DataFrame(dict, columns=['name', group]).set_index('name')
+        #merged = data.join(tmp_frame)
+
+        data.plot(column='density', ax=ax, cmap='Reds', linewidth=0.5, edgecolor='0.8',
+                    missing_kwds={"color": "white"})
 
         results_dir = os.path.join(self.result_directory, 'maps/')
 
