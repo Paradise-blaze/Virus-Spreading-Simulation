@@ -221,25 +221,3 @@ class MapGenerator:
 
         plt.savefig(results_dir + country.name + '_plot.png')
         plt.close()
-
-
-if __name__ == "__main__":
-    mapGen = MapGenerator()
-    mapGen.set_result_path('simulation/results')
-    mapGen.set_directory('measles', 'Italy')
-    mapGen.set_day_step(5)
-
-    #mapGen.generate_maps('susceptible')
-    print(mapGen.get_status())
-    print(mapGen.check_status('susceptible'))
-    #mapGen.generate_maps('exposed')
-    #mapGen.generate_maps('infectious')
-    #mapGen.generate_maps('recovered')
-    #mapGen.generate_maps('dead')
-    print(mapGen.get_status())
-    print(mapGen.get_directory())
-
-    mapGen.plot_world()
-
-    for frame in mapGen.frame_list:
-        mapGen.plot_country(frame)
