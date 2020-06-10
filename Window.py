@@ -255,8 +255,8 @@ class Window:
         self.region_choice = "United States of America"
         self.map_type_choice = "exposed"
         self.paths['animation'] = os.path.join(self.paths['results'], self.disease_choice, self.region_choice, 'maps')
-        '''
         self.display()
+        '''
 
         self.root.mainloop()
 
@@ -352,11 +352,10 @@ class Window:
             self.slide_num = 0
             self.display()
         else:
-            self.root.after(100, self.wait_for_map_type_choice)
+            self.root.after(1000, self.wait_for_map_type_choice)
 
     def display(self):
         self.slide_num += 1
-        print(self.slide_num)
         file = os.path.join(self.paths['animation'], "{}{}.png".format(self.map_type_choice, self.slide_num-1))
         if os.path.exists(file):
             image = self.scale_image(Image.open(file))
