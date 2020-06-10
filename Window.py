@@ -384,16 +384,18 @@ class Window:
     # Handlig custom simulation
     def set_custom_simulation(self, _):
         name = self.get_custom_name()
+        print(name)
         coefficients = self.get_coefficients()
-        args = [name]
-        args.extend(coefficients)
-        #self.run_simulation(args) # not working yet, we should see in C
+        self.disease_choice = name
+        args = [name] + coefficients
+        self.run_simulation(args) # not working yet, we should see in C
 
     def get_custom_name(self):
-        return self.menus['custom'].winfo_children()[1].winfo_children()[1]["text"]
+        print(self.menus['custom'].winfo_children()[1].winfo_children()[1].get())
+        return self.menus['custom'].winfo_children()[1].winfo_children()[1].get()
 
     def get_coefficients(self):
-        return [str(child.get()) for child in self.menus['custom'].winfo_children() if isinstance(child, tk.Scale)]
+        return [str(child.get() * 1.5 / 100) for child in self.menus['custom'].winfo_children() if isinstance(child, tk.Scale)]
 
     # running and displaying simulation
     def run_simulation(self, args):
@@ -427,6 +429,7 @@ class Window:
             self.current_day = mp.Value('i', 0)  # i stands for int
             self.generator_process = mp.Process(target=self.map_generator.generate_maps,
                                                 args=(self.map_type_choice, self.current_day,))
+            self.generator_process.deamon = True
             self.generator_process.start()
             self.change_menu("map")
             self.wait_for_generator()
@@ -451,7 +454,7 @@ class Window:
     def display(self):
         file = os.path.join(self.paths['animation'], "{}{}.png".format(self.map_type_choice, self.slide_num))
         self.slide_num += self.day_step
-        if False and os.path.exists(file): # False to delete
+        if os.path.exists(file):
             self.images_not_found = 0
             image = self.scale_image(Image.open(file))
             self.panel.config(image=image)

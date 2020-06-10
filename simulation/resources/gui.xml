@@ -24,10 +24,10 @@
                 <Label name="namelabel" text="Name"/>
                 <Entry name="name"/>
             </LabelFrame>
-            <Scale name="alpha" from="0" to="50" label="alpha" orient="horizontal"/>
-            <Scale name="beta" from="0" to="50" label="beta" orient="horizontal"/>
-            <Scale name="gamma" from="0" to="50" label="gamma" orient="horizontal"/>
-            <Scale name="deathRate" from="0" to="50" label="Death rate" orient="horizontal"/>
+            <Scale name="alpha" from="0" to="100" label="alpha" orient="horizontal"/>
+            <Scale name="beta" from="0" to="100" label="beta" orient="horizontal"/>
+            <Scale name="gamma" from="0" to="100" label="gamma" orient="horizontal"/>
+            <Scale name="deathRate" from="0" to="100" label="Death rate" orient="horizontal"/>
             <Button name='main' text='Return'/>
         </LabelFrame>
         <LabelFrame name='languages'>
