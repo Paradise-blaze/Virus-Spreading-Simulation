@@ -19,6 +19,15 @@
             <Button name='main' text='Return'/>
         </LabelFrame>
         <LabelFrame name='custom' >
+            <Button name='approve' text='Approve' command="set_custom_simulation"/>
+            <LabelFrame>
+                <Label name="namelabel" text="Name"/>
+                <Entry name="name"/>
+            </LabelFrame>
+            <Scale name="alpha" from="0" to="50" label="alpha" orient="horizontal"/>
+            <Scale name="beta" from="0" to="50" label="beta" orient="horizontal"/>
+            <Scale name="gamma" from="0" to="50" label="gamma" orient="horizontal"/>
+            <Scale name="deathRate" from="0" to="50" label="Death rate" orient="horizontal"/>
             <Button name='main' text='Return'/>
         </LabelFrame>
         <LabelFrame name='languages'>
@@ -30,7 +39,7 @@
             <Button name='main' text='Return'/>
         </LabelFrame>
         <LabelFrame name='confirmation' >
-            <Button name='simulation' text='Confirm' command="run_simulation"/>
+            <Button name='simulation' text='Confirm' command="confirm_and_run"/>
             <Button name='diseases' text='Return' command="clear_choice"/>
         </LabelFrame>
         <LabelFrame name='simulation' >

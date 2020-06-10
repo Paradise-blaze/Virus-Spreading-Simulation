@@ -37,7 +37,6 @@ class Window:
             constructor = getattr(tk, tag, None)
             if constructor:
                 options = to_add.attrib.copy()
-                # print(tag, options)
                 elem = constructor(root, **options)
                 if 'command' in options:  # Empty function will be executed if no viable name has been typed
                     func = getattr(Window, options['command'], lambda _1, _2: None)
@@ -105,6 +104,11 @@ class Window:
         self.images = {}
         self.scaled = {}
         self.dictionary = {}
+
+        self.colors = {
+            "field_background": "#333333",
+            "field_text": "white"
+        }
 
         self.disease_choice = ''
         self.region_choice = ''
@@ -184,6 +188,10 @@ class Window:
         self.root.config(menu=self.menu)
         self.set_language('polish')
         self.set_generator()
+        tk.Frame().winfo_children()
+        for child in self.menus["custom"].winfo_children()[1].winfo_children():
+            child.pack(expand=True, fill=tk.BOTH) #modifying custom's name label
+        print(self.menus["custom"].winfo_children())
         # self.root.resizable(width=False, height=False)
 
     def set_generator(self):
@@ -200,7 +208,7 @@ class Window:
 
     def get_button_function(self, menu_name, button_name):
         if menu_name == 'languages':
-            return lambda: self.set_language(button_name)
+            return lambda: self.set_language(button_name.lower())
         elif menu_name == 'diseases':
             return lambda: self.choose_disease(button_name)
         elif menu_name == 'regions':
@@ -283,10 +291,12 @@ class Window:
         self.hided_children["map"] = []
         for i in range(len(names)):
             if to_translate[i] is not  None:
-                elem = tk.Text(self.menu, name=names[i])
+                elem = tk.Entry(self.menu, name=names[i])
                 elem.insert(tk.INSERT, self.trans(to_translate[i]))
                 self.set_child_pack_options(elem)
-                elem.config(state="disabled") #  font=("Arial", 16)
+                elem.config(state="disabled",
+                            disabledbackground=self.colors["field_background"],
+                            disabledforeground=self.colors["field_text"]) #  font=("Arial", 16)
                 elem.pack(side=tk.LEFT)
                 self.hided_children["map"].append(elem)
 
@@ -337,8 +347,10 @@ class Window:
 
     def translate_gui(self, node):
         for child in node.winfo_children():
-            if isinstance(child, tk.Button):
+            if isinstance(child, tk.Button) or isinstance(child, tk.Label):
                 child.config(text=self.trans(child['text']))
+            elif isinstance(child, tk.Scale):
+                child.config(label=self.trans(child["label"]))
             self.translate_gui(child)
 
     def choose_disease(self, disease_name):
@@ -355,11 +367,30 @@ class Window:
         self.region_choice = ''
         self.change_menu(widget)
 
+    # Handlig custom simulation
+    def set_custom_simulation(self, _):
+        name = self.get_custom_name()
+        coefficients = self.get_coefficients()
+        args = [name]
+        args.extend(coefficients)
+        #self.run_simulation(args) # not working yet, we should see in C
+
+    def get_custom_name(self):
+        return self.menus['custom'].winfo_children()[1].winfo_children()[1]["text"]
+
+    def get_coefficients(self):
+        return [str(child.get()) for child in self.menus['custom'].winfo_children() if isinstance(child, tk.Scale)]
+
     # running and displaying simulation
-    def run_simulation(self, widget):
-        self.simulation_process = subprocess.Popen([self.paths['program'], self.disease_choice, self.region_choice])
-        self.change_menu(widget)
+    def run_simulation(self, args):
+        all_args = [self.paths['program']]
+        all_args.extend(args)
+        self.simulation_process = subprocess.Popen(all_args)
+        self.change_menu("simulation")
         self.wait_for_simulation()
+
+    def confirm_and_run(self, _):
+        self.run_simulation([self.disease_choice, self.region_choice])
 
     def wait_for_simulation(self):
         if self.simulation_process is not None and self.simulation_process.poll() is not None:
@@ -391,14 +422,6 @@ class Window:
         self.create_animation_widgets()
         self.menu.nametowidget("main").config(text="return", command=lambda: self.change_menu("main"))
         self.display()
-        '''
-        self.region_choice = ""
-        self.disease_choice = ""
-        self.map_type_choice = ""
-        for child in self.hided_children["map"]:
-            child.destroy()
-        '''
-
 
     def wait_for_generator(self):
         if self.max_day - self.current_day.value <= self.day_step:
@@ -425,8 +448,4 @@ class Window:
             self.root.after(1, self.display)
         else:
             self.destroy_children(self.menu, 'main')
-            for menu in self.menus.values():
-                print(menu.winfo_children())
-
-
 
