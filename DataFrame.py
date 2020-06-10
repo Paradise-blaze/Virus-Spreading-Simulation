@@ -48,6 +48,7 @@ class MapGenerator:
         self.status = []
         self.frame_list = []
         self.max_day = 0
+        self.curr_day = 0
         self.day_step = None
         self.result_directory = ''
         self.world_stats = {'susceptible': [], 'exposed': [], 'infectious': [], 'recovered': [], 'dead': []}
@@ -77,6 +78,12 @@ class MapGenerator:
     def get_status(self):
         return self.status
 
+    def get_current_day(self):
+        return 0
+
+    def get_max_day(self):
+        return self.max_day
+
     def check_status(self, member):
         return member in self.status
 
@@ -90,15 +97,16 @@ class MapGenerator:
         group_in_countries = pd.DataFrame(data_to_map, columns=['name', group])
         merged = self.geopandas_countries.set_index('name').join(group_in_countries.set_index('name'))
 
-        for step in range(0, self.max_day):
-            if step % self.day_step == 0:
-                for frame in self.frame_list:
-                    actual_list = frame.choose_list(group)
-                    if group == 'susceptible' and step < frame.start_day:
-                        merged.loc[frame.name, group] = actual_list[0]
-                    if frame.start_day <= step <= frame.end_day:
-                        merged.loc[frame.name, group] = actual_list[step - frame.start_day]
-                self.draw_map(merged, step, group)
+        self.curr_day = 0
+        for step in range(0, self.max_day, self.day_step):
+            self.curr_day = step
+            for frame in self.frame_list:
+                actual_list = frame.choose_list(group)
+                if group == 'susceptible' and step < frame.start_day:
+                    merged.loc[frame.name, group] = actual_list[0]
+                if frame.start_day <= step <= frame.end_day:
+                    merged.loc[frame.name, group] = actual_list[step - frame.start_day]
+            self.draw_map(merged, step, group)
 
         self.set_status(group)
 

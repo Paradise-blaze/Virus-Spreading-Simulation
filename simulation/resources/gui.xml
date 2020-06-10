@@ -42,7 +42,7 @@
             <Button name='main' text='Powrót'/>
         </LabelFrame>
         <LabelFrame name='map' >
-            <Button name='main' text='Powrót'/>
+            <Button name="main" text="Loading" command=""/>
         </LabelFrame>
     </Frame>
 </Form>
