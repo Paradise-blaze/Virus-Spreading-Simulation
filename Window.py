@@ -270,10 +270,10 @@ class Window:
         self.root.mainloop()
 
     def create_animation_widgets(self):
-        r = tk.Text(self.menu, name="region", text=self.region_choice)
-        d = tk.Text(self.menu, name="disease", text=self.disease_choice)
-        t = tk.Text(self.menu, name="type", text=self.map_type_choice)
-        self.hided_children["map"] = [r, d, t]
+        pass#r = tk.Text(self.menu, name="region", text=self.region_choice)
+        #d = tk.Text(self.menu, name="disease", text=self.disease_choice)
+        #t = tk.Text(self.menu, name="type", text=self.map_type_choice)
+        #self.hided_children["map"] = [r, d, t]
 
     def trans(self, word):
         if word in self.dictionary and self.dictionary[word] is not None and self.dictionary[word] != '':
