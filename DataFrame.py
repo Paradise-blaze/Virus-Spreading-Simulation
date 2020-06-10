@@ -205,7 +205,7 @@ class MapGenerator:
 
     def plot_country(self, country_name):
         country = next((frame for frame in self.frame_list if frame.name == country_name), None)
-        if country_name is None:
+        if country is None:
             return
         time = [i for i in range(0, len(country.dead))]
 
