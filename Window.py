@@ -315,7 +315,8 @@ class Window:
                 continue
             button = tk.Button(menu, name=self.purify_name(region), text=self.trans(region))
             button.config(command=self.region_generator_factory(region))
-            self.set_child_pack_options(button)
+            button.pack(side=tk.LEFT)
+        menu.nametowidget("main").pack(side=tk.RIGHT)
 
     def trans(self, word):
         if word in self.dictionary and self.dictionary[word] is not None and self.dictionary[word] != '':
@@ -387,14 +388,12 @@ class Window:
     # Handlig custom simulation
     def set_custom_simulation(self, _):
         name = self.get_custom_name()
-        print(name)
         coefficients = self.get_coefficients()
         self.disease_choice = name
         args = [name] + coefficients
         self.run_simulation(args) # not working yet, we should see in C
 
     def get_custom_name(self):
-        print(self.menus['custom'].winfo_children()[1].winfo_children()[1].get())
         return self.menus['custom'].winfo_children()[1].winfo_children()[1].get()
 
     def get_coefficients(self):
@@ -472,7 +471,9 @@ class Window:
             self.change_menu("plots")
 
     def generate_world_plot(self, _):
-        self.map_generator.plot_world()
+        path = os.path.join(self.paths['results'], self.disease_choice, self.region_choice, "plots", "world_plot.png")
+        if not os.path.exists(path):
+            self.map_generator.plot_world()
         self.display_plot("world")
 
     def generate_region_plot(self, name):
