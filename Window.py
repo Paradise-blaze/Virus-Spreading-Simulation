@@ -269,6 +269,12 @@ class Window:
 
         self.root.mainloop()
 
+    def create_animation_widgets(self):
+        r = tk.Text(self.menu, name="region", text=self.region_choice)
+        d = tk.Text(self.menu, name="disease", text=self.disease_choice)
+        t = tk.Text(self.menu, name="type", text=self.map_type_choice)
+        self.hided_children["map"] = [r, d, t]
+
     def trans(self, word):
         if word in self.dictionary and self.dictionary[word] is not None and self.dictionary[word] != '':
             return self.dictionary[word]
@@ -359,9 +365,10 @@ class Window:
             self.root.after(1000, self.wait_for_map_type_choice)
 
     def wait_for_generator(self):
-        if self.map_generator.check_status(self.map_type_choice):
+        if self.max_day - self.current_day.value < self.day_step:
             self.paths['animation'] = os.path.join(self.paths['results'], self.disease_choice, self.region_choice, 'maps')
             self.slide_num = 0
+            self.create_animation_widgets()
             self.menu.nametowidget("main").config(text="return", command=lambda: self.change_menu("main"))
             self.display()
         else:
@@ -370,7 +377,7 @@ class Window:
 
     def update_loading_status(self):
         status = 100*self.current_day.value/self.max_day
-        self.menu.nametowidget("main").config(text=self.trans("Loading") + " {:.2f}%".format(status))
+        self.menu.nametowidget("main").config(text=self.trans("Generating") + " {:.2f}%".format(status))
 
     def display(self):
         file = os.path.join(self.paths['animation'], "{}{}.png".format(self.map_type_choice, self.slide_num))
