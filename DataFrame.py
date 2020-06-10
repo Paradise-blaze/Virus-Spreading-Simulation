@@ -182,7 +182,7 @@ class MapGenerator:
         self.world_stats['dead'].pop(len(self.world_stats['dead']) - 1)
 
     def plot_world(self):
-        time = [i for i in range(0, len(self.world_stats['dead']))]
+        time = [i for i in range(0, self.max_day-1)]
 
         plt.plot(time, self.world_stats['susceptible'], label='Susceptible')
         plt.plot(time, self.world_stats['exposed'], label='Exposed')
@@ -201,6 +201,7 @@ class MapGenerator:
 
         plt.savefig(os.path.join(results_dir, 'world_plot.png'))
         plt.close()
+        self.world_stats = {'susceptible': [], 'exposed': [], 'infectious': [], 'recovered': [], 'dead': []}
 
     def plot_country(self, country_name):
         country = next((frame for frame in self.frame_list if frame.name == country_name), None)
