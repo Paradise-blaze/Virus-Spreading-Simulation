@@ -4,6 +4,7 @@ from PIL import Image, ImageTk
 import time
 import csv
 import subprocess
+import multiprocessing as mp
 import os
 from DataFrame import MapGenerator
 
@@ -107,6 +108,7 @@ class Window:
         self.disease_choice = ''
         self.region_choice = ''
         self.slide_num = 0
+        self.day_step = 1
         self.map_type_choice = None
         self.process = None
 
@@ -145,6 +147,9 @@ class Window:
         #self.menu_children_config_options['height'] = '3 0'
         pass
 
+    def set_day_step(self, step):
+        self.day_step = step
+
     def load_images(self):
         for name in ["background", "map"]:
             self.images[name] = Image.open(self.paths[name])
@@ -176,7 +181,7 @@ class Window:
 
     def set_generator(self):
         self.map_generator.set_result_path(self.paths['results'])
-        self.map_generator.clear_data()
+        self.map_generator.set_day_step(self.day_step)
 
     @staticmethod
     def copy_configuration(original, copy):
@@ -350,14 +355,26 @@ class Window:
         if self.map_generator.check_status(self.map_type_choice):
             self.paths['animation'] = os.path.join(self.paths['results'], self.disease_choice, self.region_choice, 'maps')
             self.slide_num = 0
+            loading_button = self.menu.nametowidget("main")
+            loading_button.config(text="return", command=lambda: self.change_menu("main"))
+
             self.display()
         else:
-            self.root.after(1000, self.wait_for_map_type_choice)
+            self.update_loading_status()
+            self.root.after(100, self.wait_for_map_type_choice)
+
+    def update_loading_status(self):
+        curr_day = self.map_generator.get_current_day()
+        max_day = self.map_generator.get_max_day()
+        status = 100*curr_day/max_day
+        self.menu.nametowidget("main").config(text=self.trans("Loading") + " {}".format(status))
+        print(status)
 
     def display(self):
-        self.slide_num += 1
-        file = os.path.join(self.paths['animation'], "{}{}.png".format(self.map_type_choice, self.slide_num-1))
+        file = os.path.join(self.paths['animation'], "{}{}.png".format(self.map_type_choice, self.slide_num))
         if os.path.exists(file):
+            self.slide_num += self.day_step
+            print(self.slide_num)
             image = self.scale_image(Image.open(file))
             self.panel.config(image=image)
             self.panel.image = image
