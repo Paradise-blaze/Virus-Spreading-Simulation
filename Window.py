@@ -105,12 +105,16 @@ class Window:
         self.images = {}
         self.scaled = {}
         self.dictionary = {}
+
         self.disease_choice = ''
         self.region_choice = ''
+        self.map_type_choice = None
         self.slide_num = 0
         self.day_step = 1
-        self.map_type_choice = None
-        self.process = None
+        self.simulation_process = None
+        self.generator_process = None
+        self.max_day = 0
+        self.current_day = 0
 
     def set_title(self, title):
         self.root.title(title)
@@ -332,21 +336,25 @@ class Window:
 
     # running and displaying simulation
     def run_simulation(self, widget):
-        self.process = subprocess.Popen([self.paths['program'], self.disease_choice, self.region_choice])
+        self.simulation_process = subprocess.Popen([self.paths['program'], self.disease_choice, self.region_choice])
         self.change_menu(widget)
         self.wait_for_simulation()
 
     def wait_for_simulation(self):
-        if self.process is not None and self.process.poll() is not None:
+        if self.simulation_process is not None and self.simulation_process.poll() is not None:
             self.map_generator.set_directory(self.disease_choice, self.region_choice)
-            self.process = None
+            self.simulation_process = None
             self.wait_for_map_type_choice()
         else:
             self.root.after(100, self.wait_for_simulation)  # refreshes every second
 
     def wait_for_map_type_choice(self):
         if self.map_type_choice is not None:
-            self.map_generator.generate_maps(self.map_type_choice)
+            self.max_day = self.map_generator.get_max_day()
+            self.current_day = mp.Value('i') # i stands for int
+            self.generator_process = mp.Process(target=self.map_generator.generate_maps, args=(self.map_type_choice, self.current_day,))
+            self.generator_process.start()
+            #self.map_generator.generate_maps(self.map_type_choice)
             self.wait_for_generator()
         else:
             self.root.after(100, self.wait_for_map_type_choice)
@@ -367,8 +375,11 @@ class Window:
         curr_day = self.map_generator.get_current_day()
         max_day = self.map_generator.get_max_day()
         status = 100*curr_day/max_day
-        self.menu.nametowidget("main").config(text=self.trans("Loading") + " {}".format(status))
-        print(status)
+        #self.menu.pack_forget()
+        self.menu.nametowidget("main").config(text=self.trans("Loading") + " {}%".format(status))
+        #self.menu.pack()
+
+        print(status, curr_day)
 
     def display(self):
         file = os.path.join(self.paths['animation'], "{}{}.png".format(self.map_type_choice, self.slide_num))
