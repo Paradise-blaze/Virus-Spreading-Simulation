@@ -133,9 +133,10 @@ class MapGenerator:
 
         data[group] = data.apply(lambda x: x[group] / x['population'], axis=1)
         max_value = data[group].max()
+        min_value = data[group].min()
 
         data.plot(column=group, ax=ax, cmap='Reds', linewidth=0.5, edgecolor='0.8',
-                  missing_kwds={"color": "white"}, vmin=0, vmax=max_value, legend=True)
+                  missing_kwds={"color": "white"}, vmin=min_value, vmax=max_value, legend=True)
 
         results_dir = os.path.join(self.result_directory, 'maps/')
 
