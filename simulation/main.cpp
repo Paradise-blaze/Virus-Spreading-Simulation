@@ -68,8 +68,6 @@ void setConnections(vector<Region> regions, rawData borders){
         region.addConnection(neighbour, 1);
         i++;
     }
-    for(Region &r: regions)
-        cout << r.getConnections().size() << " ";
 }
 
 vector<Region> createRegions(rawData &data){

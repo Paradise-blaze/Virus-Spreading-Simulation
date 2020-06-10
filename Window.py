@@ -270,10 +270,14 @@ class Window:
         self.root.mainloop()
 
     def create_animation_widgets(self):
-        pass#r = tk.Text(self.menu, name="region", text=self.region_choice)
-        #d = tk.Text(self.menu, name="disease", text=self.disease_choice)
-        #t = tk.Text(self.menu, name="type", text=self.map_type_choice)
-        #self.hided_children["map"] = [r, d, t]
+        print("xD")
+        r = tk.Text(self.menu, name="region")
+        r.insert(tk.INSERT, self.region_choice)
+        d = tk.Text(self.menu, name="disease")
+        d.insert(tk.INSERT, self.disease_choice)
+        t = tk.Text(self.menu, name="type")
+        t.insert(tk.INSERT, self.map_type_choice)
+        self.hided_children["map"] = [r, d, t]
 
     def trans(self, word):
         if word in self.dictionary and self.dictionary[word] is not None and self.dictionary[word] != '':
@@ -336,10 +340,6 @@ class Window:
         self.region_choice = ''
         self.change_menu(widget)
 
-    def select_type(self, widget):
-        self.map_type_choice = widget.winfo_name()
-        self.change_menu("map")
-
     # running and displaying simulation
     def run_simulation(self, widget):
         self.simulation_process = subprocess.Popen([self.paths['program'], self.disease_choice, self.region_choice])
@@ -351,18 +351,18 @@ class Window:
             self.map_generator.set_directory(self.disease_choice, self.region_choice)
             self.max_day = self.map_generator.get_max_day()
             self.simulation_process = None
-            self.wait_for_map_type_choice()
+            #self.wait_for_map_type_choice()
         else:
             self.root.after(100, self.wait_for_simulation)
 
-    def wait_for_map_type_choice(self):
-        if self.map_type_choice is not None:
-            self.current_day = mp.Value('i', 0)  # i stands for int
-            self.generator_process = mp.Process(target=self.map_generator.generate_maps, args=(self.map_type_choice, self.current_day,))
-            self.generator_process.start()
-            self.wait_for_generator()
-        else:
-            self.root.after(1000, self.wait_for_map_type_choice)
+    def select_type(self, widget):
+        self.map_type_choice = widget.winfo_name()
+        self.current_day = mp.Value('i', 0)  # i stands for int
+        self.generator_process = mp.Process(target=self.map_generator.generate_maps,
+                                            args=(self.map_type_choice, self.current_day,))
+        self.generator_process.start()
+        self.change_menu("map")
+        self.wait_for_generator()
 
     def wait_for_generator(self):
         if self.max_day - self.current_day.value < self.day_step:
@@ -383,7 +383,6 @@ class Window:
         file = os.path.join(self.paths['animation'], "{}{}.png".format(self.map_type_choice, self.slide_num))
         if os.path.exists(file):
             self.slide_num += self.day_step
-            print(self.slide_num)
             image = self.scale_image(Image.open(file))
             self.panel.config(image=image)
             self.panel.image = image
