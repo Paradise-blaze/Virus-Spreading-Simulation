@@ -8,7 +8,9 @@ This app is a project for Discrete Simulation of Complex Systems classes. We hav
 - Infectious  
   People with all kind of symptoms (mild, medium, serious); the presence of foreign body is clearly noticable
 - Removed  
-  People who either got rid of pathogen and gained an immunity or died due to illness  
+  People who either got rid of pathogen and gained an immunity or died due to illness
+  
+  
 We have decided to enhance that model and split Removed into Recovered and Dead to make it more accurate.
 ## Implementation 
 After several discussions we came up with an idea of writing this app in two programming languages - Python and C++. The first task of program is to create large number of files containing number of 5 groups from our model.
