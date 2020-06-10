@@ -310,6 +310,9 @@ class Window:
         menu = self.menus['plots']
         regions = list(set([self.region_choice, "Poland", "United States of America", "China", "Germany", "France", "Russia"]))
         for region in regions:
+            path = os.path.join(self.paths["results"], self.disease_choice, self.region_choice, 'data', region)
+            if not os.path.exists(path):
+                continue
             button = tk.Button(menu, name=self.purify_name(region), text=self.trans(region))
             button.config(command=self.region_generator_factory(region))
             self.set_child_pack_options(button)
@@ -473,8 +476,9 @@ class Window:
         self.display_plot("world")
 
     def generate_region_plot(self, name):
-        self.map_generator.plot_country(name)
-        self.display_plot(name)
+        if name != "":
+            self.map_generator.plot_country(name)
+            self.display_plot(name)
 
     def display_plot(self, name):
         file = "{}_plot.png".format(name)
