@@ -144,7 +144,7 @@ void Simulation::simulate() {
 
 void Simulation::randomInfectFrom(Region &region) {
     if(!region.getConnections().empty()){
-        region.infectOtherCountryByLand(region.getConnections());
+        region.infectOtherCountryByLand(regions, region.getConnections(), region);
     } else {
         region.infectOtherCountryByAir(regions, region);
     }

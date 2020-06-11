@@ -351,8 +351,21 @@ std::string Region::setScienceDonating(bool cond) {
 }
 
 //spreading methods
-void Region::infectOtherCountryByLand(std::map<Region, double> & countryMap) const {
-    if((this->infectious > 0 || this->exposed > 0) && !countryMap.empty()) {
+void Region::infectOtherCountryByLand(std::vector<Region> & regions,std::map<Region, double> & countryMap, Region & regionZero) const {
+    if((this->infectious > 0 || this->exposed > 0)) {
+        bool isAllNeighborsInfected=false;
+        for(std::map<Region,double>::iterator it = countryMap.begin(); it != countryMap.end(); it++){
+            if (!(it->first.getInfectious() != 0))
+            {
+                isAllNeighborsInfected=true;
+            }
+        }
+        if (isAllNeighborsInfected)
+        {
+            regionZero.infectOtherCountryByAir(regions, regionZero);
+            return;
+        }
+        
         int neighbourCount, neighbourNumber;
         auto it = countryMap.begin();
 

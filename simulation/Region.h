@@ -152,7 +152,7 @@ public:
     std::string setScienceDonating(bool);
 
     //spreading methods
-    void infectOtherCountryByLand(std::map<Region, double> &) const;
+    void infectOtherCountryByLand(std::vector<Region> &,std::map<Region, double> &,Region &) const;
     void infectOtherCountryByAir(std::vector<Region> &,Region &) const;
     bool getInfectionChance() const;
 
